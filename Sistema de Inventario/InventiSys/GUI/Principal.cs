@@ -203,5 +203,21 @@ namespace InventiSys.GUI
                 throw;
             }
         }
+
+        private void administarProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProveedoresGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                ProveedoresGestion f = new ProveedoresGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

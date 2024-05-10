@@ -98,5 +98,10 @@ namespace Accesos.GUI
         {
             Close();
         }
+
+        private void UsuariosEdicion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,7 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Usuarios.cs" />
+    <Compile Include="GUI\ProveedoresEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProveedoresEdicion.Designer.cs">
+      <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProveedoresGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProveedoresGestion.Designer.cs">
+      <DependentUpon>ProveedoresGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UsuariosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +78,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
+      <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProveedoresGestion.resx">
+      <DependentUpon>ProveedoresGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosEdicion.resx">
       <DependentUpon>UsuariosEdicion.cs</DependentUpon>
     </EmbeddedResource>
