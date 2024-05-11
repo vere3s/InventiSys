@@ -76,6 +76,8 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`productos` (
   `IDProducto` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NOT NULL,
   `Precio` DECIMAL(10,2) NOT NULL,
+  `CostoUnitario` DECIMAL(10,2) NOT NULL,
+  `EsPlatillo` TinyInt(1) ZeroFill NOT NULL ,
   `IDCategoria` INT NOT NULL,
   `Cantidad` INT NOT NULL,
   PRIMARY KEY (`IDProducto`),
