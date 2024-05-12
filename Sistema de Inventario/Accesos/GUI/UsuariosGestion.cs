@@ -18,6 +18,7 @@ namespace Accesos.GUI
             try
             {
                 _DATOS.DataSource = DataLayer.Consultas.USUARIOS();
+                lbRegistros.Text = _DATOS.Count.ToString();
                 FiltrarLocalmente();
             }
             catch (Exception)
@@ -65,7 +66,7 @@ namespace Accesos.GUI
         private void UsuariosGestion_Load(object sender, EventArgs e)
         {
             Cargar();
-            lbRegistros.Text = ContarUsuarios().ToString();
+           
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -90,18 +91,19 @@ namespace Accesos.GUI
                 if (MessageBox.Show("¿Desea editar el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     UsuariosEdicion oUsuario = new UsuariosEdicion();
+
                     oUsuario.tbIDUsuario.Text = dgvUsuarios.CurrentRow.Cells["IDUsuario"].Value.ToString();
                     oUsuario.tbUsuario.Text = dgvUsuarios.CurrentRow.Cells["Usuario"].Value.ToString();
                     oUsuario.tbContraseña.Text = dgvUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
-                    oUsuario.tbIDEmpleado.Text = dgvUsuarios.CurrentRow.Cells["IDEmpleado"].Value.ToString();
-                    oUsuario.tbIDRol.Text = dgvUsuarios.CurrentRow.Cells["IDRol"].Value.ToString();
+                    oUsuario.cbIDEmpleado.SelectedValue= dgvUsuarios.CurrentRow.Cells["IDEmpleado"].Value;
+                    oUsuario.cbIDRol.SelectedValue = dgvUsuarios.CurrentRow.Cells["IDRol"].Value;
                     oUsuario.ShowDialog();
                     Cargar();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
                 throw;
             }
         }

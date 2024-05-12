@@ -24,11 +24,10 @@ namespace DataLayer
             }
             return Resultado;
         }
-
-        public static DataTable USUARIOS()
+        public static DataTable Empleados()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT IDUsuario, Usuario, Contraseña, IDEmpleado, IDRol FROM usuarios ORDER BY Usuario ASC;";
+            String Consulta = @"SELECT * FROM Empleados ORDER BY Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -40,5 +39,51 @@ namespace DataLayer
             }
             return Resultado;
         }
+
+        public static DataTable Roles()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT * FROM Roles ORDER BY Rol ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+
+        public static DataTable USUARIOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT 
+    u.IDUsuario, 
+    u.Usuario, 
+    u.Contraseña, 
+    u.IDEmpleado, 
+    u.IDRol, 
+    r.Rol AS Rol,
+    e.Nombre AS Empleado
+FROM 
+    usuarios u
+    INNER JOIN roles r ON u.IDRol = r.IDRol
+    INNER JOIN empleados e ON u.IDEmpleado = e.IDEmpleado
+ORDER BY 
+    u.Usuario ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+
     }
 }

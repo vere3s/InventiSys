@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tbContraseña = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbIDEmpleado = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbIDRol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -42,6 +40,8 @@
             this.tbIDUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbIDEmpleado = new System.Windows.Forms.ComboBox();
+            this.cbIDRol = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,17 +67,6 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Contraseña";
             // 
-            // tbIDEmpleado
-            // 
-            this.tbIDEmpleado.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbIDEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIDEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIDEmpleado.Location = new System.Drawing.Point(44, 378);
-            this.tbIDEmpleado.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tbIDEmpleado.Name = "tbIDEmpleado";
-            this.tbIDEmpleado.Size = new System.Drawing.Size(101, 30);
-            this.tbIDEmpleado.TabIndex = 27;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -85,20 +74,9 @@
             this.label4.Location = new System.Drawing.Point(37, 347);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 25);
+            this.label4.Size = new System.Drawing.Size(100, 25);
             this.label4.TabIndex = 26;
-            this.label4.Text = "IDEmpleado";
-            // 
-            // tbIDRol
-            // 
-            this.tbIDRol.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbIDRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIDRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIDRol.Location = new System.Drawing.Point(44, 478);
-            this.tbIDRol.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tbIDRol.Name = "tbIDRol";
-            this.tbIDRol.Size = new System.Drawing.Size(101, 30);
-            this.tbIDRol.TabIndex = 25;
+            this.label4.Text = "Empleado";
             // 
             // label3
             // 
@@ -107,9 +85,9 @@
             this.label3.Location = new System.Drawing.Point(37, 448);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 25);
+            this.label3.Size = new System.Drawing.Size(40, 25);
             this.label3.TabIndex = 24;
-            this.label3.Text = "IDRol";
+            this.label3.Text = "Rol";
             // 
             // btnCancelar
             // 
@@ -187,17 +165,35 @@
             this.Notificador.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Notificador.ContainerControl = this;
             // 
+            // cbIDEmpleado
+            // 
+            this.cbIDEmpleado.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.cbIDEmpleado.FormattingEnabled = true;
+            this.cbIDEmpleado.Location = new System.Drawing.Point(44, 396);
+            this.cbIDEmpleado.Name = "cbIDEmpleado";
+            this.cbIDEmpleado.Size = new System.Drawing.Size(387, 24);
+            this.cbIDEmpleado.TabIndex = 30;
+            // 
+            // cbIDRol
+            // 
+            this.cbIDRol.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.cbIDRol.FormattingEnabled = true;
+            this.cbIDRol.Location = new System.Drawing.Point(44, 490);
+            this.cbIDRol.Name = "cbIDRol";
+            this.cbIDRol.Size = new System.Drawing.Size(387, 24);
+            this.cbIDRol.TabIndex = 31;
+            // 
             // UsuariosEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(471, 634);
+            this.Controls.Add(this.cbIDRol);
+            this.Controls.Add(this.cbIDEmpleado);
             this.Controls.Add(this.tbContraseña);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbIDEmpleado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbIDRol);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -210,7 +206,7 @@
             this.Name = "UsuariosEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsuariosEdicion";
-            this.Load += new System.EventHandler(this.UsuariosEdicion_Load);
+            this.Load += new System.EventHandler(this.UsuariosEdicion_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,9 +217,7 @@
 
         public System.Windows.Forms.TextBox tbContraseña;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox tbIDEmpleado;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox tbIDRol;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
@@ -232,5 +226,7 @@
         public System.Windows.Forms.TextBox tbIDUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider Notificador;
+        public System.Windows.Forms.ComboBox cbIDEmpleado;
+        public System.Windows.Forms.ComboBox cbIDRol;
     }
 }

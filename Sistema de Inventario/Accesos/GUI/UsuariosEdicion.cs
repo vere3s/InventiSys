@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataLayer;
+using System;
 using System.Windows.Forms;
 
 namespace Accesos.GUI
 {
     public partial class UsuariosEdicion : Form
     {
+    
+
         private Boolean Validar()
         {
             Boolean valido = true;
@@ -32,7 +28,9 @@ namespace Accesos.GUI
         }
         public UsuariosEdicion()
         {
+
             InitializeComponent();
+            Cargar();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -56,8 +54,8 @@ namespace Accesos.GUI
 
                     oUsuario.Usuario = tbUsuario.Text;
                     oUsuario.Contraseña = tbContraseña.Text;
-                    oUsuario.IDEmpleado = Convert.ToInt32(tbIDEmpleado.Text);
-                    oUsuario.IDRol = Convert.ToInt32(tbIDRol.Text);
+                    oUsuario.IDEmpleado = Convert.ToInt32(cbIDEmpleado.SelectedValue);
+                    oUsuario.IDRol = Convert.ToInt32(cbIDRol.SelectedValue);
                     //PROCEDER
                     if (tbIDUsuario.Text.Trim().Length == 0)
                     {
@@ -77,12 +75,12 @@ namespace Accesos.GUI
                         // ACTUALIZAR NUEVO REGISTRO
                         if (oUsuario.Actualizar())
                         {
-                            MessageBox.Show("Resgistro actualizado");
+                            MessageBox.Show("Registro actualizado");
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("El resgistro no pudo ser actualizado");
+                            MessageBox.Show("El registro no pudo ser actualizado");
                         }
                     }
                 }
@@ -98,8 +96,18 @@ namespace Accesos.GUI
         {
             Close();
         }
+        private void Cargar()
+        {
 
-        private void UsuariosEdicion_Load(object sender, EventArgs e)
+            cbIDEmpleado.DataSource = Consultas.Empleados();
+            cbIDEmpleado.DisplayMember = "Nombre";
+            cbIDEmpleado.ValueMember = "idEmpleado";
+            cbIDRol.DataSource = Consultas.Roles();
+            cbIDRol.DisplayMember = "Rol";
+            cbIDRol.ValueMember = "IDRol";
+        }
+   
+        private void UsuariosEdicion_Load_1(object sender, EventArgs e)
         {
 
         }

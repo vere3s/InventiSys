@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace InventiSys.GUI
 
         private void Home_Load(object sender, EventArgs e)
         {
-            lbContadorUsuarios.Text = Accesos.GUI.UsuariosGestion.ContarUsuarios().ToString();
+            lbContadorUsuarios.Text = Consultas.USUARIOS().Rows.Count.ToString();
         }
     }
 }

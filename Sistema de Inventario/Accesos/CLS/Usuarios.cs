@@ -26,7 +26,7 @@ namespace Accesos.CLS
             DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("INSERT INTO usuarios(Usuario, Contraseña, IDEmpleado, IDRol) VALUES(");
-            Sentencia.Append("'" + Usuario + "','" + Contraseña + "','" + IDEmpleado + "','" + IDRol + "');");
+            Sentencia.Append("'" + Usuario + "',md5('" + Contraseña + "'),'" + IDEmpleado + "','" + IDRol + "');");
             try
             {
                 if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
@@ -51,7 +51,7 @@ namespace Accesos.CLS
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("UPDATE usuarios SET ");
             Sentencia.Append("Usuario = '" + _Usuario + "'," +
-                             "Contraseña = '" + _Contraseña + "'," +
+                             "Contraseña = MD5('" + _Contraseña + "')," +
                              "IDEmpleado = '" + _IDEmpleado + "'," +
                              "IDRol = '" + _IDRol + "'");
             Sentencia.Append("WHERE IDUsuario = " + _IDUsuario + "; ");
