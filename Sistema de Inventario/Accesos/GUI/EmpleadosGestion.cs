@@ -123,7 +123,7 @@ namespace Accesos.GUI
 
         private void EmpleadosGestion_Load_1(object sender, EventArgs e)
         {
-
+            Cargar();
         }
 
      
