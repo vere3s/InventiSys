@@ -191,53 +191,6 @@ namespace Accesos.GUI
                 return -1;
             }
         }
-        private int ActualizarPedido()
-        {
-            try
-
-            {
-                if (String.IsNullOrEmpty(txtCliente)) { return -1; }
-
-                // Crear una lista para almacenar los detalles del pedido como objetos Item
-                List<Item> detallesPedido = new List<Item>();
-                PedidoVentas pedidoVentas = new PedidoVentas();
-                // Iterar sobre los datos en _DATOS para crear los objetos Item
-                foreach (DataRowView item in _DATOS)
-                {
-                    // Obtener los datos del producto de la fila actual
-                    int idProducto = Convert.ToInt32(item["IDProducto"]);
-                    string nombreProducto = item["Producto"].ToString();
-                    double precioProducto = Convert.ToDouble(item["Precio"]);
-                    int cantidad = Convert.ToInt32(item["Cantidad"]);
-
-                    pedidoVentas.ActualizarDetallePedidoVentas(1, cantidad, precioProducto);
-
-                }
-               
-                // Llamar a la función de la capa de datos para insertar el pedido
-                int idPedidoInsertado = pedidoVentas.Actualizar(_ID, txtCliente);
-                
-                // Verificar si se insertó correctamente
-                if (idPedidoInsertado > 0)
-                {
-                    MessageBox.Show("Pedido insertado correctamente. ID del pedido: " + idPedidoInsertado);
-                    // Aquí puedes realizar cualquier otra acción necesaria después de insertar el pedido
-
-                    return idPedidoInsertado;
-                }
-                else
-                {
-                    MessageBox.Show("Error al insertar el pedido.");
-                    return -1;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                return -1;
-            }
-        }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {

@@ -119,7 +119,7 @@ namespace Accesos.CLS
                     return -1;
                 }
             }
-            public int Actualizar(int idPedido, string nuevoCliente)
+            public void Actualizar(int idPedido, string nuevoCliente)
             {
                 try
                 {
@@ -135,14 +135,13 @@ namespace Accesos.CLS
                     consultaActualizacion.Append(";");
 
                     // Ejecutar la consulta de actualización
-                   return operacion.EjecutarSentencia(consultaActualizacion.ToString());
+                    operacion.EjecutarSentencia(consultaActualizacion.ToString());
 
-                   
+                    Console.WriteLine("Cliente actualizado correctamente.");
                 }
                 catch (Exception ex)
                 {
-                    return -1;
-                    
+                    Console.WriteLine("Error al actualizar el cliente: " + ex.Message);
                 }
             }
             public void ActualizarDetallePedidoVentas(int idDetallePedido, int nuevaCantidad, double nuevoPrecio)
