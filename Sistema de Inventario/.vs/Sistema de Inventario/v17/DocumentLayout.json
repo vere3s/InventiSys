@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|c:\\users\\marce\\documents\\marcela\\desarrollo ii\\proyecto\\inventisys\\sistema de inventario\\accesos\\cls\\categorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|solutionrelative:accesos\\cls\\categorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|c:\\users\\marce\\documents\\marcela\\desarrollo ii\\proyecto\\inventisys\\sistema de inventario\\accesos\\gui\\categoriagestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\categoriagestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|c:\\users\\marce\\documents\\marcela\\desarrollo ii\\proyecto\\inventisys\\sistema de inventario\\accesos\\gui\\categoriagestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\categoriagestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F449979-E42C-4953-8456-47C882A1C917}|DataLayer\\DataLayer.csproj|c:\\users\\marce\\documents\\marcela\\desarrollo ii\\proyecto\\inventisys\\sistema de inventario\\datalayer\\dbconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F449979-E42C-4953-8456-47C882A1C917}|DataLayer\\DataLayer.csproj|solutionrelative:datalayer\\dbconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|c:\\users\\marce\\documents\\marcela\\desarrollo ii\\proyecto\\inventisys\\sistema de inventario\\accesos\\gui\\categoriasedicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0189C6B7-8403-4F02-8AF4-F885CB68820F}|Accesos\\Accesos.csproj|solutionrelative:accesos\\gui\\categoriasedicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoriaGestion.cs",
+              "DocumentMoniker": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\GUI\\CategoriaGestion.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\CategoriaGestion.cs",
+              "ToolTip": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\GUI\\CategoriaGestion.cs",
+              "RelativeToolTip": "Accesos\\GUI\\CategoriaGestion.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAuwHcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T20:51:36.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Categorias.cs",
+              "DocumentMoniker": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\CLS\\Categorias.cs",
+              "RelativeDocumentMoniker": "Accesos\\CLS\\Categorias.cs",
+              "ToolTip": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\CLS\\Categorias.cs",
+              "RelativeToolTip": "Accesos\\CLS\\Categorias.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAAC4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T20:02:27.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoriaGestion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\GUI\\CategoriaGestion.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\CategoriaGestion.cs",
+              "ToolTip": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\GUI\\CategoriaGestion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Accesos\\GUI\\CategoriaGestion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T19:59:06.037Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DBConexion.cs",
+              "DocumentMoniker": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\DataLayer\\DBConexion.cs",
+              "RelativeDocumentMoniker": "DataLayer\\DBConexion.cs",
+              "ToolTip": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\DataLayer\\DBConexion.cs",
+              "RelativeToolTip": "DataLayer\\DBConexion.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAACCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T00:53:13.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoriasEdicion.cs",
+              "DocumentMoniker": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\GUI\\CategoriasEdicion.cs",
+              "RelativeDocumentMoniker": "Accesos\\GUI\\CategoriasEdicion.cs",
+              "ToolTip": "C:\\Users\\Marce\\Documents\\Marcela\\Desarrollo II\\Proyecto\\InventiSys\\Sistema de Inventario\\Accesos\\GUI\\CategoriasEdicion.cs",
+              "RelativeToolTip": "Accesos\\GUI\\CategoriasEdicion.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAhwGUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T23:49:10.138Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -44,8 +44,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CLS\Categorias.cs" />
+    <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Usuarios.cs" />
+    <Compile Include="GUI\CategoriaGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CategoriaGestion.Designer.cs">
+      <DependentUpon>CategoriaGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CategoriasEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CategoriasEdicion.Designer.cs">
+      <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.Designer.cs">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosGestion.Designer.cs">
+      <DependentUpon>ProductosGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ProveedoresEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +104,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\CategoriaGestion.resx">
+      <DependentUpon>CategoriaGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CategoriasEdicion.resx">
+      <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
       <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
     </EmbeddedResource>

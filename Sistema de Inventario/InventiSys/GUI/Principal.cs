@@ -219,5 +219,41 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+        private void categoriasMenuItem_Click(object sender, EventArgs e)
+        {
+            categoriasMenuItem.ForeColor = Color.Black;
+            categoriasMenuItem.BackColor = Color.DarkSlateGray;
+        }
+
+        private void administrarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(CategoriaGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                CategoriaGestion f = new CategoriaGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CategoriasEdicion f = new CategoriasEdicion();
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
