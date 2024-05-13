@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accesos", "Accesos\Accesos.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SesionManager", "SesionManager\SesionManager.csproj", "{893E49FC-77E8-4B91-9C56-46DAE416C745}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{EA0B5421-5F8B-4052-BF55-FA9EA63692E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{893E49FC-77E8-4B91-9C56-46DAE416C745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893E49FC-77E8-4B91-9C56-46DAE416C745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893E49FC-77E8-4B91-9C56-46DAE416C745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA0B5421-5F8B-4052-BF55-FA9EA63692E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0B5421-5F8B-4052-BF55-FA9EA63692E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0B5421-5F8B-4052-BF55-FA9EA63692E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0B5421-5F8B-4052-BF55-FA9EA63692E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

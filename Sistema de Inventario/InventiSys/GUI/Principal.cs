@@ -219,5 +219,21 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+        private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosVentasGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                PedidosVentasGestion f = new PedidosVentasGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
