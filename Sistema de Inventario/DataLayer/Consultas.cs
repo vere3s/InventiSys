@@ -9,6 +9,39 @@ namespace DataLayer
 {
     public static class Consultas
     {
+        public static DataTable PedidosVentas()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT
+    pv.IDPedido,
+    pv.Cliente,
+    pv.FechaPedido,
+    pv.Estado,
+    pv.Comentarios,
+    SUM(dpv.Cantidad * dpv.Precio) AS 'Total'
+FROM
+    pedidoventas pv
+    LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
+GROUP BY
+    pv.IDPedido,
+    pv.Cliente,
+    pv.FechaPedido,
+    pv.Estado,
+    pv.Comentarios
+ORDER BY
+    pv.FechaPedido DESC;
+";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
         public static DataTable PROVEEDORES()
         {
             DataTable Resultado = new DataTable();
@@ -84,11 +117,21 @@ ORDER BY
             }
             return Resultado;
         }
-
-        public static  DataTable CATEGORIAS()
+        public static DataTable ProductosNoIngredientes()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Categorias ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT
+    p.IDProducto,
+    p.Nombre,
+    p.Precio,
+    p.Cantidad
+FROM
+    productos p
+    INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+WHERE
+    c.EsIngrendiente = 0
+    AND (p.Cantidad > 0 OR (p.Cantidad = 0 AND p.EsPlatillo = 1));
+";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -100,5 +143,22 @@ ORDER BY
             }
             return Resultado;
         }
+        public static DataTable DetallePedidoVentas(int id)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = $"SELECT * FROM detallepedidoventas where IDPedido= '{id}';";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+
     }
+
 }

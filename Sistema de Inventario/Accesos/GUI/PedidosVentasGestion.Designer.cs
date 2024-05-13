@@ -1,6 +1,6 @@
 ﻿namespace Accesos.GUI
 {
-    partial class CategoriaGestion
+    partial class PedidosVentasGestion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosVentasGestion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoriaGestion));
-            this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbRegistros = new System.Windows.Forms.ToolStripStatusLabel();
@@ -44,57 +43,17 @@
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.tbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.IDCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EsIngrendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
+            this.dgvPedidosVentas = new System.Windows.Forms.DataGridView();
+            this.IDPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosVentas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvCategorias
-            // 
-            this.dgvCategorias.AllowUserToAddRows = false;
-            this.dgvCategorias.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dgvCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCategorias.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCategorias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDCategoria,
-            this.Nombre,
-            this.EsIngrendiente});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCategorias.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCategorias.EnableHeadersVisualStyles = false;
-            this.dgvCategorias.Location = new System.Drawing.Point(0, 37);
-            this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.ReadOnly = true;
-            this.dgvCategorias.RowHeadersWidth = 51;
-            this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(800, 391);
-            this.dgvCategorias.TabIndex = 11;
-            this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             // 
             // statusStrip1
             // 
@@ -102,10 +61,11 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lbRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(53, 476);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(961, 29);
+            this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
@@ -113,7 +73,7 @@
             this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(140, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 23);
             this.toolStripStatusLabel1.Text = "Registros encontrados";
             // 
             // lbRegistros
@@ -121,7 +81,7 @@
             this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
             this.lbRegistros.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Size = new System.Drawing.Size(15, 17);
+            this.lbRegistros.Size = new System.Drawing.Size(19, 23);
             this.lbRegistros.Text = "0";
             // 
             // toolStrip1
@@ -135,10 +95,10 @@
             this.btnAgregar,
             this.tbFiltro,
             this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(53, 49);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 37);
-            this.toolStrip1.TabIndex = 9;
+            this.toolStrip1.Size = new System.Drawing.Size(961, 40);
+            this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnEliminar
@@ -159,7 +119,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // btnEditar
             // 
@@ -178,7 +138,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // btnAgregar
             // 
@@ -189,7 +149,7 @@
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.btnAgregar.Size = new System.Drawing.Size(98, 34);
+            this.btnAgregar.Size = new System.Drawing.Size(113, 37);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -200,7 +160,7 @@
             this.tbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(200, 37);
+            this.tbFiltro.Size = new System.Drawing.Size(266, 40);
             // 
             // toolStripLabel1
             // 
@@ -208,60 +168,139 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 34);
+            this.toolStripLabel1.Size = new System.Drawing.Size(73, 37);
             this.toolStripLabel1.Text = "Filtrar";
             // 
-            // IDCategoria
+            // dgvPedidosVentas
             // 
-            this.IDCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.IDCategoria.DataPropertyName = "IDCategoria";
-            this.IDCategoria.HeaderText = "ID";
-            this.IDCategoria.MinimumWidth = 90;
-            this.IDCategoria.Name = "IDCategoria";
-            this.IDCategoria.ReadOnly = true;
-            this.IDCategoria.Width = 90;
+            this.dgvPedidosVentas.AllowUserToAddRows = false;
+            this.dgvPedidosVentas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvPedidosVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPedidosVentas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPedidosVentas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPedidosVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidosVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPedidosVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidosVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPedido,
+            this.Cliente,
+            this.Total,
+            this.FechaPedido,
+            this.Estado,
+            this.Comentarios});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedidosVentas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPedidosVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPedidosVentas.EnableHeadersVisualStyles = false;
+            this.dgvPedidosVentas.Location = new System.Drawing.Point(53, 89);
+            this.dgvPedidosVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPedidosVentas.Name = "dgvPedidosVentas";
+            this.dgvPedidosVentas.ReadOnly = true;
+            this.dgvPedidosVentas.RowHeadersWidth = 51;
+            this.dgvPedidosVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPedidosVentas.Size = new System.Drawing.Size(961, 387);
+            this.dgvPedidosVentas.TabIndex = 14;
             // 
-            // Nombre
+            // IDPedido
             // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Categoria";
-            this.Nombre.MinimumWidth = 100;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.IDPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.IDPedido.DataPropertyName = "IDPedido";
+            this.IDPedido.HeaderText = "ID";
+            this.IDPedido.MinimumWidth = 90;
+            this.IDPedido.Name = "IDPedido";
+            this.IDPedido.ReadOnly = true;
+            this.IDPedido.Width = 90;
             // 
-            // EsIngrendiente
+            // Cliente
             // 
-            this.EsIngrendiente.DataPropertyName = "EsIngrendiente";
-            this.EsIngrendiente.HeaderText = "Es Ingrediente";
-            this.EsIngrendiente.Name = "EsIngrendiente";
-            this.EsIngrendiente.ReadOnly = true;
-            this.EsIngrendiente.Width = 300;
+            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cliente.DataPropertyName = "Cliente";
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.MinimumWidth = 100;
+            this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
             // 
-            // CategoriaGestion
+            // Total
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 50;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.ToolTipText = "c2";
+            this.Total.Width = 85;
+            // 
+            // FechaPedido
+            // 
+            this.FechaPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.FechaPedido.DataPropertyName = "FechaPedido";
+            this.FechaPedido.HeaderText = "Fecha";
+            this.FechaPedido.MinimumWidth = 100;
+            this.FechaPedido.Name = "FechaPedido";
+            this.FechaPedido.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 102;
+            // 
+            // Comentarios
+            // 
+            this.Comentarios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Comentarios.DataPropertyName = "Comentarios";
+            this.Comentarios.HeaderText = "Comentarios";
+            this.Comentarios.MinimumWidth = 6;
+            this.Comentarios.Name = "Comentarios";
+            this.Comentarios.ReadOnly = true;
+            this.Comentarios.Width = 152;
+            // 
+            // PedidosVentasGestion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvCategorias);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.dgvPedidosVentas);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "CategoriaGestion";
-            this.Text = "CategoriaGestion";
-            this.Load += new System.EventHandler(this.CategoriaGestion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
+            this.Name = "PedidosVentasGestion";
+            this.Padding = new System.Windows.Forms.Padding(53, 49, 53, 49);
+            this.Text = "PedidosVentasGestion";
+            this.Load += new System.EventHandler(this.PedidosVentasGestion_Load);
+            this.TextChanged += new System.EventHandler(this.PedidosVentasGestion_TextChanged);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbRegistros;
@@ -273,8 +312,12 @@
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripTextBox tbFiltro;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EsIngrendiente;
+        private System.Windows.Forms.DataGridView dgvPedidosVentas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comentarios;
     }
 }

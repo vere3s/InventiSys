@@ -73,15 +73,11 @@
     <Compile Include="GUI\EmpleadosGestion.Designer.cs">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ProductosEdicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\ProductosEdicion.cs" />
     <Compile Include="GUI\ProductosEdicion.Designer.cs">
       <DependentUpon>ProductosEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ProductosGestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\ProductosGestion.cs" />
     <Compile Include="GUI\ProductosGestion.Designer.cs">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
     </Compile>

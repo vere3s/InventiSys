@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accesos.CLS
+namespace Modelos
 {
-    internal class Productos
+    public class Class1
     {
     }
 }

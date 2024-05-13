@@ -220,15 +220,9 @@ namespace InventiSys.GUI
             }
         }
 
-        private void categoriasMenuItem_Click(object sender, EventArgs e)
+        private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            categoriasMenuItem.ForeColor = Color.Black;
-            categoriasMenuItem.BackColor = Color.DarkSlateGray;
-        }
-
-        private void administrarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(CategoriaGestion));
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosVentasGestion));
 
             if (FormularioExistente != null)
             {
@@ -236,23 +230,9 @@ namespace InventiSys.GUI
             }
             else
             {
-                CategoriaGestion f = new CategoriaGestion();
+                PedidosVentasGestion f = new PedidosVentasGestion();
                 f.MdiParent = this;
                 f.Show();
-            }
-        }
-
-        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CategoriasEdicion f = new CategoriasEdicion();
-                f.ShowDialog();
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
         }
     }
