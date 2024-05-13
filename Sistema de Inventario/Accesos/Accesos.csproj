@@ -53,11 +53,6 @@
     <Compile Include="GUI\PedidosVentasEdicion.Designer.cs">
       <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PedidosVentasEdicion1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PedidosVentasEdicion.resx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\PedidosVentasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +93,7 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\PedidosVentasEdicion.resx">
       <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PedidosVentasEdicion1.Designer.cs</LastGenOutput>
+    
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
       <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
