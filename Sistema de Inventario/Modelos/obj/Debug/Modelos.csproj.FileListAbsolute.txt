@@ -4,3 +4,9 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Deb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.pdb
+C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Modelos\bin\Debug\Modelos.dll
+C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Modelos\bin\Debug\Modelos.pdb
+C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.csproj.AssemblyReference.cache
+C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.dll
+C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.pdb

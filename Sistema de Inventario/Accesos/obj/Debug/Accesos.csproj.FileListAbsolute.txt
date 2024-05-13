@@ -160,7 +160,6 @@ C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\bin\Debug\Syst
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.csproj.AssemblyReference.cache
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.CategoriaGestion.resources
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.CategoriasEdicion.resources
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.EmpleadosEdicion.resources
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.EmpleadosGestion.resources
