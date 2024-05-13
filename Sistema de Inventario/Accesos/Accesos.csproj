@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CLS\Categorias.cs" />
-    <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Usuarios.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="GUI\CategoriasEdicion.Designer.cs">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="GUI\EmpleadosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +66,19 @@
     </Compile>
     <Compile Include="GUI\EmpleadosGestion.Designer.cs">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
+=======
+    <Compile Include="GUI\ProductosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.Designer.cs">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosGestion.Designer.cs">
+      <DependentUpon>ProductosGestion.cs</DependentUpon>
+>>>>>>> parent of 3c602a3 (Subiendo Formulario Empleados)
     </Compile>
     <Compile Include="GUI\ProveedoresEdicion.cs">
       <SubType>Form</SubType>
@@ -101,12 +114,6 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\CategoriasEdicion.resx">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EmpleadosEdicion.resx">
-      <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EmpleadosGestion.resx">
-      <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
       <DependentUpon>ProveedoresEdicion.cs</DependentUpon>

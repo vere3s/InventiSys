@@ -109,6 +109,7 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionMa.C27CDDB7.Up2Date
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
+<<<<<<< HEAD
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll.config
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.pdb
@@ -187,3 +188,5 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\b
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.pdb
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.dll
 C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.pdb
+=======
+>>>>>>> parent of 3c602a3 (Subiendo Formulario Empleados)

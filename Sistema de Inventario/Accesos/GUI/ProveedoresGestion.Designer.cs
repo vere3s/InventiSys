@@ -89,14 +89,15 @@
             this.dgvProveedores.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProveedores.EnableHeadersVisualStyles = false;
-            this.dgvProveedores.Location = new System.Drawing.Point(30, 69);
+            this.dgvProveedores.Location = new System.Drawing.Point(40, 80);
+            this.dgvProveedores.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.ReadOnly = true;
             this.dgvProveedores.RowHeadersWidth = 51;
             this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProveedores.Size = new System.Drawing.Size(740, 327);
+            this.dgvProveedores.Size = new System.Drawing.Size(987, 405);
             this.dgvProveedores.TabIndex = 11;
-
+            // 
             // IDProveedor
             // 
             this.IDProveedor.DataPropertyName = "IDProveedor";
@@ -123,7 +124,7 @@
             this.Email.MinimumWidth = 50;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 73;
+            this.Email.Width = 89;
             // 
             // Telefono
             // 
@@ -140,18 +141,19 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lbRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(30, 396);
+            this.statusStrip1.Location = new System.Drawing.Point(40, 485);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(740, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(987, 29);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
-            
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(140, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 23);
             this.toolStripStatusLabel1.Text = "Registros encontrados";
             // 
             // lbRegistros
@@ -159,7 +161,7 @@
             this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
             this.lbRegistros.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Size = new System.Drawing.Size(15, 17);
+            this.lbRegistros.Size = new System.Drawing.Size(19, 23);
             this.lbRegistros.Text = "0";
             // 
             // toolStrip1
@@ -173,12 +175,11 @@
             this.btnAgregar,
             this.tbFiltro,
             this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(30, 32);
+            this.toolStrip1.Location = new System.Drawing.Point(40, 40);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(740, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(987, 40);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
-
             // 
             // btnEliminar
             // 
@@ -198,7 +199,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // btnEditar
             // 
@@ -217,7 +218,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // btnAgregar
             // 
@@ -228,7 +229,7 @@
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.btnAgregar.Size = new System.Drawing.Size(98, 34);
+            this.btnAgregar.Size = new System.Drawing.Size(113, 37);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -239,7 +240,7 @@
             this.tbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(200, 37);
+            this.tbFiltro.Size = new System.Drawing.Size(266, 40);
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // toolStripLabel1
@@ -248,20 +249,19 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 34);
+            this.toolStripLabel1.Size = new System.Drawing.Size(73, 37);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // ProveedoresGestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ProveedoresGestion";
-            this.Padding = new System.Windows.Forms.Padding(30, 32, 30, 32);
+            this.Padding = new System.Windows.Forms.Padding(40);
             this.Text = "ProveedoresGestion";
             this.Load += new System.EventHandler(this.ProveedoresGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();

@@ -181,7 +181,11 @@
             this.cuentasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cuentasToolStripMenuItem.Image")));
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
             this.cuentasToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
+<<<<<<< HEAD
             this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
+=======
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
+>>>>>>> parent of 3c602a3 (Subiendo Formulario Empleados)
             this.cuentasToolStripMenuItem.Text = "Tabla";
             // 
             // movimientosToolStripMenuItem
@@ -191,7 +195,11 @@
             this.movimientosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem.Image")));
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
             this.movimientosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
+<<<<<<< HEAD
             this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
+=======
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
+>>>>>>> parent of 3c602a3 (Subiendo Formulario Empleados)
             this.movimientosToolStripMenuItem.Text = "Tabla";
             // 
             // accesosMenuItem
