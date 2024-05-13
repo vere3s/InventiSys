@@ -1,156 +1,8 @@
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.pdb
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\ZstdSharp.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.pdb
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll.config
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.pdb
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.AssemblyReference.cache
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CoreCompileInputs.cache
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CopyComplete
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
-C:\Users\verri\source\repos\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll.config
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll.config
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\ZstdSharp.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll.config
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.AssemblyReference.cache
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CoreCompileInputs.cache
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CopyComplete
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll.config
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.pdb
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\ZstdSharp.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.pdb
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll.config
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.pdb
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.AssemblyReference.cache
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CoreCompileInputs.cache
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionMa.C27CDDB7.Up2Date
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
-C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
-<<<<<<< HEAD
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll.config
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.pdb
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\ZstdSharp.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.pdb
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll.config
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.pdb
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Memory.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Buffers.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.IO.Pipelines.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.AssemblyReference.cache
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CoreCompileInputs.cache
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CopyComplete
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll.config
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\SesionManager.pdb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\ZstdSharp.dll
@@ -166,6 +18,7 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\b
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.pdb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\DataLayer.dll.config
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.pdb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\MySql.Data.xml
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.pdb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Google.Protobuf.xml
@@ -184,9 +37,3 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\o
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CopyComplete
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
-C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.dll
-C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.pdb
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.dll
-C:\Users\FaMel\Downloads\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.pdb
-=======
->>>>>>> parent of 3c602a3 (Subiendo Formulario Empleados)

@@ -45,16 +45,23 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CLS\Categorias.cs" />
+    <Compile Include="CLS\Empleados.cs" />
+    <Compile Include="CLS\PedidoVentas.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Usuarios.cs" />
+    <Compile Include="GUI\CategoriaGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CategoriaGestion.Designer.cs">
+      <DependentUpon>CategoriaGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CategoriasEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\CategoriasEdicion.Designer.cs">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="GUI\EmpleadosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,19 +73,24 @@
     </Compile>
     <Compile Include="GUI\EmpleadosGestion.Designer.cs">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
-=======
-    <Compile Include="GUI\ProductosEdicion.cs">
+    </Compile>
+    <Compile Include="GUI\PedidosVentasEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ProductosEdicion.Designer.cs">
-      <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    <Compile Include="GUI\PedidosVentasEdicion.Designer.cs">
+      <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PedidosVentasGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PedidosVentasGestion.Designer.cs">
+      <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ProductosGestion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ProductosGestion.Designer.cs">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
->>>>>>> parent of 3c602a3 (Subiendo Formulario Empleados)
     </Compile>
     <Compile Include="GUI\ProveedoresEdicion.cs">
       <SubType>Form</SubType>
@@ -112,8 +124,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\CategoriaGestion.resx">
+      <DependentUpon>CategoriaGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriasEdicion.resx">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosEdicion.resx">
+      <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosGestion.resx">
+      <DependentUpon>EmpleadosGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PedidosVentasEdicion.resx">
+      <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
+      <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProductosGestion.resx">
+      <DependentUpon>ProductosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
       <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
@@ -136,6 +166,14 @@
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{2f449979-e42c-4953-8456-47c882a1c917}</Project>
       <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{ea0b5421-5f8b-4052-bf55-fa9ea63692e6}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SesionManager\SesionManager.csproj">
+      <Project>{893e49fc-77e8-4b91-9c56-46dae416c745}</Project>
+      <Name>SesionManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

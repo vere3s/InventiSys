@@ -1,0 +1,17 @@
+################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/Sistema de Inventario/DataLayer/DBConexion.cs
+/Sistema de Inventario/DataLayer/bin/Debug
+/Sistema de Inventario/DataLayer/obj/Debug
+
+/Sistema de Inventario/Accesos/obj/Debug
+/Sistema de Inventario/Accesos/bin/Debug
+
+
+/Sistema de Inventario/InventiSys/obj/Debug
+/Sistema de Inventario/InventiSys/bin/Debug
+
+/Sistema de Inventario/Modelos/obj/Debug
+/Sistema de Inventario/Modelos/bin/Debug

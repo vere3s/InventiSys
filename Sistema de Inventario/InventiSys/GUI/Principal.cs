@@ -222,6 +222,29 @@ namespace InventiSys.GUI
 
         private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
+        }
+
+
+
+        private void administrarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(CategoriaGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                CategoriaGestion f = new CategoriaGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void administrarCategoriasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
             Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosVentasGestion));
 
             if (FormularioExistente != null)
@@ -231,6 +254,36 @@ namespace InventiSys.GUI
             else
             {
                 PedidosVentasGestion f = new PedidosVentasGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CategoriasEdicion f = new CategoriasEdicion();
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void administrarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(EmpleadosGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                EmpleadosGestion f = new EmpleadosGestion();
                 f.MdiParent = this;
                 f.Show();
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Accesos.CLS
 {
-    internal class Productos
+    class Productos
     {
     }
 }
