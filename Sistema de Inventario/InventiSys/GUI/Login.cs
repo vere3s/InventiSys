@@ -1,5 +1,4 @@
-﻿using Modelos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,31 +23,17 @@ namespace InventiSys.GUI
         {
             DataTable dt = new DataTable();
             DataLayer.DBOperacion oOperacion = new DataLayer.DBOperacion();
-            string query = @"
-    SELECT 
-        u.IDUsuario, u.Usuario, 
-        e.IDEmpleado, e.Nombre, e.Cargo, e.Telefono, e.Email
-    FROM 
-        usuarios u
-    INNER JOIN 
-        empleados e ON u.IDEmpleado = e.IDEmpleado
-    WHERE 
-        u.Usuario = '" + tbUsuario.Text + @"' AND 
-        u.Contraseña = MD5('" + tbContraseña.Text + @"');";
+            string query = @"SELECT 
+            IDUsuario, Usuario, 
+            IDEmpleado, IDRol
+            FROM usuarios
+            where Usuario = '" + tbUsuario.Text + @"'
+            and Contraseña = MD5('" + tbContraseña.Text + @"');";
             dt = oOperacion.Consultar(query);
             if (dt.Rows.Count == 1)
             {
                 SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
                 oSesion.Usuario = tbUsuario.Text;
-                DataRow row = dt.Rows[0];
-                oSesion.empleado = new Empleado
-                {
-                    IDEmpleado = Convert.ToInt32(row["IDEmpleado"]),
-                    Nombre = row["Nombre"].ToString(),
-                    Cargo = row["Cargo"].ToString(),
-                    Telefono = row["Telefono"].ToString(),
-                    Email = row["Email"].ToString()
-                };
                 _Autorizado = true;
                 Close();
             }
@@ -61,11 +46,6 @@ namespace InventiSys.GUI
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

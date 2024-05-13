@@ -72,5 +72,3 @@ C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debu
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.csproj.CopyComplete
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.dll
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\obj\Debug\SesionManager.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\SesionManager\bin\Debug\Modelos.pdb

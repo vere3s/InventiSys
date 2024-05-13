@@ -82,10 +82,3 @@ C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Acce
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.csproj.CopyComplete
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.dll
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PedidosVentasEdicion.resources
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PedidosVentasGestion.resources
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\bin\Debug\Modelos.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\bin\Debug\Modelos.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\bin\Debug\SesionManager.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\bin\Debug\SesionManager.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\Accesos\bin\Debug\SesionManager.dll.config

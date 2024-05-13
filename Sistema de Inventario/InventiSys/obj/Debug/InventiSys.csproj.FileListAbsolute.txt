@@ -96,5 +96,3 @@ C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\I
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.CopyComplete
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe
 C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.pdb
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Modelos.dll
-C:\Users\Saira\Documents\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Modelos.pdb

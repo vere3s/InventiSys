@@ -1,5 +1,4 @@
-﻿using Modelos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,9 +12,8 @@ namespace SesionManager
     {
         private static Sesion _instance;
         private static readonly object _lock = new object();
-        public Empleado empleado;
-        String _Usuario;
 
+        String _Usuario;
 
         public string Usuario
         {
