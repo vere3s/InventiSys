@@ -50,6 +50,10 @@
       <Project>{2f449979-e42c-4953-8456-47c882a1c917}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{ad4bed0a-af36-4306-a1fa-8fccba9d7fd6}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

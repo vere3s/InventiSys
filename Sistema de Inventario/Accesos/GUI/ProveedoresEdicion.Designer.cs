@@ -152,7 +152,7 @@
             this.Name = "ProveedoresEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProveedoresEdicion";
-          //  this.Load += new System.EventHandler(this.ProveedoresEdicion_Load);
+            this.Load += new System.EventHandler(this.ProveedoresEdicion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

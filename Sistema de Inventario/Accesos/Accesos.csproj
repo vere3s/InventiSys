@@ -44,8 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CLS\PedidosVentas.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Usuarios.cs" />
+    <Compile Include="GUI\PedidosVentasEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PedidosVentasEdicion.Designer.cs">
+      <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PedidosVentasGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PedidosVentasGestion.Designer.cs">
+      <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ProveedoresEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +91,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\PedidosVentasEdicion.resx">
+      <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
+      <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
       <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +118,14 @@
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{2f449979-e42c-4953-8456-47c882a1c917}</Project>
       <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{ad4bed0a-af36-4306-a1fa-8fccba9d7fd6}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SesionManager\SesionManager.csproj">
+      <Project>{893e49fc-77e8-4b91-9c56-46dae416c745}</Project>
+      <Name>SesionManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

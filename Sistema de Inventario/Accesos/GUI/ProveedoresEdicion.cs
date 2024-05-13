@@ -91,5 +91,10 @@ namespace Accesos.GUI
         {
             Close();
         }
+
+        private void ProveedoresEdicion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

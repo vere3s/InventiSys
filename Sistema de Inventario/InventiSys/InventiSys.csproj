@@ -122,6 +122,10 @@
       <Project>{2f449979-e42c-4953-8456-47c882a1c917}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{AD4BED0A-AF36-4306-A1FA-8FCCBA9D7FD6}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SesionManager\SesionManager.csproj">
       <Project>{893e49fc-77e8-4b91-9c56-46dae416c745}</Project>
       <Name>SesionManager</Name>
