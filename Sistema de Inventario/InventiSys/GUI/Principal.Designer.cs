@@ -181,7 +181,7 @@
             this.cuentasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cuentasToolStripMenuItem.Image")));
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
             this.cuentasToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.cuentasToolStripMenuItem.Text = "Tabla";
             // 
             // movimientosToolStripMenuItem
@@ -191,7 +191,7 @@
             this.movimientosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem.Image")));
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
             this.movimientosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.movimientosToolStripMenuItem.Text = "Tabla";
             // 
             // accesosMenuItem

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CLS\Categorias.cs" />
+    <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Usuarios.cs" />
@@ -59,6 +60,18 @@
     </Compile>
     <Compile Include="GUI\CategoriasEdicion.Designer.cs">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmpleadosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmpleadosEdicion.Designer.cs">
+      <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmpleadosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmpleadosGestion.Designer.cs">
+      <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ProductosEdicion.cs">
       <SubType>Form</SubType>
@@ -109,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriasEdicion.resx">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosEdicion.resx">
+      <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosGestion.resx">
+      <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
       <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
