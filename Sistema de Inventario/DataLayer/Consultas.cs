@@ -154,20 +154,5 @@ ORDER BY
             return Resultado;
         }
 
-        public static  DataTable CATEGORIAS()
-        {
-            DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Categorias ORDER BY Nombre ASC;";
-            DBOperacion operacion = new DBOperacion();
-            try
-            {
-                Resultado = operacion.Consultar(Consulta);
-            }
-            catch (Exception)
-            {
-
-            }
-            return Resultado;
-        }
     }
 }

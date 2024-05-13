@@ -49,12 +49,7 @@
             this.administrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
             this.administrarPedidosVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
-            this.administrarCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -63,9 +58,10 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(220, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(293, 532);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(580, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(774, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -75,9 +71,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnUsuario});
-            this.toolStrip1.Location = new System.Drawing.Point(220, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(293, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(580, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(774, 27);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,14 +86,14 @@
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
             this.btnUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(83, 24);
+            this.btnUsuario.Size = new System.Drawing.Size(98, 24);
             this.btnUsuario.Text = "Usuario";
             // 
             // editarUsuario
             // 
             this.editarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("editarUsuario.Image")));
             this.editarUsuario.Name = "editarUsuario";
-            this.editarUsuario.Size = new System.Drawing.Size(142, 22);
+            this.editarUsuario.Size = new System.Drawing.Size(177, 26);
             this.editarUsuario.Text = "Editar";
             this.editarUsuario.Click += new System.EventHandler(this.editarUsuario_Click);
             // 
@@ -105,7 +101,7 @@
             // 
             this.cerrarSesión.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesión.Image")));
             this.cerrarSesión.Name = "cerrarSesión";
-            this.cerrarSesión.Size = new System.Drawing.Size(142, 22);
+            this.cerrarSesión.Size = new System.Drawing.Size(177, 26);
             this.cerrarSesión.Text = "Cerrar sesión";
             this.cerrarSesión.Click += new System.EventHandler(this.cerrarSesión_Click);
             // 
@@ -126,8 +122,8 @@
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0, 10, 10, 10);
-            this.menuStrip2.Size = new System.Drawing.Size(220, 450);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0, 12, 13, 12);
+            this.menuStrip2.Size = new System.Drawing.Size(293, 554);
             this.menuStrip2.TabIndex = 9;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -141,7 +137,7 @@
             this.inicioMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.inicioMenuItem.Name = "inicioMenuItem";
             this.inicioMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.inicioMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.inicioMenuItem.Size = new System.Drawing.Size(234, 52);
             this.inicioMenuItem.Text = "Inicio";
             this.inicioMenuItem.Click += new System.EventHandler(this.inicioMenuItem_Click);
             this.inicioMenuItem.MouseEnter += new System.EventHandler(this.inicioMenuItem_MouseEnter);
@@ -156,7 +152,7 @@
             this.dashboardMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.dashboardMenuItem.Name = "dashboardMenuItem";
             this.dashboardMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.dashboardMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.dashboardMenuItem.Size = new System.Drawing.Size(234, 52);
             this.dashboardMenuItem.Text = "Dashboard";
             this.dashboardMenuItem.MouseEnter += new System.EventHandler(this.dashboardMenuItem_MouseEnter);
             this.dashboardMenuItem.MouseLeave += new System.EventHandler(this.dashboardMenuItem_MouseLeave);
@@ -173,7 +169,7 @@
             this.generalMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.generalMenuItem.Name = "generalMenuItem";
             this.generalMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.generalMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.generalMenuItem.Size = new System.Drawing.Size(234, 52);
             this.generalMenuItem.Text = "General";
             this.generalMenuItem.MouseEnter += new System.EventHandler(this.generalMenuItem_MouseEnter);
             this.generalMenuItem.MouseLeave += new System.EventHandler(this.generalMenuItem_MouseLeave);
@@ -185,11 +181,7 @@
             this.cuentasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cuentasToolStripMenuItem.Image")));
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
             this.cuentasToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-<<<<<<< HEAD
             this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
-=======
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.cuentasToolStripMenuItem.Text = "Tabla";
             // 
             // movimientosToolStripMenuItem
@@ -199,11 +191,7 @@
             this.movimientosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem.Image")));
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
             this.movimientosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-<<<<<<< HEAD
             this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
-=======
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.movimientosToolStripMenuItem.Text = "Tabla";
             // 
             // accesosMenuItem
@@ -220,7 +208,7 @@
             this.accesosMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.accesosMenuItem.Name = "accesosMenuItem";
             this.accesosMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.accesosMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.accesosMenuItem.Size = new System.Drawing.Size(234, 52);
             this.accesosMenuItem.Text = "Accesos";
             this.accesosMenuItem.Click += new System.EventHandler(this.accesosMenuItem_Click);
             this.accesosMenuItem.MouseEnter += new System.EventHandler(this.accesosMenuItem_MouseEnter);
@@ -232,11 +220,7 @@
             this.administrarUsuarios.ForeColor = System.Drawing.Color.DarkGray;
             this.administrarUsuarios.Name = "administrarUsuarios";
             this.administrarUsuarios.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-<<<<<<< HEAD
             this.administrarUsuarios.Size = new System.Drawing.Size(338, 35);
-=======
-            this.administrarUsuarios.Size = new System.Drawing.Size(249, 29);
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.administrarUsuarios.Text = "Administrar Usuarios";
             this.administrarUsuarios.Click += new System.EventHandler(this.administrarUsuarios_Click);
             // 
@@ -246,11 +230,7 @@
             this.agregarUsuarioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
             this.agregarUsuarioToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-<<<<<<< HEAD
             this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(338, 35);
-=======
-            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(249, 29);
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
             this.agregarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuarioToolStripMenuItem_Click);
             // 
@@ -259,11 +239,7 @@
             this.administarProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.administarProveedoresToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.administarProveedoresToolStripMenuItem.Name = "administarProveedoresToolStripMenuItem";
-<<<<<<< HEAD
             this.administarProveedoresToolStripMenuItem.Size = new System.Drawing.Size(336, 32);
-=======
-            this.administarProveedoresToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.administarProveedoresToolStripMenuItem.Text = "Administar Proveedores";
             this.administarProveedoresToolStripMenuItem.Click += new System.EventHandler(this.administarProveedoresToolStripMenuItem_Click);
             // 
@@ -276,7 +252,7 @@
             this.inventarioMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.inventarioMenuItem.Name = "inventarioMenuItem";
             this.inventarioMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.inventarioMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.inventarioMenuItem.Size = new System.Drawing.Size(234, 52);
             this.inventarioMenuItem.Text = "Inventario";
             this.inventarioMenuItem.MouseEnter += new System.EventHandler(this.inventarioMenuItem_MouseEnter);
             this.inventarioMenuItem.MouseLeave += new System.EventHandler(this.inventarioMenuItem_MouseLeave);
@@ -293,7 +269,7 @@
             this.productosMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.productosMenuItem.Name = "productosMenuItem";
             this.productosMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.productosMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.productosMenuItem.Size = new System.Drawing.Size(234, 52);
             this.productosMenuItem.Text = "Productos";
             this.productosMenuItem.Click += new System.EventHandler(this.productosMenuItem_Click);
             this.productosMenuItem.MouseEnter += new System.EventHandler(this.productosMenuItem_MouseEnter);
@@ -305,7 +281,7 @@
             this.administrarProductosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.administrarProductosToolStripMenuItem.Name = "administrarProductosToolStripMenuItem";
             this.administrarProductosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.administrarProductosToolStripMenuItem.Size = new System.Drawing.Size(238, 29);
+            this.administrarProductosToolStripMenuItem.Size = new System.Drawing.Size(296, 35);
             this.administrarProductosToolStripMenuItem.Text = "Administrar Productos";
             // 
             // agregarProductosToolStripMenuItem
@@ -314,14 +290,11 @@
             this.agregarProductosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.agregarProductosToolStripMenuItem.Name = "agregarProductosToolStripMenuItem";
             this.agregarProductosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.agregarProductosToolStripMenuItem.Size = new System.Drawing.Size(238, 29);
+            this.agregarProductosToolStripMenuItem.Size = new System.Drawing.Size(296, 35);
             this.agregarProductosToolStripMenuItem.Text = "Agregar Productos";
             // 
             // categoriasMenuItem
             // 
-            this.categoriasMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.administrarCategoriasToolStripMenuItem,
-            this.agregarCategoriaToolStripMenuItem});
             this.categoriasMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoriasMenuItem.ForeColor = System.Drawing.Color.DarkGray;
             this.categoriasMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("categoriasMenuItem.Image")));
@@ -329,53 +302,29 @@
             this.categoriasMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.categoriasMenuItem.Name = "categoriasMenuItem";
             this.categoriasMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.categoriasMenuItem.Size = new System.Drawing.Size(164, 45);
+            this.categoriasMenuItem.Size = new System.Drawing.Size(234, 52);
             this.categoriasMenuItem.Text = "Categorias";
-            this.categoriasMenuItem.Click += new System.EventHandler(this.categoriasMenuItem_Click);
             this.categoriasMenuItem.MouseEnter += new System.EventHandler(this.categoriasMenuItem_MouseEnter);
             this.categoriasMenuItem.MouseLeave += new System.EventHandler(this.categoriasMenuItem_MouseLeave);
             // 
-<<<<<<< HEAD
             // administrarPedidosVentasToolStripMenuItem
             // 
             this.administrarPedidosVentasToolStripMenuItem.Name = "administrarPedidosVentasToolStripMenuItem";
             this.administrarPedidosVentasToolStripMenuItem.Size = new System.Drawing.Size(336, 32);
             this.administrarPedidosVentasToolStripMenuItem.Text = "Administrar Pedidos Ventas";
             this.administrarPedidosVentasToolStripMenuItem.Click += new System.EventHandler(this.administrarPedidosVentasToolStripMenuItem_Click);
-=======
-            // administrarCategoriasToolStripMenuItem
-            // 
-            this.administrarCategoriasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.administrarCategoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.administrarCategoriasToolStripMenuItem.Name = "administrarCategoriasToolStripMenuItem";
-            this.administrarCategoriasToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.administrarCategoriasToolStripMenuItem.Text = "Administrar Categorias";
-            this.administrarCategoriasToolStripMenuItem.Click += new System.EventHandler(this.administrarCategoriasToolStripMenuItem_Click);
-            // 
-            // agregarCategoriaToolStripMenuItem
-            // 
-            this.agregarCategoriaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.agregarCategoriaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
-            this.agregarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
-            this.agregarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.agregarCategoriaToolStripMenuItem_Click);
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -411,11 +360,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoriasMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarUsuarios;
         private System.Windows.Forms.ToolStripMenuItem administarProveedoresToolStripMenuItem;
-<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem administrarPedidosVentasToolStripMenuItem;
-=======
-        private System.Windows.Forms.ToolStripMenuItem administrarCategoriasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarCategoriaToolStripMenuItem;
->>>>>>> 4f7bc6cf27bb37dd9363600b21e84619bdfba4c2
     }
 }
