@@ -103,7 +103,35 @@ ORDER BY
             }
             return Resultado;
         }
+        public static DataTable PRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT
+    p.IDProducto, 
+    p.Nombre,
+    p.Precio, 
+    p.CostoUnitario,
+    p.EsPlatillo, 
+    p.IDCategoria, 
+   
+    p.Cantidad,
+     c.nombre AS Categoria
+FROM
+    productos p
+    INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+ORDER BY
+    p.Nombre ASC; ";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
 
+            }
+            return Resultado;
+        }
         public static DataTable USUARIOS()
         {
             DataTable Resultado = new DataTable();

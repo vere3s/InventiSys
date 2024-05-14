@@ -108,3 +108,4 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.csproj.Up2Date
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.ProductosEdicion.resources

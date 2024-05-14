@@ -288,5 +288,37 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+        private void administrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                ProductosGestion f = new ProductosGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosEdicion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                ProductosEdicion f = new ProductosEdicion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

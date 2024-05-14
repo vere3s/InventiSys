@@ -86,6 +86,12 @@
     <Compile Include="GUI\PedidosVentasGestion.Designer.cs">
       <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ProductosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.Designer.cs">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ProductosGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
       <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProductosEdicion.resx">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProductosGestion.resx">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
