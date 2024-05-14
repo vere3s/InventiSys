@@ -24,7 +24,6 @@ namespace DataLayer
             }
             return Resultado;
         }
-<<<<<<< Updated upstream
         public static DataTable PedidosVentas()
         {
             DataTable Resultado = new DataTable();
@@ -47,12 +46,6 @@ namespace DataLayer
             ORDER BY
                 pv.FechaPedido DESC;
             ";
-=======
-        public static DataTable ROLES()
-        {
-            DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT IDRol, Rol FROM roles ORDER BY Rol ASC;";
->>>>>>> Stashed changes
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -64,7 +57,6 @@ namespace DataLayer
             }
             return Resultado;
         }
-<<<<<<< Updated upstream
         public static DataTable PROVEEDORES()
         {
             DataTable Resultado = new DataTable();
@@ -182,8 +174,6 @@ namespace DataLayer
             return Resultado;
         }
 
-=======
->>>>>>> Stashed changes
     }
 
 }

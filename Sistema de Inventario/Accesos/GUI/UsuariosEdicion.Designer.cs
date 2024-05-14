@@ -148,7 +148,6 @@
             this.tbIDUsuario.ReadOnly = true;
             this.tbIDUsuario.Size = new System.Drawing.Size(101, 30);
             this.tbIDUsuario.TabIndex = 19;
-            this.tbIDUsuario.Visible = false;
             // 
             // label1
             // 
@@ -160,7 +159,6 @@
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 18;
             this.label1.Text = "IDUsuario";
-            this.label1.Visible = false;
             // 
             // Notificador
             // 

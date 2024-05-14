@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-<<<<<<< Updated upstream
     <Compile Include="CLS\Categorias.cs" />
     <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\PedidoVentas.cs" />
@@ -104,21 +103,6 @@
     </Compile>
     <Compile Include="GUI\ProveedoresGestion.Designer.cs">
       <DependentUpon>ProveedoresGestion.cs</DependentUpon>
-=======
-    <Compile Include="CLS\Roles.cs" />
-    <Compile Include="CLS\Usuarios.cs" />
-    <Compile Include="GUI\RolesEdicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\RolesEdicion.Designer.cs">
-      <DependentUpon>RolesEdicion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\RolesGestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\RolesGestion.Designer.cs">
-      <DependentUpon>RolesGestion.cs</DependentUpon>
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="GUI\UsuariosEdicion.cs">
       <SubType>Form</SubType>
@@ -140,7 +124,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="GUI\CategoriaGestion.resx">
       <DependentUpon>CategoriaGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,13 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProveedoresGestion.resx">
       <DependentUpon>ProveedoresGestion.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="GUI\RolesEdicion.resx">
-      <DependentUpon>RolesEdicion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\RolesGestion.resx">
-      <DependentUpon>RolesGestion.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosEdicion.resx">
       <DependentUpon>UsuariosEdicion.cs</DependentUpon>

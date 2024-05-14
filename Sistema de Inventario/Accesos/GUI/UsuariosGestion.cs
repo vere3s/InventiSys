@@ -25,17 +25,6 @@ namespace Accesos.GUI
             {
             }
         }
-        private Form ObtenerFormularioExistente(Type TipoFormulario)
-        {
-            foreach (Form form in this.MdiChildren)
-            {
-                if (form.GetType() == TipoFormulario)
-                {
-                    return form; // Devuelve la instancia existente del formulario
-                }
-            }
-            return null; // No encontró ninguna instancia existente
-        }
         public UsuariosGestion()
         {
             InitializeComponent();
@@ -148,29 +137,6 @@ namespace Accesos.GUI
         private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
             FiltrarLocalmente();
-        }
-
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(Accesos.GUI.RolesGestion));
-
-            if (FormularioExistente != null)
-            {
-                FormularioExistente.Activate(); // Activar la instancia existente
-            }
-            else
-            {
-                try
-                {
-                    RolesGestion f = new RolesGestion();
-                    f.Show();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
         }
     }
 }
