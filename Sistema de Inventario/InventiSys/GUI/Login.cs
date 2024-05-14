@@ -20,22 +20,21 @@ namespace InventiSys.GUI
         {
             InitializeComponent();
         }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             DataLayer.DBOperacion oOperacion = new DataLayer.DBOperacion();
             string query = @"
-    SELECT 
-        u.IDUsuario, u.Usuario, 
-        e.IDEmpleado, e.Nombre, e.Cargo, e.Telefono, e.Email
-    FROM 
-        usuarios u
-    INNER JOIN 
-        empleados e ON u.IDEmpleado = e.IDEmpleado
-    WHERE 
-        u.Usuario = '" + tbUsuario.Text + @"' AND 
-        u.Contraseña = MD5('" + tbContraseña.Text + @"');";
+            SELECT 
+                u.IDUsuario, u.Usuario, 
+                e.IDEmpleado, e.Nombre, e.Cargo, e.Telefono, e.Email
+            FROM 
+                usuarios u
+            INNER JOIN 
+                empleados e ON u.IDEmpleado = e.IDEmpleado
+            WHERE 
+                u.Usuario = '" + tbUsuario.Text + @"' AND 
+                u.Contraseña = '" + Accesos.CLS.Usuarios.ConvertirContraseña(tbContraseña.Text) + @"';";
             dt = oOperacion.Consultar(query);
             if (dt.Rows.Count == 1)
             {

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Accesos.CLS
 {
-    internal class Usuarios
+    public class Usuarios
     {
         Int32 _IDUsuario;
         string _Usuario;
@@ -26,7 +27,7 @@ namespace Accesos.CLS
             DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("INSERT INTO usuarios(Usuario, Contraseña, IDEmpleado, IDRol) VALUES(");
-            Sentencia.Append("'" + Usuario + "',md5('" + Contraseña + "'),'" + IDEmpleado + "','" + IDRol + "');");
+            Sentencia.Append("'" + Usuario + "',md5('" + Usuarios.ConvertirContraseña(Contraseña) + "'),'" + IDEmpleado + "','" + IDRol + "');");
             try
             {
                 if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
@@ -51,7 +52,7 @@ namespace Accesos.CLS
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("UPDATE usuarios SET ");
             Sentencia.Append("Usuario = '" + _Usuario + "'," +
-                             "Contraseña = MD5('" + _Contraseña + "')," +
+                             "Contraseña = '" + Usuarios.ConvertirContraseña(_Contraseña) + "'," +
                              "IDEmpleado = '" + _IDEmpleado + "'," +
                              "IDRol = '" + _IDRol + "'");
             Sentencia.Append("WHERE IDUsuario = " + _IDUsuario + "; ");
@@ -95,6 +96,20 @@ namespace Accesos.CLS
                 Resultado = false;
             }
             return Resultado;
+        }
+        public static string ConvertirContraseña(string cContraseña)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] ConvertirBytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(cContraseña));
+
+                StringBuilder convertirCadena = new StringBuilder();
+                for (int i = 0; i < ConvertirBytes.Length; i++)
+                {
+                    convertirCadena.Append(ConvertirBytes[i].ToString("x2"));
+                }
+                return convertirCadena.ToString();
+            }
         }
     }
 }

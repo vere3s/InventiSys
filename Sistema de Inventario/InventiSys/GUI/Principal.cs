@@ -288,5 +288,21 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+        private void administrarUsuarios_Click_1(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(UsuariosGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                UsuariosGestion f = new UsuariosGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
