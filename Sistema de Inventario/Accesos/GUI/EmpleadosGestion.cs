@@ -72,18 +72,26 @@ namespace Accesos.GUI
         {
             try
             {
+                // Mostrar un mensaje de confirmación
                 if (MessageBox.Show("¿Desea editar el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    // Crear una instancia del formulario de edición de empleados
                     EmpleadosEdicion oEmpleado = new EmpleadosEdicion();
+
+                    // Llenar los campos del formulario con los valores de la fila seleccionada en el DataGridView
                     oEmpleado.tbIdEmpleado.Text = dgvEmpleados.CurrentRow.Cells["IdEmpleado"].Value.ToString();
                     oEmpleado.tbNombre.Text = dgvEmpleados.CurrentRow.Cells["Nombre"].Value.ToString();
                     oEmpleado.tbCargo.Text = dgvEmpleados.CurrentRow.Cells["Cargo"].Value.ToString();
                     oEmpleado.tbTelefono.Text = dgvEmpleados.CurrentRow.Cells["Telefono"].Value.ToString();
                     oEmpleado.tbEmail.Text = dgvEmpleados.CurrentRow.Cells["Email"].Value.ToString();
 
+                    // Mostrar el formulario de edición de empleados como un diálogo modal
                     oEmpleado.ShowDialog();
+
+                    // Recargar los datos después de cerrar el formulario de edición
                     Cargar();
                 }
+
             }
             catch (Exception)
             {

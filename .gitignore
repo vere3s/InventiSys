@@ -378,3 +378,5 @@ Sistema de Inventario/InventiSys/obj/Debug/InventiSys.csproj.AssemblyReference.c
 *.cache
 Sistema de Inventario/InventiSys/obj/Debug/InventiSys.csproj.GenerateResource.cache
 Sistema de Inventario/InventiSys/obj/Debug/InventiSys.csproj.AssemblyReference.cache
+*.pdb
+*.pdb
