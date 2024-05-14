@@ -60,7 +60,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             this.dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvRoles.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRoles.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

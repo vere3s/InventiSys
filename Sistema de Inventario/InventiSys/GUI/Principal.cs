@@ -283,55 +283,20 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void administrarUsuarios_Click_1(object sender, EventArgs e)
         {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosGestion));
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(UsuariosGestion));
+
             if (FormularioExistente != null)
             {
                 FormularioExistente.Activate(); // Activar la instancia existente
             }
             else
             {
-                ProductosGestion f = new ProductosGestion();
+                UsuariosGestion f = new UsuariosGestion();
                 f.MdiParent = this;
                 f.Show();
             }
         }
-    
-
-    private void administrarRolesToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        Form FormularioExistente = ObtenerFormularioExistente(typeof(RolesGestion));
-
-        if (FormularioExistente != null)
-        {
-            FormularioExistente.Activate(); // Activar la instancia existente
-        }
-        else
-        {
-            RolesGestion f = new RolesGestion();
-            f.MdiParent = this;
-            f.Show();
-        }
-    }
-
-    private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosEdicion));
-
-        if (FormularioExistente != null)
-        {
-            FormularioExistente.Activate(); // Activar la instancia existente
-        }
-        else
-        {
-            ProductosEdicion f = new ProductosEdicion();
-
-            f.MdiParent = this;
-            f.Show();
-        }
-    }
-
-   
     }
 }

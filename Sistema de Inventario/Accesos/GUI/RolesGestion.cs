@@ -48,7 +48,6 @@ namespace Accesos.GUI
                 {
                     _DATOS.Filter = "Rol like '%" + tbFiltro.Text + "%'";
                 }
-
             }
             catch (Exception)
             {
@@ -99,7 +98,6 @@ namespace Accesos.GUI
                 throw;
             }
         }
-
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

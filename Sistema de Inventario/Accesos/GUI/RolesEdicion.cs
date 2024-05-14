@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Accesos.GUI
@@ -12,7 +19,7 @@ namespace Accesos.GUI
             {
                 if (tbRol.Text.Trim().Length == 0)
                 {
-                    Notificador.SetError(tbRol, "El nombre del rol no puede estar vacío");
+                    Notificador.SetError(tbRol, "Este campo no puede estar vacio");
                     valido = false;
                 }
             }
@@ -22,11 +29,9 @@ namespace Accesos.GUI
             }
             return valido;
         }
-
         public RolesEdicion()
         {
             InitializeComponent();
-          
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -35,46 +40,45 @@ namespace Accesos.GUI
             {
                 if (Validar())
                 {
-                    // Create an object based on the entity class
+                    // CREAR UN OBJETO A PARTIR DE LA CLASE ENTIDAD
                     CLS.Roles oRol = new CLS.Roles();
-
-                    // Sync the object with the GUI
+                    // SINCRONIZAMOS EL OBJETO CON LA GUI
                     try
                     {
                         oRol.IDRol = Convert.ToInt32(tbIDRol.Text);
                     }
                     catch (Exception)
                     {
+                        //Console.WriteLine("No se puedo convertir ");
                         oRol.IDRol = 0;
                     }
 
                     oRol.Rol = tbRol.Text;
-
-                    // Proceed
+                    //PROCEDER
                     if (tbIDRol.Text.Trim().Length == 0)
                     {
-                        // Insert new record
+                        //GUARDAR NUEVO REGISTRO
                         if (oRol.Insertar())
                         {
-                            MessageBox.Show("Rol guardado correctamente");
+                            MessageBox.Show("Resgistro guardado");
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("El rol no pudo ser guardado");
+                            MessageBox.Show("El resgistro no pudo ser almacenado");
                         }
                     }
                     else
                     {
-                        // Update existing record
+                        // ACTUALIZAR NUEVO REGISTRO
                         if (oRol.Actualizar())
                         {
-                            MessageBox.Show("Rol actualizado correctamente");
+                            MessageBox.Show("Resgistro actualizado");
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("El rol no pudo ser actualizado");
+                            MessageBox.Show("El resgistro no pudo ser actualizado");
                         }
                     }
                 }
@@ -85,13 +89,9 @@ namespace Accesos.GUI
             }
         }
 
-   
-
-    
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Close();    
+            Close();
         }
     }
 }
