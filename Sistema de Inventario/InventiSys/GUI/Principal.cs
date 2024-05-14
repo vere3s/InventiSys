@@ -1,5 +1,4 @@
-﻿using Accesos.GUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Accesos.GUI;
 
 namespace InventiSys.GUI
 {
     public partial class Principal : Form
     {
         SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
+
         public Principal()
         {
             InitializeComponent();
         }
+
         private Form ObtenerFormularioExistente(Type TipoFormulario)
         {
             foreach (Form form in this.MdiChildren)
@@ -29,6 +31,7 @@ namespace InventiSys.GUI
             }
             return null; // No encontró ninguna instancia existente
         }
+
         private void Principal_Load(object sender, EventArgs e)
         {
             btnUsuario.Text = oSesion.Usuario;
@@ -37,7 +40,7 @@ namespace InventiSys.GUI
             {
                 if (c is MdiClient)
                 {
-                    c.BackColor = Color.Teal; // color 
+                    c.BackColor = Color.Teal; // color
                 }
             }
             Home f = new Home();
@@ -66,7 +69,9 @@ namespace InventiSys.GUI
 
         private void administrarUsuarios_Click(object sender, EventArgs e)
         {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(Accesos.GUI.UsuariosGestion));
+            Form FormularioExistente = ObtenerFormularioExistente(
+                typeof(Accesos.GUI.UsuariosGestion)
+            );
 
             if (FormularioExistente != null)
             {
@@ -82,18 +87,14 @@ namespace InventiSys.GUI
                         f.MdiParent = this;
                         f.Show();
                     }
-
                 }
-                catch (Exception)
-                {
-
-                }
+                catch (Exception) { }
             }
         }
 
         private void inicioMenuItem_Click(object sender, EventArgs e)
         {
-            // Verifica si ya existe una instancia del formulario 
+            // Verifica si ya existe una instancia del formulario
             Form FormularioExistente = ObtenerFormularioExistente(typeof(Home));
 
             if (FormularioExistente != null)
@@ -199,7 +200,6 @@ namespace InventiSys.GUI
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -220,12 +220,7 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-
+        private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e) { }
 
         private void administrarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -268,7 +263,6 @@ namespace InventiSys.GUI
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -292,7 +286,6 @@ namespace InventiSys.GUI
         private void administrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosGestion));
-
             if (FormularioExistente != null)
             {
                 FormularioExistente.Activate(); // Activar la instancia existente
@@ -304,21 +297,41 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+    
 
-        private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+    private void administrarRolesToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        Form FormularioExistente = ObtenerFormularioExistente(typeof(RolesGestion));
+
+        if (FormularioExistente != null)
         {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosEdicion));
-
-            if (FormularioExistente != null)
-            {
-                FormularioExistente.Activate(); // Activar la instancia existente
-            }
-            else
-            {
-                ProductosEdicion f = new ProductosEdicion();
-                f.MdiParent = this;
-                f.Show();
-            }
+            FormularioExistente.Activate(); // Activar la instancia existente
         }
+        else
+        {
+            RolesGestion f = new RolesGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
+    }
+
+    private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosEdicion));
+
+        if (FormularioExistente != null)
+        {
+            FormularioExistente.Activate(); // Activar la instancia existente
+        }
+        else
+        {
+            ProductosEdicion f = new ProductosEdicion();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+    }
+
+   
     }
 }
