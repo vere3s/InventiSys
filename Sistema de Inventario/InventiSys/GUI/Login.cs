@@ -24,6 +24,7 @@ namespace InventiSys.GUI
         {
             DataTable dt = new DataTable();
             DataLayer.DBOperacion oOperacion = new DataLayer.DBOperacion();
+<<<<<<< Updated upstream
             string query = @"
             SELECT 
                 u.IDUsuario, u.Usuario, 
@@ -35,6 +36,14 @@ namespace InventiSys.GUI
             WHERE 
                 u.Usuario = '" + tbUsuario.Text + @"' AND 
                 u.Contraseña = '" + Accesos.CLS.Usuarios.ConvertirContraseña(tbContraseña.Text) + @"';";
+=======
+            string query = @"SELECT 
+            IDUsuario, Usuario, 
+            IDEmpleado, IDRol
+            FROM usuarios
+            where Usuario = '" + tbUsuario.Text + @"'
+            and Contraseña = '" + Accesos.CLS.Usuarios.ComputeSha256Hash(tbContraseña.Text) + @"';";
+>>>>>>> Stashed changes
             dt = oOperacion.Consultar(query);
             if (dt.Rows.Count == 1)
             {

@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosGestion));
+<<<<<<< Updated upstream
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.IDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +38,11 @@
             this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> Stashed changes
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbRegistros = new System.Windows.Forms.ToolStripStatusLabel();
@@ -51,6 +54,7 @@
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.tbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+<<<<<<< Updated upstream
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -180,6 +184,23 @@
             this.IDRol.Visible = false;
             this.IDRol.Width = 80;
             // 
+=======
+            this.btnRoles = new System.Windows.Forms.ToolStripButton();
+            this.btnEmpleados = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.IDRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.SuspendLayout();
+            // 
+>>>>>>> Stashed changes
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -188,7 +209,7 @@
             this.lbRegistros});
             this.statusStrip1.Location = new System.Drawing.Point(40, 388);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(720, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(526, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -210,8 +231,12 @@
             // 
             // toolStrip1
             // 
+<<<<<<< Updated upstream
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+=======
+            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(5);
+>>>>>>> Stashed changes
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEliminar,
             this.toolStripSeparator1,
@@ -222,8 +247,12 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
+<<<<<<< Updated upstream
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Size = new System.Drawing.Size(717, 37);
+=======
+            this.toolStrip1.Size = new System.Drawing.Size(696, 34);
+>>>>>>> Stashed changes
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -300,6 +329,7 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(61, 20);
             this.toolStripLabel1.Text = "Filtrar";
             // 
+<<<<<<< Updated upstream
             // toolStrip2
             // 
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
@@ -346,6 +376,50 @@
             // 
             // toolStripContainer1
             // 
+=======
+            // btnRoles
+            // 
+            this.btnRoles.AutoSize = false;
+            this.btnRoles.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRoles.ForeColor = System.Drawing.Color.White;
+            this.btnRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnRoles.Image")));
+            this.btnRoles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRoles.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.btnRoles.Size = new System.Drawing.Size(150, 40);
+            this.btnRoles.Text = "Administrar Roles";
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.AutoSize = false;
+            this.btnEmpleados.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEmpleados.ForeColor = System.Drawing.Color.White;
+            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            this.btnEmpleados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.btnEmpleados.Size = new System.Drawing.Size(150, 40);
+            this.btnEmpleados.Text = "Administrar Empleados";
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRoles,
+            this.btnEmpleados});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.toolStrip2.Location = new System.Drawing.Point(566, 74);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(10, 30, 10, 10);
+            this.toolStrip2.Size = new System.Drawing.Size(170, 336);
+            this.toolStrip2.TabIndex = 9;
+            this.toolStrip2.Text = "toolStrip2";
+>>>>>>> Stashed changes
             // 
             // toolStripContainer1.ContentPanel
             // 
@@ -366,26 +440,116 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
+            // IDEmpleado
+            // 
+            this.IDEmpleado.DataPropertyName = "IDEmpleado";
+            this.IDEmpleado.HeaderText = "IDEmpleado";
+            this.IDEmpleado.MinimumWidth = 100;
+            this.IDEmpleado.Name = "IDEmpleado";
+            this.IDEmpleado.ReadOnly = true;
+            // 
+            // Contraseña
+            // 
+            this.Contraseña.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Contraseña.DataPropertyName = "Contraseña";
+            this.Contraseña.HeaderText = "Contraseña";
+            this.Contraseña.MinimumWidth = 50;
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
+            // 
+            // Usuario
+            // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Usuario.DataPropertyName = "Usuario";
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.MinimumWidth = 100;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // IDUsuario
+            // 
+            this.IDUsuario.DataPropertyName = "IDUsuario";
+            this.IDUsuario.HeaderText = "IDUsuario";
+            this.IDUsuario.MinimumWidth = 90;
+            this.IDUsuario.Name = "IDUsuario";
+            this.IDUsuario.ReadOnly = true;
+            this.IDUsuario.Width = 90;
+            // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDUsuario,
+            this.Usuario,
+            this.Contraseña,
+            this.IDEmpleado,
+            this.IDRol});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuarios.EnableHeadersVisualStyles = false;
+            this.dgvUsuarios.Location = new System.Drawing.Point(40, 74);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(526, 314);
+            this.dgvUsuarios.TabIndex = 8;
+            // 
             // UsuariosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+<<<<<<< Updated upstream
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "UsuariosGestion";
             this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
             this.Text = "UsuariosGestion";
+=======
+            this.ClientSize = new System.Drawing.Size(776, 450);
+            this.Controls.Add(this.dgvUsuarios);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.toolStrip1);
+            this.Name = "UsuariosGestion";
+            this.Padding = new System.Windows.Forms.Padding(40);
+            this.Text = "Gestion de Usuarios";
+>>>>>>> Stashed changes
             this.Load += new System.EventHandler(this.UsuariosGestion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+<<<<<<< Updated upstream
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.RightToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.RightToolStripPanel.PerformLayout();
@@ -393,14 +557,15 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+>>>>>>> Stashed changes
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbRegistros;
@@ -412,6 +577,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+<<<<<<< Updated upstream
         private System.Windows.Forms.DataGridViewTextBoxColumn IDUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
@@ -423,5 +589,16 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+=======
+        private System.Windows.Forms.ToolStripButton btnRoles;
+        private System.Windows.Forms.ToolStripButton btnEmpleados;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUsuario;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+>>>>>>> Stashed changes
     }
 }

@@ -181,21 +181,22 @@ namespace InventiSys.GUI
         private void accesosMenuItem_Click(object sender, EventArgs e)
         {
             accesosMenuItem.ForeColor = Color.Black;
-            accesosMenuItem.BackColor = Color.DarkSlateGray;
         }
 
         private void productosMenuItem_Click(object sender, EventArgs e)
         {
             productosMenuItem.ForeColor = Color.Black;
-            productosMenuItem.BackColor = Color.DarkSlateGray;
         }
 
         private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                UsuariosEdicion f = new UsuariosEdicion();
-                f.ShowDialog();
+                if (oSesion.ValidarPermiso(1))
+                {
+                    UsuariosEdicion f = new UsuariosEdicion();
+                    f.ShowDialog();
+                }
             }
             catch (Exception)
             {
