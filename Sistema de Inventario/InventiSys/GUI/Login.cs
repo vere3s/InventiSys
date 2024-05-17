@@ -34,7 +34,7 @@ namespace InventiSys.GUI
                 empleados e ON u.IDEmpleado = e.IDEmpleado
             WHERE 
                 u.Usuario = '" + tbUsuario.Text + @"' AND 
-                u.Contraseña = '" + Accesos.CLS.Usuarios.ComputeSha256Hash(tbContraseña.Text) + @"';";
+                u.Contraseña = '" + Accesos.CLS.Usuarios.ConvertirContraseña(tbContraseña.Text) + @"';";
             dt = oOperacion.Consultar(query);
             if (dt.Rows.Count == 1)
             {

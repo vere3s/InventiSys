@@ -138,5 +138,33 @@ namespace Accesos.GUI
         {
             FiltrarLocalmente();
         }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EmpleadosGestion f = new EmpleadosGestion();
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RolesGestion f = new RolesGestion();
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

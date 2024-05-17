@@ -163,3 +163,5 @@ C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFT
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.csproj.CopyComplete
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.dll
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.RolesEdicion.resources
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.RolesGestion.resources

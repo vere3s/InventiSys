@@ -88,7 +88,7 @@ namespace DataLayer
             return Resultado;
         }
 
-        public static DataTable Roles()
+        public static DataTable ROLES()
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT * FROM Roles ORDER BY Rol ASC;";

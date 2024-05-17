@@ -102,14 +102,9 @@ namespace Accesos.GUI
             cbIDEmpleado.DataSource = Consultas.Empleados();
             cbIDEmpleado.DisplayMember = "Nombre";
             cbIDEmpleado.ValueMember = "idEmpleado";
-            cbIDRol.DataSource = Consultas.Roles();
+            cbIDRol.DataSource = Consultas.ROLES();
             cbIDRol.DisplayMember = "Rol";
             cbIDRol.ValueMember = "IDRol";
-        }
-   
-        private void UsuariosEdicion_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
