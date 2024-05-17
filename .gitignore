@@ -380,3 +380,5 @@ Sistema de Inventario/InventiSys/obj/Debug/InventiSys.csproj.GenerateResource.ca
 Sistema de Inventario/InventiSys/obj/Debug/InventiSys.csproj.AssemblyReference.cache
 *.pdb
 *.pdb
+/Sistema de Inventario/.vs
+Sistema de Inventario/.vs/Sistema de Inventario/v17/.suo

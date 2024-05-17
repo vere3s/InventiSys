@@ -220,7 +220,20 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void administrarPedidosVentasToolStripMenuItem_Click(object sender, EventArgs e) {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosVentasGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                PedidosVentasGestion f = new PedidosVentasGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
 
         private void administrarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -238,21 +251,7 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarCategoriasToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosVentasGestion));
-
-            if (FormularioExistente != null)
-            {
-                FormularioExistente.Activate(); // Activar la instancia existente
-            }
-            else
-            {
-                PedidosVentasGestion f = new PedidosVentasGestion();
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
+       
 
         private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -283,9 +282,11 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarUsuarios_Click_1(object sender, EventArgs e)
+        
+
+        private void administrarRolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(UsuariosGestion));
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(RolesGestion));
 
             if (FormularioExistente != null)
             {
@@ -293,10 +294,31 @@ namespace InventiSys.GUI
             }
             else
             {
-                UsuariosGestion f = new UsuariosGestion();
+                RolesGestion f = new RolesGestion();
                 f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void administrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                ProductosGestion f = new ProductosGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void dashboardMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

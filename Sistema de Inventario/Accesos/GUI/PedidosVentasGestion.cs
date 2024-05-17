@@ -72,7 +72,7 @@ namespace Accesos.GUI
         private void btnEditar_Click(object sender, EventArgs e)
         {
             PedidosVentasEdicion pedidosVentasEdicion = new PedidosVentasEdicion();
-            pedidosVentasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.Rows[0].Cells[0].Value);
+            pedidosVentasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
             pedidosVentasEdicion.ShowDialog();
             Cargar();
         }

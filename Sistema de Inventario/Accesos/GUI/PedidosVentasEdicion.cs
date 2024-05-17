@@ -19,7 +19,7 @@ namespace Accesos.GUI
         BindingSource _DATOS = new BindingSource();
         BindingSource _DATOSProductos = new BindingSource();
         public int _ID = -2;
-        string txtCliente = "Juan";
+        string txtCliente = "";
         public PedidosVentasEdicion()
         {
             InitializeComponent();
@@ -76,6 +76,7 @@ namespace Accesos.GUI
             tablaPedidos.Columns.Add("Cantidad", typeof(int));
             tablaPedidos.Columns.Add("Precio", typeof(decimal));
             tablaPedidos.Columns.Add("Importe", typeof(decimal));
+            tablaPedidos.Columns.Add("IDDetallePedido", typeof(int));
             DataSet _dataSet = new DataSet();
             _dataSet.Tables.Add(tablaPedidos);
             _DATOS.DataSource = tablaPedidos;
@@ -84,7 +85,7 @@ namespace Accesos.GUI
                 btnModificar.Visible = true;
                 btnEnPedido.Visible = false;
                 _DATOS.DataSource = Consultas.DetallePedidoVentas(_ID);
-
+                MessageBox.Show(_DATOS.Count.ToString());
             }
             // Establecer la tabla de pedidos como origen de datos para el BindingSource
 
@@ -161,9 +162,9 @@ namespace Accesos.GUI
                     string nombreProducto = item["Producto"].ToString();
                     decimal precioProducto = Convert.ToDecimal(item["Precio"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
-
+                   // int idDetallpedido = Convert.ToInt32(item["IDDetallePedido"]);
                     // Crear un objeto Item con los datos del producto y agregarlo a la lista
-                    Item itemPedido = new Item(idProducto, nombreProducto, precioProducto, cantidad);
+                    Item itemPedido = new Item(idProducto, precioProducto, cantidad);
                     detallesPedido.Add(itemPedido);
                 }
                 PedidoVentas pedidoVentas = new PedidoVentas();
@@ -194,50 +195,69 @@ namespace Accesos.GUI
         private int ActualizarPedido()
         {
             try
-
             {
                 if (String.IsNullOrEmpty(txtCliente)) { return -1; }
-
-                // Crear una lista para almacenar los detalles del pedido como objetos Item
+                if (_DATOS == null)
+                {
+                    return -1;
+                }
+                // Create a list to store the details of the order as Item objects
                 List<Item> detallesPedido = new List<Item>();
                 PedidoVentas pedidoVentas = new PedidoVentas();
-                // Iterar sobre los datos en _DATOS para crear los objetos Item
+                
+
+                // Iterate over the data in _DATOS to create the Item objects
                 foreach (DataRowView item in _DATOS)
                 {
-                    // Obtener los datos del producto de la fila actual
+                    // Obtain the data of the product from the current row
                     int idProducto = Convert.ToInt32(item["IDProducto"]);
-                    string nombreProducto = item["Producto"].ToString();
-                    double precioProducto = Convert.ToDouble(item["Precio"]);
+                   
+                    decimal precioProducto = Convert.ToDecimal(item["Precio"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
+                    int idDetallePedido = -1;
+                    try
+                    {
+                        idDetallePedido = Convert.ToInt32(item["IDDetallePedido"]);
+                    }
+                    catch (Exception)
+                    {
 
-                    pedidoVentas.ActualizarDetallePedidoVentas(1, cantidad, precioProducto);
+                        idDetallePedido = -1;
+                    }
+                        
+                    
+                    // Add the product to the list of details
+                    detallesPedido.Add(new Item(idProducto, precioProducto,cantidad,idDetallePedido));
 
+                  
                 }
 
-                // Llamar a la función de la capa de datos para insertar el pedido
-                int idPedidoInsertado = pedidoVentas.Actualizar(_ID, txtCliente);
+                // Remove products from the order that are not present in the DataGridView
+               
+               // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
 
-                // Verificar si se insertó correctamente
-                if (idPedidoInsertado > 0)
+                // Update the order with the new details
+                int idPedidoActualizado = pedidoVentas.Actualizar(_ID, txtCliente, detallesPedido);
+
+                // Check if the update was successful
+                if (idPedidoActualizado > 0)
                 {
-                    MessageBox.Show("Pedido insertado correctamente. ID del pedido: " + idPedidoInsertado);
-                    // Aquí puedes realizar cualquier otra acción necesaria después de insertar el pedido
-
-                    return idPedidoInsertado;
+                    MessageBox.Show("Pedido actualizado correctamente. ID del pedido: " + idPedidoActualizado);
+                    return idPedidoActualizado;
                 }
                 else
                 {
-                    MessageBox.Show("Error al insertar el pedido.");
+                    MessageBox.Show("Error al actualizar el pedido.");
                     return -1;
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error en edicion: " + ex.ToString());
                 return -1;
             }
         }
+
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
@@ -284,6 +304,19 @@ namespace Accesos.GUI
 
 
         private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ActualizarPedido();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            ClienteComentario f = new ClienteComentario();
+            if (f.ShowDialog() == DialogResult.OK) { 
+            txtCliente = f.tbCliente.Text;
+            }
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
         }

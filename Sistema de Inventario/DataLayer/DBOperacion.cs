@@ -17,22 +17,27 @@ namespace DataLayer
             MySqlCommand Comando = new MySqlCommand();
             try
             {
-                if (base.Conectar()) //Base para acceder a los miembros de la clase base 
+                if (base.Conectar()) // Base para acceder a los miembros de la clase base
                 {
                     Comando.Connection = base._CONEXION;
                     Comando.CommandType = System.Data.CommandType.Text;
                     Comando.CommandText = pConsulta;
                     Adaptador.SelectCommand = Comando;
                     Adaptador.Fill(Resultado);
-                    base.Desconectar();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Resultado = new DataTable();
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                base.Desconectar(); // Asegurarse de que la conexión se cierre incluso si hay una excepción
             }
             return Resultado;
         }
+
         public Int32 EjecutarSentenciaYObtenerID(String pSentencia)
         {
             Int32 idGenerado = -1;
@@ -83,6 +88,10 @@ namespace DataLayer
             {
                 Console.WriteLine("Error al ejecutar sentencia: " + ex.Message);
                 FilasAfectadas = -1;
+            }
+            finally
+            {
+                Desconectar();
             }
             return FilasAfectadas;
         }

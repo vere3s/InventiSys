@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,24 +29,30 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT
-                pv.IDPedido,
-                pv.Cliente,
-                pv.FechaPedido,
-                pv.Estado,
-                pv.Comentarios,
-                SUM(dpv.Cantidad * dpv.Precio) AS 'Total'
-            FROM
-                pedidoventas pv
-                LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
-            GROUP BY
-                pv.IDPedido,
-                pv.Cliente,
-                pv.FechaPedido,
-                pv.Estado,
-                pv.Comentarios
-            ORDER BY
-                pv.FechaPedido DESC;
-            ";
+    DISTINCT pv.IDPedido,
+    pv.Cliente,
+    pv.FechaPedido,
+    pv.Estado,
+    pv.Comentarios,
+    SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
+    CASE 
+        WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
+        ELSE 'No Pagado'
+    END AS 'EstadoPago'
+FROM
+    pedidoventas pv
+    LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
+    LEFT JOIN ventas v ON pv.IDPedido = v.IDPedido
+GROUP BY
+    pv.IDPedido,
+    pv.Cliente,
+    pv.FechaPedido,
+    pv.Estado,
+    pv.Comentarios,
+    v.IDVentas
+ORDER BY
+    pv.FechaPedido DESC;
+";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -189,15 +196,29 @@ ORDER BY
         public static DataTable DetallePedidoVentas(int id)
         {
             DataTable Resultado = new DataTable();
-            String Consulta = $"SELECT * FROM detallepedidoventas where IDPedido= '{id}';";
+            String Consulta = $@"SELECT 
+             
+       
+                p.IDProducto,
+                p.Nombre AS Producto,
+                dpv.Cantidad,
+                dpv.Precio,
+                (dpv.Cantidad * dpv.Precio) AS Importe
+            FROM 
+                detallepedidoventas dpv
+            INNER JOIN 
+                productos p ON dpv.IDProducto = p.IDProducto
+            WHERE 
+                dpv.IDPedido = '{id}';";
             DBOperacion operacion = new DBOperacion();
             try
             {
                 Resultado = operacion.Consultar(Consulta);
+                Console.WriteLine("el id es" + id);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             return Resultado;
         }

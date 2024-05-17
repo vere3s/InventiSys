@@ -11,15 +11,25 @@ namespace Modelos
         public int IDProducto { get; set; }
         public string NombreProducto { get; set; }
         public decimal Precio { get; set; }
+        public int IDDetallePedido { get; set; }
         public int Cantidad { get; set; }
 
         // Constructor
-        public Item(int idProducto, string nombreProducto, decimal precio, int cantidad)
+        public Item(int idProducto, decimal precio, int cantidad)
         {
             IDProducto = idProducto;
-            NombreProducto = nombreProducto;
+           
             Precio = precio;
             Cantidad = cantidad;
+       
+        }
+        public Item(int idProducto,  decimal precio, int cantidad, int iDDetallePedido)
+        {
+            IDProducto = idProducto;
+           
+            Precio = precio;
+            Cantidad = cantidad;
+            IDDetallePedido = iDDetallePedido;
         }
     }
 

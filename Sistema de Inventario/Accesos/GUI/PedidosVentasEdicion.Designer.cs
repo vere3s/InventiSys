@@ -38,6 +38,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnEnPedido = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPagar = new System.Windows.Forms.ToolStripButton();
@@ -46,13 +47,12 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCliente = new System.Windows.Forms.ToolStripButton();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.IDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
@@ -78,6 +78,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 23);
             this.toolStripStatusLabel1.Text = "Registros encontrados";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // lbRegistros
             // 
@@ -127,13 +128,26 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.AutoSize = false;
+            this.btnModificar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(94, 31);
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.Visible = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // btnEnPedido
             // 
             this.btnEnPedido.AutoSize = false;
             this.btnEnPedido.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEnPedido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnPedido.ForeColor = System.Drawing.Color.White;
-            this.btnEnPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnEnPedido.Image")));
             this.btnEnPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEnPedido.Name = "btnEnPedido";
             this.btnEnPedido.Size = new System.Drawing.Size(94, 31);
@@ -151,11 +165,10 @@
             this.btnPagar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnPagar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.ForeColor = System.Drawing.Color.White;
-            this.btnPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnPagar.Image")));
             this.btnPagar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Padding = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            this.btnPagar.Size = new System.Drawing.Size(95, 37);
+            this.btnPagar.Size = new System.Drawing.Size(75, 37);
             this.btnPagar.Text = "Pagar";
             this.btnPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
@@ -189,12 +202,12 @@
             this.btnCliente.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
             this.btnCliente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(94, 31);
             this.btnCliente.Text = "Cliente";
             this.btnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // dgvPedido
             // 
@@ -239,6 +252,18 @@
             this.dgvPedido.Size = new System.Drawing.Size(961, 387);
             this.dgvPedido.TabIndex = 17;
             // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(747, 89);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(264, 116);
+            this.listBox1.TabIndex = 18;
+            this.listBox1.Visible = false;
+            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
+            // 
             // IDProducto
             // 
             this.IDProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -248,7 +273,7 @@
             this.IDProducto.Name = "IDProducto";
             this.IDProducto.ReadOnly = true;
             this.IDProducto.Visible = false;
-            this.IDProducto.Width = 125;
+            this.IDProducto.Width = 148;
             // 
             // Producto
             // 
@@ -289,33 +314,6 @@
             this.Importe.ReadOnly = true;
             this.Importe.Width = 113;
             // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(747, 89);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(264, 116);
-            this.listBox1.TabIndex = 18;
-            this.listBox1.Visible = false;
-            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.AutoSize = false;
-            this.btnModificar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(94, 31);
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.Visible = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // PedidosVentasEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,13 +352,13 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton btnCliente;
+        private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton btnCliente;
-        private System.Windows.Forms.ToolStripButton btnModificar;
     }
 }

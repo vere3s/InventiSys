@@ -63,6 +63,12 @@
     <Compile Include="GUI\CategoriasEdicion.Designer.cs">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ClienteComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClienteComentario.Designer.cs">
+      <DependentUpon>ClienteComentario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EmpleadosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriasEdicion.resx">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClienteComentario.resx">
+      <DependentUpon>ClienteComentario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EmpleadosEdicion.resx">
       <DependentUpon>EmpleadosEdicion.cs</DependentUpon>

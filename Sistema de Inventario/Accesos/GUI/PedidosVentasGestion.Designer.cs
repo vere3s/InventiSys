@@ -45,6 +45,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dgvPedidosVentas = new System.Windows.Forms.DataGridView();
             this.IDPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -194,6 +195,7 @@
             this.dgvPedidosVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidosVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPedido,
+            this.EstadoPago,
             this.Cliente,
             this.Total,
             this.FechaPedido,
@@ -227,6 +229,15 @@
             this.IDPedido.Name = "IDPedido";
             this.IDPedido.ReadOnly = true;
             this.IDPedido.Width = 90;
+            // 
+            // EstadoPago
+            // 
+            this.EstadoPago.DataPropertyName = "EstadoPago";
+            this.EstadoPago.HeaderText = "EstadoPago";
+            this.EstadoPago.MinimumWidth = 6;
+            this.EstadoPago.Name = "EstadoPago";
+            this.EstadoPago.ReadOnly = true;
+            this.EstadoPago.Width = 125;
             // 
             // Cliente
             // 
@@ -314,6 +325,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridView dgvPedidosVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;

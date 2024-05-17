@@ -144,9 +144,9 @@ namespace Accesos.GUI
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(130, 337);
+            this.btnAceptar.Location = new System.Drawing.Point(71, 337);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(74, 29);
+            this.btnAceptar.Size = new System.Drawing.Size(99, 29);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,7 +157,7 @@ namespace Accesos.GUI
             // 
             this.btnCancelar.Location = new System.Drawing.Point(229, 337);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(82, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(123, 29);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
