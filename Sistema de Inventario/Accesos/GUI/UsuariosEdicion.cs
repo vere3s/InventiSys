@@ -6,7 +6,7 @@ namespace Accesos.GUI
 {
     public partial class UsuariosEdicion : Form
     {
-    
+        SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
 
         private Boolean Validar()
         {
@@ -62,12 +62,12 @@ namespace Accesos.GUI
                         //GUARDAR NUEVO REGISTRO
                         if (oUsuario.Insertar())
                         {
-                            MessageBox.Show("Resgistro guardado");
+                            MessageBox.Show("Resgistro realizado con éxito");
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("El resgistro no pudo ser almacenado");
+                            MessageBox.Show("No se pudo registrar el Usuario");
                         }
                     }
                     else

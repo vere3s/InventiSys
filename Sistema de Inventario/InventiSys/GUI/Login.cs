@@ -1,4 +1,5 @@
-﻿using Modelos;
+﻿using Accesos.CLS;
+using Modelos;
 using SesionManager;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,28 @@ namespace InventiSys.GUI
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+        public Boolean RegistroLogin()
+        {
+            Boolean Resultado = false;
+            Accesos.GUI.UsuariosEdicion f = new Accesos.GUI.UsuariosEdicion();
+            f.ShowDialog();
+            Resultado = true;
+            
+            return Resultado;
+        }
+        private void lbRegistrar_Click(object sender, EventArgs e)
+        {
+            if (RegistroLogin())
+            {
+                GUI.Principal f = new GUI.Principal();
+                f.ShowDialog();
+            }
+            else
+            {
+                GUI.Login f = new GUI.Login();
+                f.ShowDialog();
+            }
         }
     }
 }
