@@ -1,5 +1,7 @@
-﻿using DataLayer;
+﻿using Accesos.CLS;
+using DataLayer;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Accesos.GUI
@@ -13,9 +15,19 @@ namespace Accesos.GUI
             Boolean valido = true;
             try
             {
-                if (tbUsuario.Text.Trim().Length == 0)
+                if (tbUsuario.Text.Trim().Length == 0 )
                 {
                     Notificador.SetError(tbUsuario, "Este campo no puede estar vacio");
+                    valido = false;
+                }
+                if (tbContraseña.Text.Trim().Length == 0)
+                { 
+                    Notificador.SetError(tbContraseña, "Este campo no puede estar vacio");
+                    valido = false;
+                }
+                if (CLS.Usuarios.UsuarioExiste(tbUsuario.Text))
+                {
+                    MessageBox.Show("El usuario ya existe. Por favor, elija otro nombre de usuario.");
                     valido = false;
                 }
             }

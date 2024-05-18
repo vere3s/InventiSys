@@ -50,6 +50,9 @@ namespace InventiSys.GUI
             Accesos.GUI.UsuariosEdicion f = new Accesos.GUI.UsuariosEdicion();
             f.MdiParent = this;
             f.Show();
+
+            f.tbUsuario.Text = oSesion.Usuario;
+            f.tbContraseña.Text = oSesion.Contraseña;
         }
 
         private void cerrarSesión_Click(object sender, EventArgs e)
@@ -268,7 +271,6 @@ namespace InventiSys.GUI
         {
 
         }
-        #endregion
 
         private void pedidos_Click(object sender, EventArgs e)
         {
@@ -285,5 +287,6 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+        #endregion
     }
 }

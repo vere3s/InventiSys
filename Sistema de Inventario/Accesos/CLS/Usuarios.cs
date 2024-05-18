@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -27,7 +29,10 @@ namespace Accesos.CLS
             DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("INSERT INTO usuarios(Usuario, Contraseña, IDEmpleado, IDRol) VALUES(");
-            Sentencia.Append("'" + Usuario + "',md5('" + Usuarios.ConvertirContraseña(Contraseña) + "'),'" + IDEmpleado + "','" + IDRol + "');");
+            Sentencia.Append("'" + Usuario + "', ");
+            Sentencia.Append("'" + Usuarios.ConvertirContraseña(Contraseña) + "', ");
+            Sentencia.Append("'" + IDEmpleado + "', ");
+            Sentencia.Append("'" + IDRol + "');");
             try
             {
                 if (Operacion.EjecutarSentencia(Sentencia.ToString()) >= 0)
@@ -51,10 +56,10 @@ namespace Accesos.CLS
             DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("UPDATE usuarios SET ");
-            Sentencia.Append("Usuario = '" + _Usuario + "'," +
-                             "Contraseña = '" + Usuarios.ConvertirContraseña(_Contraseña) + "'," +
-                             "IDEmpleado = '" + _IDEmpleado + "'," +
-                             "IDRol = '" + _IDRol + "'");
+            Sentencia.Append("Usuario = '" + _Usuario + "', ");
+            Sentencia.Append("Contraseña = '" + Usuarios.ConvertirContraseña(_Contraseña) + "', ");
+            Sentencia.Append("IDEmpleado = '" + _IDEmpleado + "', ");
+            Sentencia.Append("IDRol = '" + _IDRol + "' ");
             Sentencia.Append("WHERE IDUsuario = " + _IDUsuario + "; ");
             try
             {
@@ -110,6 +115,21 @@ namespace Accesos.CLS
                 }
                 return convertirCadena.ToString();
             }
+        }
+        public static bool UsuarioExiste(string oUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT Usuario FROM Usuarios WHERE Usuario = '" + oUsuario + "';";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado.Rows.Count > 0;
         }
     }
 }

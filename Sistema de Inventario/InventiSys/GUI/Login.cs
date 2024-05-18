@@ -41,6 +41,7 @@ namespace InventiSys.GUI
             {
                 SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
                 oSesion.Usuario = tbUsuario.Text;
+                oSesion.Contraseña = tbContraseña.Text;
                 DataRow row = dt.Rows[0];
                 oSesion.empleado = new Empleado()
                 {
