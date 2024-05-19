@@ -12,12 +12,11 @@ using System.Windows.Forms;
 
 namespace Accesos.GUI
 {
-    public partial class PedidosVentasGestion : Form
+    public partial class PedidosComprasGestion : Form
     {
         int _id = -1;
         BindingSource _DATOS = new BindingSource();
- 
-        public PedidosVentasGestion()
+        public PedidosComprasGestion()
         {
             InitializeComponent();
         }

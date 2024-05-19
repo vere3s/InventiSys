@@ -70,30 +70,7 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarUsuarios_Click(object sender, EventArgs e)
-        {
-            Form FormularioExistente = ObtenerFormularioExistente(
-                typeof(Accesos.GUI.UsuariosGestion)
-            );
-
-            if (FormularioExistente != null)
-            {
-                FormularioExistente.Activate(); // Activar la instancia existente
-            }
-            else
-            {
-                try
-                {
-                    if (oSesion.ValidarPermiso(1))
-                    {
-                        Accesos.GUI.UsuariosGestion f = new Accesos.GUI.UsuariosGestion();
-                        f.MdiParent = this;
-                        f.Show();
-                    }
-                }
-                catch (Exception) { }
-            }
-        }
+    
 
         private void inicioMenuItem_Click(object sender, EventArgs e)
         {
@@ -315,5 +292,21 @@ namespace InventiSys.GUI
             }
         }
         #endregion
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosComprasGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                PedidosComprasGestion f = new PedidosComprasGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

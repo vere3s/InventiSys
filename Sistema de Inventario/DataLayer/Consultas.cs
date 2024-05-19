@@ -10,6 +10,27 @@ namespace DataLayer
 {
     public static class Consultas
     {
+         public static DataTable PedidosCompras(int id)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = $@"SELECT *
+            FROM 
+                pedidocompras dpv
+     
+            WHERE 
+                dpv.IDPedido = '{id}';";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return Resultado;
+        }
         public static DataTable CATEGORIAS()
         {
             DataTable Resultado = new DataTable();
@@ -223,6 +244,48 @@ ORDER BY
             return Resultado;
         }
 
+        public static object PedidosCompras()
+        {
+  
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT
+    DISTINCT pc.IDPedido,
+    pc.IDProveedor,
+    pc.FechaPedido,
+    pc.Estado,
+    pc.Comentarios,
+ps.Nombre,
+    SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
+    CASE 
+        WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
+        ELSE 'No Pagado'
+    END AS 'EstadoPago'
+FROM
+    pedidocompras pc
+    LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
+    LEFT JOIN ventas v ON pc.IDPedido = v.IDPedido
+    LEFT JOIN Proveedores ps on pc.IDProveedor = ps.IDProveedor
+GROUP BY
+    pv.IDPedido,
+    pv.IDProveedor,
+    pv.FechaPedido,
+    pv.Estado,
+    pv.Comentarios,
+    v.IDVentas
+ORDER BY
+    pv.FechaPedido DESC;
+";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
     }
 
 }

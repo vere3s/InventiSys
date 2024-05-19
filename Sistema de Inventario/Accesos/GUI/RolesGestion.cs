@@ -26,7 +26,7 @@ namespace Accesos.GUI
         }
         void Cargar()
         {
-            _DATOS.DataSource = Consultas.Roles();
+            _DATOS.DataSource = Consultas.ROLES();
             dgvRoles.AutoGenerateColumns = false;
             dgvRoles.DataSource = _DATOS;
             lbRegistros.Text = _DATOS.Count.ToString();

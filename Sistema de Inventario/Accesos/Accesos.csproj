@@ -46,6 +46,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="CLS\Categorias.cs" />
     <Compile Include="CLS\Empleados.cs" />
+    <Compile Include="CLS\PedidoCompras.cs" />
     <Compile Include="CLS\PedidoVentas.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Proveedor.cs" />
@@ -53,6 +54,12 @@
     <Compile Include="CLS\Usuarios.cs" />
     <Compile Include="GUI\CategoriaGestion.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProveedorComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProveedorComentario.Designer.cs">
+      <DependentUpon>ProveedorComentario.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CategoriaGestion.Designer.cs">
       <DependentUpon>CategoriaGestion.cs</DependentUpon>
@@ -80,6 +87,18 @@
     </Compile>
     <Compile Include="GUI\EmpleadosGestion.Designer.cs">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PedidosComprasEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PedidosComprasEdicion.Designer.cs">
+      <DependentUpon>PedidosComprasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PedidosComprasGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PedidosComprasGestion.Designer.cs">
+      <DependentUpon>PedidosComprasGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\PedidosVentasEdicion.cs">
       <SubType>Form</SubType>
@@ -164,14 +183,22 @@
     <EmbeddedResource Include="GUI\EmpleadosGestion.resx">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PedidosVentasEdicion.resx">
-      <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
-    </EmbeddedResource>
+   
+
     <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
       <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="GUI\ProductosEdicion.resx">
       <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="GUI\PedidosVentasEdicion.resx">
+      <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="GUI\PedidosComprasGestion.resx">
+      <DependentUpon>PedidosComprasGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProductosGestion.resx">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
@@ -188,11 +215,17 @@
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </EmbeddedResource>
+      <EmbeddedResource Include="GUI\PedidosComprasEdicion.resx">
+      <DependentUpon>PedidosComprasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosEdicion.resx">
       <DependentUpon>UsuariosEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosGestion.resx">
       <DependentUpon>UsuariosGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProveedorComentario.resx">
+      <DependentUpon>ProveedorComentario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
