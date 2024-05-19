@@ -1,21 +1,33 @@
-﻿using DataLayer;
+﻿using Accesos.CLS;
+using DataLayer;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Accesos.GUI
 {
     public partial class UsuariosEdicion : Form
     {
-    
+        SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
 
         private Boolean Validar()
         {
             Boolean valido = true;
             try
             {
-                if (tbUsuario.Text.Trim().Length == 0)
+                if (tbUsuario.Text.Trim().Length == 0 )
                 {
                     Notificador.SetError(tbUsuario, "Este campo no puede estar vacio");
+                    valido = false;
+                }
+                if (tbContraseña.Text.Trim().Length == 0)
+                { 
+                    Notificador.SetError(tbContraseña, "Este campo no puede estar vacio");
+                    valido = false;
+                }
+                if (CLS.Usuarios.UsuarioExiste(tbUsuario.Text))
+                {
+                    MessageBox.Show("El usuario ya existe. Por favor, elija otro nombre de usuario.");
                     valido = false;
                 }
             }
@@ -62,12 +74,12 @@ namespace Accesos.GUI
                         //GUARDAR NUEVO REGISTRO
                         if (oUsuario.Insertar())
                         {
-                            MessageBox.Show("Resgistro guardado");
+                            MessageBox.Show("Resgistro realizado con éxito");
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("El resgistro no pudo ser almacenado");
+                            MessageBox.Show("No se pudo registrar el Usuario");
                         }
                     }
                     else
@@ -102,14 +114,9 @@ namespace Accesos.GUI
             cbIDEmpleado.DataSource = Consultas.Empleados();
             cbIDEmpleado.DisplayMember = "Nombre";
             cbIDEmpleado.ValueMember = "idEmpleado";
-            cbIDRol.DataSource = Consultas.Roles();
+            cbIDRol.DataSource = Consultas.ROLES();
             cbIDRol.DisplayMember = "Rol";
             cbIDRol.ValueMember = "IDRol";
-        }
-   
-        private void UsuariosEdicion_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -15,11 +15,17 @@ namespace SesionManager
         private static readonly object _lock = new object();
         public Empleado empleado;
         String _Usuario;
+        String _Contraseña;
 
         public string Usuario
         {
             get => _Usuario;
             set => _Usuario = value;
+        }
+        public string Contraseña
+        {
+            get => _Contraseña;
+            set => _Contraseña = value;
         }
 
         public static Sesion ObtenerInstancia()

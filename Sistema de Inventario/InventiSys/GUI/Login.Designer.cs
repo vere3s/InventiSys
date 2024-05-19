@@ -37,16 +37,16 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbRegistrar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(104, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(167, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -54,10 +54,9 @@
             // lbMensaje
             // 
             this.lbMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensaje.Location = new System.Drawing.Point(52, 368);
-            this.lbMensaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMensaje.Location = new System.Drawing.Point(39, 299);
             this.lbMensaje.Name = "lbMensaje";
-            this.lbMensaje.Size = new System.Drawing.Size(321, 70);
+            this.lbMensaje.Size = new System.Drawing.Size(241, 57);
             this.lbMensaje.TabIndex = 14;
             this.lbMensaje.Text = "Ingrese sus credenciales en el espacio designado";
             this.lbMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,10 +66,9 @@
             this.tbContraseña.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContraseña.Location = new System.Drawing.Point(68, 306);
-            this.tbContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbContraseña.Location = new System.Drawing.Point(51, 249);
             this.tbContraseña.Name = "tbContraseña";
-            this.tbContraseña.Size = new System.Drawing.Size(290, 30);
+            this.tbContraseña.Size = new System.Drawing.Size(218, 26);
             this.tbContraseña.TabIndex = 13;
             this.tbContraseña.UseSystemPasswordChar = true;
             // 
@@ -78,20 +76,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 278);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(39, 226);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 25);
+            this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "CONTRASEÑA";
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(239, 473);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(175, 457);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(167, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(125, 38);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -100,10 +96,9 @@
             // btnEntrar
             // 
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(31, 473);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEntrar.Location = new System.Drawing.Point(19, 457);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(167, 47);
+            this.btnEntrar.Size = new System.Drawing.Size(125, 38);
             this.btnEntrar.TabIndex = 10;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -117,29 +112,42 @@
             this.tbUsuario.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(68, 225);
-            this.tbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUsuario.Location = new System.Drawing.Point(51, 183);
             this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(290, 30);
+            this.tbUsuario.Size = new System.Drawing.Size(218, 26);
             this.tbUsuario.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 194);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(39, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "USUARIO";
             // 
+            // lbRegistrar
+            // 
+            this.lbRegistrar.AutoSize = true;
+            this.lbRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistrar.ForeColor = System.Drawing.Color.Navy;
+            this.lbRegistrar.Location = new System.Drawing.Point(39, 380);
+            this.lbRegistrar.Name = "lbRegistrar";
+            this.lbRegistrar.Size = new System.Drawing.Size(237, 40);
+            this.lbRegistrar.TabIndex = 16;
+            this.lbRegistrar.Text = "¿Todavía no ha iniciado sesión? \r\nRegistrese aquí";
+            this.lbRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbRegistrar.Click += new System.EventHandler(this.lbRegistrar_Click);
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(435, 543);
+            this.ClientSize = new System.Drawing.Size(326, 518);
+            this.Controls.Add(this.lbRegistrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbMensaje);
             this.Controls.Add(this.tbContraseña);
@@ -149,7 +157,6 @@
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -170,5 +177,6 @@
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.TextBox tbUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbRegistrar;
     }
 }

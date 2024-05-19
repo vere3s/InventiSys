@@ -52,8 +52,8 @@
             this.tbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnRoles = new System.Windows.Forms.ToolStripButton();
+            this.btnEmpleados = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -305,8 +305,8 @@
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.btnRoles,
+            this.btnEmpleados});
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.toolStrip2.Location = new System.Drawing.Point(0, 3);
             this.toolStrip2.Name = "toolStrip2";
@@ -315,34 +315,36 @@
             this.toolStrip2.TabIndex = 9;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStripButton1
+            // btnRoles
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.BackColor = System.Drawing.Color.SteelBlue;
-            this.toolStripButton1.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripButton1.Size = new System.Drawing.Size(170, 40);
-            this.toolStripButton1.Text = "Administrar Roles";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoles.AutoSize = false;
+            this.btnRoles.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRoles.ForeColor = System.Drawing.Color.White;
+            this.btnRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnRoles.Image")));
+            this.btnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRoles.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Padding = new System.Windows.Forms.Padding(10);
+            this.btnRoles.Size = new System.Drawing.Size(170, 40);
+            this.btnRoles.Text = "Administrar Roles";
+            this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
-            // toolStripButton2
+            // btnEmpleados
             // 
-            this.toolStripButton2.BackColor = System.Drawing.Color.SteelBlue;
-            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripButton2.Size = new System.Drawing.Size(170, 40);
-            this.toolStripButton2.Text = "Administrar Empleados";
-            this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEmpleados.ForeColor = System.Drawing.Color.White;
+            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10);
+            this.btnEmpleados.Size = new System.Drawing.Size(170, 40);
+            this.btnEmpleados.Text = "Administrar Empleados";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // toolStripContainer1
             // 
@@ -376,7 +378,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "UsuariosGestion";
-            this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
+            this.Padding = new System.Windows.Forms.Padding(40);
             this.Text = "UsuariosGestion";
             this.Load += new System.EventHandler(this.UsuariosGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
@@ -420,8 +422,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDRol;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btnRoles;
+        private System.Windows.Forms.ToolStripButton btnEmpleados;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
     }
 }
