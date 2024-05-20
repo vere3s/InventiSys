@@ -46,11 +46,14 @@
             this.productosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProductos = new System.Windows.Forms.ToolStripMenuItem();
+            this.ComprasStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarCategorias = new System.Windows.Forms.ToolStripMenuItem();
-            this.ComprasStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -59,10 +62,9 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(293, 532);
+            this.statusStrip1.Location = new System.Drawing.Point(220, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(774, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(580, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -72,9 +74,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnUsuario});
-            this.toolStrip1.Location = new System.Drawing.Point(293, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(220, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(774, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(580, 27);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -87,14 +89,14 @@
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
             this.btnUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(98, 28);
+            this.btnUsuario.Size = new System.Drawing.Size(83, 24);
             this.btnUsuario.Text = "Usuario";
             // 
             // editarUsuario
             // 
             this.editarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("editarUsuario.Image")));
             this.editarUsuario.Name = "editarUsuario";
-            this.editarUsuario.Size = new System.Drawing.Size(177, 26);
+            this.editarUsuario.Size = new System.Drawing.Size(142, 22);
             this.editarUsuario.Text = "Editar";
             this.editarUsuario.Click += new System.EventHandler(this.editarUsuario_Click);
             // 
@@ -102,7 +104,7 @@
             // 
             this.cerrarSesión.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesión.Image")));
             this.cerrarSesión.Name = "cerrarSesión";
-            this.cerrarSesión.Size = new System.Drawing.Size(177, 26);
+            this.cerrarSesión.Size = new System.Drawing.Size(142, 22);
             this.cerrarSesión.Text = "Cerrar sesión";
             this.cerrarSesión.Click += new System.EventHandler(this.cerrarSesión_Click);
             // 
@@ -120,12 +122,13 @@
             this.inventarioMenuItem,
             this.productosMenuItem,
             this.ComprasStripMenuItem1,
-            this.categoriasMenuItem});
+            this.categoriasMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0, 12, 13, 12);
-            this.menuStrip2.Size = new System.Drawing.Size(293, 554);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0, 10, 10, 10);
+            this.menuStrip2.Size = new System.Drawing.Size(220, 450);
             this.menuStrip2.TabIndex = 9;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -139,7 +142,7 @@
             this.inicioMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.inicioMenuItem.Name = "inicioMenuItem";
             this.inicioMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.inicioMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.inicioMenuItem.Size = new System.Drawing.Size(164, 45);
             this.inicioMenuItem.Text = "Inicio";
             this.inicioMenuItem.Click += new System.EventHandler(this.inicioMenuItem_Click);
             this.inicioMenuItem.MouseEnter += new System.EventHandler(this.inicioMenuItem_MouseEnter);
@@ -154,7 +157,7 @@
             this.dashboardMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.dashboardMenuItem.Name = "dashboardMenuItem";
             this.dashboardMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.dashboardMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.dashboardMenuItem.Size = new System.Drawing.Size(164, 45);
             this.dashboardMenuItem.Text = "Dashboard";
             this.dashboardMenuItem.Click += new System.EventHandler(this.dashboardMenuItem_Click);
             this.dashboardMenuItem.MouseEnter += new System.EventHandler(this.dashboardMenuItem_MouseEnter);
@@ -172,7 +175,7 @@
             this.accesosMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.accesosMenuItem.Name = "accesosMenuItem";
             this.accesosMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.accesosMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.accesosMenuItem.Size = new System.Drawing.Size(164, 45);
             this.accesosMenuItem.Text = "Accesos";
             // 
             // administrarUsuarios
@@ -181,7 +184,7 @@
             this.administrarUsuarios.ForeColor = System.Drawing.Color.DarkGray;
             this.administrarUsuarios.Name = "administrarUsuarios";
             this.administrarUsuarios.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.administrarUsuarios.Size = new System.Drawing.Size(282, 35);
+            this.administrarUsuarios.Size = new System.Drawing.Size(229, 29);
             this.administrarUsuarios.Text = "Administrar Usuarios";
             this.administrarUsuarios.Click += new System.EventHandler(this.administrarUsuarios_Click);
             // 
@@ -191,7 +194,7 @@
             this.agregarUsuario.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.agregarUsuario.Name = "agregarUsuario";
             this.agregarUsuario.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.agregarUsuario.Size = new System.Drawing.Size(282, 35);
+            this.agregarUsuario.Size = new System.Drawing.Size(229, 29);
             this.agregarUsuario.Text = "Agregar Usuario";
             this.agregarUsuario.Click += new System.EventHandler(this.agregarUsuario_Click);
             // 
@@ -206,7 +209,7 @@
             this.ventasMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.ventasMenuItem.Name = "ventasMenuItem";
             this.ventasMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.ventasMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.ventasMenuItem.Size = new System.Drawing.Size(164, 45);
             this.ventasMenuItem.Text = "Ventas";
             this.ventasMenuItem.MouseEnter += new System.EventHandler(this.generalMenuItem_MouseEnter);
             this.ventasMenuItem.MouseLeave += new System.EventHandler(this.generalMenuItem_MouseLeave);
@@ -218,7 +221,7 @@
             this.pedidos.Image = ((System.Drawing.Image)(resources.GetObject("pedidos.Image")));
             this.pedidos.Name = "pedidos";
             this.pedidos.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.pedidos.Size = new System.Drawing.Size(226, 35);
+            this.pedidos.Size = new System.Drawing.Size(186, 29);
             this.pedidos.Text = "Pedidos";
             this.pedidos.Click += new System.EventHandler(this.pedidos_Click);
             // 
@@ -231,7 +234,7 @@
             this.inventarioMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.inventarioMenuItem.Name = "inventarioMenuItem";
             this.inventarioMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.inventarioMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.inventarioMenuItem.Size = new System.Drawing.Size(164, 45);
             this.inventarioMenuItem.Text = "Inventario";
             this.inventarioMenuItem.Click += new System.EventHandler(this.inventarioMenuItem_Click);
             this.inventarioMenuItem.MouseEnter += new System.EventHandler(this.inventarioMenuItem_MouseEnter);
@@ -249,7 +252,7 @@
             this.productosMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.productosMenuItem.Name = "productosMenuItem";
             this.productosMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.productosMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.productosMenuItem.Size = new System.Drawing.Size(164, 45);
             this.productosMenuItem.Text = "Productos";
             this.productosMenuItem.Click += new System.EventHandler(this.productosMenuItem_Click);
             this.productosMenuItem.MouseEnter += new System.EventHandler(this.productosMenuItem_MouseEnter);
@@ -261,7 +264,7 @@
             this.administrarProductos.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.administrarProductos.Name = "administrarProductos";
             this.administrarProductos.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.administrarProductos.Size = new System.Drawing.Size(296, 35);
+            this.administrarProductos.Size = new System.Drawing.Size(238, 29);
             this.administrarProductos.Text = "Administrar Productos";
             this.administrarProductos.Click += new System.EventHandler(this.administrarProductos_Click);
             // 
@@ -271,9 +274,32 @@
             this.agregarProductos.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.agregarProductos.Name = "agregarProductos";
             this.agregarProductos.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.agregarProductos.Size = new System.Drawing.Size(296, 35);
+            this.agregarProductos.Size = new System.Drawing.Size(238, 29);
             this.agregarProductos.Text = "Agregar Productos";
             this.agregarProductos.Click += new System.EventHandler(this.agregarProductos_Click);
+            // 
+            // ComprasStripMenuItem1
+            // 
+            this.ComprasStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3});
+            this.ComprasStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComprasStripMenuItem1.ForeColor = System.Drawing.Color.DarkGray;
+            this.ComprasStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ComprasStripMenuItem1.Image")));
+            this.ComprasStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ComprasStripMenuItem1.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
+            this.ComprasStripMenuItem1.Name = "ComprasStripMenuItem1";
+            this.ComprasStripMenuItem1.Padding = new System.Windows.Forms.Padding(10);
+            this.ComprasStripMenuItem1.Size = new System.Drawing.Size(164, 45);
+            this.ComprasStripMenuItem1.Text = "Pedidos";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(201, 26);
+            this.toolStripMenuItem3.Text = "Pedidos Compras";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // categoriasMenuItem
             // 
@@ -287,7 +313,7 @@
             this.categoriasMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
             this.categoriasMenuItem.Name = "categoriasMenuItem";
             this.categoriasMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.categoriasMenuItem.Size = new System.Drawing.Size(234, 52);
+            this.categoriasMenuItem.Size = new System.Drawing.Size(164, 45);
             this.categoriasMenuItem.Text = "Categorias";
             this.categoriasMenuItem.MouseEnter += new System.EventHandler(this.categoriasMenuItem_MouseEnter);
             this.categoriasMenuItem.MouseLeave += new System.EventHandler(this.categoriasMenuItem_MouseLeave);
@@ -297,7 +323,7 @@
             this.agregarCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarCategoria.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.agregarCategoria.Name = "agregarCategoria";
-            this.agregarCategoria.Size = new System.Drawing.Size(295, 32);
+            this.agregarCategoria.Size = new System.Drawing.Size(238, 26);
             this.agregarCategoria.Text = "Agregar Categoria";
             this.agregarCategoria.Click += new System.EventHandler(this.agregarCategoria_Click);
             // 
@@ -306,44 +332,55 @@
             this.administrarCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.administrarCategorias.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.administrarCategorias.Name = "administrarCategorias";
-            this.administrarCategorias.Size = new System.Drawing.Size(295, 32);
+            this.administrarCategorias.Size = new System.Drawing.Size(238, 26);
             this.administrarCategorias.Text = "administrar Categorias";
             this.administrarCategorias.Click += new System.EventHandler(this.administrarCategorias_Click);
             // 
-            // ComprasStripMenuItem1
+            // toolStripMenuItem1
             // 
-            this.ComprasStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3});
-            this.ComprasStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComprasStripMenuItem1.ForeColor = System.Drawing.Color.DarkGray;
-            this.ComprasStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ComprasStripMenuItem1.Image")));
-            this.ComprasStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ComprasStripMenuItem1.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
-            this.ComprasStripMenuItem1.Name = "ComprasStripMenuItem1";
-            this.ComprasStripMenuItem1.Padding = new System.Windows.Forms.Padding(10);
-            this.ComprasStripMenuItem1.Size = new System.Drawing.Size(234, 52);
-            this.ComprasStripMenuItem1.Text = "Categorias";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem4});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(25, 0, 20, 0);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(10);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(164, 45);
+            this.toolStripMenuItem1.Text = "Permisos";
             // 
-            // toolStripMenuItem3
+            // toolStripMenuItem2
             // 
-            this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.toolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(250, 32);
-            this.toolStripMenuItem3.Text = "Pedidos Compras";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(231, 29);
+            this.toolStripMenuItem2.Text = "Administrar Permisos";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStripMenuItem4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(231, 29);
+            this.toolStripMenuItem4.Text = "Agregar Permisos";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -381,5 +418,8 @@
         private System.Windows.Forms.ToolStripMenuItem administrarCategorias;
         private System.Windows.Forms.ToolStripMenuItem ComprasStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }

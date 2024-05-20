@@ -62,6 +62,19 @@ namespace Accesos.GUI
                 throw;
             }
         }
+        public static int ContarCategorias()
+        {
+            try
+            {
+                DataTable Resultado = DataLayer.Consultas.CATEGORIAS();
+                return Resultado.Rows.Count;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al contar: " + ex.Message);
+                return 0;
+            }
+        }
         public CategoriaGestion()
         {
             InitializeComponent();

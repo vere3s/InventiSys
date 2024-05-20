@@ -48,12 +48,25 @@
     <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\PedidoCompras.cs" />
     <Compile Include="CLS\PedidoVentas.cs" />
+    <Compile Include="CLS\Permisos.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Roles.cs" />
     <Compile Include="CLS\Usuarios.cs" />
     <Compile Include="GUI\CategoriaGestion.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PermisosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PermisosEdicion.Designer.cs">
+      <DependentUpon>PermisosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PermisosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PermisosGestion.Designer.cs">
+      <DependentUpon>PermisosGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ProveedorComentario.cs">
       <SubType>Form</SubType>
@@ -183,20 +196,21 @@
     <EmbeddedResource Include="GUI\EmpleadosGestion.resx">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </EmbeddedResource>
-   
-
     <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
       <DependentUpon>PedidosVentasGestion.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="GUI\PermisosEdicion.resx">
+      <DependentUpon>PermisosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PermisosGestion.resx">
+      <DependentUpon>PermisosGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProductosEdicion.resx">
       <DependentUpon>ProductosEdicion.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="GUI\PedidosVentasEdicion.resx">
       <DependentUpon>PedidosVentasEdicion.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="GUI\PedidosComprasGestion.resx">
       <DependentUpon>PedidosComprasGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,7 +229,7 @@
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </EmbeddedResource>
-      <EmbeddedResource Include="GUI\PedidosComprasEdicion.resx">
+    <EmbeddedResource Include="GUI\PedidosComprasEdicion.resx">
       <DependentUpon>PedidosComprasEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosEdicion.resx">

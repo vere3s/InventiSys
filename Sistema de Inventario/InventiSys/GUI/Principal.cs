@@ -308,5 +308,35 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosComprasGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                PermisosGestion f = new PermisosGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PermisosEdicion f = new PermisosEdicion();
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

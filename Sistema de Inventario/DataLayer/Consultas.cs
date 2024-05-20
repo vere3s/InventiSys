@@ -286,6 +286,51 @@ ORDER BY
             }
             return Resultado;
         }
+
+        public static DataTable Permisos()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT 
+    p.IDPermiso, 
+    p.IDRol, 
+    p.IDOpcion,  
+    r.Rol AS Rol,
+    o.Opcion AS Opcion
+FROM 
+    permisos p
+    INNER JOIN roles r ON p.IDRol = r.IDRol
+    INNER JOIN opciones o ON p.IDOpcion = o.IDOpcion
+ORDER BY 
+    p.IDPermiso ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+
+
+        }
+
+        public static DataTable OPCIONES()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT * FROM Opciones ORDER BY Opcion ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
     }
 
 }

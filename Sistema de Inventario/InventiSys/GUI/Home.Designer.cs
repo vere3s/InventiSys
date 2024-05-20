@@ -32,10 +32,10 @@
             this.lbContadorUsuarios = new System.Windows.Forms.Label();
             this.lbUsuarios = new System.Windows.Forms.Label();
             this.pbRoles = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblContadorCategorias = new System.Windows.Forms.Label();
             this.lbCategorias = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblContadorProductos = new System.Windows.Forms.Label();
             this.lbProductos = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,17 +82,17 @@
             this.pbRoles.TabIndex = 18;
             this.pbRoles.TabStop = false;
             // 
-            // label1
+            // lblContadorCategorias
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(426, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 89);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContadorCategorias.BackColor = System.Drawing.Color.White;
+            this.lblContadorCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorCategorias.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblContadorCategorias.Location = new System.Drawing.Point(426, 40);
+            this.lblContadorCategorias.Name = "lblContadorCategorias";
+            this.lblContadorCategorias.Size = new System.Drawing.Size(120, 89);
+            this.lblContadorCategorias.TabIndex = 23;
+            this.lblContadorCategorias.Text = "0";
+            this.lblContadorCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbCategorias
             // 
@@ -117,17 +117,17 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // lblContadorProductos
             // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(697, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 89);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContadorProductos.BackColor = System.Drawing.Color.White;
+            this.lblContadorProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorProductos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblContadorProductos.Location = new System.Drawing.Point(697, 40);
+            this.lblContadorProductos.Name = "lblContadorProductos";
+            this.lblContadorProductos.Size = new System.Drawing.Size(120, 89);
+            this.lblContadorProductos.TabIndex = 26;
+            this.lblContadorProductos.Text = "0";
+            this.lblContadorProductos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbProductos
             // 
@@ -196,10 +196,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbVentas);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblContadorProductos);
             this.Controls.Add(this.lbProductos);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblContadorCategorias);
             this.Controls.Add(this.lbCategorias);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbContadorUsuarios);
@@ -222,10 +222,10 @@
         private System.Windows.Forms.Label lbContadorUsuarios;
         private System.Windows.Forms.Label lbUsuarios;
         private System.Windows.Forms.PictureBox pbRoles;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblContadorCategorias;
         private System.Windows.Forms.Label lbCategorias;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblContadorProductos;
         private System.Windows.Forms.Label lbProductos;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;

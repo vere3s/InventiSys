@@ -119,3 +119,11 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Deb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PedidosComprasGestion.resources
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PedidosComprasEdicion.resources
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.ProveedorComentario.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.ClienteComentario.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PermisosEdicion.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PermisosGestion.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PedidosComprasGestion.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.RolesEdicion.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.RolesGestion.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PedidosComprasEdicion.resources
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.ProveedorComentario.resources

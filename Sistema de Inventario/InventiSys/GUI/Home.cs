@@ -21,6 +21,9 @@ namespace InventiSys.GUI
         private void Home_Load(object sender, EventArgs e)
         {
             lbContadorUsuarios.Text = Consultas.USUARIOS().Rows.Count.ToString();
+            lblContadorCategorias.Text=Consultas.CATEGORIAS().Rows.Count.ToString();
+            lblContadorProductos.Text=Consultas.PRODUCTOS().Rows.Count.ToString();
+
         }
     }
 }
