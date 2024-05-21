@@ -50,7 +50,7 @@
             this.tbContraseña.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContraseña.Location = new System.Drawing.Point(471, 57);
+            this.tbContraseña.Location = new System.Drawing.Point(33, 233);
             this.tbContraseña.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(291, 26);
@@ -60,7 +60,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(466, 32);
+            this.label5.Location = new System.Drawing.Point(28, 208);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 20);
@@ -71,7 +71,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 102);
+            this.label4.Location = new System.Drawing.Point(24, 289);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
@@ -82,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(373, 108);
+            this.label3.Location = new System.Drawing.Point(28, 380);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
@@ -93,7 +93,7 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(526, 229);
+            this.btnCancelar.Location = new System.Drawing.Point(197, 501);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(112, 35);
@@ -106,7 +106,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(148, 229);
+            this.btnGuardar.Location = new System.Drawing.Point(28, 501);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 35);
@@ -120,7 +120,7 @@
             this.tbUsuario.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(149, 57);
+            this.tbUsuario.Location = new System.Drawing.Point(33, 145);
             this.tbUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(291, 26);
@@ -130,7 +130,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(144, 33);
+            this.label2.Location = new System.Drawing.Point(28, 121);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 20);
@@ -169,8 +169,8 @@
             // 
             this.cbIDEmpleado.BackColor = System.Drawing.Color.PaleTurquoise;
             this.cbIDEmpleado.FormattingEnabled = true;
-            this.cbIDEmpleado.Location = new System.Drawing.Point(32, 142);
-            this.cbIDEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIDEmpleado.Location = new System.Drawing.Point(29, 329);
+            this.cbIDEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.cbIDEmpleado.Name = "cbIDEmpleado";
             this.cbIDEmpleado.Size = new System.Drawing.Size(291, 21);
             this.cbIDEmpleado.TabIndex = 30;
@@ -179,8 +179,8 @@
             // 
             this.cbIDRol.BackColor = System.Drawing.Color.PaleTurquoise;
             this.cbIDRol.FormattingEnabled = true;
-            this.cbIDRol.Location = new System.Drawing.Point(378, 142);
-            this.cbIDRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIDRol.Location = new System.Drawing.Point(33, 414);
+            this.cbIDRol.Margin = new System.Windows.Forms.Padding(2);
             this.cbIDRol.Name = "cbIDRol";
             this.cbIDRol.Size = new System.Drawing.Size(291, 21);
             this.cbIDRol.TabIndex = 31;
@@ -190,7 +190,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(808, 287);
+            this.ClientSize = new System.Drawing.Size(361, 566);
             this.Controls.Add(this.cbIDRol);
             this.Controls.Add(this.cbIDEmpleado);
             this.Controls.Add(this.tbContraseña);

@@ -1,4 +1,5 @@
 ﻿using Accesos.CLS;
+using DataLayer;
 using Modelos;
 using SesionManager;
 using System;
@@ -71,24 +72,23 @@ namespace InventiSys.GUI
         }
         public Boolean RegistroLogin()
         {
-            Boolean Resultado = false;
             Accesos.GUI.UsuariosEdicion f = new Accesos.GUI.UsuariosEdicion();
-            f.ShowDialog();
-            Resultado = true;
-            
-            return Resultado;
+            DialogResult resultado = f.ShowDialog();
+            return resultado == DialogResult.OK;
         }
         private void lbRegistrar_Click(object sender, EventArgs e)
         {
-            if (RegistroLogin())
+            this.Hide();
+            Accesos.GUI.UsuariosEdicion f = new Accesos.GUI.UsuariosEdicion();
+            f.ShowDialog();
+            if (f.RegistroExitoso)
             {
-                GUI.Principal f = new GUI.Principal();
-                f.ShowDialog();
+                GUI.Principal p = new GUI.Principal();
+                p.ShowDialog();
             }
             else
             {
-                GUI.Login f = new GUI.Login();
-                f.ShowDialog();
+                this.Show();
             }
         }
     }

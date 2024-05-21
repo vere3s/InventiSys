@@ -9,7 +9,8 @@ namespace Accesos.GUI
     public partial class UsuariosEdicion : Form
     {
         SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
-
+        private Boolean _RegistroExitoso = false;
+        public bool RegistroExitoso { get => _RegistroExitoso; private set => _RegistroExitoso = value;} // Propiedad pública 
         private Boolean Validar()
         {
             Boolean valido = true;
@@ -75,11 +76,13 @@ namespace Accesos.GUI
                         if (oUsuario.Insertar())
                         {
                             MessageBox.Show("Resgistro realizado con éxito");
+                            _RegistroExitoso = true;
                             Close();
                         }
                         else
                         {
                             MessageBox.Show("No se pudo registrar el Usuario");
+                            _RegistroExitoso = false;
                         }
                     }
                     else

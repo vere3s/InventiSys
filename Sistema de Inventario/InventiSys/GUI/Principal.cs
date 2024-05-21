@@ -69,9 +69,6 @@ namespace InventiSys.GUI
                 pf.Show();
             }
         }
-
-    
-
         private void inicioMenuItem_Click(object sender, EventArgs e)
         {
             // Verifica si ya existe una instancia del formulario
@@ -90,7 +87,19 @@ namespace InventiSys.GUI
         }
         private void inventarioMenuItem_Click(object sender, EventArgs e)
         {
+            // Verifica si ya existe una instancia del formulario
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Inventario));
 
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                Inventario f = new Inventario();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
 
         private void dashboardMenuItem_Click(object sender, EventArgs e)
@@ -172,13 +181,11 @@ namespace InventiSys.GUI
         private void accesosMenuItem_Click(object sender, EventArgs e)
         {
             accesosMenuItem.ForeColor = Color.Black;
-            accesosMenuItem.BackColor = Color.DarkSlateGray;
         }
 
         private void productosMenuItem_Click(object sender, EventArgs e)
         {
             productosMenuItem.ForeColor = Color.Black;
-            productosMenuItem.BackColor = Color.DarkSlateGray;
         }
         #endregion
         
