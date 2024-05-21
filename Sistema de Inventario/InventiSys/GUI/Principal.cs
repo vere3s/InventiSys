@@ -276,10 +276,34 @@ namespace InventiSys.GUI
         private void administrarProductos_Click(object sender, EventArgs e)
         {
 
+
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(ProductosGestion));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                ProductosGestion f = new ProductosGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+
         }
 
         private void agregarProductos_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                ProductosEdicion f = new ProductosEdicion();
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
