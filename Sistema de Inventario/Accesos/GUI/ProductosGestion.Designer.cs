@@ -274,7 +274,7 @@
             // 
             // Categoria
             // 
-            this.Categoria.DataPropertyName = "Nombre";
+            this.Categoria.DataPropertyName = "NombreC";
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.MinimumWidth = 6;
             this.Categoria.Name = "Categoria";

@@ -143,7 +143,7 @@ ORDER BY
     p.IDCategoria, 
    
     p.Cantidad,
-     c.Nombre AS Nombre
+     c.Nombre AS NombreC
 FROM
     productos p
     INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria

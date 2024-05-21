@@ -11,11 +11,11 @@ namespace Accesos.CLS
     internal class Categorias
     {
         Int32 _IDCategoria;
-        string _Nombre;
+        string _NombreC;
         Int32 _EsIngrendiente;
 
         public int IDCategoria { get => _IDCategoria; set => _IDCategoria = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
+        public string Nombre { get => _NombreC; set => _NombreC = value; }
         public int EsIngrendiente { get => _EsIngrendiente; set => _EsIngrendiente = value; }
 
         public Boolean Insertar()
@@ -48,7 +48,7 @@ namespace Accesos.CLS
             DBOperacion Operacion = new DBOperacion();
             StringBuilder Sentencia = new StringBuilder();
             Sentencia.Append("UPDATE categorias SET ");
-            Sentencia.Append("Nombre = '" + _Nombre + "'," +
+            Sentencia.Append("Nombre = '" + _NombreC + "'," +
                              "EsIngrendiente = '" + _EsIngrendiente + "'");
             Sentencia.Append("WHERE IDCategoria = " + _IDCategoria + "; ");
             try
