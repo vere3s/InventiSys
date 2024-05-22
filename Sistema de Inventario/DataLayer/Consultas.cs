@@ -49,31 +49,30 @@ namespace DataLayer
         public static DataTable PedidosVentas()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT
-    DISTINCT pv.IDPedido,
-    pv.Cliente,
-    pv.FechaPedido,
-    pv.Estado,
-    pv.Comentarios,
-    SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
-    CASE 
-        WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
-        ELSE 'No Pagado'
-    END AS 'EstadoPago'
-FROM
-    pedidoventas pv
-    LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
-    LEFT JOIN ventas v ON pv.IDPedido = v.IDPedido
-GROUP BY
-    pv.IDPedido,
-    pv.Cliente,
-    pv.FechaPedido,
-    pv.Estado,
-    pv.Comentarios,
-    v.IDVentas
-ORDER BY
-    pv.FechaPedido DESC;
-";
+                        String Consulta = @"SELECT
+                DISTINCT pv.IDPedido,
+                pv.Cliente,
+                pv.FechaPedido,
+                pv.Estado,
+                pv.Comentarios,
+                SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
+                CASE 
+                    WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
+                    ELSE 'No Pagado'
+                END AS 'EstadoPago'
+            FROM
+                pedidoventas pv
+                LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
+                LEFT JOIN ventas v ON pv.IDPedido = v.IDPedido
+            GROUP BY
+                pv.IDPedido,
+                pv.Cliente,
+                pv.FechaPedido,
+                pv.Estado,
+                pv.Comentarios,
+                v.IDVentas
+            ORDER BY
+                pv.FechaPedido DESC; ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -135,20 +134,20 @@ ORDER BY
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT
-    p.IDProducto, 
-    p.Nombre,
-    p.Precio, 
-    p.CostoUnitario,
-    p.EsPlatillo, 
-    p.IDCategoria, 
+                p.IDProducto, 
+                p.Nombre,
+                p.Precio, 
+                p.CostoUnitario,
+                p.EsPlatillo, 
+                p.IDCategoria, 
    
-    p.Cantidad,
-     c.Nombre AS NombreC
-FROM
-    productos p
-    INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
-ORDER BY
-    p.Nombre ASC; ";
+                p.Cantidad,
+                 c.Nombre AS NombreC
+            FROM
+                productos p
+                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+            ORDER BY
+                p.Nombre ASC; ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -249,32 +248,31 @@ ORDER BY
   
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT
-    DISTINCT pc.IDPedido,
-    pc.IDProveedor,
-    pc.FechaPedido,
-    pc.Estado,
-    pc.Comentarios,
-ps.Nombre,
-    SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
-    CASE 
-        WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
-        ELSE 'No Pagado'
-    END AS 'EstadoPago'
-FROM
-    pedidocompras pc
-    LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
-    LEFT JOIN ventas v ON pc.IDPedido = v.IDPedido
-    LEFT JOIN Proveedores ps on pc.IDProveedor = ps.IDProveedor
-GROUP BY
-    pv.IDPedido,
-    pv.IDProveedor,
-    pv.FechaPedido,
-    pv.Estado,
-    pv.Comentarios,
-    v.IDVentas
-ORDER BY
-    pv.FechaPedido DESC;
-";
+                DISTINCT pc.IDPedido,
+                pc.IDProveedor,
+                pc.FechaPedido,
+                pc.Estado,
+                pc.Comentarios,
+            ps.Nombre,
+                SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
+                CASE 
+                    WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
+                    ELSE 'No Pagado'
+                END AS 'EstadoPago'
+            FROM
+                pedidocompras pc
+                LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
+                LEFT JOIN ventas v ON pc.IDPedido = v.IDPedido
+                LEFT JOIN Proveedores ps on pc.IDProveedor = ps.IDProveedor
+            GROUP BY
+                pv.IDPedido,
+                pv.IDProveedor,
+                pv.FechaPedido,
+                pv.Estado,
+                pv.Comentarios,
+                v.IDVentas
+            ORDER BY
+                pv.FechaPedido DESC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -291,17 +289,17 @@ ORDER BY
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT 
-    p.IDPermiso, 
-    p.IDRol, 
-    p.IDOpcion,  
-    r.Rol AS Rol,
-    o.Opcion AS Opcion
-FROM 
-    permisos p
-    INNER JOIN roles r ON p.IDRol = r.IDRol
-    INNER JOIN opciones o ON p.IDOpcion = o.IDOpcion
-ORDER BY 
-    p.IDPermiso ASC;";
+                p.IDPermiso, 
+                p.IDRol, 
+                p.IDOpcion,  
+                r.Rol AS Rol,
+                o.Opcion AS Opcion
+            FROM 
+                permisos p
+                INNER JOIN roles r ON p.IDRol = r.IDRol
+                INNER JOIN opciones o ON p.IDOpcion = o.IDOpcion
+            ORDER BY 
+                p.IDPermiso ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -331,6 +329,74 @@ ORDER BY
             }
             return Resultado;
         }
+
+        public static DataTable INVENTARIOPRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT
+                p.IDProducto, 
+                p.Nombre,
+                p.Precio, 
+                p.CostoUnitario,
+                p.IDCategoria, 
+                cs.FechaCompra,
+                c.Nombre AS NombreC,
+	            (p.Cantidad* p.Precio) as TotalPrecio,
+                p.Cantidad as Existencia
+            FROM
+                productos p
+                left join detallepedidocompras dpc on dpc.IDProducto = p.IDProducto
+                left join compras cs on cs.PedidoCompras_IDPedido = dpc.IDPedido
+
+                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+            Where
+                c.EsIngrendiente = 0
+            ORDER BY
+                p.Nombre ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+        public static DataTable INVENTARIOINGREDIENTES()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT
+                p.IDProducto, 
+                p.Nombre,
+                p.CostoUnitario, 
+                p.IDCategoria, 
+                cs.FechaCompra,
+                c.Nombre AS NombreC,
+	            (p.Cantidad* p.CostoUnitario) as 'Total costo',
+                p.Cantidad as Existencia
+            FROM
+                productos p
+                left join detallepedidocompras dpc on dpc.IDProducto = p.IDProducto
+                left join compras cs on cs.PedidoCompras_IDPedido = dpc.IDPedido
+                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+            Where 
+             c.EsIngrendiente = 1
+            ORDER BY
+                p.Nombre ASC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+
     }
 
 }

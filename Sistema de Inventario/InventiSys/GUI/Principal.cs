@@ -85,22 +85,6 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
-        private void inventarioMenuItem_Click(object sender, EventArgs e)
-        {
-            // Verifica si ya existe una instancia del formulario
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(Inventario));
-
-            if (FormularioExistente != null)
-            {
-                FormularioExistente.Activate(); // Activar la instancia existente
-            }
-            else
-            {
-                Inventario f = new Inventario();
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
 
         private void dashboardMenuItem_Click(object sender, EventArgs e)
         {
@@ -368,6 +352,43 @@ namespace InventiSys.GUI
             {
                 throw;
             }
+        }
+
+        private void inventarioDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Inventario));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                Inventario f = new Inventario();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void inventarioDeIngredientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(InventarioIngredientes));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                InventarioIngredientes f = new InventarioIngredientes();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void inventarioDeIngredientesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -62,6 +62,12 @@
     <Compile Include="GUI\Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\InventarioIngredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InventarioIngredientes.Designer.cs">
+      <DependentUpon>InventarioIngredientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\PermisosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InventarioIngredientes.resx">
+      <DependentUpon>InventarioIngredientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PedidosVentasGestion.resx">
       <DependentUpon>PedidosVentasGestion.cs</DependentUpon>

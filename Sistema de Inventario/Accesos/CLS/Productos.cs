@@ -54,7 +54,7 @@ namespace Accesos.CLS
             DataLayer.DBOperacion Operacion = new DataLayer.DBOperacion();
             StringBuilder Sentencia = new StringBuilder(); // objeto para construir cadenas complejas
             Sentencia.Append("UPDATE productos SET ");
-            Sentencia.Append("Nombre = '" + Nombre + "','" +
+            Sentencia.Append("Nombre = '" + Nombre + "'," +
                              "Precio = '" + _Precio + "'," +
                              "CostoUnitario = '" + _CostoUnitario + "'," +
                              "EsPlatillo = '" + _EsPlatillo + "'," +

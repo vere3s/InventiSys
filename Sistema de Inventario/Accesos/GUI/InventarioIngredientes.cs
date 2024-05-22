@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Accesos.GUI
 {
-    public partial class Inventario : Form
+    public partial class InventarioIngredientes : Form
     {
         BindingSource _DATOS = new BindingSource();
         public void Cargar()
         {
             try
             {
-                _DATOS.DataSource = DataLayer.Consultas.INVENTARIOPRODUCTOS();
+                _DATOS.DataSource = DataLayer.Consultas.INVENTARIOINGREDIENTES();
                 lbRegistros.Text = _DATOS.Count.ToString();
                 FiltrarLocalmente();
             }
@@ -46,12 +46,12 @@ namespace Accesos.GUI
                 throw;
             }
         }
-        public Inventario()
+        public InventarioIngredientes()
         {
             InitializeComponent();
         }
 
-        private void Inventario_Load(object sender, EventArgs e)
+        private void InventarioIngredientes_Load(object sender, EventArgs e)
         {
             Cargar();
         }

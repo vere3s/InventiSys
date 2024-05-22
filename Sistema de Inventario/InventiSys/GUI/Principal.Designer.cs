@@ -43,6 +43,8 @@
             this.ventasMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioDeIngredientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProductos = new System.Windows.Forms.ToolStripMenuItem();
@@ -221,12 +223,15 @@
             this.pedidos.Image = ((System.Drawing.Image)(resources.GetObject("pedidos.Image")));
             this.pedidos.Name = "pedidos";
             this.pedidos.Padding = new System.Windows.Forms.Padding(1, 5, 1, 0);
-            this.pedidos.Size = new System.Drawing.Size(186, 29);
+            this.pedidos.Size = new System.Drawing.Size(136, 29);
             this.pedidos.Text = "Pedidos";
             this.pedidos.Click += new System.EventHandler(this.pedidos_Click);
             // 
             // inventarioMenuItem
             // 
+            this.inventarioMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inventarioDeProductosToolStripMenuItem,
+            this.inventarioDeIngredientesToolStripMenuItem});
             this.inventarioMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventarioMenuItem.ForeColor = System.Drawing.Color.DarkGray;
             this.inventarioMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inventarioMenuItem.Image")));
@@ -236,9 +241,22 @@
             this.inventarioMenuItem.Padding = new System.Windows.Forms.Padding(10);
             this.inventarioMenuItem.Size = new System.Drawing.Size(164, 45);
             this.inventarioMenuItem.Text = "Inventario";
-            this.inventarioMenuItem.Click += new System.EventHandler(this.inventarioMenuItem_Click);
             this.inventarioMenuItem.MouseEnter += new System.EventHandler(this.inventarioMenuItem_MouseEnter);
             this.inventarioMenuItem.MouseLeave += new System.EventHandler(this.inventarioMenuItem_MouseLeave);
+            // 
+            // inventarioDeProductosToolStripMenuItem
+            // 
+            this.inventarioDeProductosToolStripMenuItem.Name = "inventarioDeProductosToolStripMenuItem";
+            this.inventarioDeProductosToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.inventarioDeProductosToolStripMenuItem.Text = "Inventario de productos";
+            this.inventarioDeProductosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeProductosToolStripMenuItem_Click);
+            // 
+            // inventarioDeIngredientesToolStripMenuItem
+            // 
+            this.inventarioDeIngredientesToolStripMenuItem.Name = "inventarioDeIngredientesToolStripMenuItem";
+            this.inventarioDeIngredientesToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.inventarioDeIngredientesToolStripMenuItem.Text = "Inventario de Ingredientes";
+            this.inventarioDeIngredientesToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeIngredientesToolStripMenuItem_Click);
             // 
             // productosMenuItem
             // 
@@ -421,5 +439,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem inventarioDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioDeIngredientesToolStripMenuItem;
     }
 }
