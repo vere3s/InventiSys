@@ -7,12 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Accesos.GUI
 {
     public partial class Inventario : Form
     {
         BindingSource _DATOS = new BindingSource();
+
+        // actualizar 
+        public ProductosGestion _productosGestion;
+
+        private Boolean Validar()
+        {
+            Boolean valido = true;
+          
+            return valido;
+        }
         public void Cargar()
         {
             try
@@ -37,8 +46,8 @@ namespace Accesos.GUI
                 {
                     _DATOS.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
                 }
-                dgvProductos.AutoGenerateColumns = false;
-                dgvProductos.DataSource = _DATOS;
+                dgvInventario.AutoGenerateColumns = false;
+                dgvInventario.DataSource = _DATOS;
             }
             catch (Exception)
             {
@@ -49,7 +58,32 @@ namespace Accesos.GUI
         public Inventario()
         {
             InitializeComponent();
+          
         }
+        public void productosGestion(ProductosGestion productosGestion)
+        {
+            _productosGestion = productosGestion;
+
+            // Suscribirse al evento DataChanged del formulario principal
+            _productosGestion.DataChanged += OnDataChanged;
+        }
+        private void OnDataChanged(object sender, EventArgs e)
+        {
+            // Recargar los datos en el formulario dependiente
+            Cargar();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            // Desuscribirse del evento para evitar referencias no válidas
+            if (_productosGestion != null)
+            {
+                _productosGestion.DataChanged -= OnDataChanged;
+            }
+        }
+
 
         private void Inventario_Load(object sender, EventArgs e)
         {
@@ -59,6 +93,42 @@ namespace Accesos.GUI
         private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
             FiltrarLocalmente();
+        }
+
+        private void dgvInventario_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+
+            try
+            {    // Suponiendo que estamos validando solo una columna específica, por ejemplo, la primera columna.
+                if (e.ColumnIndex == 8) // Cambiar al índice de la columna que deseas validar.
+                {
+                    if (int.TryParse(e.FormattedValue.ToString(), out int newValue))
+                    {
+                        // Comprobar si el valor es menor que 10.
+                        if (newValue < 10)
+                        {
+                          
+                            dgvInventario.Rows[e.RowIndex].ErrorText = "El valor debe ser mayor o igual a 10.";
+                            NOTIFICADORI.SetError(dgvInventario , $"El valor en la fila {e.RowIndex + 1} y columna {e.ColumnIndex + 1} debe ser mayor o igual a 10.");
+                        }
+                        else
+                        {
+                            // Limpiar el error si la validación pasa.
+                            dgvInventario.Rows[e.RowIndex].ErrorText = string.Empty;
+                            NOTIFICADORI.SetError(dgvInventario, string.Empty);
+                        }
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+
         }
     }
 }

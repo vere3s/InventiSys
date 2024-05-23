@@ -127,7 +127,7 @@
   <data name="toolStripLabel2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAP+NSURBVHhe7P0H
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAP+NSURBVHhe7P0H
         mB3Fta8P+5x77j3/+93nnHPDMbZJBhyObWyMsXE2YHLG5JxBRJGDAQMiZ4SEECLnJBGUABEFAgUQCOUw
         yjnnjDRT3++3aq3q6p4eoTB7Zkuqep73qapV1T17FPqtVd1772+lkkoqqWzsxTn3Tx1Hu2+/ONj95JWh
         7k8vDXOHvjTEnfHyEHfli8Nq735xSO0TLwyt6/zCkLqPnx9S94UwuG7Ec4PrxpJnB9fNI88MqlsMHHl6
@@ -2961,5 +2961,8 @@
   </metadata>
   <metadata name="TotalPrecio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="NOTIFICADORI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1004, 54</value>
   </metadata>
 </root>

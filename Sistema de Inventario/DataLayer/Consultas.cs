@@ -31,6 +31,26 @@ namespace DataLayer
             }
             return Resultado;
         }
+
+        public static DataTable ProductosPocoStock()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = $@"SELECT Nombre, Cantidad
+FROM gestionrestaurantesdb.productos
+WHERE Cantidad < 15 and esPlatillo = 0;
+";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return Resultado;
+        }
         public static DataTable CATEGORIAS()
         {
             DataTable Resultado = new DataTable();

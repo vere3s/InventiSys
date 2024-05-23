@@ -8,17 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Accesos.GUI;
+using DataLayer;
 
 namespace InventiSys.GUI
 {
     public partial class Principal : Form
     {
         SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
+        ProductosGestion productosGestion = new ProductosGestion();
+
 
         public Principal()
         {
             InitializeComponent();
+            DataTable dt = Consultas.ProductosPocoStock();
+            notifyIcon1.Visible = true;
+            notifyIcon1.Icon = SystemIcons.Error;
+            notifyIcon1.BalloonTipTitle = "Bajo Inventario";
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+
+            string lowStockMessage = string.Empty;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string nombreProducto = row["Nombre"].ToString();
+                lowStockMessage += $"El producto {nombreProducto} tiene bajo stock.\n";
+            }
+
+            if (!string.IsNullOrEmpty(lowStockMessage))
+            {
+                notifyIcon1.BalloonTipText = lowStockMessage;
+                notifyIcon1.ShowBalloonTip(30000); // Mostrar por 30 segundos
+            }
+
         }
+
 
         private Form ObtenerFormularioExistente(Type TipoFormulario)
         {
@@ -266,12 +290,16 @@ namespace InventiSys.GUI
             if (FormularioExistente != null)
             {
                 FormularioExistente.Activate(); // Activar la instancia existente
+                if (FormularioExistente is ProductosGestion)
+                {
+                    ((ProductosGestion)FormularioExistente).Cargar();
+                }
             }
             else
             {
-                ProductosGestion f = new ProductosGestion();
-                f.MdiParent = this;
-                f.Show();
+                ProductosGestion productosGestion = new ProductosGestion();
+                productosGestion.MdiParent = this;
+                productosGestion.Show();
             }
 
         }
@@ -357,16 +385,22 @@ namespace InventiSys.GUI
         private void inventarioDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form FormularioExistente = ObtenerFormularioExistente(typeof(Inventario));
-
+            Inventario f;
             if (FormularioExistente != null)
             {
-                FormularioExistente.Activate(); // Activar la instancia existente
+                FormularioExistente.Activate(); 
+                if (FormularioExistente is Inventario)
+                {
+                    ((Inventario)FormularioExistente).Cargar(); 
+                }
             }
             else
             {
-                Inventario f = new Inventario();
+
+                f = new Inventario();
                 f.MdiParent = this;
                 f.Show();
+                
             }
         }
 

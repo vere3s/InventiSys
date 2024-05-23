@@ -196,3 +196,4 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Deb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PermisosEdicion.resources
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.PermisosGestion.resources
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.InventarioIngredientes.resources
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Accesos\obj\Debug\Accesos.GUI.InventarioIngredientes.resources

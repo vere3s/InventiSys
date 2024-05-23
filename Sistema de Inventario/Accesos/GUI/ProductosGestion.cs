@@ -13,6 +13,19 @@ namespace Accesos.GUI
     public partial class ProductosGestion : Form
     {
         BindingSource _DATOS = new BindingSource();
+
+        // Actualizar automaticamente 
+
+        public delegate void DataChangedEventHandler(object sender, EventArgs e);
+        // Declarar el evento
+        public event DataChangedEventHandler DataChanged;
+
+    
+
+        
+        
+
+
         public void Cargar()
         {
             try
@@ -77,6 +90,8 @@ namespace Accesos.GUI
 
                 throw;
             }
+
+            DataChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void ProductosGestion_Load(object sender, EventArgs e)
@@ -97,6 +112,7 @@ namespace Accesos.GUI
                     oProducto.tbNombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                     oProducto.tbPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
                     oProducto.tbCostoUnitario.Text = dgvProductos.CurrentRow.Cells["CostoUnitario"].Value.ToString();
+                    oProducto.tbPlatillo.Text = dgvProductos.CurrentRow.Cells["EsPlatillo"].Value.ToString();
                     oProducto.cbIDCategoria.SelectedValue = dgvProductos.CurrentRow.Cells["IDCategoria"].Value;
                     oProducto.tbCantidad.Text = dgvProductos.CurrentRow.Cells["Cantidad"].Value.ToString();
                     oProducto.ShowDialog();
@@ -108,6 +124,8 @@ namespace Accesos.GUI
                 MessageBox.Show(ex.ToString());
                 throw;
             }
+            DataChanged?.Invoke(this, EventArgs.Empty);
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
