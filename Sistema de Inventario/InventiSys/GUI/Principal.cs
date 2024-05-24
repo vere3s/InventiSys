@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Accesos.GUI;
 using DataLayer;
+using Reportes.GUI;
 
 namespace InventiSys.GUI
 {
@@ -462,5 +463,22 @@ namespace InventiSys.GUI
             }
         }
         #endregion
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            // Verifica si ya existe una instancia del formulario
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Reportes.GUI.crvProductos));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                crvProductos f = new crvProductos();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

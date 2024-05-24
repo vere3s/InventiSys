@@ -10,11 +10,39 @@ using System.Windows.Forms;
 
 namespace Reportes.GUI
 {
-    public partial class VisorProductos : Form
+    public partial class crvProductos : Form
     {
-        public VisorProductos()
+        public crvProductos()
         {
             InitializeComponent();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VisorProductos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Mostrar_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                REP.Productos rdProductos = new REP.Productos();
+                rdProductos.SetDataSource(DataLayer.Consultas.ORDENES_SEGUN_PERIODO_PRODUCTOS(dpInicio.Text, dpFinal.Text));
+                crvProducto.ReportSource = rdProductos;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        
         }
     }
 }

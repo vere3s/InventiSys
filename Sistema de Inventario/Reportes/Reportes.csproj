@@ -127,6 +127,9 @@
     <EmbeddedResource Include="GUI\VisorIngredientes.resx">
       <DependentUpon>VisorIngredientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VisorProductos.resx">
+      <DependentUpon>VisorProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REP\Compras.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Compras.cs</LastGenOutput>
@@ -144,7 +147,12 @@
       <LastGenOutput>Ventas.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{2f449979-e42c-4953-8456-47c882a1c917}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

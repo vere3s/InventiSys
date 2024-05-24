@@ -509,6 +509,50 @@ WHERE EsPlatillo = 0;
             }
             return Resultado;
         }
+
+        public static DataTable ORDENES_SEGUN_PERIODO_PRODUCTOS(string pFechaInicio, string pFechaFinal)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT
+                p.IDProducto, 
+                p.Nombre,
+                p.Precio, 
+                p.CostoUnitario, 
+                cs.FechaCompra,
+			
+	            (p.Cantidad* p.Precio) as TotalPrecio,
+                p.Cantidad as Existencia
+            FROM
+                productos p
+                left join detallepedidocompras dpc on dpc.IDProducto = p.IDProducto
+                left join compras cs on cs.PedidoCompras_IDPedido = dpc.IDPedido
+
+                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+            Where
+                c.EsIngrendiente = 0
+            AND 
+	            CAST(cs.FechaCompra AS DATE) between '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
+            GROUP BY
+                p.IDProducto, 
+                p.Nombre,
+                p.CostoUnitario, 
+                p.IDCategoria, 
+                c.Nombre,
+                cs.FechaCompra
+            ORDER BY
+                p.Nombre ASC;
+            ";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
     }
 
 }
