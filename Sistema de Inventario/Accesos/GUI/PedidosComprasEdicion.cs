@@ -193,7 +193,7 @@ namespace Accesos.GUI
         {
             try
             {
-                if (_IDproveedor >= 0) { return -1; }
+                if (_IDproveedor <= 0) { return -1; }
                 if (_DATOS == null)
                 {
                     return -1;
