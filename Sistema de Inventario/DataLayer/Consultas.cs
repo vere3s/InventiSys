@@ -233,6 +233,7 @@ WHERE EsPlatillo = 0;
                 p.IDProducto,
                 p.Nombre,
                 p.Precio,
+                p.EsPlatillo,
                 p.Cantidad
             FROM
                 productos p

@@ -12,6 +12,7 @@ namespace Accesos.GUI
 {
     public partial class CantidadCosto : Form
     {
+       public int cantidadMaxima;
         public CantidadCosto()
         {
             InitializeComponent();
@@ -26,20 +27,25 @@ namespace Accesos.GUI
                     Notificador.SetError(tbCantidad, "Ingrese un número válido mayor que cero");
                     valido = false;
                 }
-                if (!decimal.TryParse(tbCantidad.Text.Trim(), out decimal costoUnitario) || costoUnitario <= 0)
+                else if (cantidad > cantidadMaxima)
                 {
-                    Notificador.SetError(tbCantidad, "Ingrese un número válido mayor que cero");
+                    Notificador.SetError(tbCantidad, $"La cantidad no puede ser mayor que {cantidadMaxima}");
                     valido = false;
                 }
 
+                if (!decimal.TryParse(tbCosto.Text.Trim(), out decimal costoUnitario) || costoUnitario <= 0)
+                {
+                    Notificador.SetError(tbCosto, "Ingrese un número válido mayor que cero");
+                    valido = false;
+                }
             }
             catch (Exception)
             {
-
                 valido = false;
             }
             return valido;
         }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();

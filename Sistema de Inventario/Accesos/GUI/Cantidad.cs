@@ -12,6 +12,7 @@ namespace Accesos.GUI
 {
     public partial class Cantidad : Form
     {
+        public int _cantidadMaxima = 0;
         public Cantidad()
         {
             InitializeComponent();
@@ -26,11 +27,16 @@ namespace Accesos.GUI
                     Notificador.SetError(tbCantidad, "Ingrese un número válido mayor que cero");
                     valido = false;
                 }
+                else if (cantidad > _cantidadMaxima)
+                {
+                    Notificador.SetError(tbCantidad, $"La cantidad no puede ser mayor que {_cantidadMaxima}");
+                    valido = false;
+                }
 
+              
             }
             catch (Exception)
             {
-
                 valido = false;
             }
             return valido;

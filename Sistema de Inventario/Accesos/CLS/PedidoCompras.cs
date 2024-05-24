@@ -263,35 +263,52 @@ namespace Accesos.CLS
                 Console.WriteLine("Error al eliminar detalles del pedido: " + ex.Message);
             }
         }
-        public void PagarPedido(int idPedido, double precio, int idEmpleado)
+        public int PagarPedido(int idPedido, double precio, int idEmpleado)
         {
             try
             {
                 // Crear una instancia de DBOperacion para ejecutar las consultas
                 DBOperacion operacion = new DBOperacion();
 
-                // Construir la consulta para insertar el pago en la tabla 'compras'
-       
-                StringBuilder consultaCompra = new StringBuilder();
-                consultaCompra.Append("INSERT INTO compras(PedidoCompras_IDPedido, FechaCompra, empleado_IDEmpleado) VALUES (");
-                consultaCompra.Append(idPedido); // Insertamos el ID del pedido
-                consultaCompra.Append(", '");
-                consultaCompra.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora
-                consultaCompra.Append("', ");
-                consultaCompra.Append(idEmpleado); // Insertamos el ID del empleado
-                consultaCompra.Append(");");
+                // Construir la consulta para verificar si ya existe un pago para el idPedido
+                StringBuilder consultaVerificacion = new StringBuilder();
+                consultaVerificacion.Append("SELECT COUNT(*) FROM compras WHERE PedidoCompras_IDPedido = ");
+                consultaVerificacion.Append(idPedido);
+                consultaVerificacion.Append(";");
 
+                // Ejecutar la consulta de verificación
+                int count = operacion.EjecutarSentencia(consultaVerificacion.ToString());
 
-                // Ejecutar la consulta para insertar la compra
-                operacion.EjecutarSentencia(consultaCompra.ToString());
+                // Si no existe un pago previo, proceder con la inserción
+                if (count == 0)
+                {
+                    // Construir la consulta para insertar el pago en la tabla 'compras'
+                    StringBuilder consultaCompra = new StringBuilder();
+                    consultaCompra.Append("INSERT INTO compras(PedidoCompras_IDPedido, FechaCompra, empleado_IDEmpleado) VALUES (");
+                    consultaCompra.Append(idPedido); // Insertamos el ID del pedido
+                    consultaCompra.Append(", '");
+                    consultaCompra.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora
+                    consultaCompra.Append("', ");
+                    consultaCompra.Append(idEmpleado); // Insertamos el ID del empleado
+                    consultaCompra.Append(");");
 
-                // Si la inserción es exitosa, mostrar un mensaje
-                Console.WriteLine("Compra realizada correctamente.");
+                    // Ejecutar la consulta para insertar la compra
+                    return operacion.EjecutarSentencia(consultaCompra.ToString());
+
+                    // Si la inserción es exitosa, mostrar un mensaje
+                  
+                }
+                else
+                {
+                    // Mostrar un mensaje indicando que ya existe un pago para ese pedido
+                    return 0;
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al realizar la compra: " + ex.Message);
+                return -1;
             }
         }
+
     }
 }

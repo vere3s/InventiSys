@@ -29,46 +29,103 @@ namespace Accesos.GUI
         }
         private void AgregarProducto()
         {
-            // Obtener el ID del producto seleccionado en el ListBox
-            int idProductoSeleccionado = (int)listBox1.SelectedValue;
+            // Obtener el producto seleccionado en el ListBox
+            DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
 
-            if (idProductoSeleccionado != 0) // Ajusta según tu caso
+            // Obtener el ID del producto seleccionado en el ListBox
+            int idProductoSeleccionado = (int)productoSeleccionado["IDProducto"];
+
+            // Verificar si el producto ya está en la lista
+            DataRow[] filasExistentes = ((DataTable)_DATOS.DataSource).Select($"IDProducto = {idProductoSeleccionado}");
+
+            // Obtener si el producto es un platillo y sus existencias
+            bool esPlatillo = Convert.ToBoolean(productoSeleccionado["EsPlatillo"]);
+            int existencias = Convert.ToInt32(productoSeleccionado["Cantidad"]);
+
+            // Si es un platillo, no es necesario verificar las existencias
+            if (!esPlatillo || (filasExistentes.Length > 0 && esPlatillo))
             {
-                // Verificar si el producto ya está en la lista
-                DataRow[] filasExistentes = ((DataTable)_DATOS.DataSource).Select($"IDProducto = {idProductoSeleccionado}");
+                // Verificar si la cantidad seleccionada es menor o igual a las existencias disponibles
+                if (filasExistentes.Length > 0 || nCantidad <= existencias)
+                {
+                    listBox1.Text = "";
+
+                    if (filasExistentes.Length > 0)
+                    {
+                        // Si el producto ya está en la lista, incrementar su cantidad en 1
+                        filasExistentes[0]["Cantidad"] = nCantidad > 0 ? nCantidad : Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
+                        filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["Precio"]);
+                    }
+                    else
+                    {
+                        // El producto no está en la lista, agregarlo
+                        Cantidad c = new Cantidad();
+                        c._cantidadMaxima = existencias;
+
+                        if (c.ShowDialog() == DialogResult.OK)
+                        {
+                            nCantidad = Convert.ToInt32(c.tbCantidad.Text);
+                            decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["Precio"]);
+                            string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
+
+                            DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
+                            nuevaFila["IDProducto"] = idProductoSeleccionado;
+                            nuevaFila["Producto"] = nombreProductoSeleccionado;
+                            nuevaFila["Cantidad"] = nCantidad > 0 ? nCantidad : 1;
+                            nuevaFila["Precio"] = precioProductoSeleccionado;
+                            nuevaFila["Importe"] = precioProductoSeleccionado * nCantidad; // Calcular el importe correctamente
+                            ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
+                        }
+                    }
+                }
+                else
+                {
+                    // Manejar la situación donde la cantidad seleccionada es mayor que las existencias disponibles
+                    MessageBox.Show("La cantidad seleccionada supera las existencias disponibles", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else // Si es un platillo, agregarlo sin verificar las existencias
+            {
+                listBox1.Text = "";
 
                 if (filasExistentes.Length > 0)
                 {
-                   
                     // Si el producto ya está en la lista, incrementar su cantidad en 1
-                    filasExistentes[0]["Cantidad"] = nCantidad >0 ?nCantidad:Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
+                    filasExistentes[0]["Cantidad"] = nCantidad > 0 ? nCantidad : Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
                     filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["Precio"]);
                 }
                 else
                 {
-                    // El producto no está en la lista, agregarlo
-                    Cantidad c= new Cantidad();
-                    if(c.ShowDialog() == DialogResult.OK) {
-                        nCantidad = Convert.ToInt32(c.tbCantidad.Text);
-                    DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
+                    // El producto no está en la lista, agregarlo sin verificar existencias
                     decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["Precio"]);
                     string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
+                    Cantidad c = new Cantidad();
+                    c._cantidadMaxima = 9999;
 
-                    DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
-                    nuevaFila["IDProducto"] = idProductoSeleccionado;
-                    nuevaFila["Producto"] = nombreProductoSeleccionado;
-                    nuevaFila["Cantidad"] = nCantidad >0 ?nCantidad :1;
-                    nuevaFila["Precio"] = precioProductoSeleccionado;
-                    nuevaFila["Importe"] = precioProductoSeleccionado; // Por defecto, el importe es el mismo que el precio
-                    ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
+                    if (c.ShowDialog() == DialogResult.OK)
+                    {
+                        nCantidad = Convert.ToInt32(c.tbCantidad.Text);
+                        DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
+                        nuevaFila["IDProducto"] = idProductoSeleccionado;
+                        nuevaFila["Producto"] = nombreProductoSeleccionado;
+                        nuevaFila["Cantidad"] = nCantidad > 0 ? nCantidad : 1;
+                        nuevaFila["Precio"] = precioProductoSeleccionado;
+                        nuevaFila["Importe"] = precioProductoSeleccionado * nCantidad; // Calcular el importe correctamente
+                        ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
                     }
                 }
-                nCantidad = 0;
-                listBox1.Text = "";
-                // Actualizar la vista del DataGridView (dgvPedido) para reflejar los cambios
-                dgvPedido.Refresh(); // O cualquier método de actualización necesario
             }
+
+            nCantidad = 0;
+            listBox1.Text = "";
+            // Actualizar la vista del DataGridView (dgvPedido) para reflejar los cambios
+            dgvPedido.Refresh(); // O cualquier método de actualización necesario
         }
+
+
+
+
+
 
 
         private void PedidosVentasEdicion_Load(object sender, EventArgs e)
@@ -114,15 +171,14 @@ namespace Accesos.GUI
                 if (String.IsNullOrEmpty(tbFiltro.Text))
                 {
                     listBox1.Visible = false;
-                    _DATOS.RemoveFilter();
+                    _DATOSProductos.RemoveFilter();
                 }
                 else
                 {
                     listBox1.Visible = true;
-                    _DATOS.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
+                    _DATOSProductos.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
                 }
-                dgvPedido.AutoGenerateColumns = false;
-                dgvPedido.DataSource = _DATOS;
+             
             }
             catch (Exception)
             {
@@ -159,6 +215,10 @@ namespace Accesos.GUI
             {
                 if (String.IsNullOrEmpty(txtCliente)) { return -1; }
                 if (_DATOS.Count == 0) { return -1; }
+               if(_ID >= 0)
+                {
+                    return _ID;
+                }
                 // Crear una lista para almacenar los detalles del pedido como objetos Item
                 List<Item> detallesPedido = new List<Item>();
 
@@ -279,13 +339,20 @@ namespace Accesos.GUI
           
       
             if (_DATOS.Count == 0) { return; }
-            int _idPedido = InsertarPedido(); if (_idPedido > 0)
-            {
-                PedidoVentas pedidoVentas = new PedidoVentas();
-                SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
+            if (_ID <= 0) { _ID = InsertarPedido(); }
+    
 
-                pedidoVentas.pagarPedido(_idPedido, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
-            }
+
+               
+                if (_ID > 0)
+                {
+                    PedidoVentas pedidoVentas = new PedidoVentas();
+                    SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
+
+                   int pedidopagado = pedidoVentas.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+
+                }
+            
 
         }
 
@@ -293,7 +360,7 @@ namespace Accesos.GUI
         {
             if (_ID <= 0)
             {
-                InsertarPedido();
+               _ID = InsertarPedido();
             }
         }
 

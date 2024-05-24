@@ -9,6 +9,7 @@ namespace Accesos.CLS
     using System;
     using System.Collections.Generic;
     using System.Data;
+    using System.Globalization;
     using System.Text;
     using DataLayer; // Ajusta el namespace según la estructura de tu proyecto
     using Modelos;
@@ -28,36 +29,59 @@ namespace Accesos.CLS
 
             // Método para insertar el pedido en la base de datos
             // Método para insertar el pedido en la base de datos
-            public void pagarPedido(int idPedido, double precio, int idEmpleado)
+            public int PagarPedido(int idPedido, double precio, int idEmpleado)
             {
                 try
                 {
                     // Crear una instancia de DBOperacion para ejecutar las consultas
                     DBOperacion operacion = new DBOperacion();
 
-                    // Construir la consulta para insertar la venta en la tabla 'ventas'
-                    StringBuilder consultaVenta = new StringBuilder();
-                    consultaVenta.Append("INSERT INTO ventas(IDPedido, Precio, FechaVenta, IDEmpleado) VALUES(");
-                    consultaVenta.Append(idPedido);
-                    consultaVenta.Append(",");
-                    consultaVenta.Append(precio.ToString("0.00")); // Formateamos el precio a dos decimales
-                    consultaVenta.Append(",'");
-                    consultaVenta.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora
-                    consultaVenta.Append("',");
-                    consultaVenta.Append(idEmpleado);
-                    consultaVenta.Append(");");
+                    // Construir la consulta para verificar si ya existe un pago para el idPedido
+                    StringBuilder consultaVerificacion = new StringBuilder();
+                    consultaVerificacion.Append("SELECT COUNT(*) FROM ventas WHERE IDPedido = ");
+                    consultaVerificacion.Append(idPedido);
+                    consultaVerificacion.Append(";");
 
-                    // Ejecutar la consulta para insertar la venta
-                    operacion.EjecutarSentencia(consultaVenta.ToString());
+                    // Ejecutar la consulta de verificación
+                    int count = operacion.EjecutarSentencia(consultaVerificacion.ToString());
 
-                    // Si la inserción es exitosa, mostrar un mensaje
-                    Console.WriteLine("Venta realizada correctamente.");
+                    // Si no existe un pago previo, proceder con la inserción
+                    if (count == 0)
+                    {
+                        // Construir la consulta para insertar la venta en la tabla 'ventas'
+                        StringBuilder consultaVenta = new StringBuilder();
+                        consultaVenta.Append("INSERT INTO ventas(IDPedido, Precio, FechaVenta, IDEmpleado) VALUES(");
+                        consultaVenta.Append(idPedido);
+                        consultaVenta.Append(",");
+                        consultaVenta.Append(precio.ToString("F2", CultureInfo.InvariantCulture)); // Formateamos el precio a dos decimales con punto decimal
+                        consultaVenta.Append(",'");
+                        consultaVenta.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora
+                        consultaVenta.Append("',");
+                        consultaVenta.Append(idEmpleado);
+                        consultaVenta.Append(");");
+
+                        // Ejecutar la consulta para insertar la venta
+                        operacion.EjecutarSentencia(consultaVenta.ToString());
+
+                        // Si la inserción es exitosa, mostrar un mensaje y retornar 1
+             
+                        return 1;
+                    }
+                    else
+                    {
+                        // Mostrar un mensaje indicando que ya existe un pago para ese pedido y retornar 0
+                        
+                        return 0;
+                    }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error al realizar la venta: " + ex.Message);
+                    // Mostrar un mensaje de error y retornar -1
+               
+                    return -1;
                 }
             }
+
             public int Insertar(string cliente, List<Item> detallesPedido, string Comentario)
             {
                 try

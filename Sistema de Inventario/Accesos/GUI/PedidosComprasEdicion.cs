@@ -26,50 +26,59 @@ namespace Accesos.GUI
         private void AgregarProducto()
         {
             // Obtener el ID del producto seleccionado en el ListBox
+            int selectedIndex = listBox1.SelectedIndex;
             int idProductoSeleccionado = (int)listBox1.SelectedValue;
-
+            int existencias = Convert.ToInt32(((DataRowView)listBox1.Items[selectedIndex])["Cantidad"]);
 
             if (idProductoSeleccionado != 0) // Ajusta según tu caso
             {
                 // Verificar si el producto ya está en la lista
                 DataRow[] filasExistentes = ((DataTable)_DATOS.DataSource).Select($"IDProducto = {idProductoSeleccionado}");
-                listBox1.Text = "";
-                if (filasExistentes.Length > 0)
+
+                // Verificar si la cantidad seleccionada es menor o igual a las existencias disponibles
+                if (filasExistentes.Length > 0 || nCantidad <= existencias)
                 {
-                    // Si el producto ya está en la lista, incrementar su cantidad en 1
-                    filasExistentes[0]["Cantidad"] = nCantidad > 0? nCantidad: Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
-                    filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["CostoUnitario"]);
+                    listBox1.Text = "";
+
+                    if (filasExistentes.Length > 0)
+                    {
+                        // Si el producto ya está en la lista, incrementar su cantidad en 1
+                        filasExistentes[0]["Cantidad"] = nCantidad > 0 ? nCantidad : Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
+                        filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["CostoUnitario"]);
+                    }
+                    else
+                    {
+                        CantidadCosto c = new CantidadCosto();
+
+                        c.cantidadMaxima = existencias;
+                        DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
+                        decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["CostoUnitario"]);
+                        string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
+                        c.tbCantidad.Text = "1";
+                        c.tbCosto.Text = precioProductoSeleccionado.ToString();
+                        if (c.ShowDialog() == DialogResult.OK)
+                        {
+                            nCantidad = Convert.ToInt32(c.tbCantidad.Text);
+                            nCosto = Convert.ToDecimal(c.tbCosto.Text);
+                        }
+                        DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
+                        nuevaFila["IDProducto"] = idProductoSeleccionado;
+                        nuevaFila["Producto"] = nombreProductoSeleccionado;
+                        nuevaFila["Cantidad"] = nCantidad > 0 ? nCantidad : 1;
+                        nuevaFila["CostoUnitario"] = nCosto > 0 ? nCosto : precioProductoSeleccionado;
+                        nuevaFila["Importe"] = Convert.ToDecimal(nuevaFila["Cantidad"]) * Convert.ToDecimal(nuevaFila["CostoUnitario"]);
+                        ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
+                    }
                 }
                 else
                 {
-                    CantidadCosto c = new CantidadCosto();
-
-                    // El producto no está en la lista, agregarlo
-                    DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
-                    decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["CostoUnitario"]);
-                    string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
-                    c.tbCantidad.Text = "1";
-                    c.tbCosto.Text = precioProductoSeleccionado.ToString();
-                    if(c.ShowDialog() == DialogResult.OK)
-                    {
-                        nCantidad =Convert.ToInt32( c.tbCantidad.Text);
-                        nCosto = Convert.ToDecimal(c.tbCosto.Text);
-                    }
-                    DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
-                    nuevaFila["IDProducto"] = idProductoSeleccionado;
-                    nuevaFila["Producto"] = nombreProductoSeleccionado;
-                    nuevaFila["Cantidad"] = nCantidad > 0 ? nCantidad : 1;
-                    nuevaFila["CostoUnitario"] = nCosto > 0 ? nCosto : precioProductoSeleccionado;
-                    nuevaFila["Importe"] = precioProductoSeleccionado; // Por defecto, el importe es el mismo que el precio
-                    ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
+                    // Maneja la situación donde la cantidad seleccionada es mayor que las existencias disponibles
                 }
-
             }
             listBox1.Text = "";
         }
 
-
-        private void PedidosVentasEdicion_Load(object sender, EventArgs e)
+            private void PedidosVentasEdicion_Load(object sender, EventArgs e)
         {
             Cargar();
         }
@@ -276,12 +285,14 @@ namespace Accesos.GUI
             {
                 _ID = InsertarPedido();
             }
-          
+
+            if (_ID >= 1){
+
                 PedidoCompras pedidoCompras = new PedidoCompras();
                 SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
                 Console.WriteLine($"ID del Pedido: {_ID}, Total de Productos: {ObtenerTotalProductos()}, ID del Empleado: {oSesion.empleado.IDEmpleado}");
 
-                pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+                pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado); }
             
 
         }
