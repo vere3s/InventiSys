@@ -22,8 +22,8 @@ namespace Reportes.GUI
             try
             {
                 REP.Ventas rdProductos = new REP.Ventas();
-                rdProductos.SetDataSource(DataLayer.Consultas.ORDENES_SEGUN_PERIODO_PRODUCTOS(dpInicio.Text, dpFinal.Text));
-                crvVisorVentas.ReportSource = rdProductos;
+               // rdProductos.SetDataSource(DataLayer.Consultas.(dpInicio.Text, dpFinal.Text));
+                //crvVisorVentas.ReportSource = rdProductos;
 
             }
             catch (Exception)

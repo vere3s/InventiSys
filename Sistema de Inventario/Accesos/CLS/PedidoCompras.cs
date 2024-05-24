@@ -278,7 +278,8 @@ namespace Accesos.CLS
                 consultaVerificacion.Append(";");
 
                 // Ejecutar la consulta de verificación
-                int count = operacion.EjecutarSentencia(consultaVerificacion.ToString());
+                int count = Convert.ToInt32(operacion.Consultar(consultaVerificacion.ToString()).Rows[0][0]);
+
 
                 // Si no existe un pago previo, proceder con la inserción
                 if (count == 0)
