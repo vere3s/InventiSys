@@ -72,6 +72,7 @@ namespace Accesos.GUI
             PedidosComprasEdicion pedidosComprasEdicion = new PedidosComprasEdicion();
             pedidosComprasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
             pedidosComprasEdicion._IDproveedor = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdProveedor"].Value);
+
             pedidosComprasEdicion.ShowDialog();
             Cargar();
         }

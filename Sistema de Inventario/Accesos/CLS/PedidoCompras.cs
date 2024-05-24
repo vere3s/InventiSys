@@ -67,7 +67,7 @@ namespace Accesos.CLS
             }
         }
 
-        public int Actualizar(int idPedido, int nuevoProveedor, List<Item> nuevosDetallesPedido)
+        public int Actualizar(int idPedido, int nuevoProveedor, List<Item> nuevosDetallesPedido,string nuevoComentario)
         {
             try
             {
@@ -78,7 +78,10 @@ namespace Accesos.CLS
                 StringBuilder consultaActualizacionProveedor = new StringBuilder();
                 consultaActualizacionProveedor.Append("UPDATE pedidocompras SET IDProveedor = ");
                 consultaActualizacionProveedor.Append(nuevoProveedor);
-                consultaActualizacionProveedor.Append(" WHERE IDPedido = ");
+                consultaActualizacionProveedor.Append(", ");
+                consultaActualizacionProveedor.Append("Comentarios = '");
+                consultaActualizacionProveedor.Append(nuevoComentario?.Replace("'", "''") ?? "");
+                consultaActualizacionProveedor.Append("' WHERE IDPedido = ");
                 consultaActualizacionProveedor.Append(idPedido);
                 consultaActualizacionProveedor.Append(";");
 

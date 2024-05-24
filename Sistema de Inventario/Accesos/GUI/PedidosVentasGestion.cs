@@ -65,15 +65,14 @@ namespace Accesos.GUI
             Cargar();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             PedidosVentasEdicion pedidosVentasEdicion = new PedidosVentasEdicion();
             pedidosVentasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
+            pedidosVentasEdicion.txtCliente = dgvPedidosVentas.SelectedRows[0].Cells["Cliente"].Value.ToString();
+            pedidosVentasEdicion.txtComentario = dgvPedidosVentas.SelectedRows[0].Cells["Comentarios"].Value.ToString();
             pedidosVentasEdicion.ShowDialog();
             Cargar();
         }
@@ -109,9 +108,8 @@ namespace Accesos.GUI
 
         }
 
-        private void dgvPedidosVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+    
 
-        }
+       
     }
 }

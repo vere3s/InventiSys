@@ -19,7 +19,8 @@ namespace Accesos.GUI
         BindingSource _DATOS = new BindingSource();
         BindingSource _DATOSProductos = new BindingSource();
         public int _ID = -2;
-        string txtCliente = "";
+        public string txtCliente = "";
+        public string txtComentario  = "";
         public PedidosVentasEdicion()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace Accesos.GUI
 
                 if (filasExistentes.Length > 0)
                 {
+                   
                     // Si el producto ya está en la lista, incrementar su cantidad en 1
                     filasExistentes[0]["Cantidad"] = Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
                     filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["Precio"]);
@@ -56,7 +58,7 @@ namespace Accesos.GUI
                     nuevaFila["Importe"] = precioProductoSeleccionado; // Por defecto, el importe es el mismo que el precio
                     ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
                 }
-
+                listBox1.Text = "";
                 // Actualizar la vista del DataGridView (dgvPedido) para reflejar los cambios
                 dgvPedido.Refresh(); // O cualquier método de actualización necesario
             }
@@ -85,7 +87,7 @@ namespace Accesos.GUI
                 btnModificar.Visible = true;
                 btnEnPedido.Visible = false;
                 _DATOS.DataSource = Consultas.DetallePedidoVentas(_ID);
-                MessageBox.Show(_DATOS.Count.ToString());
+              
             }
             // Establecer la tabla de pedidos como origen de datos para el BindingSource
 
@@ -150,7 +152,7 @@ namespace Accesos.GUI
 
             {
                 if (String.IsNullOrEmpty(txtCliente)) { return -1; }
-
+                if (_DATOS.Count == 0) { return -1; }
                 // Crear una lista para almacenar los detalles del pedido como objetos Item
                 List<Item> detallesPedido = new List<Item>();
 
@@ -169,7 +171,7 @@ namespace Accesos.GUI
                 }
                 PedidoVentas pedidoVentas = new PedidoVentas();
                 // Llamar a la función de la capa de datos para insertar el pedido
-                int idPedidoInsertado = pedidoVentas.Insertar(txtCliente, detallesPedido);
+                int idPedidoInsertado = pedidoVentas.Insertar(txtCliente, detallesPedido,txtComentario);
 
                 // Verificar si se insertó correctamente
                 if (idPedidoInsertado > 0)
@@ -196,7 +198,10 @@ namespace Accesos.GUI
         {
             try
             {
-                if(_ID <= 0)
+                
+             
+                if (_DATOS.Count == 0) { return -1; }
+                if (_ID <= 0)
                 {
                     return -1;
                 }
@@ -241,7 +246,7 @@ namespace Accesos.GUI
                // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
 
                 // Update the order with the new details
-                int idPedidoActualizado = pedidoVentas.Actualizar(_ID, txtCliente, detallesPedido);
+                int idPedidoActualizado = pedidoVentas.Actualizar(_ID, txtCliente, detallesPedido,"Actualizado",txtComentario);
 
                 // Check if the update was successful
                 if (idPedidoActualizado > 0)
@@ -265,6 +270,9 @@ namespace Accesos.GUI
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+          
+      
+            if (_DATOS.Count == 0) { return; }
             int _idPedido = InsertarPedido(); if (_idPedido > 0)
             {
                 PedidoVentas pedidoVentas = new PedidoVentas();
@@ -309,20 +317,22 @@ namespace Accesos.GUI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+
+            if (_DATOS.Count == 0) { return; }
             ActualizarPedido();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
             ClienteComentario f = new ClienteComentario();
-            if (f.ShowDialog() == DialogResult.OK) { 
+            f.rtbComentario.Text = txtComentario;
+            f.tbCliente.Text = txtCliente;
+            if (f.ShowDialog() == DialogResult.OK) {
+                txtComentario = f.rtbComentario.Text.ToString();
             txtCliente = f.tbCliente.Text;
             }
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

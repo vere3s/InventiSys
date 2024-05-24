@@ -219,7 +219,6 @@
             this.dgvPedidosVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedidosVentas.Size = new System.Drawing.Size(961, 387);
             this.dgvPedidosVentas.TabIndex = 14;
-            this.dgvPedidosVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidosVentas_CellContentClick);
             // 
             // IDPedido
             // 
@@ -300,6 +299,7 @@
             this.Name = "PedidosVentasGestion";
             this.Padding = new System.Windows.Forms.Padding(53, 49, 53, 49);
             this.Text = "PedidosVentasGestion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PedidosVentasGestion_Load);
             this.TextChanged += new System.EventHandler(this.PedidosVentasGestion_TextChanged);
             this.statusStrip1.ResumeLayout(false);

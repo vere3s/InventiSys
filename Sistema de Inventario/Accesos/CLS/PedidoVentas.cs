@@ -58,7 +58,7 @@ namespace Accesos.CLS
                     Console.WriteLine("Error al realizar la venta: " + ex.Message);
                 }
             }
-            public int Insertar(string cliente, List<Item> detallesPedido)
+            public int Insertar(string cliente, List<Item> detallesPedido, string Comentario)
             {
                 try
                 {
@@ -67,9 +67,13 @@ namespace Accesos.CLS
 
                     // Construir la consulta para insertar el pedido en la tabla 'pedidoventas'
                     StringBuilder consultaPedido = new StringBuilder();
-                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente,Estado) VALUES('");
-                    consultaPedido.Append(cliente);
-                    consultaPedido.Append("','Pendiente');");
+                   
+                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente,Estado,Comentarios) VALUES('");
+                    consultaPedido.Append(cliente.Replace("'", "''")); // Escapar apóstrofes en el cliente
+                    consultaPedido.Append("','Pendiente','");
+                    consultaPedido.Append(Comentario.Replace("'", "''")); // Escapar apóstrofes en el comentario
+                    consultaPedido.Append("');");
+
 
                     int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido.ToString());
                     // Ejecutar la consulta para insertar el pedido
@@ -120,25 +124,33 @@ namespace Accesos.CLS
                     return -1;
                 }
             }
-            public int Actualizar(int idPedido, string nuevoCliente, List<Item> nuevosDetallesPedido)
+            public int Actualizar(int idPedido, string nuevoCliente, List<Item> nuevosDetallesPedido,string nuevoEstado,string nuevoComentario)
             {
                 try
                 {
                     // Crear una instancia de DBOperacion para ejecutar las consultas
                     DBOperacion operacion = new DBOperacion();
 
-         
+
 
                     // Construir la consulta para actualizar el cliente del pedido
-                    StringBuilder consultaActualizacionCliente = new StringBuilder();
-                    consultaActualizacionCliente.Append("UPDATE pedidoventas SET Cliente = '");
-                    consultaActualizacionCliente.Append(nuevoCliente);
-                    consultaActualizacionCliente.Append("' WHERE IDPedido = ");
-                    consultaActualizacionCliente.Append(idPedido);
-                    consultaActualizacionCliente.Append(";");
+                    StringBuilder consultaActualizacion = new StringBuilder();
+                    consultaActualizacion.Append("UPDATE pedidoventas SET ");
+                    consultaActualizacion.Append("Cliente = '");
+                    consultaActualizacion.Append(nuevoCliente?.Replace("'", "''") ?? ""); // Check for null before replacing
+                    consultaActualizacion.Append("', ");
+                    consultaActualizacion.Append("Estado = '");
+                    consultaActualizacion.Append(nuevoEstado?.Replace("'", "''") ?? ""); // Check for null before replacing
+                    consultaActualizacion.Append("', ");
+                    consultaActualizacion.Append("Comentarios = '");
+                    consultaActualizacion.Append(nuevoComentario?.Replace("'", "''") ?? ""); // Check for null before replacing
+                    consultaActualizacion.Append("' WHERE IDPedido = ");
+                    consultaActualizacion.Append(idPedido.ToString()); // Convert idPedido to string
+                    consultaActualizacion.Append(";");
+
 
                     // Ejecutar la consulta de actualización del cliente
-                    operacion.EjecutarSentencia(consultaActualizacionCliente.ToString());
+                    operacion.EjecutarSentencia(consultaActualizacion.ToString());
 
                     // Eliminar los detalles del pedido que ya no están en la lista de nuevos detalles
                     StringBuilder consultaEliminacionDetalles = new StringBuilder();

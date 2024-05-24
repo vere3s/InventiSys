@@ -15,6 +15,7 @@ namespace Accesos.GUI
         BindingSource _DATOSProductos = new BindingSource();
         public int _ID = -2;
        public int _IDproveedor = -2;
+        public string txtComentario = "";
         public PedidosComprasEdicion()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace Accesos.GUI
             {
                 // Verificar si el producto ya está en la lista
                 DataRow[] filasExistentes = ((DataTable)_DATOS.DataSource).Select($"IDProducto = {idProductoSeleccionado}");
-                
+                listBox1.Text = "";
                 if (filasExistentes.Length > 0)
                 {
                     // Si el producto ya está en la lista, incrementar su cantidad en 1
@@ -147,6 +148,7 @@ namespace Accesos.GUI
             {
                 if (_IDproveedor <= 1) { return -1; }
                 if (_ID >= 1) { return _ID; }
+                if (_DATOS.Count == 0) { return -1; }
 
                 // Crear una lista para almacenar los detalles del pedido como objetos Item
                 List<Item> detallesPedido = new List<Item>();
@@ -194,6 +196,7 @@ namespace Accesos.GUI
             try
             {
                 if (_IDproveedor <= 0) { return -1; }
+                if(_DATOS.Count == 0) { return -1; }
                 if (_DATOS == null)
                 {
                     return -1;
@@ -234,7 +237,7 @@ namespace Accesos.GUI
                // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
 
                 // Update the order with the new details
-                int idPedidoActualizado = pedidoCompras.Actualizar(_ID,_IDproveedor, detallesPedido);
+                int idPedidoActualizado = pedidoCompras.Actualizar(_ID,_IDproveedor, detallesPedido,txtComentario);
 
                 // Check if the update was successful
                 if (idPedidoActualizado > 0)
@@ -258,7 +261,8 @@ namespace Accesos.GUI
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            if(_ID <= 0)
+            if (_DATOS.Count == 0) { return; }
+            if (_ID <= 0)
             {
                 _ID = InsertarPedido();
             }
@@ -317,11 +321,12 @@ namespace Accesos.GUI
 
             f.cbProveedor.SelectedValue = _IDproveedor;
             // Método para obtener el IdProveedor de la fila actual
-
+            f.rtbComentario.Text = txtComentario;
             
             if (f.ShowDialog() == DialogResult.OK) {
+                txtComentario = f.rtbComentario.Text;
                 _IDproveedor = Convert.ToInt32(f.cbProveedor.SelectedValue);
-                MessageBox.Show(_IDproveedor.ToString());
+               
             }
         }
 

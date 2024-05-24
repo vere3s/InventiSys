@@ -311,6 +311,7 @@
             this.Name = "PedidosComprasGestion";
             this.Padding = new System.Windows.Forms.Padding(53, 49, 53, 49);
             this.Text = "Pedidos Compras Gestion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PedidosVentasGestion_Load);
             this.TextChanged += new System.EventHandler(this.PedidosVentasGestion_TextChanged);
             this.statusStrip1.ResumeLayout(false);

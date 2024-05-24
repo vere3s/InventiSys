@@ -47,12 +47,12 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCliente = new System.Windows.Forms.ToolStripButton();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.IDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
@@ -243,6 +243,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPedido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPedido.EnableHeadersVisualStyles = false;
             this.dgvPedido.Location = new System.Drawing.Point(53, 89);
             this.dgvPedido.Name = "dgvPedido";
@@ -251,18 +252,6 @@
             this.dgvPedido.RowTemplate.Height = 24;
             this.dgvPedido.Size = new System.Drawing.Size(961, 387);
             this.dgvPedido.TabIndex = 17;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(747, 89);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(264, 116);
-            this.listBox1.TabIndex = 18;
-            this.listBox1.Visible = false;
-            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             // 
             // IDProducto
             // 
@@ -273,7 +262,7 @@
             this.IDProducto.Name = "IDProducto";
             this.IDProducto.ReadOnly = true;
             this.IDProducto.Visible = false;
-            this.IDProducto.Width = 148;
+            this.IDProducto.Width = 125;
             // 
             // Producto
             // 
@@ -302,7 +291,7 @@
             this.CostoUnitario.MinimumWidth = 6;
             this.CostoUnitario.Name = "CostoUnitario";
             this.CostoUnitario.ReadOnly = true;
-            this.CostoUnitario.Width = 178;
+            this.CostoUnitario.Width = 163;
             // 
             // Importe
             // 
@@ -313,6 +302,18 @@
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
             this.Importe.Width = 113;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(747, 89);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(264, 116);
+            this.listBox1.TabIndex = 18;
+            this.listBox1.Visible = false;
+            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             // 
             // PedidosComprasEdicion
             // 
@@ -326,6 +327,7 @@
             this.Name = "PedidosComprasEdicion";
             this.Padding = new System.Windows.Forms.Padding(53, 49, 53, 49);
             this.Text = "Pedidos Compras Edicion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PedidosVentasEdicion_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
