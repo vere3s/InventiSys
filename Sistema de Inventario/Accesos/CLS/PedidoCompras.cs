@@ -25,7 +25,7 @@ namespace Accesos.CLS
                 DBOperacion operacion = new DBOperacion();
 
                 // Construir la consulta para insertar el pedido en la tabla 'pedidocompras'
-                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, Estado) VALUES ('{idProveedor}', 'Pendiente');";
+                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, Estado) VALUES ({idProveedor}, 'Pendiente');";
 
 
 

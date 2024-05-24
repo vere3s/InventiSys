@@ -309,8 +309,8 @@ WHERE EsPlatillo = 0;
                 pc.IDProveedor,
                 pc.FechaPedido,
                 pc.Estado,
-                pc.Comentarios
-			
+                pc.Comentarios,
+			    c.IDCompras
             ORDER BY
                 pc.FechaPedido DESC;";
             DBOperacion operacion = new DBOperacion();
