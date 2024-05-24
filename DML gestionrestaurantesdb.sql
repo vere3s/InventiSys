@@ -24,44 +24,76 @@ set Contraseña = MD5('12345')
 where IDUsuario = 2;
 DELIMITER //
 
-CREATE TRIGGER actualizar_inventario_detallepedidocompras
-AFTER INSERT ON detallepedidocompras
+CREATE TRIGGER after_detallepedidoventas_insert_update 
+AFTER INSERT ON gestionrestaurantesdb.detallepedidoventas
 FOR EACH ROW
 BEGIN
-    -- Actualizar la cantidad disponible en el inventario
-    UPDATE productos 
-    SET Cantidad = Cantidad + NEW.Cantidad 
-    WHERE IDProducto = NEW.IDProducto;
-END;
-//
-
-DELIMITER ;
-
-DELIMITER //
-
-CREATE TRIGGER actualizar_inventario_detallepedidocompras
-AFTER INSERT ON detallepedidocompras
-FOR EACH ROW
-BEGIN
-    DECLARE nueva_cantidad INT;
+    DECLARE diff INT;
     
-    -- Calcular la nueva cantidad disponible en el inventario después de la compra
-    SET nueva_cantidad = (SELECT Cantidad + NEW.Cantidad FROM productos WHERE IDProducto = NEW.IDProducto);
-
-    -- Verificar si la nueva cantidad resultante es positiva
-    IF nueva_cantidad >= 0 THEN
-        -- Actualizar la cantidad disponible en el inventario
-        UPDATE productos 
-        SET Cantidad = nueva_cantidad
-        WHERE IDProducto = NEW.IDProducto;
-    ELSE
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'La cantidad disponible en el inventario no puede ser negativa';
+    -- Obtener la diferencia entre la cantidad actual y la anterior
+    SELECT NEW.Cantidad - COALESCE(OLD.Cantidad, 0) INTO diff;
+    
+    -- Actualizar el inventario solo si la cantidad no es para un platillo
+    IF (SELECT EsPlatillo FROM gestionrestaurantesdb.productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
+        -- Si la diferencia es positiva, significa que se agregaron productos
+        IF diff > 0 THEN
+            UPDATE gestionrestaurantesdb.productos 
+            SET Cantidad = Cantidad + diff
+            WHERE IDProducto = NEW.IDProducto;
+        -- Si la diferencia es negativa, significa que se eliminaron productos
+        ELSE
+            UPDATE gestionrestaurantesdb.productos 
+            SET Cantidad = Cantidad - ABS(diff)
+            WHERE IDProducto = NEW.IDProducto;
+        END IF;
     END IF;
 END;
 //
 
 DELIMITER ;
+
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE TRIGGER after_detallepedidocompras_insert_update 
+AFTER INSERT ON gestionrestaurantesdb.detallepedidocompras
+FOR EACH ROW
+BEGIN
+    DECLARE diff INT;
+    
+    -- Obtener la diferencia entre la cantidad actual y la anterior
+    SELECT NEW.Cantidad - COALESCE(OLD.Cantidad, 0) INTO diff;
+    
+    -- Actualizar el inventario solo si la cantidad no es para un platillo
+    IF (SELECT EsPlatillo FROM gestionrestaurantesdb.productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
+        -- Si la diferencia es positiva, significa que se recibieron más productos
+        IF diff > 0 THEN
+            UPDATE gestionrestaurantesdb.productos 
+            SET Cantidad = Cantidad + diff,
+                CostoUnitario = NEW.Precio -- Actualizar el costo unitario con el nuevo precio y cantidad recibida
+            WHERE IDProducto = NEW.IDProducto;
+        -- Si la diferencia es negativa, significa que se recibieron menos productos
+        ELSE
+            UPDATE gestionrestaurantesdb.productos 
+            SET Cantidad = Cantidad - ABS(diff),
+                CostoUnitario = NEW.Precio-- Actualizar el costo unitario con el nuevo precio y cantidad recibida
+            WHERE IDProducto = NEW.IDProducto;
+        END IF;
+    END IF;
+    
+    -- Actualizar el precio de compra en la tabla compras
+    UPDATE gestionrestaurantesdb.compras
+    SET Comentario = NEW.Precio
+    WHERE PedidoCompras_IDPedido = NEW.IDPedido;
+    
+END;
+//
+
+DELIMITER ;
+
 DELIMITER //
 
 CREATE TRIGGER validar_usuario_y_empleado
