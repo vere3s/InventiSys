@@ -196,6 +196,10 @@ namespace Accesos.GUI
         {
             try
             {
+                if(_ID <= 0)
+                {
+                    return -1;
+                }
                 if (String.IsNullOrEmpty(txtCliente)) { return -1; }
                 if (_DATOS == null)
                 {

@@ -51,6 +51,25 @@ WHERE Cantidad < 15 and esPlatillo = 0;
             }
             return Resultado;
         }
+        public static DataTable ProductosNoContables()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT IDProducto, Nombre, Precio, CostoUnitario, EsPlatillo, IDCategoria, Cantidad
+FROM gestionrestaurantesdb.productos
+WHERE EsPlatillo = 0;
+
+";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
         public static DataTable CATEGORIAS()
         {
             DataTable Resultado = new DataTable();
@@ -427,7 +446,7 @@ WHERE Cantidad < 15 and esPlatillo = 0;
                 p.IDProducto,
                 p.Nombre AS Producto,
                 dpv.Cantidad,
-                dpv.Precio,
+                dpv.Precio as CostoUnitario,
                 (dpv.Cantidad * dpv.Precio) AS Importe
             FROM 
                 detallepedidoCompras dpv

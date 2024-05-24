@@ -35,20 +35,20 @@ namespace Accesos.GUI
                 {
                     // Si el producto ya está en la lista, incrementar su cantidad en 1
                     filasExistentes[0]["Cantidad"] = Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
-                    filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["Precio"]);
+                    filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["CostoUnitario"]);
                 }
                 else
                 {
                     // El producto no está en la lista, agregarlo
                     DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
-                    decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["Precio"]);
+                    decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["CostoUnitario"]);
                     string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
 
                     DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
                     nuevaFila["IDProducto"] = idProductoSeleccionado;
                     nuevaFila["Producto"] = nombreProductoSeleccionado;
                     nuevaFila["Cantidad"] = 1;
-                    nuevaFila["Precio"] = precioProductoSeleccionado;
+                    nuevaFila["CostoUnitario"] = precioProductoSeleccionado;
                     nuevaFila["Importe"] = precioProductoSeleccionado; // Por defecto, el importe es el mismo que el precio
                     ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
                 }
@@ -69,7 +69,7 @@ namespace Accesos.GUI
             tablaPedidos.Columns.Add("IDProducto", typeof(int));
             tablaPedidos.Columns.Add("Producto", typeof(string));
             tablaPedidos.Columns.Add("Cantidad", typeof(int));
-            tablaPedidos.Columns.Add("Precio", typeof(decimal));
+            tablaPedidos.Columns.Add("CostoUnitario", typeof(decimal));
             tablaPedidos.Columns.Add("Importe", typeof(decimal));
             tablaPedidos.Columns.Add("IDDetallePedido", typeof(int));
             DataSet _dataSet = new DataSet();
@@ -89,7 +89,7 @@ namespace Accesos.GUI
 
             dgvPedido.AutoGenerateColumns = false;
             dgvPedido.DataSource = _DATOS.DataSource;
-            _DATOSProductos.DataSource = Consultas.ProductosNoIngredientes();
+            _DATOSProductos.DataSource = Consultas.ProductosNoContables();
             listBox1.DataSource = _DATOSProductos.DataSource;
             listBox1.DisplayMember = "Nombre";
             listBox1.ValueMember = "IDProducto";
@@ -157,7 +157,7 @@ namespace Accesos.GUI
                     // Obtener los datos del producto de la fila actual
                     int idProducto = Convert.ToInt32(item["IDProducto"]);
                     string nombreProducto = item["Producto"].ToString();
-                    decimal precioProducto = Convert.ToDecimal(item["Precio"]);
+                    decimal precioProducto = Convert.ToDecimal(item["CostoUnitario"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
                    // int idDetallpedido = Convert.ToInt32(item["IDDetallePedido"]);
                     // Crear un objeto Item con los datos del producto y agregarlo a la lista
@@ -209,7 +209,7 @@ namespace Accesos.GUI
                     // Obtain the data of the product from the current row
                     int idProducto = Convert.ToInt32(item["IDProducto"]);
                    
-                    decimal precioProducto = Convert.ToDecimal(item["Precio"]);
+                    decimal precioProducto = Convert.ToDecimal(item["CostoUnitario"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
                     int idDetallePedido = -1;
                     try
