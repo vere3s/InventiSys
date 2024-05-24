@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAT\dtsReporteCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsReporteCompras.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\dtsReporteIngredientes.cs">
       <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
     </Compile>
@@ -60,17 +65,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsReporteProductos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\dtsReporteVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsReporteVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VisorCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorCompras.Designer.cs">
+      <DependentUpon>VisorCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\VisorIngredientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\VisorIngredientes.Designer.cs">
       <DependentUpon>VisorIngredientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\VisorProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorProductos.Designer.cs">
+      <DependentUpon>VisorProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VisorVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorVentas.Designer.cs">
+      <DependentUpon>VisorVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REP\Compras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Compras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REP\Ingredientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ingredientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Productos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Productos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Ventas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ventas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -78,9 +124,21 @@
     <EmbeddedResource Include="GUI\VisorIngredientes.resx">
       <DependentUpon>VisorIngredientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REP\Compras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Compras.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REP\Ingredientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Ingredientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Productos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Productos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Ventas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Ventas.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
@@ -88,6 +146,17 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DAT\dtsReporteCompras.xsc">
+      <DependentUpon>dtsReporteCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsReporteCompras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsReporteCompras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\dtsReporteCompras.xss">
+      <DependentUpon>dtsReporteCompras.xsd</DependentUpon>
+    </None>
     <None Include="DAT\dtsReporteIngredientes.xsc">
       <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
     </None>
@@ -109,6 +178,17 @@
     </None>
     <None Include="DAT\dtsReporteProductos.xss">
       <DependentUpon>dtsReporteProductos.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsReporteVentas.xsc">
+      <DependentUpon>dtsReporteVentas.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsReporteVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsReporteVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\dtsReporteVentas.xss">
+      <DependentUpon>dtsReporteVentas.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
