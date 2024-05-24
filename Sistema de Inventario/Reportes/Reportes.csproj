@@ -47,6 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAT\dtsReporteIngredientes.cs">
+      <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\dtsReporteIngredientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\dtsReporteProductos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsReporteProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUI\VisorIngredientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +83,33 @@
       <LastGenOutput>Ingredientes.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAT\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAT\dtsReporteIngredientes.xsc">
+      <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsReporteIngredientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsReporteIngredientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\dtsReporteIngredientes.xss">
+      <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsReporteProductos.xsc">
+      <DependentUpon>dtsReporteProductos.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsReporteProductos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsReporteProductos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\dtsReporteProductos.xss">
+      <DependentUpon>dtsReporteProductos.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
