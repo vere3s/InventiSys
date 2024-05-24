@@ -293,7 +293,18 @@ namespace Accesos.CLS
                     // Crear una instancia de DBOperacion para ejecutar las consultas
                     DBOperacion operacion = new DBOperacion();
 
+                    // Consultar si hay algún pago asociado con el pedido
+                    string consultaPago = "SELECT COUNT(*) FROM pagos WHERE IDPedido = " + idPedido;
+                    int count = Convert.ToInt32(operacion.EjecutarSentencia(consultaPago));
 
+                    // Si hay algún pago asociado, no se permite eliminar
+                    if (count > 0)
+                    {
+                        Console.WriteLine("No se puede eliminar el pedido porque ya tiene un pago asociado.");
+                        return false;
+                    }
+
+                    // Si no hay pagos asociados, procedemos con la eliminación
 
                     // Construir la consulta para eliminar los detalles del pedido
                     StringBuilder consultaEliminacionDetalles = new StringBuilder();
@@ -322,6 +333,7 @@ namespace Accesos.CLS
                     return false;
                 }
             }
+
 
             public void EliminarProductosNoPresentesEnPedido(int idPedido, List<Item> nuevosDetallesPedido)
             {

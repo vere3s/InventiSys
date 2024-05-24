@@ -18,8 +18,8 @@
               <xs:element name="ID_x0020_Venta" msprop:Generator_ColumnPropNameInRow="ID_Venta" msprop:Generator_ColumnPropNameInTable="ID_VentaColumn" msprop:Generator_ColumnVarNameInTable="columnID_Venta" msprop:Generator_UserColumnName="ID Venta" type="xs:int" minOccurs="0" />
               <xs:element name="Cliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
               <xs:element name="Fecha_x0020_de_x0020_Venta" msprop:Generator_ColumnPropNameInRow="Fecha_de_Venta" msprop:Generator_ColumnPropNameInTable="Fecha_de_VentaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha_de_Venta" msprop:Generator_UserColumnName="Fecha de Venta" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Empleado" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_ColumnVarNameInTable="columnEmpleado" msprop:Generator_UserColumnName="Empleado" type="xs:string" minOccurs="0" />
               <xs:element name="Precio_x0020_Total" msprop:Generator_ColumnPropNameInRow="Precio_Total" msprop:Generator_ColumnPropNameInTable="Precio_TotalColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio_Total" msprop:Generator_UserColumnName="Precio Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Empleado" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_ColumnVarNameInTable="columnEmpleado" msprop:Generator_UserColumnName="Empleado" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

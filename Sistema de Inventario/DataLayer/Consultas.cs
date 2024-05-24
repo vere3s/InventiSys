@@ -563,6 +563,37 @@ namespace DataLayer
             }
             return Resultado;
         }
-    }
 
+        public static DataTable VENTAS_SEGUN_PERIODO_PRODUCTOS(string pFechaInicio, string pFechaFinal)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = $@"SELECT
+    v.IDVentas AS 'ID Venta',
+    pv.Cliente AS 'Cliente',
+    v.FechaVenta AS 'Fecha de Venta',
+    v.Precio AS 'Precio Total',
+    e.Nombre AS 'Empleado'
+FROM
+    gestionrestaurantesdb.ventas v
+INNER JOIN
+    gestionrestaurantesdb.empleados e ON v.IDEmpleado = e.IDEmpleado
+INNER JOIN
+    gestionrestaurantesdb.pedidoventas pv ON v.IDPedido = pv.IDPedido
+WHERE
+    CAST(v.FechaVenta AS DATE) BETWEEN '{pFechaInicio}' AND '{pFechaFinal}'
+ORDER BY
+    v.FechaVenta DESC;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+    }
 }
+

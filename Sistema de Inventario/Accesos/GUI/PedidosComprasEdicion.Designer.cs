@@ -83,7 +83,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(140, 17);
             this.toolStripStatusLabel1.Text = "Registros encontrados";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+      
             // 
             // lbRegistros
             // 

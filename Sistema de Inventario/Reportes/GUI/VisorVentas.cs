@@ -16,5 +16,21 @@ namespace Reportes.GUI
         {
             InitializeComponent();
         }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                REP.Ventas rdProductos = new REP.Ventas();
+                rdProductos.SetDataSource(DataLayer.Consultas.ORDENES_SEGUN_PERIODO_PRODUCTOS(dpInicio.Text, dpFinal.Text));
+                crvVisorVentas.ReportSource = rdProductos;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

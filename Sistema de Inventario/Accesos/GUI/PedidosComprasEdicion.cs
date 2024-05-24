@@ -14,10 +14,10 @@ namespace Accesos.GUI
         BindingSource _DATOS = new BindingSource();
         BindingSource _DATOSProductos = new BindingSource();
         public int _ID = -2;
-       public int _IDproveedor = -2;
+        public int _IDproveedor = -2;
         public string txtComentario = "";
         int nCantidad;
-       decimal nCosto;
+        decimal nCosto;
         public PedidosComprasEdicion()
         {
             InitializeComponent();
@@ -78,7 +78,7 @@ namespace Accesos.GUI
             listBox1.Text = "";
         }
 
-            private void PedidosVentasEdicion_Load(object sender, EventArgs e)
+        private void PedidosVentasEdicion_Load(object sender, EventArgs e)
         {
             Cargar();
         }
@@ -100,7 +100,7 @@ namespace Accesos.GUI
                 btnModificar.Visible = true;
                 btnEnPedido.Visible = false;
                 _DATOS.DataSource = Consultas.DetallePedidoCompras(_ID);
-                
+
 
             }
             // Establecer la tabla de pedidos como origen de datos para el BindingSource
@@ -159,14 +159,21 @@ namespace Accesos.GUI
 
             return totalProductos;
         }
+        #region Insertar Pedido
+        private void btnEnPedido_Click(object sender, EventArgs e)
+        {
 
+            InsertarPedido();
+
+
+        }
         private int InsertarPedido()
         {
             try
 
             {
                 if (_IDproveedor <= 0) { return -1; }
-                if (_ID >= 1) { return _ID; }
+                if (_ID > 0) { return _ID; }
                 if (_DATOS.Count == 0) { return -1; }
 
                 // Crear una lista para almacenar los detalles del pedido como objetos Item
@@ -180,21 +187,23 @@ namespace Accesos.GUI
                     string nombreProducto = item["Producto"].ToString();
                     decimal precioProducto = Convert.ToDecimal(item["CostoUnitario"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
-                   // int idDetallpedido = Convert.ToInt32(item["IDDetallePedido"]);
+                    // int idDetallpedido = Convert.ToInt32(item["IDDetallePedido"]);
                     // Crear un objeto Item con los datos del producto y agregarlo a la lista
                     Item itemPedido = new Item(idProducto, precioProducto, cantidad);
                     detallesPedido.Add(itemPedido);
                 }
                 PedidoCompras pedidoCompras = new PedidoCompras();
                 // Llamar a la función de la capa de datos para insertar el pedido
-                int idPedidoInsertado = pedidoCompras.Insertar(_IDproveedor, detallesPedido);
+                int idPedidoInsertado = pedidoCompras.Insertar(_IDproveedor, detallesPedido, txtComentario);
 
                 // Verificar si se insertó correctamente
                 if (idPedidoInsertado > 0)
                 {
                     MessageBox.Show("Pedido insertado correctamente. ID del pedido: " + idPedidoInsertado);
                     // Aquí puedes realizar cualquier otra acción necesaria después de inserta2r el pedido
-
+                    _ID = idPedidoInsertado;
+                    btnModificar.Visible = true;
+                    btnEnPedido.Visible = false;
                     return idPedidoInsertado;
                 }
                 else
@@ -210,12 +219,19 @@ namespace Accesos.GUI
                 return -10;
             }
         }
+        #endregion
+
+        #region Actualizar Pedido
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ActualizarPedido();
+        }
         private int ActualizarPedido()
         {
             try
             {
                 if (_IDproveedor <= 0) { return -1; }
-                if(_DATOS.Count == 0) { return -1; }
+                if (_DATOS.Count == 0) { return -1; }
                 if (_DATOS == null)
                 {
                     return -1;
@@ -223,14 +239,14 @@ namespace Accesos.GUI
                 // Create a list to store the details of the order as Item objects
                 List<Item> detallesPedido = new List<Item>();
                 PedidoCompras pedidoCompras = new PedidoCompras();
-                
+
 
                 // Iterate over the data in _DATOS to create the Item objects
                 foreach (DataRowView item in _DATOS)
                 {
                     // Obtain the data of the product from the current row
                     int idProducto = Convert.ToInt32(item["IDProducto"]);
-                   
+
                     decimal precioProducto = Convert.ToDecimal(item["CostoUnitario"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
                     int idDetallePedido = -1;
@@ -243,20 +259,20 @@ namespace Accesos.GUI
 
                         idDetallePedido = -1;
                     }
-                        
-                    
-                    // Add the product to the list of details
-                    detallesPedido.Add(new Item(idProducto, precioProducto,cantidad,idDetallePedido));
 
-                  
+
+                    // Add the product to the list of details
+                    detallesPedido.Add(new Item(idProducto, precioProducto, cantidad, idDetallePedido));
+
+
                 }
 
                 // Remove products from the order that are not present in the DataGridView
-               
-               // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
+
+                // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
 
                 // Update the order with the new details
-                int idPedidoActualizado = pedidoCompras.Actualizar(_ID,_IDproveedor, detallesPedido,txtComentario);
+                int idPedidoActualizado = pedidoCompras.Actualizar(_ID, _IDproveedor, detallesPedido, txtComentario);
 
                 // Check if the update was successful
                 if (idPedidoActualizado > 0)
@@ -276,36 +292,51 @@ namespace Accesos.GUI
                 return -1;
             }
         }
+        #endregion
 
-
+        #region Pagar Pedido
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            if (_DATOS.Count == 0) { return; }
-            if (_ID <= 0)
+            // Verifica si hay elementos en la lista de datos
+            if (_DATOS.Count == 0)
             {
-                _ID = InsertarPedido();
+                return; // Sale del método si no hay datos
             }
 
-            if (_ID >= 1){
-
+            // Verifica si el ID es válido
+            if (_ID <= 0)
+            {
+                InsertarPedido(); // Inserta un nuevo pedido si el ID es menor o igual a cero
+            }
+            else
+            {
+                // El ID es mayor que cero, por lo que se asume que ya existe un pedido
                 PedidoCompras pedidoCompras = new PedidoCompras();
                 SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
-                Console.WriteLine($"ID del Pedido: {_ID}, Total de Productos: {ObtenerTotalProductos()}, ID del Empleado: {oSesion.empleado.IDEmpleado}");
 
-                pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado); }
-            
+                // Realiza el pago del pedido
+                int idPago = pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
 
-        }
-
-        private void btnEnPedido_Click(object sender, EventArgs e)
-        {
-            if (_ID <= 0)
-            {
-               _ID = InsertarPedido();
-               
+                // Manejo de resultados del pago
+                if (idPago > 0)
+                {
+                    MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (idPago == 0)
+                {
+                    MessageBox.Show("Ya existe un pago para este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al procesar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+        #endregion
 
+
+
+        #region Eliminar
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             // Obtener la fila seleccionada en el DataGridView
@@ -328,14 +359,11 @@ namespace Accesos.GUI
                 MessageBox.Show("Seleccione una fila para eliminar.");
             }
         }
+        #endregion
 
 
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            ActualizarPedido();
-        }
-
+        #region Cliente
         private void btnCliente_Click(object sender, EventArgs e)
         {
             ProveedorComentario f = new ProveedorComentario();
@@ -343,28 +371,27 @@ namespace Accesos.GUI
             f.cbProveedor.SelectedValue = _IDproveedor;
             // Método para obtener el IdProveedor de la fila actual
             f.rtbComentario.Text = txtComentario;
-            
-            if (f.ShowDialog() == DialogResult.OK) {
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
                 txtComentario = f.rtbComentario.Text;
                 _IDproveedor = Convert.ToInt32(f.cbProveedor.SelectedValue);
-               
+
             }
         }
+        #endregion
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnCantidad_Click(object sender, EventArgs e)
         {
             CantidadCosto c = new CantidadCosto();
             c.tbCantidad.Text = nCantidad.ToString();
             c.tbCosto.Text = nCosto.ToString();
-            if(c.ShowDialog() == DialogResult.OK)
+            if (c.ShowDialog() == DialogResult.OK)
             {
-                nCantidad =  Convert.ToInt32(c.tbCantidad.Text);
-                nCosto = Convert.ToDecimal(c.tbCosto.Text); 
+                nCantidad = Convert.ToInt32(c.tbCantidad.Text);
+                nCosto = Convert.ToDecimal(c.tbCosto.Text);
             }
         }
     }

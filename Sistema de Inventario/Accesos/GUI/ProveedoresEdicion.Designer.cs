@@ -54,14 +54,17 @@
             // 
             // tbIDProveedor
             // 
+            this.tbIDProveedor.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbIDProveedor.Location = new System.Drawing.Point(125, 33);
             this.tbIDProveedor.Name = "tbIDProveedor";
+            this.tbIDProveedor.ReadOnly = true;
             this.tbIDProveedor.Size = new System.Drawing.Size(113, 22);
             this.tbIDProveedor.TabIndex = 1;
             this.tbIDProveedor.Visible = false;
             // 
             // tbNombre
             // 
+            this.tbNombre.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbNombre.Location = new System.Drawing.Point(125, 90);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(272, 22);
@@ -78,6 +81,7 @@
             // 
             // tbTelefono
             // 
+            this.tbTelefono.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbTelefono.Location = new System.Drawing.Point(125, 145);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(272, 22);
@@ -94,6 +98,7 @@
             // 
             // tbEmail
             // 
+            this.tbEmail.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbEmail.Location = new System.Drawing.Point(125, 212);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(272, 22);
@@ -137,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(432, 365);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -152,7 +158,6 @@
             this.Name = "ProveedoresEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProveedoresEdicion";
-          //  this.Load += new System.EventHandler(this.ProveedoresEdicion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
