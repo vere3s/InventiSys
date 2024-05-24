@@ -468,6 +468,47 @@ WHERE EsPlatillo = 0;
             }
             return Resultado;
         }
+        public static DataTable ORDENES_SEGUN_PERIODO_INGREDIENTES(string pFechaInicio, string pFechaFinal)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = @"SELECT DISTINCT
+                p.IDProducto, 
+                p.Nombre,
+                p.CostoUnitario, 
+                p.IDCategoria, 
+                COALESCE(MAX(cs.FechaCompra), 'N/A') AS FechaCompra,
+                c.Nombre AS NombreC,
+                (p.Cantidad * p.CostoUnitario) AS 'Total costo',
+                p.Cantidad AS Existencia
+            FROM
+                productos p
+                LEFT JOIN detallepedidocompras dpc ON dpc.IDProducto = p.IDProducto
+                LEFT JOIN compras cs ON cs.PedidoCompras_IDPedido = dpc.IDPedido
+                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+            WHERE 
+                c.EsIngrendiente = 1
+            AND 
+	            CAST(cs.FechaCompra AS DATE) between '" + pFechaInicio + "' AND '" + pFechaFinal +@"'
+            GROUP BY
+                p.IDProducto, 
+                p.Nombre,
+                p.CostoUnitario, 
+                p.IDCategoria, 
+                c.Nombre
+            ORDER BY
+                p.Nombre ASC;
+            ";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
     }
 
 }

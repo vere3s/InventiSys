@@ -34,8 +34,10 @@
             this.dpFinal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dpInicio = new System.Windows.Forms.DateTimePicker();
+            this.crvVisorIngredientes = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +54,10 @@
             this.splitContainer1.Panel1.Controls.Add(this.dpFinal);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.dpInicio);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.crvVisorIngredientes);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 0;
@@ -101,16 +107,29 @@
             this.dpInicio.Size = new System.Drawing.Size(106, 20);
             this.dpInicio.TabIndex = 5;
             // 
-            // Visor
+            // crvVisorIngredientes
+            // 
+            this.crvVisorIngredientes.ActiveViewIndex = -1;
+            this.crvVisorIngredientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvVisorIngredientes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvVisorIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvVisorIngredientes.Location = new System.Drawing.Point(0, 0);
+            this.crvVisorIngredientes.Name = "crvVisorIngredientes";
+            this.crvVisorIngredientes.Size = new System.Drawing.Size(600, 450);
+            this.crvVisorIngredientes.TabIndex = 0;
+            this.crvVisorIngredientes.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // VisorIngredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Visor";
+            this.Name = "VisorIngredientes";
             this.Text = "Visor";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -125,5 +144,6 @@
         private System.Windows.Forms.DateTimePicker dpFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dpInicio;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvVisorIngredientes;
     }
 }
