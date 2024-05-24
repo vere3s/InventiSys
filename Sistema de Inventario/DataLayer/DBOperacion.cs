@@ -40,7 +40,8 @@ namespace DataLayer
 
         public Int32 EjecutarSentenciaYObtenerID(String pSentencia)
         {
-            Int32 idGenerado = -1;
+            Int32 idGenerado = -1; // Valor por defecto si no se puede obtener el ID
+
             MySqlCommand Comando = new MySqlCommand();
             try
             {
@@ -49,11 +50,9 @@ namespace DataLayer
                     Comando.Connection = base._CONEXION;
                     Comando.CommandType = System.Data.CommandType.Text;
                     Comando.CommandText = pSentencia;
-
-                    // Ejecutar la sentencia
                     Comando.ExecuteNonQuery();
 
-                    // Obtener el ID generado por la última inserción
+                    // Obtener el ID generado por la sentencia SQL
                     Comando.CommandText = "SELECT LAST_INSERT_ID();";
                     idGenerado = Convert.ToInt32(Comando.ExecuteScalar());
                 }
@@ -61,12 +60,11 @@ namespace DataLayer
             catch (Exception ex)
             {
                 Console.WriteLine("Error al ejecutar sentencia: " + ex.Message);
-                throw;
+                idGenerado = -1;
             }
             finally
             {
-                if (base._CONEXION.State == ConnectionState.Open)
-                    base._CONEXION.Close();
+                Desconectar();
             }
             return idGenerado;
         }

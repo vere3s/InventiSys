@@ -25,12 +25,12 @@ namespace Accesos.CLS
                 DBOperacion operacion = new DBOperacion();
 
                 // Construir la consulta para insertar el pedido en la tabla 'pedidocompras'
-                StringBuilder consultaPedido = new StringBuilder();
-                consultaPedido.Append("INSERT INTO pedidocompras(IDProveedor, Estado) VALUES(");
-                consultaPedido.Append(idProveedor);
-                consultaPedido.Append(",'Pendiente');");
+                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, Estado) VALUES ('{idProveedor}', 'Pendiente');";
 
-                int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido.ToString());
+
+
+                int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido);
+               
 
                 // Verificar si se pudo obtener el ID del pedido
                 if (idPedido > 0)
@@ -38,16 +38,18 @@ namespace Accesos.CLS
                     foreach (Item item in detallesPedido)
                     {
                         // Construir la consulta para insertar el detalle del pedido
+                
                         StringBuilder consultaDetalle = new StringBuilder();
-                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio) VALUES(");
-                        consultaDetalle.Append(idPedido);
-                        consultaDetalle.Append(",");
-                        consultaDetalle.Append(item.IDProducto);
-                        consultaDetalle.Append(",");
-                        consultaDetalle.Append(item.Cantidad);
-                        consultaDetalle.Append(",");
-                        consultaDetalle.Append(item.Precio);
+                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio) VALUES (");
+                        consultaDetalle.Append(idPedido); // IDPedido es numérico, no necesita comillas
+                        consultaDetalle.Append(", ");
+                        consultaDetalle.Append(item.IDProducto); // IDProducto es numérico, no necesita comillas
+                        consultaDetalle.Append(", ");
+                        consultaDetalle.Append(item.Cantidad); // Cantidad es numérico, no necesita comillas
+                        consultaDetalle.Append(", ");
+                        consultaDetalle.Append(item.Precio); // Precio es numérico, no necesita comillas
                         consultaDetalle.Append(");");
+
 
                         // Ejecutar la consulta para insertar el detalle del pedido
                         operacion.EjecutarSentencia(consultaDetalle.ToString());
@@ -266,16 +268,16 @@ namespace Accesos.CLS
                 DBOperacion operacion = new DBOperacion();
 
                 // Construir la consulta para insertar el pago en la tabla 'compras'
+       
                 StringBuilder consultaCompra = new StringBuilder();
-                consultaCompra.Append("INSERT INTO compras(IDPedido, Precio, FechaCompra, IDEmpleado) VALUES(");
-                consultaCompra.Append(idPedido);
-                consultaCompra.Append(",");
-                consultaCompra.Append(precio.ToString("0.00")); // Formateamos el precio a dos decimales
-                consultaCompra.Append(",'");
+                consultaCompra.Append("INSERT INTO compras(PedidoCompras_IDPedido, FechaCompra, empleado_IDEmpleado) VALUES (");
+                consultaCompra.Append(idPedido); // Insertamos el ID del pedido
+                consultaCompra.Append(", '");
                 consultaCompra.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora
-                consultaCompra.Append("',");
-                consultaCompra.Append(idEmpleado);
+                consultaCompra.Append("', ");
+                consultaCompra.Append(idEmpleado); // Insertamos el ID del empleado
                 consultaCompra.Append(");");
+
 
                 // Ejecutar la consulta para insertar la compra
                 operacion.EjecutarSentencia(consultaCompra.ToString());

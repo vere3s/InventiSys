@@ -1,15 +1,9 @@
 ﻿using Accesos.CLS;
-using Accesos.CLS.Accesos.CLS;
 using DataLayer;
 using Modelos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Accesos.GUI
@@ -20,7 +14,7 @@ namespace Accesos.GUI
         BindingSource _DATOS = new BindingSource();
         BindingSource _DATOSProductos = new BindingSource();
         public int _ID = -2;
-        int proveedorID = -2;
+       public int _IDproveedor = -2;
         public PedidosComprasEdicion()
         {
             InitializeComponent();
@@ -85,9 +79,9 @@ namespace Accesos.GUI
             {
                 btnModificar.Visible = true;
                 btnEnPedido.Visible = false;
-                _DATOS.DataSource = Consultas.DetallePedidoVentas(_ID);
-                proveedorID = Convert.ToInt32(Consultas.PedidosCompras(_ID).Columns["Nombre"].ColumnName.ToString());
-       
+                _DATOS.DataSource = Consultas.DetallePedidoCompras(_ID);
+                
+
             }
             // Establecer la tabla de pedidos como origen de datos para el BindingSource
 
@@ -108,12 +102,12 @@ namespace Accesos.GUI
                 if (String.IsNullOrEmpty(tbFiltro.Text))
                 {
                     listBox1.Visible = false;
-                    _DATOS.RemoveFilter();
+                    _DATOSProductos.RemoveFilter();
                 }
                 else
                 {
                     listBox1.Visible = true;
-                    _DATOS.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
+                    _DATOSProductos.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
                 }
                 dgvPedido.AutoGenerateColumns = false;
                 dgvPedido.DataSource = _DATOS;
@@ -151,7 +145,8 @@ namespace Accesos.GUI
             try
 
             {
-                if (proveedorID <= -1) { return -1; }
+                if (_IDproveedor <= 1) { return -1; }
+                if (_ID >= 1) { return _ID; }
 
                 // Crear una lista para almacenar los detalles del pedido como objetos Item
                 List<Item> detallesPedido = new List<Item>();
@@ -169,36 +164,36 @@ namespace Accesos.GUI
                     Item itemPedido = new Item(idProducto, precioProducto, cantidad);
                     detallesPedido.Add(itemPedido);
                 }
-                PedidoCompras pedidoVentas = new PedidoCompras();
+                PedidoCompras pedidoCompras = new PedidoCompras();
                 // Llamar a la función de la capa de datos para insertar el pedido
-                int idPedidoInsertado = pedidoVentas.Insertar(proveedorID, detallesPedido);
+                int idPedidoInsertado = pedidoCompras.Insertar(_IDproveedor, detallesPedido);
 
                 // Verificar si se insertó correctamente
                 if (idPedidoInsertado > 0)
                 {
                     MessageBox.Show("Pedido insertado correctamente. ID del pedido: " + idPedidoInsertado);
-                    // Aquí puedes realizar cualquier otra acción necesaria después de insertar el pedido
+                    // Aquí puedes realizar cualquier otra acción necesaria después de inserta2r el pedido
 
                     return idPedidoInsertado;
                 }
                 else
                 {
                     MessageBox.Show("Error al insertar el pedido.");
-                    return -1;
+                    return -2;
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
-                return -1;
+                MessageBox.Show("Error: " + ex.ToString());
+                return -10;
             }
         }
         private int ActualizarPedido()
         {
             try
             {
-                if (proveedorID <= -1) { return -1; }
+                if (_IDproveedor >= 0) { return -1; }
                 if (_DATOS == null)
                 {
                     return -1;
@@ -239,7 +234,7 @@ namespace Accesos.GUI
                // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
 
                 // Update the order with the new details
-                int idPedidoActualizado = pedidoCompras.Actualizar(_ID,proveedorID, detallesPedido);
+                int idPedidoActualizado = pedidoCompras.Actualizar(_ID,_IDproveedor, detallesPedido);
 
                 // Check if the update was successful
                 if (idPedidoActualizado > 0)
@@ -263,13 +258,17 @@ namespace Accesos.GUI
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            int _idPedido = InsertarPedido(); if (_idPedido > 0)
+            if(_ID <= 0)
             {
+                _ID = InsertarPedido();
+            }
+          
                 PedidoCompras pedidoCompras = new PedidoCompras();
                 SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
+                Console.WriteLine($"ID del Pedido: {_ID}, Total de Productos: {ObtenerTotalProductos()}, ID del Empleado: {oSesion.empleado.IDEmpleado}");
 
-                pedidoCompras.PagarPedido(_idPedido, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
-            }
+                pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+            
 
         }
 
@@ -277,7 +276,8 @@ namespace Accesos.GUI
         {
             if (_ID <= 0)
             {
-                InsertarPedido();
+               _ID = InsertarPedido();
+               
             }
         }
 
@@ -305,6 +305,7 @@ namespace Accesos.GUI
         }
 
 
+
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ActualizarPedido();
@@ -314,20 +315,13 @@ namespace Accesos.GUI
         {
             ProveedorComentario f = new ProveedorComentario();
 
-            int IdProveedor = GetIdProveedor(_DATOS);
-            f.cbProveedor.SelectedValue = IdProveedor;
+            f.cbProveedor.SelectedValue = _IDproveedor;
             // Método para obtener el IdProveedor de la fila actual
-            int GetIdProveedor(BindingSource bindingSource)
-            {
-                if (bindingSource.Current is DataRowView currentRowView)
-                {
-                    DataRow currentRow = currentRowView.Row;
-                    return (int)currentRow["IdProveedor"];
-                }
-                return -1; // o lanza una excepción si prefieres
-            }
+
+            
             if (f.ShowDialog() == DialogResult.OK) {
-                Cargar();
+                _IDproveedor = Convert.ToInt32(f.cbProveedor.SelectedValue);
+                MessageBox.Show(_IDproveedor.ToString());
             }
         }
 

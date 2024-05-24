@@ -39,8 +39,9 @@ namespace Accesos.GUI
         private void ProveedorComentario_Load(object sender, EventArgs e)
         {
             cbProveedor.DataSource = Consultas.PROVEEDORES();
+
             cbProveedor.DisplayMember = "Nombre";
-            cbProveedor.SelectedValue = "IDProveedor";
+            cbProveedor.ValueMember = "IDProveedor";
         }
     }
 }

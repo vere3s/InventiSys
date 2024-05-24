@@ -270,29 +270,30 @@ WHERE Cantidad < 15 and esPlatillo = 0;
             String Consulta = @"SELECT
                 DISTINCT pc.IDPedido,
                 pc.IDProveedor,
+                ps.Nombre,
                 pc.FechaPedido,
                 pc.Estado,
                 pc.Comentarios,
             ps.Nombre,
                 SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
                 CASE 
-                    WHEN v.IDVentas IS NOT NULL THEN 'Pagado'
+                    WHEN c.IDCompras IS NOT NULL THEN 'Pagado'
                     ELSE 'No Pagado'
                 END AS 'EstadoPago'
             FROM
                 pedidocompras pc
                 LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
-                LEFT JOIN ventas v ON pc.IDPedido = v.IDPedido
+                LEFT JOIN Compras c ON pc.IDPedido = c.PedidoCompras_IDPedido
                 LEFT JOIN Proveedores ps on pc.IDProveedor = ps.IDProveedor
             GROUP BY
-                pv.IDPedido,
-                pv.IDProveedor,
-                pv.FechaPedido,
-                pv.Estado,
-                pv.Comentarios,
-                v.IDVentas
+                pc.IDPedido,
+                pc.IDProveedor,
+                pc.FechaPedido,
+                pc.Estado,
+                pc.Comentarios
+			
             ORDER BY
-                pv.FechaPedido DESC;";
+                pc.FechaPedido DESC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -417,6 +418,35 @@ WHERE Cantidad < 15 and esPlatillo = 0;
             return Resultado;
         }
 
+        public static DataTable DetallePedidoCompras(int id)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = $@"SELECT 
+             
+       
+                p.IDProducto,
+                p.Nombre AS Producto,
+                dpv.Cantidad,
+                dpv.Precio,
+                (dpv.Cantidad * dpv.Precio) AS Importe
+            FROM 
+                detallepedidoCompras dpv
+            INNER JOIN 
+                productos p ON dpv.IDProducto = p.IDProducto
+            WHERE 
+                dpv.IDPedido = '{id}';";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+                Console.WriteLine("el id es" + id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return Resultado;
+        }
     }
 
 }

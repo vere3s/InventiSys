@@ -22,9 +22,10 @@ namespace Accesos.GUI
         }
         private void Cargar()
         {
-            _DATOS.DataSource = Consultas.PedidosVentas();
-            dgvPedidosVentas.DataSource = _DATOS.DataSource;
+            _DATOS.DataSource = Consultas.PedidosCompras();
             dgvPedidosVentas.AutoGenerateColumns = false;
+            dgvPedidosVentas.DataSource = _DATOS.DataSource;
+           
 
         }
         private void FiltrarLocalmente()
@@ -37,7 +38,7 @@ namespace Accesos.GUI
                 }
                 else
                 {
-                    _DATOS.Filter = "Cliente like '%" + tbFiltro.Text + "%'";
+                    _DATOS.Filter = "Proveedor like '%" + tbFiltro.Text + "%'";
                 }
                 dgvPedidosVentas.AutoGenerateColumns = false;
                 dgvPedidosVentas.DataSource = _DATOS;
@@ -59,21 +60,19 @@ namespace Accesos.GUI
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            PedidosVentasEdicion pedidosVentasEdicion = new PedidosVentasEdicion();
-            pedidosVentasEdicion.ShowDialog();
+            PedidosComprasEdicion pedidosComprasEdicion = new PedidosComprasEdicion();
+            pedidosComprasEdicion.ShowDialog();
             Cargar();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            PedidosVentasEdicion pedidosVentasEdicion = new PedidosVentasEdicion();
-            pedidosVentasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
-            pedidosVentasEdicion.ShowDialog();
+            PedidosComprasEdicion pedidosComprasEdicion = new PedidosComprasEdicion();
+            pedidosComprasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
+            pedidosComprasEdicion._IDproveedor = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdProveedor"].Value);
+            pedidosComprasEdicion.ShowDialog();
             Cargar();
         }
 

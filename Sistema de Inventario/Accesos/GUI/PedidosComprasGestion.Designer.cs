@@ -45,6 +45,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dgvPedidosVentas = new System.Windows.Forms.DataGridView();
             this.IDPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,6 +196,7 @@
             this.dgvPedidosVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidosVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPedido,
+            this.IDProveedor,
             this.EstadoPago,
             this.Proveedor,
             this.Total,
@@ -229,6 +231,16 @@
             this.IDPedido.Name = "IDPedido";
             this.IDPedido.ReadOnly = true;
             this.IDPedido.Width = 90;
+            // 
+            // IDProveedor
+            // 
+            this.IDProveedor.DataPropertyName = "IDProveedor";
+            this.IDProveedor.HeaderText = "IDProveedor";
+            this.IDProveedor.MinimumWidth = 6;
+            this.IDProveedor.Name = "IDProveedor";
+            this.IDProveedor.ReadOnly = true;
+            this.IDProveedor.Visible = false;
+            this.IDProveedor.Width = 125;
             // 
             // EstadoPago
             // 
@@ -298,7 +310,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "PedidosComprasGestion";
             this.Padding = new System.Windows.Forms.Padding(53, 49, 53, 49);
-            this.Text = "PedidosVentasGestion";
+            this.Text = "Pedidos Compras Gestion";
             this.Load += new System.EventHandler(this.PedidosVentasGestion_Load);
             this.TextChanged += new System.EventHandler(this.PedidosVentasGestion_TextChanged);
             this.statusStrip1.ResumeLayout(false);
@@ -325,6 +337,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridView dgvPedidosVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;

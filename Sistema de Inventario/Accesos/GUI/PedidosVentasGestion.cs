@@ -108,5 +108,10 @@ namespace Accesos.GUI
 
 
         }
+
+        private void dgvPedidosVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

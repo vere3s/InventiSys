@@ -219,6 +219,7 @@
             this.dgvPedidosVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedidosVentas.Size = new System.Drawing.Size(961, 387);
             this.dgvPedidosVentas.TabIndex = 14;
+            this.dgvPedidosVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidosVentas_CellContentClick);
             // 
             // IDPedido
             // 

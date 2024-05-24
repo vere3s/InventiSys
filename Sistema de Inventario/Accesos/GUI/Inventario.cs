@@ -98,36 +98,17 @@ namespace Accesos.GUI
         private void dgvInventario_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
 
-            try
-            {    // Suponiendo que estamos validando solo una columna específica, por ejemplo, la primera columna.
-                if (e.ColumnIndex == 8) // Cambiar al índice de la columna que deseas validar.
-                {
-                    if (int.TryParse(e.FormattedValue.ToString(), out int newValue))
-                    {
-                        // Comprobar si el valor es menor que 10.
-                        if (newValue < 10)
-                        {
-                          
-                            dgvInventario.Rows[e.RowIndex].ErrorText = "El valor debe ser mayor o igual a 10.";
-                            NOTIFICADORI.SetError(dgvInventario , $"El valor en la fila {e.RowIndex + 1} y columna {e.ColumnIndex + 1} debe ser mayor o igual a 10.");
-                        }
-                        else
-                        {
-                            // Limpiar el error si la validación pasa.
-                            dgvInventario.Rows[e.RowIndex].ErrorText = string.Empty;
-                            NOTIFICADORI.SetError(dgvInventario, string.Empty);
-                        }
-                    }
-                    else
-                    {
-                    }
-                }
-            }
-            catch (Exception)
-            {
 
-                
-            }
+
+        }
+
+        private void dgvInventario_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+
+        }
+
+        private void dgvInventario_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

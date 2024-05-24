@@ -186,7 +186,9 @@
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventario.Size = new System.Drawing.Size(961, 396);
             this.dgvInventario.TabIndex = 17;
+            this.dgvInventario.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellEndEdit);
             this.dgvInventario.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvInventario_CellValidating);
+            this.dgvInventario.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvInventario_ColumnAdded);
             // 
             // FechaCompra
             // 
