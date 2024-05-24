@@ -233,7 +233,7 @@ WHERE EsPlatillo = 0;
                 p.IDProducto,
                 p.Nombre,
                 p.Precio,
-                p.EsPlatillo,
+                3p.EsPlatillo,
                 p.Cantidad
             FROM
                 productos p
@@ -293,6 +293,7 @@ WHERE EsPlatillo = 0;
                 ps.Nombre,
                 pc.FechaPedido,
                 pc.Estado,
+                ps.Nombre as Proveedor,
                 pc.Comentarios,
             ps.Nombre,
                 SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
