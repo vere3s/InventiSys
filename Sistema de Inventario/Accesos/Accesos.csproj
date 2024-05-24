@@ -53,6 +53,18 @@
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\Roles.cs" />
     <Compile Include="CLS\Usuarios.cs" />
+    <Compile Include="GUI\Cantidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cantidad.Designer.cs">
+      <DependentUpon>Cantidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CantidadCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CantidadCosto.Designer.cs">
+      <DependentUpon>CantidadCosto.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CategoriaGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +205,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Cantidad.resx">
+      <DependentUpon>Cantidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CantidadCosto.resx">
+      <DependentUpon>CantidadCosto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriaGestion.resx">
       <DependentUpon>CategoriaGestion.cs</DependentUpon>
     </EmbeddedResource>

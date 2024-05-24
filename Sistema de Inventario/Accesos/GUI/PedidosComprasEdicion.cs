@@ -16,6 +16,8 @@ namespace Accesos.GUI
         public int _ID = -2;
        public int _IDproveedor = -2;
         public string txtComentario = "";
+        int nCantidad;
+       decimal nCosto;
         public PedidosComprasEdicion()
         {
             InitializeComponent();
@@ -35,21 +37,29 @@ namespace Accesos.GUI
                 if (filasExistentes.Length > 0)
                 {
                     // Si el producto ya está en la lista, incrementar su cantidad en 1
-                    filasExistentes[0]["Cantidad"] = Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
+                    filasExistentes[0]["Cantidad"] = nCantidad > 0? nCantidad: Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
                     filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["CostoUnitario"]);
                 }
                 else
                 {
+                    CantidadCosto c = new CantidadCosto();
+
                     // El producto no está en la lista, agregarlo
                     DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
                     decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["CostoUnitario"]);
                     string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
-
+                    c.tbCantidad.Text = "1";
+                    c.tbCosto.Text = precioProductoSeleccionado.ToString();
+                    if(c.ShowDialog() == DialogResult.OK)
+                    {
+                        nCantidad =Convert.ToInt32( c.tbCantidad.Text);
+                        nCosto = Convert.ToDecimal(c.tbCosto.Text);
+                    }
                     DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
                     nuevaFila["IDProducto"] = idProductoSeleccionado;
                     nuevaFila["Producto"] = nombreProductoSeleccionado;
-                    nuevaFila["Cantidad"] = 1;
-                    nuevaFila["CostoUnitario"] = precioProductoSeleccionado;
+                    nuevaFila["Cantidad"] = nCantidad > 0 ? nCantidad : 1;
+                    nuevaFila["CostoUnitario"] = nCosto > 0 ? nCosto : precioProductoSeleccionado;
                     nuevaFila["Importe"] = precioProductoSeleccionado; // Por defecto, el importe es el mismo que el precio
                     ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
                 }
@@ -333,6 +343,18 @@ namespace Accesos.GUI
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCantidad_Click(object sender, EventArgs e)
+        {
+            CantidadCosto c = new CantidadCosto();
+            c.tbCantidad.Text = nCantidad.ToString();
+            c.tbCosto.Text = nCosto.ToString();
+            if(c.ShowDialog() == DialogResult.OK)
+            {
+                nCantidad =  Convert.ToInt32(c.tbCantidad.Text);
+                nCosto = Convert.ToDecimal(c.tbCosto.Text); 
+            }
         }
     }
 }

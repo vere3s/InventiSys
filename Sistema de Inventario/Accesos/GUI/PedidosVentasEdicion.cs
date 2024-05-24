@@ -21,6 +21,7 @@ namespace Accesos.GUI
         public int _ID = -2;
         public string txtCliente = "";
         public string txtComentario  = "";
+        int nCantidad =0;
         public PedidosVentasEdicion()
         {
             InitializeComponent();
@@ -40,12 +41,15 @@ namespace Accesos.GUI
                 {
                    
                     // Si el producto ya está en la lista, incrementar su cantidad en 1
-                    filasExistentes[0]["Cantidad"] = Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
+                    filasExistentes[0]["Cantidad"] = nCantidad >0 ?nCantidad:Convert.ToInt32(filasExistentes[0]["Cantidad"]) + 1;
                     filasExistentes[0]["Importe"] = Convert.ToDecimal(filasExistentes[0]["Cantidad"]) * Convert.ToDecimal(filasExistentes[0]["Precio"]);
                 }
                 else
                 {
                     // El producto no está en la lista, agregarlo
+                    Cantidad c= new Cantidad();
+                    if(c.ShowDialog() == DialogResult.OK) {
+                        nCantidad = Convert.ToInt32(c.tbCantidad.Text);
                     DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
                     decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["Precio"]);
                     string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
@@ -53,11 +57,13 @@ namespace Accesos.GUI
                     DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
                     nuevaFila["IDProducto"] = idProductoSeleccionado;
                     nuevaFila["Producto"] = nombreProductoSeleccionado;
-                    nuevaFila["Cantidad"] = 1;
+                    nuevaFila["Cantidad"] = nCantidad >0 ?nCantidad :1;
                     nuevaFila["Precio"] = precioProductoSeleccionado;
                     nuevaFila["Importe"] = precioProductoSeleccionado; // Por defecto, el importe es el mismo que el precio
                     ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
+                    }
                 }
+                nCantidad = 0;
                 listBox1.Text = "";
                 // Actualizar la vista del DataGridView (dgvPedido) para reflejar los cambios
                 dgvPedido.Refresh(); // O cualquier método de actualización necesario
@@ -333,6 +339,13 @@ namespace Accesos.GUI
             }
         }
 
-        
+        private void btnCantidad_Click(object sender, EventArgs e)
+        {
+            Cantidad c = new Cantidad();
+            c.tbCantidad.Text = nCantidad.ToString();
+            if(c.ShowDialog() == DialogResult.OK) {
+                nCantidad = Convert.ToInt32(c.tbCantidad.Text);
+            }
+        }
     }
 }
