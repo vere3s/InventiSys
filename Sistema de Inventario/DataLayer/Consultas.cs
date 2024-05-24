@@ -36,9 +36,9 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = $@"SELECT Nombre, Cantidad
-FROM gestionrestaurantesdb.productos
-WHERE Cantidad < 15 and esPlatillo = 0;
-";
+            FROM gestionrestaurantesdb.productos
+            WHERE Cantidad < 15 and esPlatillo = 0;
+            ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -55,10 +55,10 @@ WHERE Cantidad < 15 and esPlatillo = 0;
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT IDProducto, Nombre, Precio, CostoUnitario, EsPlatillo, IDCategoria, Cantidad
-FROM gestionrestaurantesdb.productos
-WHERE EsPlatillo = 0;
+            FROM gestionrestaurantesdb.productos
+            WHERE EsPlatillo = 0;
 
-";
+            ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -375,13 +375,13 @@ WHERE EsPlatillo = 0;
         public static DataTable INVENTARIOPRODUCTOS()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT
+            String Consulta = @"SELECT DISTINCT
                 p.IDProducto, 
                 p.Nombre,
                 p.Precio, 
                 p.CostoUnitario,
                 p.IDCategoria, 
-                cs.FechaCompra,
+                COALESCE(MAX(cs.FechaCompra), 'N/A') AS FechaCompra,
                 c.Nombre AS NombreC,
 	            (p.Cantidad* p.Precio) as TotalPrecio,
                 p.Cantidad as Existencia
@@ -393,6 +393,12 @@ WHERE EsPlatillo = 0;
                 INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
             Where
                 c.EsIngrendiente = 0
+            GROUP BY
+                p.IDProducto, 
+                p.Nombre,
+                p.CostoUnitario, 
+                p.IDCategoria, 
+                c.Nombre
             ORDER BY
                 p.Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
@@ -409,22 +415,28 @@ WHERE EsPlatillo = 0;
         public static DataTable INVENTARIOINGREDIENTES()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT
+            String Consulta = @"SELECT DISTINCT
                 p.IDProducto, 
                 p.Nombre,
                 p.CostoUnitario, 
                 p.IDCategoria, 
-                cs.FechaCompra,
+                COALESCE(MAX(cs.FechaCompra), 'N/A') AS FechaCompra,
                 c.Nombre AS NombreC,
-	            (p.Cantidad* p.CostoUnitario) as 'Total costo',
-                p.Cantidad as Existencia
+                (p.Cantidad * p.CostoUnitario) AS 'Total costo',
+                p.Cantidad AS Existencia
             FROM
                 productos p
-                left join detallepedidocompras dpc on dpc.IDProducto = p.IDProducto
-                left join compras cs on cs.PedidoCompras_IDPedido = dpc.IDPedido
+                LEFT JOIN detallepedidocompras dpc ON dpc.IDProducto = p.IDProducto
+                LEFT JOIN compras cs ON cs.PedidoCompras_IDPedido = dpc.IDPedido
                 INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
-            Where 
-             c.EsIngrendiente = 1
+            WHERE 
+                c.EsIngrendiente = 1
+            GROUP BY
+                p.IDProducto, 
+                p.Nombre,
+                p.CostoUnitario, 
+                p.IDCategoria, 
+                c.Nombre
             ORDER BY
                 p.Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
@@ -468,7 +480,7 @@ WHERE EsPlatillo = 0;
             }
             return Resultado;
         }
-        public static DataTable ORDENES_SEGUN_PERIODO_INGREDIENTES(string pFechaInicio, string pFechaFinal)
+        public static DataTable SEGUN_PERIODO_INGREDIENTES(string pFechaInicio, string pFechaFinal)
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT DISTINCT
@@ -496,8 +508,7 @@ WHERE EsPlatillo = 0;
                 p.IDCategoria, 
                 c.Nombre
             ORDER BY
-                p.Nombre ASC;
-            ";
+                p.Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -510,7 +521,7 @@ WHERE EsPlatillo = 0;
             return Resultado;
         }
 
-        public static DataTable ORDENES_SEGUN_PERIODO_PRODUCTOS(string pFechaInicio, string pFechaFinal)
+        public static DataTable SEGUN_PERIODO_PRODUCTOS(string pFechaInicio, string pFechaFinal)
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT
@@ -540,8 +551,7 @@ WHERE EsPlatillo = 0;
                 c.Nombre,
                 cs.FechaCompra
             ORDER BY
-                p.Nombre ASC;
-            ";
+                p.Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {

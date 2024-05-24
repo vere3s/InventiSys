@@ -409,7 +409,7 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public IngredientesRow AddIngredientesRow(string FechaCompra, string IDProducto, string Nombre, string CostoUnitario, string Existencia, string Total_costo) {
+            public IngredientesRow AddIngredientesRow(string FechaCompra, int IDProducto, string Nombre, decimal CostoUnitario, int Existencia, decimal Total_costo) {
                 IngredientesRow rowIngredientesRow = ((IngredientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FechaCompra,
@@ -453,15 +453,15 @@ namespace Reportes.DAT {
             private void InitClass() {
                 this.columnFechaCompra = new global::System.Data.DataColumn("FechaCompra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaCompra);
-                this.columnIDProducto = new global::System.Data.DataColumn("IDProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnIDProducto = new global::System.Data.DataColumn("IDProducto", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDProducto);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
-                this.columnCostoUnitario = new global::System.Data.DataColumn("CostoUnitario", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCostoUnitario = new global::System.Data.DataColumn("CostoUnitario", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCostoUnitario);
-                this.columnExistencia = new global::System.Data.DataColumn("Existencia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnExistencia = new global::System.Data.DataColumn("Existencia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExistencia);
-                this.columnTotal_costo = new global::System.Data.DataColumn("Total costo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotal_costo = new global::System.Data.DataColumn("Total costo", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_costo);
             }
             
@@ -621,10 +621,10 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string IDProducto {
+            public int IDProducto {
                 get {
                     try {
-                        return ((string)(this[this.tableIngredientes.IDProductoColumn]));
+                        return ((int)(this[this.tableIngredientes.IDProductoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'IDProducto\' de la tabla \'Ingredientes\' es DBNull.", e);
@@ -653,10 +653,10 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CostoUnitario {
+            public decimal CostoUnitario {
                 get {
                     try {
-                        return ((string)(this[this.tableIngredientes.CostoUnitarioColumn]));
+                        return ((decimal)(this[this.tableIngredientes.CostoUnitarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'CostoUnitario\' de la tabla \'Ingredientes\' es DBNull.", e);
@@ -669,10 +669,10 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Existencia {
+            public int Existencia {
                 get {
                     try {
-                        return ((string)(this[this.tableIngredientes.ExistenciaColumn]));
+                        return ((int)(this[this.tableIngredientes.ExistenciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Existencia\' de la tabla \'Ingredientes\' es DBNull.", e);
@@ -685,10 +685,10 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Total_costo {
+            public decimal Total_costo {
                 get {
                     try {
-                        return ((string)(this[this.tableIngredientes.Total_costoColumn]));
+                        return ((decimal)(this[this.tableIngredientes.Total_costoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Total costo\' de la tabla \'Ingredientes\' es DBNull.", e);

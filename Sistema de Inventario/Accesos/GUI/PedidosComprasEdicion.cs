@@ -165,7 +165,7 @@ namespace Accesos.GUI
             try
 
             {
-                if (_IDproveedor <= 1) { return -1; }
+                if (_IDproveedor <= 0) { return -1; }
                 if (_ID >= 1) { return _ID; }
                 if (_DATOS.Count == 0) { return -1; }
 

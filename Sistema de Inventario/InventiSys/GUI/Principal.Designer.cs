@@ -523,6 +523,7 @@
             this.reporteDeIngredientesToolStripMenuItem.Name = "reporteDeIngredientesToolStripMenuItem";
             this.reporteDeIngredientesToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.reporteDeIngredientesToolStripMenuItem.Text = "Reporte de ingredientes";
+            this.reporteDeIngredientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeIngredientesToolStripMenuItem_Click);
             // 
             // reporteDeVentasToolStripMenuItem
             // 

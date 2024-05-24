@@ -467,7 +467,7 @@ namespace InventiSys.GUI
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             // Verifica si ya existe una instancia del formulario
-            Form FormularioExistente = ObtenerFormularioExistente(typeof(Reportes.GUI.crvProductos));
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Reportes.GUI.VisorProductos));
 
             if (FormularioExistente != null)
             {
@@ -475,7 +475,24 @@ namespace InventiSys.GUI
             }
             else
             {
-                crvProductos f = new crvProductos();
+                VisorProductos f = new VisorProductos();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void reporteDeIngredientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Verifica si ya existe una instancia del formulario
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Reportes.GUI.VisorIngredientes));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                VisorIngredientes f = new VisorIngredientes();
                 f.MdiParent = this;
                 f.Show();
             }
