@@ -56,44 +56,31 @@ DELIMITER ;
 DELIMITER ;
 
 
-DELIMITER //
-
-CREATE TRIGGER after_detallepedidocompras_insert_update 
+CREATE TRIGGER after_detallepedidocompras_insert
 AFTER INSERT ON gestionrestaurantesdb.detallepedidocompras
 FOR EACH ROW
 BEGIN
     DECLARE diff INT;
-    
-    -- Obtener la diferencia entre la cantidad actual y la anterior
-    SELECT NEW.Cantidad - COALESCE(OLD.Cantidad, 0) INTO diff;
-    
+
+    -- La cantidad insertada es la nueva cantidad
+    SET diff = NEW.Cantidad;
+
     -- Actualizar el inventario solo si la cantidad no es para un platillo
     IF (SELECT EsPlatillo FROM gestionrestaurantesdb.productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
-        -- Si la diferencia es positiva, significa que se recibieron más productos
-        IF diff > 0 THEN
-            UPDATE gestionrestaurantesdb.productos 
-            SET Cantidad = Cantidad + diff,
-                CostoUnitario = NEW.Precio -- Actualizar el costo unitario con el nuevo precio y cantidad recibida
-            WHERE IDProducto = NEW.IDProducto;
-        -- Si la diferencia es negativa, significa que se recibieron menos productos
-        ELSE
-            UPDATE gestionrestaurantesdb.productos 
-            SET Cantidad = Cantidad - ABS(diff),
-                CostoUnitario = NEW.Precio-- Actualizar el costo unitario con el nuevo precio y cantidad recibida
-            WHERE IDProducto = NEW.IDProducto;
-        END IF;
+        UPDATE gestionrestaurantesdb.productos 
+        SET Cantidad = Cantidad + diff,
+            CostoUnitario = NEW.Precio -- Actualizar el costo unitario con el nuevo precio y cantidad recibida
+        WHERE IDProducto = NEW.IDProducto;
     END IF;
     
     -- Actualizar el precio de compra en la tabla compras
     UPDATE gestionrestaurantesdb.compras
     SET Comentario = NEW.Precio
     WHERE PedidoCompras_IDPedido = NEW.IDPedido;
-    
 END;
 //
 
 DELIMITER ;
-
 DELIMITER //
 
 CREATE TRIGGER validar_usuario_y_empleado
