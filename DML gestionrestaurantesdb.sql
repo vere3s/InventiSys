@@ -29,31 +29,23 @@ AFTER INSERT ON gestionrestaurantesdb.detallepedidoventas
 FOR EACH ROW
 BEGIN
     DECLARE diff INT;
-    
-    -- Obtener la diferencia entre la cantidad actual y la anterior
-    SELECT NEW.Cantidad - COALESCE(OLD.Cantidad, 0) INTO diff;
-    
+
+    -- Obtener la diferencia entre la cantidad nueva y la cantidad anterior (si la hay)
+    SET diff = NEW.Cantidad;
+
     -- Actualizar el inventario solo si la cantidad no es para un platillo
     IF (SELECT EsPlatillo FROM gestionrestaurantesdb.productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
-        -- Si la diferencia es positiva, significa que se agregaron productos
-        IF diff > 0 THEN
-            UPDATE gestionrestaurantesdb.productos 
-            SET Cantidad = Cantidad + diff
-            WHERE IDProducto = NEW.IDProducto;
-        -- Si la diferencia es negativa, significa que se eliminaron productos
-        ELSE
-            UPDATE gestionrestaurantesdb.productos 
-            SET Cantidad = Cantidad - ABS(diff)
-            WHERE IDProducto = NEW.IDProducto;
-        END IF;
+        -- Actualizar la cantidad en el inventario
+        UPDATE gestionrestaurantesdb.productos 
+        SET Cantidad = Cantidad - diff
+        WHERE IDProducto = NEW.IDProducto;
     END IF;
-END;
-//
+END //
 
 DELIMITER ;
 
 
-DELIMITER ;
+DELIMITER //
 
 
 CREATE TRIGGER after_detallepedidocompras_insert
