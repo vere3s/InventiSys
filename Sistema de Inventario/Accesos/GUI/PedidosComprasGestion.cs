@@ -107,5 +107,11 @@ namespace Accesos.GUI
 
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ProveedoresGestion f = new ProveedoresGestion();
+            f.ShowDialog();
+        }
     }
 }
