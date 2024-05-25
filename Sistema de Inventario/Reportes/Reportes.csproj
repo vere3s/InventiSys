@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAT\dtsReporteCompras.cs">
+      <DependentUpon>dtsReporteCompras.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\dtsReporteCompras.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,6 +65,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsReporteIngredientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\dtsReporteProductos.cs">
+      <DependentUpon>dtsReporteProductos.xsd</DependentUpon>
     </Compile>
     <Compile Include="DAT\dtsReporteProductos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +130,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\VisorCompras.resx">
+      <DependentUpon>VisorCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorIngredientes.resx">
       <DependentUpon>VisorIngredientes.cs</DependentUpon>
     </EmbeddedResource>

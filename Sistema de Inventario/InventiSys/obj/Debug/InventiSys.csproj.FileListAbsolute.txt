@@ -211,3 +211,6 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.dll
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.xml
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.dll
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.xml

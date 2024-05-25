@@ -594,6 +594,35 @@ ORDER BY
             }
             return Resultado;
         }
+
+        public static DataTable COMPRAS_SEGUN_PEDIDO(string pFechaInicio, string pFechaFinal)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta = $@"SELECT 
+  c.IDCompras,
+  c.FechaCompra,
+  c.Comentario,
+  c.PedidoCompras_IDPedido,
+  e.Nombre AS Empleado
+FROM 
+  gestionrestaurantesdb.compras c
+  INNER JOIN gestionrestaurantesdb.empleados e ON c.empleado_IDEmpleado = e.IDEmpleado
+WHERE
+    CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
+ORDER BY
+    c.FechaCompra asc;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                Resultado = operacion.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Resultado;
+        }
+
     }
 }
 

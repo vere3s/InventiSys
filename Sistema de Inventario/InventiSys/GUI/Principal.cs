@@ -497,5 +497,27 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+        private void reporteDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Verifica si ya existe una instancia del formulario
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Reportes.GUI.VisorCompras));
+
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                VisorCompras f = new VisorCompras();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
