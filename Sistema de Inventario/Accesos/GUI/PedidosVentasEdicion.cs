@@ -349,9 +349,22 @@ namespace Accesos.GUI
                     PedidoVentas pedidoVentas = new PedidoVentas();
                     SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
 
-                   int pedidopagado = pedidoVentas.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
-
+                   int idPago = pedidoVentas.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+                // Manejo de resultados del pago
+                if (idPago > 0)
+                {
+                    MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else if (idPago == 0)
+                {
+                    MessageBox.Show("Ya existe un pago para este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al procesar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
             
 
         }

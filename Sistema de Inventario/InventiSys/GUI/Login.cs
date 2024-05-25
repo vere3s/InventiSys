@@ -91,5 +91,12 @@ namespace InventiSys.GUI
                 this.Show();
             }
         }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+          Configuracion c = new Configuracion();
+            c.ShowDialog();
+
+        }
     }
 }

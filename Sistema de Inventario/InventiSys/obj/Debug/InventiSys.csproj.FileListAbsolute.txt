@@ -208,3 +208,4 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\stdole.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.pdb
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Configuracion.resources
