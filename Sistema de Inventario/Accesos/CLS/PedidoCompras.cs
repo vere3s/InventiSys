@@ -25,7 +25,7 @@ namespace Accesos.CLS
                 DBOperacion operacion = new DBOperacion();
 
                 // Construir la consulta para insertar el pedido en la tabla 'pedidocompras'
-                string consultaPedido = $"INSERT INTO gestionrestaurantesdb.pedidocompras(IDProveedor, Estado, Comentarios) VALUES ({idProveedor}, 'Pendiente', '{nuevoComentario}');";
+                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, Estado, Comentarios) VALUES ({idProveedor}, 'Creado', '{nuevoComentario}');";
 
 
 
@@ -273,7 +273,7 @@ namespace Accesos.CLS
 
                 // Construir la consulta para verificar si ya existe un pago para el idPedido
                 StringBuilder consultaVerificacion = new StringBuilder();
-                consultaVerificacion.Append("SELECT COUNT(*) FROM compras WHERE PedidoCompras_IDPedido = ");
+                consultaVerificacion.Append("SELECT COUNT(*) FROM compras WHERE IDPedido = ");
                 consultaVerificacion.Append(idPedido);
                 consultaVerificacion.Append(";");
 
@@ -286,7 +286,7 @@ namespace Accesos.CLS
                 {
                     // Construir la consulta para insertar el pago en la tabla 'compras'
                     StringBuilder consultaCompra = new StringBuilder();
-                    consultaCompra.Append("INSERT INTO compras(PedidoCompras_IDPedido, FechaCompra, empleado_IDEmpleado) VALUES (");
+                    consultaCompra.Append("INSERT INTO compras(IDPedido, FechaCompra, IDEmpleado) VALUES (");
                     consultaCompra.Append(idPedido); // Insertamos el ID del pedido
                     consultaCompra.Append(", '");
                     consultaCompra.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora

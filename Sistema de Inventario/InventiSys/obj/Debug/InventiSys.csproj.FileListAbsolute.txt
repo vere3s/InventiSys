@@ -230,3 +230,14 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.xml
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.xml
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config

@@ -1,11 +1,11 @@
--- Schema gestionrestaurantesdb
+-- Schema GestionRestauranteDB
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `gestionrestaurantesdb`;
+CREATE SCHEMA IF NOT EXISTS `GestionRestauranteDB`;
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`categorias`
+-- Table `GestionRestauranteDB`.`categorias`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`categorias` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`categorias` (
   `IDCategoria` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NOT NULL,
   `EsIngrendiente` TINYINT(1) UNSIGNED ZEROFILL NOT NULL,
@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`categorias` (
   );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`empleados`
+-- Table `GestionRestauranteDB`.`empleados`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`empleados` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`empleados` (
   `IDEmpleado` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(100) NOT NULL,
   `Cargo` VARCHAR(50) NOT NULL,
@@ -25,9 +25,9 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`empleados` (
   );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`proveedores`
+-- Table `GestionRestauranteDB`.`proveedores`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`proveedores` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`proveedores` (
   `IDProveedor` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NOT NULL,
   `Telefono` VARCHAR(45) NULL DEFAULT NULL,
@@ -37,9 +37,9 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`proveedores` (
 
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`pedidocompras`
+-- Table `GestionRestauranteDB`.`pedidocompras`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`pedidocompras` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`pedidocompras` (
   `IDPedido` INT NOT NULL AUTO_INCREMENT,
   `FechaPedido` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `Estado` VARCHAR(45) NOT NULL,
@@ -48,31 +48,31 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`pedidocompras` (
   PRIMARY KEY (`IDPedido`),
   CONSTRAINT `fk_PedidoVenta_Proveedor1`
     FOREIGN KEY (`IDProveedor`)
-    REFERENCES `gestionrestaurantesdb`.`proveedores` (`IDProveedor`)
+    REFERENCES `GestionRestauranteDB`.`proveedores` (`IDProveedor`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`compras`
+-- Table `GestionRestauranteDB`.`compras`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`compras` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`compras` (
   `IDCompras` INT NOT NULL AUTO_INCREMENT,
   `FechaCompra` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `Comentario` VARCHAR(45) NULL DEFAULT NULL,
-  `PedidoCompras_IDPedido` INT NOT NULL,
-  `empleado_IDEmpleado` INT NOT NULL,
-  PRIMARY KEY (`IDCompras`, `empleado_IDEmpleado`),
+  `IDPedido` INT NOT NULL,
+  `IDEmpleado` INT NOT NULL,
+  PRIMARY KEY (`IDCompras`, `IDEmpleado`),
   CONSTRAINT `fk_compras_empleado1`
-    FOREIGN KEY (`empleado_IDEmpleado`)
-    REFERENCES `gestionrestaurantesdb`.`empleados` (`IDEmpleado`),
+    FOREIGN KEY (`IDEmpleado`)
+    REFERENCES `GestionRestauranteDB`.`empleados` (`IDEmpleado`),
   CONSTRAINT `fk_Compras_PedidoCompras1`
-    FOREIGN KEY (`PedidoCompras_IDPedido`)
-    REFERENCES `gestionrestaurantesdb`.`pedidocompras` (`IDPedido`)
+    FOREIGN KEY (`IDPedido`)
+    REFERENCES `GestionRestauranteDB`.`pedidocompras` (`IDPedido`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`productos`
+-- Table `GestionRestauranteDB`.`productos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`productos` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`productos` (
   `IDProducto` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NOT NULL,
   `Precio` DECIMAL(10,2) NOT NULL,
@@ -83,13 +83,13 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`productos` (
   PRIMARY KEY (`IDProducto`),
   CONSTRAINT `fk_Producto_Categoria1`
     FOREIGN KEY (`IDCategoria`)
-    REFERENCES `gestionrestaurantesdb`.`categorias` (`IDCategoria`)
+    REFERENCES `GestionRestauranteDB`.`categorias` (`IDCategoria`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`detallepedidocompras`
+-- Table `GestionRestauranteDB`.`detallepedidocompras`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`detallepedidocompras` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`detallepedidocompras` (
   `IDDetallePedido` INT NOT NULL AUTO_INCREMENT,
   `IDPedido` INT NOT NULL,
   `IDProducto` INT NOT NULL,
@@ -98,16 +98,16 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`detallepedidocompras` (
   PRIMARY KEY (`IDDetallePedido`),
   CONSTRAINT `fk_Detalle_PedidoVenta_PedidoVenta1`
     FOREIGN KEY (`IDPedido`)
-    REFERENCES `gestionrestaurantesdb`.`pedidocompras` (`IDPedido`),
+    REFERENCES `GestionRestauranteDB`.`pedidocompras` (`IDPedido`),
   CONSTRAINT `fk_Detalle_PedidoVenta_Producto1`
     FOREIGN KEY (`IDProducto`)
-    REFERENCES `gestionrestaurantesdb`.`productos` (`IDProducto`)
+    REFERENCES `GestionRestauranteDB`.`productos` (`IDProducto`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`pedidoventas`
+-- Table `GestionRestauranteDB`.`pedidoventas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`pedidoventas` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`pedidoventas` (
   `IDPedido` INT NOT NULL AUTO_INCREMENT,
   `Cliente` VARCHAR(45) NOT NULL,
   `FechaPedido` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
@@ -117,9 +117,9 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`pedidoventas` (
   );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`detallepedidoventas`
+-- Table `GestionRestauranteDB`.`detallepedidoventas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`detallepedidoventas` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`detallepedidoventas` (
   `IDDetallePedido` INT NOT NULL AUTO_INCREMENT,
   `IDPedido` INT NOT NULL,
   `IDProducto` INT NOT NULL,
@@ -128,50 +128,50 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`detallepedidoventas` (
   PRIMARY KEY (`IDDetallePedido`),
   CONSTRAINT `fk_Detalle_Pedido_Pedido`
     FOREIGN KEY (`IDPedido`)
-    REFERENCES `gestionrestaurantesdb`.`pedidoventas` (`IDPedido`),
+    REFERENCES `GestionRestauranteDB`.`pedidoventas` (`IDPedido`),
   CONSTRAINT `fk_Detalle_Pedido_Producto1`
     FOREIGN KEY (`IDProducto`)
-    REFERENCES `gestionrestaurantesdb`.`productos` (`IDProducto`)
+    REFERENCES `GestionRestauranteDB`.`productos` (`IDProducto`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`opciones`
+-- Table `GestionRestauranteDB`.`opciones`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`opciones` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`opciones` (
   `IDOpcion` INT NOT NULL AUTO_INCREMENT,
   `Opcion` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`IDOpcion`)
   );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`roles`
+-- Table `GestionRestauranteDB`.`roles`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`roles` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`roles` (
   `IDRol` INT NOT NULL AUTO_INCREMENT,
   `Rol` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`IDRol`)
   );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`permisos`
+-- Table `GestionRestauranteDB`.`permisos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`permisos` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`permisos` (
   `IDPermiso` INT NOT NULL AUTO_INCREMENT,
   `IDROL` INT NOT NULL,
   `IDOpcion` INT NOT NULL,
   PRIMARY KEY (`IDPermiso`),
   CONSTRAINT `permisos_ibfk_1`
     FOREIGN KEY (`IDROL`)
-    REFERENCES `gestionrestaurantesdb`.`roles` (`IDRol`),
+    REFERENCES `GestionRestauranteDB`.`roles` (`IDRol`),
   CONSTRAINT `permisos_ibfk_2`
     FOREIGN KEY (`IDOpcion`)
-    REFERENCES `gestionrestaurantesdb`.`opciones` (`IDOpcion`)
+    REFERENCES `GestionRestauranteDB`.`opciones` (`IDOpcion`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`usuarios`
+-- Table `GestionRestauranteDB`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`usuarios` (
   `IDUsuario` INT NOT NULL AUTO_INCREMENT,
   `Usuario` VARCHAR(100) NOT NULL,
   `Contraseña` VARCHAR(100) NOT NULL,
@@ -180,16 +180,16 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`usuarios` (
   PRIMARY KEY (`IDUsuario`),
   CONSTRAINT `fk_usuario_Rol1`
     FOREIGN KEY (`IDRol`)
-    REFERENCES `gestionrestaurantesdb`.`roles` (`IDRol`),
+    REFERENCES `GestionRestauranteDB`.`roles` (`IDRol`),
   CONSTRAINT `usuario_ibfk_1`
     FOREIGN KEY (`IDEmpleado`)
-    REFERENCES `gestionrestaurantesdb`.`empleados` (`IDEmpleado`)
+    REFERENCES `GestionRestauranteDB`.`empleados` (`IDEmpleado`)
     );
 
 -- -----------------------------------------------------
--- Table `gestionrestaurantesdb`.`ventas`
+-- Table `GestionRestauranteDB`.`ventas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`ventas` (
+CREATE TABLE IF NOT EXISTS `GestionRestauranteDB`.`ventas` (
   `IDVentas` INT NOT NULL AUTO_INCREMENT,
   `IDPedido` INT NOT NULL,
   `Precio` DOUBLE(10,2) NOT NULL,
@@ -198,8 +198,8 @@ CREATE TABLE IF NOT EXISTS `gestionrestaurantesdb`.`ventas` (
   PRIMARY KEY (`IDVentas`),
   CONSTRAINT `fk_ventas_empleado1`
     FOREIGN KEY (`IDEmpleado`)
-    REFERENCES `gestionrestaurantesdb`.`empleados` (`IDEmpleado`),
+    REFERENCES `GestionRestauranteDB`.`empleados` (`IDEmpleado`),
   CONSTRAINT `fk_Ventas_Pedido1`
     FOREIGN KEY (`IDPedido`)
-    REFERENCES `gestionrestaurantesdb`.`pedidoventas` (`IDPedido`)
+    REFERENCES `GestionRestauranteDB`.`pedidoventas` (`IDPedido`)
     );

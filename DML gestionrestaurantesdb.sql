@@ -1,106 +1,106 @@
-INSERT INTO `gestionrestaurantesdb`.`roles` (`IDRol`, `Rol`) VALUES ('1', 'ADMINISTRADOR');
-INSERT INTO `gestionrestaurantesdb`.`roles` (`IDRol`, `Rol`) VALUES ('2', 'COCINERO');
+INSERT INTO `GestionRestauranteDB`.`roles` (`IDRol`, `Rol`) VALUES ('1', 'ADMINISTRADOR');
+INSERT INTO `GestionRestauranteDB`.`roles` (`IDRol`, `Rol`) VALUES ('2', 'COCINERO');
 
-INSERT INTO `gestionrestaurantesdb`.`opciones` (`Opcion`) VALUES ('GESTION USUARIOS');
-INSERT INTO `gestionrestaurantesdb`.`opciones` (`Opcion`) VALUES ('GESTION PRODUCTOS');
+INSERT INTO `GestionRestauranteDB`.`opciones` (`Opcion`) VALUES ('GESTION USUARIOS');
+INSERT INTO `GestionRestauranteDB`.`opciones` (`Opcion`) VALUES ('GESTION PRODUCTOS');
 
-INSERT INTO `gestionrestaurantesdb`.`permisos` (`IDROL`, `IDOpcion`) VALUES ('1', '1');
-INSERT INTO `gestionrestaurantesdb`.`permisos` (`IDROL`, `IDOpcion`) VALUES ('2', '2');
+INSERT INTO `GestionRestauranteDB`.`permisos` (`IDROL`, `IDOpcion`) VALUES ('1', '1');
+INSERT INTO `GestionRestauranteDB`.`permisos` (`IDROL`, `IDOpcion`) VALUES ('2', '2');
 
-INSERT INTO `gestionrestaurantesdb`.`empleados` (`Nombre`, `Cargo`, `Telefono`, `Email`) VALUES ('ANDREA', 'ADMIN', '12345678', 'ANDREA@gmail.com');
-INSERT INTO `gestionrestaurantesdb`.`empleados` (`Nombre`, `Cargo`, `Telefono`, `Email`) VALUES ('ESTEFANY', 'COCINERO', '12345678', 'ESTEFANY@gmail.com');
+INSERT INTO `GestionRestauranteDB`.`empleados` (`Nombre`, `Cargo`, `Telefono`, `Email`) VALUES ('ANDREA', 'ADMIN', '12345678', 'ANDREA@gmail.com');
+INSERT INTO `GestionRestauranteDB`.`empleados` (`Nombre`, `Cargo`, `Telefono`, `Email`) VALUES ('ESTEFANY', 'COCINERO', '12345678', 'ESTEFANY@gmail.com');
 
-INSERT INTO `gestionrestaurantesdb`.`usuarios` (`Usuario`, `Contraseña`, `IDEmpleado`, `IDRol`) VALUES ('ANDRE2', '12345', '1', '1');
-INSERT INTO `gestionrestaurantesdb`.`usuarios` (`Usuario`, `Contraseña`, `IDEmpleado`, `IDRol`) VALUES ('ESTEF2', '12345', '2', '2');
-
-SELECT * FROM gestionrestaurantesdb.usuarios;
-update gestionrestaurantesdb.usuarios 
-set Contraseña = MD5('12345') 
-where IDUsuario = 1;
-
-SELECT * FROM gestionrestaurantesdb.usuarios;
-update gestionrestaurantesdb.usuarios 
-set Contraseña = MD5('12345') 
-where IDUsuario = 2;
+INSERT INTO `GestionRestauranteDB`.`usuarios` (`Usuario`, `Contraseña`, `IDEmpleado`, `IDRol`) VALUES ('ANDRE2', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1', '1');
+INSERT INTO `GestionRestauranteDB`.`usuarios` (`Usuario`, `Contraseña`, `IDEmpleado`, `IDRol`) VALUES ('ESTEF2', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2', '2');
 DELIMITER //
 
 CREATE TRIGGER after_detallepedidoventas_insert_update 
-AFTER INSERT ON gestionrestaurantesdb.detallepedidoventas
+AFTER INSERT ON detallepedidoventas
 FOR EACH ROW
 BEGIN
     DECLARE diff INT;
 
-    -- Obtener la diferencia entre la cantidad nueva y la cantidad anterior (si la hay)
+    -- La cantidad insertada es la diferencia a deducir del inventario
     SET diff = NEW.Cantidad;
 
-    -- Actualizar el inventario solo si la cantidad no es para un platillo
-    IF (SELECT EsPlatillo FROM gestionrestaurantesdb.productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
+    -- Actualizar el inventario solo si el producto no es un platillo
+    IF (SELECT EsPlatillo FROM productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
         -- Actualizar la cantidad en el inventario
-        UPDATE gestionrestaurantesdb.productos 
+        UPDATE productos 
+        SET Cantidad = Cantidad - diff
+        WHERE IDProducto = NEW.IDProducto;
+    END IF;
+END //
+
+DELIMITER //
+
+CREATE TRIGGER after_detallepedidoventas_update 
+AFTER UPDATE ON detallepedidoventas
+FOR EACH ROW
+BEGIN
+    DECLARE diff INT;
+
+    -- Calcular la diferencia entre la nueva cantidad y la anterior
+    SET diff = NEW.Cantidad - OLD.Cantidad;
+
+    -- Actualizar el inventario solo si el producto no es un platillo
+    IF (SELECT EsPlatillo FROM productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
+        -- Actualizar la cantidad en el inventario
+        UPDATE productos 
         SET Cantidad = Cantidad - diff
         WHERE IDProducto = NEW.IDProducto;
     END IF;
 END //
 
 DELIMITER ;
-
-
 DELIMITER //
 
-
 CREATE TRIGGER after_detallepedidocompras_insert
-AFTER INSERT ON gestionrestaurantesdb.detallepedidocompras
+AFTER INSERT ON detallepedidocompras
 FOR EACH ROW
 BEGIN
     DECLARE diff INT;
 
-    -- La cantidad insertada es la nueva cantidad
+    -- La cantidad insertada es la cantidad nueva a añadir al inventario
     SET diff = NEW.Cantidad;
 
-    -- Actualizar el inventario solo si la cantidad no es para un platillo
-    IF (SELECT EsPlatillo FROM gestionrestaurantesdb.productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
-        UPDATE gestionrestaurantesdb.productos 
+    -- Actualizar el inventario solo si el producto no es un platillo
+    IF (SELECT EsPlatillo FROM productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
+        UPDATE productos 
         SET Cantidad = Cantidad + diff,
             CostoUnitario = NEW.Precio -- Actualizar el costo unitario con el nuevo precio y cantidad recibida
         WHERE IDProducto = NEW.IDProducto;
     END IF;
     
     -- Actualizar el precio de compra en la tabla compras
-    UPDATE gestionrestaurantesdb.compras
+    UPDATE compras
     SET Comentario = NEW.Precio
-    WHERE PedidoCompras_IDPedido = NEW.IDPedido;
-END;
-//
+    WHERE IDPedido = NEW.IDPedido;
+END //
 
-DELIMITER ;
 DELIMITER //
 
-CREATE TRIGGER validar_usuario_y_empleado
-BEFORE INSERT ON usuarios
+CREATE TRIGGER after_detallepedidocompras_update
+AFTER UPDATE ON detallepedidocompras
 FOR EACH ROW
 BEGIN
-    DECLARE usuario_existente INT;
-    DECLARE empleado_existente INT;
+    DECLARE diff INT;
 
-    -- Verificar si el usuario ya existe en otro registro de la tabla usuarios
-    SELECT COUNT(*) INTO usuario_existente FROM usuarios WHERE Usuario = NEW.Usuario;
+    -- Calcular la diferencia entre la nueva cantidad y la anterior
+    SET diff = NEW.Cantidad - OLD.Cantidad;
 
-    -- Verificar si el empleado ya está asignado a otro usuario
-    SELECT COUNT(*) INTO empleado_existente FROM usuarios WHERE IDEmpleado = NEW.IDEmpleado;
-
-    -- Si el usuario ya existe en otro registro de la tabla usuarios, o el empleado ya está asignado a otro usuario, lanzar una señal de error
-    IF usuario_existente > 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'El usuario ya existe';
+    -- Actualizar el inventario solo si el producto no es un platillo
+    IF (SELECT EsPlatillo FROM productos WHERE IDProducto = NEW.IDProducto) = 0 THEN
+        UPDATE productos 
+        SET Cantidad = Cantidad + diff,
+            CostoUnitario = NEW.Precio -- Actualizar el costo unitario con el nuevo precio y cantidad recibida
+        WHERE IDProducto = NEW.IDProducto;
     END IF;
-
-    IF empleado_existente > 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'El empleado ya está asignado a otro usuario';
-    END IF;
-END;
-//
+    
+    -- Actualizar el precio de compra en la tabla compras
+    UPDATE compras
+    SET Comentario = NEW.Precio
+    WHERE IDPedido = NEW.IDPedido;
+END //
 
 DELIMITER ;
-
-
