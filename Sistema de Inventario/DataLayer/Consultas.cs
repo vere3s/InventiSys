@@ -304,7 +304,7 @@ namespace DataLayer
             FROM
                 pedidocompras pc
                 LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
-                LEFT JOIN compras c ON pc.IDPedido = c.PedidoCompras_IDPedido
+                LEFT JOIN compras c ON pc.IDPedido = c.IDPedido
                 LEFT JOIN proveedores ps on pc.IDProveedor = ps.IDProveedor
             GROUP BY
                 pc.IDPedido,
@@ -388,7 +388,7 @@ namespace DataLayer
             FROM
                 productos p
                 left join detallepedidocompras dpc on dpc.IDProducto = p.IDProducto
-                left join compras cs on cs.PedidoCompras_IDPedido = dpc.IDPedido
+                left join compras cs on cs.IDPedido = dpc.IDPedido
 
                 INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
             Where
@@ -427,7 +427,7 @@ namespace DataLayer
             FROM
                 productos p
                 LEFT JOIN detallepedidocompras dpc ON dpc.IDProducto = p.IDProducto
-                LEFT JOIN compras cs ON cs.PedidoCompras_IDPedido = dpc.IDPedido
+                LEFT JOIN compras cs ON cs.IDPedido = dpc.IDPedido
                 INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
             WHERE 
                 c.EsIngrendiente = 1
@@ -495,7 +495,7 @@ namespace DataLayer
             FROM
                 productos p
                 LEFT JOIN detallepedidocompras dpc ON dpc.IDProducto = p.IDProducto
-                LEFT JOIN compras cs ON cs.PedidoCompras_IDPedido = dpc.IDPedido
+                LEFT JOIN compras cs ON cs.IDPedido = dpc.IDPedido
                 INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
             WHERE 
                 c.EsIngrendiente = 1
@@ -536,7 +536,7 @@ namespace DataLayer
             FROM
                 productos p
                 left join detallepedidocompras dpc on dpc.IDProducto = p.IDProducto
-                left join compras cs on cs.PedidoCompras_IDPedido = dpc.IDPedido
+                left join compras cs on cs.IDPedido = dpc.IDPedido
 
                 INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
             Where
@@ -602,18 +602,18 @@ namespace DataLayer
                c.IDCompras,
                c.FechaCompra,
                c.Comentario,
-               c.PedidoCompras_IDPedido,
+               c.IDPedido,
                e.Nombre AS Empleado
                FROM 
                compras c
-               INNER JOIN empleados e ON c.empleado_IDEmpleado = e.IDEmpleado
+               INNER JOIN empleados e ON c.IDEmpleado = e.IDEmpleado
                WHERE
                CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
              GROUP BY
                 c.IDCompras,
                c.FechaCompra,
                c.Comentario,
-               c.PedidoCompras_IDPedido,
+               c.IDPedido,
                e.Nombre
              ORDER BY
                c.FechaCompra ASC;";
