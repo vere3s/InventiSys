@@ -1,10 +1,5 @@
 ﻿using InventiSys.GUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventiSys.CLS
@@ -15,19 +10,21 @@ namespace InventiSys.CLS
         {
             try
             {
-                GUI.Splash f = new GUI.Splash();
+                Splash f = new Splash();
                 f.ShowDialog();
             }
             catch (Exception)
             {
+                // Manejar la excepción si es necesario
             }
         }
+
         public Boolean LoginScreen()
         {
             Boolean Resultado = false;
             try
             {
-                GUI.Login f = new GUI.Login();
+                Login f = new Login();
                 f.ShowDialog();
                 Resultado = f.Autorizado;
             }
@@ -36,15 +33,20 @@ namespace InventiSys.CLS
                 Resultado = false;
             }
             return Resultado;
-
         }
+
         public AppManager()
         {
             SplashScreen();
             if (LoginScreen())
             {
                 Principal f = new Principal();
+                f.FormClosed += (sender, e) => { ExitThread(); }; // Salir del contexto de la aplicación cuando se cierre la ventana principal
                 f.Show();
+            }
+            else
+            {
+                ExitThread(); // Salir del contexto de la aplicación si no se autoriza el login
             }
         }
     }

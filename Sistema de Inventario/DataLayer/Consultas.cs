@@ -204,7 +204,7 @@ namespace DataLayer
             String Consulta = @"SELECT 
                 u.IDUsuario, 
                 u.Usuario, 
-                u.Contraseña, 
+                u.Contraseña as Contrasena, 
                 u.IDEmpleado, 
                 u.IDRol, 
                 r.Rol AS Rol,
