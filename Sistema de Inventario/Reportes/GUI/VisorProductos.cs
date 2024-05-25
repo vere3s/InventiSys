@@ -22,7 +22,7 @@ namespace Reportes.GUI
             try
             {
                 REP.Productos rOrdenes = new REP.Productos();
-                rOrdenes.SetDataSource(DataLayer.Consultas.SEGUN_PERIODO_INGREDIENTES(dpInicio.Text, dpFinal.Text));
+                rOrdenes.SetDataSource(DataLayer.Consultas.SEGUN_PERIODO_PRODUCTOS(dpInicio.Text, dpFinal.Text));
                 crvVisorProductos.ReportSource = rOrdenes;
             }
             catch (Exception)

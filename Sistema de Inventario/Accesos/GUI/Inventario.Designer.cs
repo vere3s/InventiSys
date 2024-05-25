@@ -53,6 +53,7 @@
             this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOTIFICADORI = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnConvertirPDF = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -65,10 +66,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lbRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(53, 476);
+            this.statusStrip1.Location = new System.Drawing.Point(40, 388);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(961, 29);
+            this.statusStrip1.Size = new System.Drawing.Size(720, 22);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -77,7 +77,7 @@
             this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(194, 23);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(150, 17);
             this.toolStripStatusLabel1.Text = "Cantidad de productos: ";
             // 
             // lbRegistros
@@ -85,7 +85,7 @@
             this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
             this.lbRegistros.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Size = new System.Drawing.Size(19, 23);
+            this.lbRegistros.Size = new System.Drawing.Size(15, 17);
             this.lbRegistros.Text = "0";
             // 
             // toolStrip1
@@ -95,10 +95,11 @@
             this.toolStripLabel2,
             this.toolStripComboBox1,
             this.tbFiltro,
-            this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(53, 49);
+            this.toolStripLabel1,
+            this.btnConvertirPDF});
+            this.toolStrip1.Location = new System.Drawing.Point(40, 40);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(961, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(720, 29);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -108,14 +109,14 @@
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Padding = new System.Windows.Forms.Padding(3);
-            this.toolStripLabel2.Size = new System.Drawing.Size(26, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(26, 26);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(185, 31);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(140, 29);
             this.toolStripComboBox1.Text = "Filtrar por categoria";
             // 
             // tbFiltro
@@ -124,7 +125,7 @@
             this.tbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(266, 31);
+            this.tbFiltro.Size = new System.Drawing.Size(200, 29);
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // toolStripLabel1
@@ -133,7 +134,7 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(73, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(61, 26);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // dgvInventario
@@ -178,17 +179,13 @@
             this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventario.EnableHeadersVisualStyles = false;
-            this.dgvInventario.Location = new System.Drawing.Point(53, 80);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvInventario.Location = new System.Drawing.Point(40, 69);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventario.Size = new System.Drawing.Size(961, 396);
+            this.dgvInventario.Size = new System.Drawing.Size(720, 319);
             this.dgvInventario.TabIndex = 17;
-            this.dgvInventario.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellEndEdit);
-            this.dgvInventario.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvInventario_CellValidating);
-            this.dgvInventario.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvInventario_ColumnAdded);
             // 
             // FechaCompra
             // 
@@ -226,7 +223,7 @@
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Width = 153;
+            this.Precio.Width = 115;
             // 
             // CostoUnitario
             // 
@@ -236,7 +233,7 @@
             this.CostoUnitario.MinimumWidth = 6;
             this.CostoUnitario.Name = "CostoUnitario";
             this.CostoUnitario.ReadOnly = true;
-            this.CostoUnitario.Width = 164;
+            this.CostoUnitario.Width = 124;
             // 
             // EsPlatillo
             // 
@@ -247,7 +244,6 @@
             this.EsPlatillo.Name = "EsPlatillo";
             this.EsPlatillo.ReadOnly = true;
             this.EsPlatillo.Visible = false;
-            this.EsPlatillo.Width = 125;
             // 
             // Categoria
             // 
@@ -291,17 +287,25 @@
             // 
             this.NOTIFICADORI.ContainerControl = this;
             // 
+            // btnConvertirPDF
+            // 
+            this.btnConvertirPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnConvertirPDF.Image")));
+            this.btnConvertirPDF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnConvertirPDF.Name = "btnConvertirPDF";
+            this.btnConvertirPDF.Size = new System.Drawing.Size(113, 26);
+            this.btnConvertirPDF.Text = "Convertir a PDF";
+            this.btnConvertirPDF.Click += new System.EventHandler(this.btnConvertirPDF_Click);
+            // 
             // Inventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Inventario";
-            this.Padding = new System.Windows.Forms.Padding(53, 49, 53, 49);
+            this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.Inventario_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -336,5 +340,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Existencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrecio;
         private System.Windows.Forms.ErrorProvider NOTIFICADORI;
+        private System.Windows.Forms.ToolStripButton btnConvertirPDF;
     }
 }

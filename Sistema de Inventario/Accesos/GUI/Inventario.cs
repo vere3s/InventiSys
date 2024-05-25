@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
+
 namespace Accesos.GUI
 {
     public partial class Inventario : Form
@@ -95,21 +100,65 @@ namespace Accesos.GUI
             FiltrarLocalmente();
         }
 
-        private void dgvInventario_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        private void ExportDataGridViewToPDF(DataGridView dgv, string filePath)
         {
+            try
+            {
+                // Crear un nuevo documento PDF
+                Document document = new Document(PageSize.A4, 10, 10, 10, 10);
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+                document.Open();
 
+                // Crear una tabla con el número de columnas igual al número de columnas del DataGridView
+                PdfPTable pdfTable = new PdfPTable(dgv.ColumnCount);
+                pdfTable.WidthPercentage = 100;
 
+                // Agregar encabezados de columna
+                foreach (DataGridViewColumn column in dgv.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    pdfTable.AddCell(cell);
+                }
 
+                // Agregar las filas de datos del DataGridView a la tabla PDF
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (!row.IsNewRow) // Ignorar la fila nueva
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            pdfTable.AddCell(cell.Value?.ToString() ?? string.Empty);
+                        }
+                    }
+                }
+
+                // Agregar la tabla al documento
+                document.Add(pdfTable);
+
+                // Cerrar el documento
+                document.Close();
+
+                MessageBox.Show("PDF exportado con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al exportar a PDF: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void dgvInventario_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        private void btnConvertirPDF_Click(object sender, EventArgs e)
         {
+            // Selecciona una ruta para guardar el archivo PDF
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF file|*.pdf";
+            saveFileDialog.Title = "Guardar como PDF";
+            saveFileDialog.FileName = "Inventario.pdf";
 
-        }
-
-        private void dgvInventario_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportDataGridViewToPDF(dgvInventario, saveFileDialog.FileName);
+            }
         }
     }
 }
