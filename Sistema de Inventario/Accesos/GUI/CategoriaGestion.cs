@@ -17,7 +17,7 @@ namespace Accesos.GUI
         public static DataTable CATEGORIAS()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Categorias ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM categorias ORDER BY Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
