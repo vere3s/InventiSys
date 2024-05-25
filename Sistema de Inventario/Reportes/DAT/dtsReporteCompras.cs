@@ -4,5 +4,8 @@
 
     public partial class dtsReporteCompras
     {
+        partial class comprasDataTable
+        {
+        }
     }
 }
