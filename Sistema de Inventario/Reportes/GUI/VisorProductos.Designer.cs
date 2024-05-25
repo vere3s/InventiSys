@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.crvVisorProductos = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dpFinal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dpInicio = new System.Windows.Forms.DateTimePicker();
+            this.crvVisorProductos = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -49,6 +49,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.MediumAquamarine;
             this.splitContainer1.Panel1.Controls.Add(this.btnMostrar);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.dpFinal);
@@ -62,6 +63,52 @@
             this.splitContainer1.SplitterDistance = 191;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(112, 249);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrar.TabIndex = 14;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 193);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Fecha final";
+            // 
+            // dpFinal
+            // 
+            this.dpFinal.CustomFormat = "yyyy-MM-dd";
+            this.dpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpFinal.Location = new System.Drawing.Point(21, 212);
+            this.dpFinal.Name = "dpFinal";
+            this.dpFinal.Size = new System.Drawing.Size(106, 20);
+            this.dpFinal.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Fecha de inicio";
+            // 
+            // dpInicio
+            // 
+            this.dpInicio.CustomFormat = "yyyy-MM-dd";
+            this.dpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpInicio.Location = new System.Drawing.Point(21, 143);
+            this.dpInicio.Name = "dpInicio";
+            this.dpInicio.Size = new System.Drawing.Size(106, 20);
+            this.dpInicio.TabIndex = 10;
+            // 
             // crvVisorProductos
             // 
             this.crvVisorProductos.ActiveViewIndex = -1;
@@ -73,52 +120,6 @@
             this.crvVisorProductos.Size = new System.Drawing.Size(605, 450);
             this.crvVisorProductos.TabIndex = 0;
             this.crvVisorProductos.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Location = new System.Drawing.Point(103, 248);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
-            this.btnMostrar.TabIndex = 14;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Fecha final";
-            // 
-            // dpFinal
-            // 
-            this.dpFinal.CustomFormat = "yyyy-MM-dd";
-            this.dpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpFinal.Location = new System.Drawing.Point(12, 211);
-            this.dpFinal.Name = "dpFinal";
-            this.dpFinal.Size = new System.Drawing.Size(106, 20);
-            this.dpFinal.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Fecha de inicio";
-            // 
-            // dpInicio
-            // 
-            this.dpInicio.CustomFormat = "yyyy-MM-dd";
-            this.dpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpInicio.Location = new System.Drawing.Point(12, 142);
-            this.dpInicio.Name = "dpInicio";
-            this.dpInicio.Size = new System.Drawing.Size(106, 20);
-            this.dpInicio.TabIndex = 10;
             // 
             // VisorProductos
             // 

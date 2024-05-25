@@ -49,6 +49,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.MediumAquamarine;
             this.splitContainer1.Panel1.Controls.Add(this.btnMostrar);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.dpFinal);
@@ -64,7 +65,7 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(106, 226);
+            this.btnMostrar.Location = new System.Drawing.Point(112, 225);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnMostrar.TabIndex = 9;
@@ -75,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 170);
+            this.label2.Location = new System.Drawing.Point(21, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 8;
@@ -85,7 +86,7 @@
             // 
             this.dpFinal.CustomFormat = "yyyy-MM-dd";
             this.dpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpFinal.Location = new System.Drawing.Point(15, 189);
+            this.dpFinal.Location = new System.Drawing.Point(21, 188);
             this.dpFinal.Name = "dpFinal";
             this.dpFinal.Size = new System.Drawing.Size(106, 20);
             this.dpFinal.TabIndex = 7;
@@ -93,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 101);
+            this.label1.Location = new System.Drawing.Point(21, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 6;
@@ -103,7 +104,7 @@
             // 
             this.dpInicio.CustomFormat = "yyyy-MM-dd";
             this.dpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpInicio.Location = new System.Drawing.Point(15, 120);
+            this.dpInicio.Location = new System.Drawing.Point(21, 119);
             this.dpInicio.Name = "dpInicio";
             this.dpInicio.Size = new System.Drawing.Size(106, 20);
             this.dpInicio.TabIndex = 5;

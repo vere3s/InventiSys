@@ -83,7 +83,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(140, 17);
             this.toolStripStatusLabel1.Text = "Registros encontrados";
-      
             // 
             // lbRegistros
             // 
@@ -251,7 +250,7 @@
             this.dgvPedido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPedido.EnableHeadersVisualStyles = false;
             this.dgvPedido.Location = new System.Drawing.Point(0, 0);
-            this.dgvPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPedido.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
             this.dgvPedido.RowHeadersWidth = 51;
@@ -313,7 +312,7 @@
             this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(560, 72);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(199, 95);
             this.listBox1.TabIndex = 18;
@@ -324,7 +323,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(40, 74);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -345,7 +344,7 @@
             // btnCantidad
             // 
             this.btnCantidad.Location = new System.Drawing.Point(32, 25);
-            this.btnCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.btnCantidad.Name = "btnCantidad";
             this.btnCantidad.Size = new System.Drawing.Size(102, 19);
             this.btnCantidad.TabIndex = 0;
@@ -362,9 +361,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PedidosComprasEdicion";
-            this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
+            this.Padding = new System.Windows.Forms.Padding(40);
             this.Text = "Pedidos Compras Edicion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PedidosVentasEdicion_Load);

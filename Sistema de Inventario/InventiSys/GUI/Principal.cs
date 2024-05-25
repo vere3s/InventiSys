@@ -108,12 +108,6 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
-
-        private void dashboardMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         #region MouseEnter
         private void inicioMenuItem_MouseEnter(object sender, EventArgs e)
         {
@@ -124,27 +118,6 @@ namespace InventiSys.GUI
         {
             inicioMenuItem.ForeColor = Color.DarkGray;
         }
-
-        private void dashboardMenuItem_MouseEnter(object sender, EventArgs e)
-        {
-            dashboardMenuItem.ForeColor = Color.Black;
-        }
-
-        private void dashboardMenuItem_MouseLeave(object sender, EventArgs e)
-        {
-            dashboardMenuItem.ForeColor = Color.DarkGray;
-        }
-
-        private void generalMenuItem_MouseEnter(object sender, EventArgs e)
-        {
-            pedidosMenuItem.ForeColor = Color.Black;
-        }
-
-        private void generalMenuItem_MouseLeave(object sender, EventArgs e)
-        {
-            pedidosMenuItem.ForeColor = Color.DarkGray;
-        }
-
         private void accesosMenuItem_MouseEnter(object sender, EventArgs e)
         {
             accesosMenuItem.ForeColor = Color.Black;
@@ -154,17 +127,15 @@ namespace InventiSys.GUI
         {
             accesosMenuItem.ForeColor = Color.DarkGray;
         }
-
-        private void inventarioMenuItem_MouseEnter(object sender, EventArgs e)
+        private void toolStripMenuItem1_MouseEnter(object sender, EventArgs e)
         {
-            inventarioMenuItem.ForeColor = Color.Black;
+            toolStripMenuItem1.ForeColor = Color.Black;
         }
 
-        private void inventarioMenuItem_MouseLeave(object sender, EventArgs e)
+        private void toolStripMenuItem1_MouseLeave(object sender, EventArgs e)
         {
-            inventarioMenuItem.ForeColor = Color.DarkGray;
+            toolStripMenuItem1.ForeColor = Color.DarkGray;
         }
-
         private void productosMenuItem_MouseEnter(object sender, EventArgs e)
         {
             productosMenuItem.ForeColor = Color.Black;
@@ -184,7 +155,43 @@ namespace InventiSys.GUI
         {
             categoriasMenuItem.ForeColor = Color.DarkGray;
         }
+        private void inventarioMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            inventarioMenuItem.ForeColor = Color.Black;
+        }
 
+        private void inventarioMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            inventarioMenuItem.ForeColor = Color.DarkGray;
+        }
+        private void pedidosVentasMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            pedidosMenuItem.ForeColor = Color.Black;
+        }
+
+        private void pedidosVentasMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            pedidosMenuItem.ForeColor = Color.DarkGray;
+        }
+        private void pedidosComprasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            pedidosComprasToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void pedidosComprasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            pedidosComprasToolStripMenuItem.ForeColor = Color.DarkGray;
+        }
+        private void ReportesStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            ReportesStripMenuItem1.ForeColor = Color.Black;
+        }
+
+        private void ReportesStripMenuItem1_MouseLeave(object sender, EventArgs e)
+        {
+            ReportesStripMenuItem1.ForeColor = Color.DarkGray;
+
+        }
         private void accesosMenuItem_Click(object sender, EventArgs e)
         {
             accesosMenuItem.ForeColor = Color.Black;
@@ -385,26 +392,6 @@ namespace InventiSys.GUI
             }
         }
 
-        private void administrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void agregarVentaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void administrarComprasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void agregarCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void administrarPedidosVenta_Click(object sender, EventArgs e)
         {
             Form FormularioExistente = ObtenerFormularioExistente(typeof(PedidosVentasGestion));
@@ -462,7 +449,6 @@ namespace InventiSys.GUI
                 throw;
             }
         }
-        #endregion
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
@@ -519,5 +505,12 @@ namespace InventiSys.GUI
                 f.Show();
             }
         }
+
+
+
+        #endregion
+
+
+        
     }
 }

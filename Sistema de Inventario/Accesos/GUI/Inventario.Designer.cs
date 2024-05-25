@@ -41,6 +41,7 @@
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.tbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btnConvertirPDF = new System.Windows.Forms.ToolStripButton();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +54,7 @@
             this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOTIFICADORI = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnConvertirPDF = new System.Windows.Forms.ToolStripButton();
+            this.btnConvertirExcel = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -96,10 +97,11 @@
             this.toolStripComboBox1,
             this.tbFiltro,
             this.toolStripLabel1,
-            this.btnConvertirPDF});
+            this.btnConvertirPDF,
+            this.btnConvertirExcel});
             this.toolStrip1.Location = new System.Drawing.Point(40, 40);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(720, 29);
+            this.toolStrip1.Size = new System.Drawing.Size(720, 44);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -109,14 +111,14 @@
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Padding = new System.Windows.Forms.Padding(3);
-            this.toolStripLabel2.Size = new System.Drawing.Size(26, 26);
+            this.toolStripLabel2.Size = new System.Drawing.Size(26, 41);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(140, 29);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(140, 44);
             this.toolStripComboBox1.Text = "Filtrar por categoria";
             // 
             // tbFiltro
@@ -125,7 +127,7 @@
             this.tbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(200, 29);
+            this.tbFiltro.Size = new System.Drawing.Size(200, 44);
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // toolStripLabel1
@@ -134,8 +136,21 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 26);
+            this.toolStripLabel1.Size = new System.Drawing.Size(61, 41);
             this.toolStripLabel1.Text = "Filtrar";
+            // 
+            // btnConvertirPDF
+            // 
+            this.btnConvertirPDF.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnConvertirPDF.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertirPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnConvertirPDF.Image")));
+            this.btnConvertirPDF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnConvertirPDF.Margin = new System.Windows.Forms.Padding(5);
+            this.btnConvertirPDF.Name = "btnConvertirPDF";
+            this.btnConvertirPDF.Padding = new System.Windows.Forms.Padding(5);
+            this.btnConvertirPDF.Size = new System.Drawing.Size(132, 34);
+            this.btnConvertirPDF.Text = "Convertir a PDF";
+            this.btnConvertirPDF.Click += new System.EventHandler(this.btnConvertirPDF_Click);
             // 
             // dgvInventario
             // 
@@ -179,12 +194,12 @@
             this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventario.EnableHeadersVisualStyles = false;
-            this.dgvInventario.Location = new System.Drawing.Point(40, 69);
+            this.dgvInventario.Location = new System.Drawing.Point(40, 84);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventario.Size = new System.Drawing.Size(720, 319);
+            this.dgvInventario.Size = new System.Drawing.Size(720, 304);
             this.dgvInventario.TabIndex = 17;
             // 
             // FechaCompra
@@ -223,7 +238,7 @@
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Width = 115;
+            this.Precio.Width = 125;
             // 
             // CostoUnitario
             // 
@@ -233,7 +248,7 @@
             this.CostoUnitario.MinimumWidth = 6;
             this.CostoUnitario.Name = "CostoUnitario";
             this.CostoUnitario.ReadOnly = true;
-            this.CostoUnitario.Width = 124;
+            this.CostoUnitario.Width = 135;
             // 
             // EsPlatillo
             // 
@@ -287,14 +302,18 @@
             // 
             this.NOTIFICADORI.ContainerControl = this;
             // 
-            // btnConvertirPDF
+            // btnConvertirExcel
             // 
-            this.btnConvertirPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnConvertirPDF.Image")));
-            this.btnConvertirPDF.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnConvertirPDF.Name = "btnConvertirPDF";
-            this.btnConvertirPDF.Size = new System.Drawing.Size(113, 26);
-            this.btnConvertirPDF.Text = "Convertir a PDF";
-            this.btnConvertirPDF.Click += new System.EventHandler(this.btnConvertirPDF_Click);
+            this.btnConvertirExcel.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnConvertirExcel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertirExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnConvertirExcel.Image")));
+            this.btnConvertirExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnConvertirExcel.Margin = new System.Windows.Forms.Padding(5);
+            this.btnConvertirExcel.Name = "btnConvertirExcel";
+            this.btnConvertirExcel.Padding = new System.Windows.Forms.Padding(5);
+            this.btnConvertirExcel.Size = new System.Drawing.Size(139, 34);
+            this.btnConvertirExcel.Text = "Convertir a Excel";
+            this.btnConvertirExcel.Click += new System.EventHandler(this.btnConvertirExcel_Click);
             // 
             // Inventario
             // 
@@ -305,7 +324,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Inventario";
-            this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
+            this.Padding = new System.Windows.Forms.Padding(40);
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.Inventario_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -341,5 +360,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrecio;
         private System.Windows.Forms.ErrorProvider NOTIFICADORI;
         private System.Windows.Forms.ToolStripButton btnConvertirPDF;
+        private System.Windows.Forms.ToolStripButton btnConvertirExcel;
     }
 }
