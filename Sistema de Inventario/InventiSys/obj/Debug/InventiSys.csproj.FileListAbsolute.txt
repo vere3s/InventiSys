@@ -222,3 +222,11 @@ C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFT
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.dll
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.xml
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config
