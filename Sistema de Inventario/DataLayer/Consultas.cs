@@ -36,7 +36,7 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = $@"SELECT Nombre, Cantidad
-            FROM gestionrestaurantesdb.productos
+            FROM productos
             WHERE Cantidad < 15 and esPlatillo = 0;
             ";
             DBOperacion operacion = new DBOperacion();
@@ -55,7 +55,7 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT IDProducto, Nombre, Precio, CostoUnitario, EsPlatillo, IDCategoria, Cantidad
-            FROM gestionrestaurantesdb.productos
+            FROM productos
             WHERE EsPlatillo = 0;
 
             ";
@@ -73,7 +73,7 @@ namespace DataLayer
         public static DataTable CATEGORIAS()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Categorias ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM categorias ORDER BY Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -126,7 +126,7 @@ namespace DataLayer
         public static DataTable PROVEEDORES()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Proveedores ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM proveedores ORDER BY Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -141,7 +141,7 @@ namespace DataLayer
         public static DataTable Empleados()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Empleados ORDER BY Nombre ASC;";
+            String Consulta = @"SELECT * FROM empleados ORDER BY Nombre ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -157,7 +157,7 @@ namespace DataLayer
         public static DataTable ROLES()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Roles ORDER BY Rol ASC;";
+            String Consulta = @"SELECT * FROM roles ORDER BY Rol ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -304,8 +304,8 @@ namespace DataLayer
             FROM
                 pedidocompras pc
                 LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
-                LEFT JOIN Compras c ON pc.IDPedido = c.PedidoCompras_IDPedido
-                LEFT JOIN Proveedores ps on pc.IDProveedor = ps.IDProveedor
+                LEFT JOIN compras c ON pc.IDPedido = c.PedidoCompras_IDPedido
+                LEFT JOIN proveedores ps on pc.IDProveedor = ps.IDProveedor
             GROUP BY
                 pc.IDPedido,
                 pc.IDProveedor,
@@ -359,7 +359,7 @@ namespace DataLayer
         public static DataTable OPCIONES()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT * FROM Opciones ORDER BY Opcion ASC;";
+            String Consulta = @"SELECT * FROM opciones ORDER BY Opcion ASC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -568,21 +568,21 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = $@"SELECT
-    v.IDVentas AS 'ID Venta',
-    pv.Cliente AS 'Cliente',
-    v.FechaVenta AS 'Fecha de Venta',
-    v.Precio AS 'Precio Total',
-    e.Nombre AS 'Empleado'
-FROM
-    gestionrestaurantesdb.ventas v
-INNER JOIN
-    gestionrestaurantesdb.empleados e ON v.IDEmpleado = e.IDEmpleado
-INNER JOIN
-    gestionrestaurantesdb.pedidoventas pv ON v.IDPedido = pv.IDPedido
-WHERE
-    CAST(v.FechaVenta AS DATE) BETWEEN '{pFechaInicio}' AND '{pFechaFinal}'
-ORDER BY
-    v.FechaVenta DESC;";
+                v.IDVentas AS 'ID Venta',
+                pv.Cliente AS 'Cliente',
+                v.FechaVenta AS 'Fecha de Venta',
+                v.Precio AS 'Precio Total',
+                e.Nombre AS 'Empleado'
+            FROM
+                ventas v
+            INNER JOIN
+                empleados e ON v.IDEmpleado = e.IDEmpleado
+            INNER JOIN
+                pedidoventas pv ON v.IDPedido = pv.IDPedido
+            WHERE
+                CAST(v.FechaVenta AS DATE) BETWEEN '{pFechaInicio}' AND '{pFechaFinal}'
+            ORDER BY
+                v.FechaVenta DESC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -605,8 +605,8 @@ ORDER BY
                c.PedidoCompras_IDPedido,
                e.Nombre AS Empleado
                FROM 
-               gestionrestaurantesdb.compras c
-               INNER JOIN gestionrestaurantesdb.empleados e ON c.empleado_IDEmpleado = e.IDEmpleado
+               compras c
+               INNER JOIN empleados e ON c.empleado_IDEmpleado = e.IDEmpleado
                WHERE
                CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
              GROUP BY

@@ -16,7 +16,7 @@ namespace DataLayer
             Boolean Resultado = false;
             try
             {
-                _CONEXION.ConnectionString = "Server=localhost;Port=3306;Database=gestionrestaurantesdb;Uid=sistema-user;Pwd=Sistema-user; SSLMode = None"; //contiene informacion para conectarmnos al servidor de datos
+                _CONEXION.ConnectionString = "Server=85.31.225.102;Port=3306;Database=GestionRestauranteDB;Uid=restaurante;Pwd=90u&3Ypo4; SSLMode = None"; //contiene informacion para conectarmnos al servidor de datos
                 _CONEXION.Open();
                 Resultado = true;
             }
