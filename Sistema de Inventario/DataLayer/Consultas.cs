@@ -105,7 +105,7 @@ namespace DataLayer
                 LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
                 LEFT JOIN ventas v ON pv.IDPedido = v.IDPedido
             WHERE
-                CAST(pc.FechaPedido AS DATE) BETWEEN '{inicio}' AND '{final}'
+                CAST(pv.FechaPedido AS DATE) BETWEEN '{inicio}' AND '{final}'
             GROUP BY
                 pv.IDPedido,
                 pv.Cliente,
