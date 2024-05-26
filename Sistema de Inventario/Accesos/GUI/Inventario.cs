@@ -19,7 +19,7 @@ namespace Accesos.GUI
         BindingSource _DATOS = new BindingSource();
 
         // actualizar 
-        public ProductosGestion _productosGestion;
+        public ProductosGestion _productosGestion; // INSTANCIA,  utilizada para gestionar los productos y sus eventos.
 
         private Boolean Validar()
         {
@@ -63,7 +63,7 @@ namespace Accesos.GUI
         public Inventario()
         {
             InitializeComponent();
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;// Establece el contexto de la licencia 
         }
         public void productosGestion(ProductosGestion productosGestion)
         {

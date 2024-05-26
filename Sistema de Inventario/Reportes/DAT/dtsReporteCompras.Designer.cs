@@ -289,7 +289,7 @@ namespace Reportes.DAT {
             
             private global::System.Data.DataColumn columnEmpleado;
             
-            private global::System.Data.DataColumn columnPrecio;
+            private global::System.Data.DataColumn columnTotalCosto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -366,9 +366,9 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PrecioColumn {
+            public global::System.Data.DataColumn TotalCostoColumn {
                 get {
-                    return this.columnPrecio;
+                    return this.columnTotalCosto;
                 }
             }
             
@@ -409,7 +409,7 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comprasRow AddcomprasRow(int Compras, System.DateTime FechaCompra, string Producto, int Pedido, string Empleado, double Precio) {
+            public comprasRow AddcomprasRow(int Compras, System.DateTime FechaCompra, string Producto, int Pedido, string Empleado, double TotalCosto) {
                 comprasRow rowcomprasRow = ((comprasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Compras,
@@ -417,7 +417,7 @@ namespace Reportes.DAT {
                         Producto,
                         Pedido,
                         Empleado,
-                        Precio};
+                        TotalCosto};
                 rowcomprasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcomprasRow);
                 return rowcomprasRow;
@@ -445,7 +445,7 @@ namespace Reportes.DAT {
                 this.columnProducto = base.Columns["Producto"];
                 this.columnPedido = base.Columns["Pedido"];
                 this.columnEmpleado = base.Columns["Empleado"];
-                this.columnPrecio = base.Columns["Precio"];
+                this.columnTotalCosto = base.Columns["TotalCosto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -461,8 +461,8 @@ namespace Reportes.DAT {
                 base.Columns.Add(this.columnPedido);
                 this.columnEmpleado = new global::System.Data.DataColumn("Empleado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmpleado);
-                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio);
+                this.columnTotalCosto = new global::System.Data.DataColumn("TotalCosto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCosto);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -685,17 +685,17 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double Precio {
+            public double TotalCosto {
                 get {
                     try {
-                        return ((double)(this[this.tablecompras.PrecioColumn]));
+                        return ((double)(this[this.tablecompras.TotalCostoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Precio\' de la tabla \'compras\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalCosto\' de la tabla \'compras\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablecompras.PrecioColumn] = value;
+                    this[this.tablecompras.TotalCostoColumn] = value;
                 }
             }
             
@@ -761,14 +761,14 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPrecioNull() {
-                return this.IsNull(this.tablecompras.PrecioColumn);
+            public bool IsTotalCostoNull() {
+                return this.IsNull(this.tablecompras.TotalCostoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPrecioNull() {
-                this[this.tablecompras.PrecioColumn] = global::System.Convert.DBNull;
+            public void SetTotalCostoNull() {
+                this[this.tablecompras.TotalCostoColumn] = global::System.Convert.DBNull;
             }
         }
         
