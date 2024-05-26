@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DataLayer
@@ -601,25 +602,32 @@ namespace DataLayer
         public static DataTable COMPRAS_SEGUN_PEDIDO(string pFechaInicio, string pFechaFinal)
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT 
+            String Consulta = @"SELECT DISTINCT
                c.IDCompras,
                c.FechaCompra,
-               c.Comentario,
                c.IDPedido,
-               e.Nombre AS Empleado
+               p.Nombre As Producto,
+               e.Nombre AS Empleado,
+               dc.Precio as Costo
+               
                FROM 
-               compras c
-               INNER JOIN empleados e ON c.IDEmpleado = e.IDEmpleado
+               GestionRestauranteDB.compras c
+               left join GestionRestauranteDB.detallepedidocompras dc on c.IDPedido = dc.IDPedido
+               left join GestionRestauranteDB.productos p on dc.IDProducto = p.IDProducto
+               INNER JOIN GestionRestauranteDB.empleados e ON c.IDEmpleado = e.IDEmpleado
+               
                WHERE
-               CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
+ CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
              GROUP BY
                 c.IDCompras,
                c.FechaCompra,
-               c.Comentario,
+
                c.IDPedido,
-               e.Nombre
+               p.Nombre,
+               e.Nombre,
+               dc.Precio
              ORDER BY
-               c.FechaCompra ASC;";
+               c.FechaCompra ASC; ";
             DBOperacion operacion = new DBOperacion();
             try
             {
