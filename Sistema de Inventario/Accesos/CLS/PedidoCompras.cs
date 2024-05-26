@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using DataLayer; // Ajusta el namespace según la estructura de tu proyecto
@@ -25,7 +26,9 @@ namespace Accesos.CLS
                 DBOperacion operacion = new DBOperacion();
 
                 // Construir la consulta para insertar el pedido en la tabla 'pedidocompras'
-                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, Estado, Comentarios) VALUES ({idProveedor}, 'Creado', '{nuevoComentario}');";
+                string fechaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, FechaPedido, Estado, Comentarios) VALUES ({idProveedor}, '{fechaActual}', 'Creado', '{nuevoComentario}');";
+
 
 
 
@@ -39,17 +42,19 @@ namespace Accesos.CLS
                     foreach (Item item in detallesPedido)
                     {
                         // Construir la consulta para insertar el detalle del pedido
-                
+
                         StringBuilder consultaDetalle = new StringBuilder();
-                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio) VALUES (");
+                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio, Fecha) VALUES (");
                         consultaDetalle.Append(idPedido); // IDPedido es numérico, no necesita comillas
                         consultaDetalle.Append(", ");
                         consultaDetalle.Append(item.IDProducto); // IDProducto es numérico, no necesita comillas
                         consultaDetalle.Append(", ");
                         consultaDetalle.Append(item.Cantidad); // Cantidad es numérico, no necesita comillas
                         consultaDetalle.Append(", ");
-                        consultaDetalle.Append(item.Precio); // Precio es numérico, no necesita comillas
-                        consultaDetalle.Append(");");
+                        consultaDetalle.Append(item.Precio.ToString("0.00", CultureInfo.InvariantCulture)); // Precio es numérico, conviértelo a cadena con el formato correcto
+                 
+                        consultaDetalle.Append("');");
+
 
 
                         // Ejecutar la consulta para insertar el detalle del pedido

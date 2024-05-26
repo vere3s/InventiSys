@@ -85,10 +85,10 @@ namespace DataLayer
             }
             return Resultado;
         }
-        public static DataTable PedidosVentas()
+        public static DataTable PedidosVentas(string inicio, string final)
         {
             DataTable Resultado = new DataTable();
-                        String Consulta = @"SELECT
+                        String Consulta = $@"SELECT
                 DISTINCT pv.IDPedido,
                 pv.Cliente,
                 pv.FechaPedido,
@@ -103,6 +103,8 @@ namespace DataLayer
                 pedidoventas pv
                 LEFT JOIN detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
                 LEFT JOIN ventas v ON pv.IDPedido = v.IDPedido
+            WHERE
+                CAST(pc.FechaPedido AS DATE) BETWEEN '{inicio}' AND '{final}'
             GROUP BY
                 pv.IDPedido,
                 pv.Cliente,
@@ -285,7 +287,7 @@ namespace DataLayer
 
         public static object PedidosCompras(string inicio,string final)
         {
-            Console.WriteLine(inicio);
+            
   
             DataTable Resultado = new DataTable();
             string Consulta = $@"
@@ -307,7 +309,7 @@ namespace DataLayer
             LEFT JOIN compras c ON pc.IDPedido = c.IDPedido
             LEFT JOIN proveedores ps ON pc.IDProveedor = ps.IDProveedor
         WHERE
-            pc.FechaPedido BETWEEN '{inicio}' AND '{final}'
+           CAST(pc.FechaPedido AS DATE) BETWEEN '{inicio}' AND '{final}'
         GROUP BY
             pc.IDPedido,
             pc.IDProveedor,
@@ -466,7 +468,7 @@ namespace DataLayer
                 dpv.Precio as CostoUnitario,
                 (dpv.Cantidad * dpv.Precio) AS Importe
             FROM 
-                detallepedidoCompras dpv
+                detallepedidocompras dpv
             INNER JOIN 
                 productos p ON dpv.IDProducto = p.IDProducto
             WHERE 

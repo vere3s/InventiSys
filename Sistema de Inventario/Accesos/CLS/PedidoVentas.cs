@@ -43,7 +43,7 @@ namespace Accesos.CLS
                     consultaVerificacion.Append(";");
 
                     // Ejecutar la consulta de verificación
-                    int count = operacion.EjecutarSentencia(consultaVerificacion.ToString());
+                    int count = Convert.ToInt32(operacion.Consultar(consultaVerificacion.ToString()).Rows[0][0]);
 
                     // Si no existe un pago previo, proceder con la inserción
                     if (count == 0)
@@ -89,14 +89,22 @@ namespace Accesos.CLS
                     // Crear una instancia de DBOperacion para ejecutar las consultas
                     DBOperacion operacion = new DBOperacion();
 
-                    // Construir la consulta para insertar el pedido en la tabla 'pedidoventas'
+                    
+
+                    // Obtener la fecha actual de la máquina local
+                    DateTime fechaActual = DateTime.Now;
+
+                    // Construir la consulta de inserción con la fecha actual
                     StringBuilder consultaPedido = new StringBuilder();
-                   
-                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente,Estado,Comentarios) VALUES('");
+                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente, FechaPedido, Estado, Comentarios) VALUES('");
                     consultaPedido.Append(cliente.Replace("'", "''")); // Escapar apóstrofes en el cliente
-                    consultaPedido.Append("','Pendiente','");
+                    consultaPedido.Append("', '");
+                    consultaPedido.Append(fechaActual.ToString("yyyy-MM-dd HH:mm:ss")); // Formatear la fecha como string
+                    consultaPedido.Append("', 'Pendiente', '");
                     consultaPedido.Append(Comentario.Replace("'", "''")); // Escapar apóstrofes en el comentario
                     consultaPedido.Append("');");
+
+
 
 
                     int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido.ToString());

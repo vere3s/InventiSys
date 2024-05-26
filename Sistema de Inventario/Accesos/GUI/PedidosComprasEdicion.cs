@@ -308,7 +308,8 @@ namespace Accesos.GUI
             {
                 InsertarPedido(); // Inserta un nuevo pedido si el ID es menor o igual a cero
             }
-            else
+            if (_ID > 0)
+           
             {
                 // El ID es mayor que cero, por lo que se asume que ya existe un pedido
                 PedidoCompras pedidoCompras = new PedidoCompras();
