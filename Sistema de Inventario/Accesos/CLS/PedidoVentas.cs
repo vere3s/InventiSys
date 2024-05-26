@@ -96,18 +96,16 @@ namespace Accesos.CLS
 
                     // Construir la consulta de inserción con la fecha actual
                     StringBuilder consultaPedido = new StringBuilder();
-                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente, FechaPedido, Estado, Comentarios) VALUES('");
-                    consultaPedido.Append(cliente.Replace("'", "''")); // Escapar apóstrofes en el cliente
-                    consultaPedido.Append("', '");
-                    consultaPedido.Append(fechaActual.ToString("yyyy-MM-dd HH:mm:ss")); // Formatear la fecha como string
-                    consultaPedido.Append("', 'Pendiente', '");
-                    consultaPedido.Append(Comentario.Replace("'", "''")); // Escapar apóstrofes en el comentario
-                    consultaPedido.Append("');");
+                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente, FechaPedido, Estado, Comentarios) VALUES(@Cliente, @FechaPedido, 'Pendiente', @Comentarios)");
 
+                    // Crear un diccionario de parámetros y añadir los valores correspondientes
+                    Dictionary<string, object> parametros = new Dictionary<string, object>();
+                    parametros.Add("@Cliente", cliente);
+                    parametros.Add("@FechaPedido", fechaActual);
+                    parametros.Add("@Comentarios", Comentario);
 
+                    int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido.ToString(), parametros);
 
-
-                    int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido.ToString());
                     // Ejecutar la consulta para insertar el pedido
 
                     // Obtener el ID del pedido recién insertado
@@ -117,28 +115,24 @@ namespace Accesos.CLS
                     // Verificar si se pudo obtener el ID del pedido
                     if (idPedido > 0)
                     {
-                        Console.WriteLine("El id es" + idPedido);
+                     
                         // Iterar sobre los detalles del pedido para insertar cada uno en la tabla 'detallepedidoventas'
                         foreach (Item item in detallesPedido)
                         {
                             // Construir la consulta para insertar el detalle del pedido
                             StringBuilder consultaDetalle = new StringBuilder();
-                            consultaDetalle.Append("INSERT INTO detallepedidoventas(IDPedido, IDProducto, Cantidad, Precio) VALUES(");
-                            consultaDetalle.Append(idPedido);
+                            consultaDetalle.Append("INSERT INTO detallepedidoventas(IDPedido, IDProducto, Cantidad, Precio) VALUES(@IDPedido, @IDProducto, @Cantidad, @Precio)");
 
-                            consultaDetalle.Append(",");
-                            consultaDetalle.Append(item.IDProducto);
-                            Console.WriteLine("El id es idProducto" + item.IDProducto);
-                            consultaDetalle.Append(",");
-                            consultaDetalle.Append(item.Cantidad);
-                            Console.WriteLine("El id es idProducto" + item.Cantidad);
-                            consultaDetalle.Append(",");
-                            consultaDetalle.Append(item.Precio);
-                            Console.WriteLine("El id es idProducto" + item.Precio);
-                            consultaDetalle.Append(");");
+                            // Crear un diccionario de parámetros y añadir los valores correspondientes
+                            Dictionary<string, object> parametrosDetalles = new Dictionary<string, object>();
+                            parametrosDetalles .Add("@IDPedido", idPedido);
+                            parametrosDetalles .Add("@IDProducto", item.IDProducto);
+                            parametrosDetalles .Add("@Cantidad", item.Cantidad);
+                            parametrosDetalles .Add("@Precio", item.Precio);
 
                             // Ejecutar la consulta para insertar el detalle del pedido
-                            Console.WriteLine("El id es idSentencia" + operacion.EjecutarSentencia(consultaDetalle.ToString()));
+                            operacion.EjecutarSentencia(consultaDetalle.ToString(), parametrosDetalles );
+
                         }
 
                         // Si se llega a este punto, se insertaron correctamente todos los detalles del pedido
@@ -168,21 +162,52 @@ namespace Accesos.CLS
                     // Construir la consulta para actualizar el cliente del pedido
                     StringBuilder consultaActualizacion = new StringBuilder();
                     consultaActualizacion.Append("UPDATE pedidoventas SET ");
-                    consultaActualizacion.Append("Cliente = '");
-                    consultaActualizacion.Append(nuevoCliente?.Replace("'", "''") ?? ""); // Check for null before replacing
-                    consultaActualizacion.Append("', ");
-                    consultaActualizacion.Append("Estado = '");
-                    consultaActualizacion.Append(nuevoEstado?.Replace("'", "''") ?? ""); // Check for null before replacing
-                    consultaActualizacion.Append("', ");
-                    consultaActualizacion.Append("Comentarios = '");
-                    consultaActualizacion.Append(nuevoComentario?.Replace("'", "''") ?? ""); // Check for null before replacing
-                    consultaActualizacion.Append("' WHERE IDPedido = ");
-                    consultaActualizacion.Append(idPedido.ToString()); // Convert idPedido to string
-                    consultaActualizacion.Append(";");
 
+                    if (!string.IsNullOrEmpty(nuevoCliente))
+                    {
+                        consultaActualizacion.Append("Cliente = @NuevoCliente, ");
+                    }
+
+                    if (!string.IsNullOrEmpty(nuevoEstado))
+                    {
+                        consultaActualizacion.Append("Estado = @NuevoEstado, ");
+                    }
+
+                    if (!string.IsNullOrEmpty(nuevoComentario))
+                    {
+                        consultaActualizacion.Append("Comentarios = @NuevoComentario, ");
+                    }
+
+                    // Eliminar la última coma y espacio si se agregaron actualizaciones
+                    if (consultaActualizacion.Length > 0)
+                    {
+                        consultaActualizacion.Length -= 2;
+                    }
+
+                    consultaActualizacion.Append(" WHERE IDPedido = @IDPedido");
+
+                    // Crear un diccionario de parámetros y añadir los valores correspondientes
+                    Dictionary<string, object> parametros = new Dictionary<string, object>();
+                    if (!string.IsNullOrEmpty(nuevoCliente))
+                    {
+                        parametros.Add("@NuevoCliente", nuevoCliente);
+                    }
+
+                    if (!string.IsNullOrEmpty(nuevoEstado))
+                    {
+                        parametros.Add("@NuevoEstado", nuevoEstado);
+                    }
+
+                    if (!string.IsNullOrEmpty(nuevoComentario))
+                    {
+                        parametros.Add("@NuevoComentario", nuevoComentario);
+                    }
+
+                    parametros.Add("@IDPedido", idPedido);
 
                     // Ejecutar la consulta de actualización del cliente
-                    operacion.EjecutarSentencia(consultaActualizacion.ToString());
+                    operacion.EjecutarSentencia(consultaActualizacion.ToString(), parametros);
+
 
                     // Eliminar los detalles del pedido que ya no están en la lista de nuevos detalles
                     StringBuilder consultaEliminacionDetalles = new StringBuilder();

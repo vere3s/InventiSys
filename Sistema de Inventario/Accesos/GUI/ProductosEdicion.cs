@@ -72,7 +72,7 @@ namespace Accesos.GUI
                     oProducto.Nombre = tbNombre.Text;
                     oProducto.Precio = Convert.ToDouble(tbPrecio.Text);
                     oProducto.CostoUnitario = Convert.ToDouble(tbCostoUnitario.Text);
-                    oProducto.EsPlatillo = Convert.ToInt32(tbPlatillo.Text);
+                    oProducto.EsPlatillo = Convert.ToInt32(cbPlatillo.Checked ? 1: 0);
                     oProducto.IDCategoria = Convert.ToInt32(cbIDCategoria.SelectedValue);
                     oProducto.Cantidad = Convert.ToInt32(tbCantidad.Text);
 
@@ -120,10 +120,26 @@ namespace Accesos.GUI
         {
             Close();
         }
+void Verificar() {
+            if (cbPlatillo.Checked)
+            {
+                tbCantidad.Text = "0";
+                tbCantidad.ReadOnly = true;
+            }
+            else
+            {
+                tbCantidad.ReadOnly = false;
+            }
+        }
+
+        private void cbPlatillo_CheckedChanged(object sender, EventArgs e)
+        {
+            Verificar();
+        }
 
         private void ProductosEdicion_Load(object sender, EventArgs e)
         {
-
+            Verificar();
         }
     }
 }

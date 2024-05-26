@@ -27,14 +27,19 @@ namespace Accesos.CLS
 
                 // Construir la consulta para insertar el pedido en la tabla 'pedidocompras'
                 string fechaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                string consultaPedido = $"INSERT INTO pedidocompras(IDProveedor, FechaPedido, Estado, Comentarios) VALUES ({idProveedor}, '{fechaActual}', 'Creado', '{nuevoComentario}');";
+                string consultaPedido = "INSERT INTO pedidocompras(IDProveedor, FechaPedido, Estado, Comentarios) VALUES (@IDProveedor, @FechaPedido, @Estado, @Comentarios);";
+
+                // Crear un diccionario de parámetros y añadir los valores correspondientes
+                Dictionary<string, object> parametros = new Dictionary<string, object>();
+                parametros.Add("@IDProveedor", idProveedor);
+                parametros.Add("@FechaPedido", fechaActual);
+                parametros.Add("@Estado", "Creado");
+                parametros.Add("@Comentarios", nuevoComentario);
+
+                // Ejecutar la consulta para insertar el pedido y obtener su ID
+                int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido, parametros);
 
 
-
-
-
-                int idPedido = operacion.EjecutarSentenciaYObtenerID(consultaPedido);
-               
 
                 // Verificar si se pudo obtener el ID del pedido
                 if (idPedido > 0)
@@ -42,23 +47,20 @@ namespace Accesos.CLS
                     foreach (Item item in detallesPedido)
                     {
                         // Construir la consulta para insertar el detalle del pedido
-
                         StringBuilder consultaDetalle = new StringBuilder();
-                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio, Fecha) VALUES (");
-                        consultaDetalle.Append(idPedido); // IDPedido es numérico, no necesita comillas
-                        consultaDetalle.Append(", ");
-                        consultaDetalle.Append(item.IDProducto); // IDProducto es numérico, no necesita comillas
-                        consultaDetalle.Append(", ");
-                        consultaDetalle.Append(item.Cantidad); // Cantidad es numérico, no necesita comillas
-                        consultaDetalle.Append(", ");
-                        consultaDetalle.Append(item.Precio.ToString("0.00", CultureInfo.InvariantCulture)); // Precio es numérico, conviértelo a cadena con el formato correcto
-                 
-                        consultaDetalle.Append("');");
+                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio, Fecha) VALUES (@IDPedido, @IDProducto, @Cantidad, @Precio, @Fecha)");
 
-
+                        // Crear un diccionario de parámetros y añadir los valores correspondientes
+                        Dictionary<string, object> parametrosDetalles = new Dictionary<string, object>();
+                        parametrosDetalles.Add("@IDPedido", idPedido);
+                        parametrosDetalles.Add("@IDProducto", item.IDProducto);
+                        parametrosDetalles.Add("@Cantidad", item.Cantidad);
+                        parametrosDetalles.Add("@Precio", item.Precio.ToString("0.00", CultureInfo.InvariantCulture));
+                        parametrosDetalles.Add("@Fecha", DateTime.Now);
 
                         // Ejecutar la consulta para insertar el detalle del pedido
-                        operacion.EjecutarSentencia(consultaDetalle.ToString());
+                        operacion.EjecutarSentencia(consultaDetalle.ToString(), parametrosDetalles);
+
                     }
                     return idPedido;
                 }
@@ -82,17 +84,16 @@ namespace Accesos.CLS
 
                 // Construir la consulta para actualizar el proveedor del pedido
                 StringBuilder consultaActualizacionProveedor = new StringBuilder();
-                consultaActualizacionProveedor.Append("UPDATE pedidocompras SET IDProveedor = ");
-                consultaActualizacionProveedor.Append(nuevoProveedor);
-                consultaActualizacionProveedor.Append(", ");
-                consultaActualizacionProveedor.Append("Comentarios = '");
-                consultaActualizacionProveedor.Append(nuevoComentario?.Replace("'", "''") ?? "");
-                consultaActualizacionProveedor.Append("' WHERE IDPedido = ");
-                consultaActualizacionProveedor.Append(idPedido);
-                consultaActualizacionProveedor.Append(";");
+                consultaActualizacionProveedor.Append("UPDATE pedidocompras SET IDProveedor = @NuevoProveedor, Comentarios = @NuevoComentario WHERE IDPedido = @IDPedido");
+
+                // Crear un diccionario de parámetros y añadir los valores correspondientes
+                Dictionary<string, object> parametros = new Dictionary<string, object>();
+                parametros.Add("@NuevoProveedor", nuevoProveedor);
+                parametros.Add("@NuevoComentario", nuevoComentario?.Replace("'", "''") ?? ""); // Escapar comillas simples
+                parametros.Add("@IDPedido", idPedido);
 
                 // Ejecutar la consulta de actualización del proveedor
-                operacion.EjecutarSentencia(consultaActualizacionProveedor.ToString());
+                operacion.EjecutarSentencia(consultaActualizacionProveedor.ToString(), parametros);
 
                 // Eliminar los detalles del pedido que ya no están en la lista de nuevos detalles
                 StringBuilder consultaEliminacionDetalles = new StringBuilder();
@@ -198,77 +199,6 @@ namespace Accesos.CLS
                 return false;
             }
         }
-
-        public void EliminarProductosNoPresentesEnPedido(int idPedido, List<Item> nuevosDetallesPedido)
-        {
-            try
-            {
-                // Crear una instancia de DBOperacion para ejecutar las consultas
-                DBOperacion operacion = new DBOperacion();
-
-                // Construir la consulta para obtener todos los detalles del pedido actual
-                StringBuilder consultaDetallesPedidoActual = new StringBuilder();
-                consultaDetallesPedidoActual.Append("SELECT IDDetallePedido FROM detallepedidocompras WHERE IDPedido = ");
-                consultaDetallesPedidoActual.Append(idPedido);
-                consultaDetallesPedidoActual.Append(";");
-
-                // Ejecutar la consulta para obtener los detalles del pedido actual
-                DataTable detallesPedidoActual = operacion.Consultar(consultaDetallesPedidoActual.ToString());
-
-                // Crear una lista para almacenar los IDs de los detalles presentes en el pedido actual
-                List<int> idsDetallesPresentes = new List<int>();
-                foreach (DataRow fila in detallesPedidoActual.Rows)
-                {
-                    int idDetallePedido = Convert.ToInt32(fila["IDDetallePedido"]);
-                    idsDetallesPresentes.Add(idDetallePedido);
-                }
-
-                // Crear una lista para almacenar los IDs de los detalles presentes en los nuevos detalles del pedido
-                List<int> idsNuevosDetalles = new List<int>();
-                foreach (Item nuevoDetalle in nuevosDetallesPedido)
-                {
-                    idsNuevosDetalles.Add(nuevoDetalle.IDDetallePedido);
-                }
-
-                // Determinar los IDs de los detalles que ya no están presentes en los nuevos detalles del pedido
-                List<int> idsDetallesAEliminar = idsDetallesPresentes.Except(idsNuevosDetalles).ToList();
-
-                // Si hay detalles a eliminar, construir la consulta de eliminación y ejecutarla
-                if (idsDetallesAEliminar.Count > 0)
-                {
-                    StringBuilder consultaEliminacionDetalles = new StringBuilder();
-                    consultaEliminacionDetalles.Append("DELETE FROM detallepedidocompras WHERE IDDetallePedido IN (");
-
-                    StringBuilder idsDetalles = new StringBuilder();
-                    foreach (int idDetalle in idsDetallesAEliminar)
-                    {
-                        idsDetalles.Append(idDetalle);
-                        idsDetalles.Append(",");
-                    }
-
-                    if (idsDetalles.Length > 0)
-                    {
-                        idsDetalles.Length--; // Eliminar el último carácter (coma)
-                    }
-
-                    consultaEliminacionDetalles.Append(idsDetalles);
-                    consultaEliminacionDetalles.Append(");");
-
-                    // Ejecutar la consulta de eliminación de detalles
-                    operacion.EjecutarSentencia(consultaEliminacionDetalles.ToString());
-
-                    Console.WriteLine("Detalles eliminados correctamente.");
-                }
-                else
-                {
-                    Console.WriteLine("No hay detalles para eliminar.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al eliminar detalles del pedido: " + ex.Message);
-            }
-        }
         public int PagarPedido(int idPedido, double precio, int idEmpleado)
         {
             try
@@ -278,12 +208,18 @@ namespace Accesos.CLS
 
                 // Construir la consulta para verificar si ya existe un pago para el idPedido
                 StringBuilder consultaVerificacion = new StringBuilder();
-                consultaVerificacion.Append("SELECT COUNT(*) FROM compras WHERE IDPedido = ");
-                consultaVerificacion.Append(idPedido);
-                consultaVerificacion.Append(";");
+            
+                consultaVerificacion.Append("SELECT COUNT(*) FROM compras WHERE IDPedido = @IDPedido");
+
+                // Crear un diccionario de parámetros y añadir el valor de IDPedido
+                Dictionary<string, object> parametro = new Dictionary<string, object>
+                {
+                    { "@IDPedido", idPedido }
+                };
 
                 // Ejecutar la consulta de verificación
-                int count = Convert.ToInt32(operacion.Consultar(consultaVerificacion.ToString()).Rows[0][0]);
+                int count = Convert.ToInt32(operacion.Consultar(consultaVerificacion.ToString(), parametro).Rows[0][0]);
+
 
 
                 // Si no existe un pago previo, proceder con la inserción
@@ -291,19 +227,22 @@ namespace Accesos.CLS
                 {
                     // Construir la consulta para insertar el pago en la tabla 'compras'
                     StringBuilder consultaCompra = new StringBuilder();
-                    consultaCompra.Append("INSERT INTO compras(IDPedido, FechaCompra, IDEmpleado) VALUES (");
-                    consultaCompra.Append(idPedido); // Insertamos el ID del pedido
-                    consultaCompra.Append(", '");
-                    consultaCompra.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // Formateamos la fecha y hora
-                    consultaCompra.Append("', ");
-                    consultaCompra.Append(idEmpleado); // Insertamos el ID del empleado
-                    consultaCompra.Append(");");
+                    consultaCompra.Append("INSERT INTO compras(IDPedido, FechaCompra, IDEmpleado) VALUES (@IDPedido, @FechaCompra, @IDEmpleado)");
+
+                    // Crear un diccionario de parámetros y añadir los valores correspondientes
+                    Dictionary<string, object> parametros = new Dictionary<string, object>
+                    {
+                        { "@IDPedido", idPedido },
+                        { "@FechaCompra", DateTime.Now },
+                        { "@IDEmpleado", idEmpleado }
+                    };
 
                     // Ejecutar la consulta para insertar la compra
-                    return operacion.EjecutarSentencia(consultaCompra.ToString());
+                    return operacion.EjecutarSentencia(consultaCompra.ToString(), parametros);
+
 
                     // Si la inserción es exitosa, mostrar un mensaje
-                  
+
                 }
                 else
                 {

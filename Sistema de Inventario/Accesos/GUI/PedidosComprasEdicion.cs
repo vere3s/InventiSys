@@ -328,6 +328,8 @@ namespace Accesos.GUI
                     if (idPago > 0)
                     {
                         MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                       
                     }
                     else if (idPago == 0)
                     {

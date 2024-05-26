@@ -107,7 +107,7 @@ namespace Accesos.GUI
                     oProducto.tbNombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                     oProducto.tbPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
                     oProducto.tbCostoUnitario.Text = dgvProductos.CurrentRow.Cells["CostoUnitario"].Value.ToString();
-                    oProducto.tbPlatillo.Text = dgvProductos.CurrentRow.Cells["EsPlatillo"].Value.ToString();
+                    oProducto.cbPlatillo.Checked = (Convert.ToInt32(dgvProductos.CurrentRow.Cells["EsPlatillo"].Value)==1);
                     oProducto.cbIDCategoria.SelectedValue = dgvProductos.CurrentRow.Cells["IDCategoria"].Value;
                     oProducto.tbCantidad.Text = dgvProductos.CurrentRow.Cells["Cantidad"].Value.ToString();
                     oProducto.ShowDialog();

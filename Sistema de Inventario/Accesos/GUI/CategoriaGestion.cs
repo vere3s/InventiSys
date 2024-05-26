@@ -116,7 +116,9 @@ namespace Accesos.GUI
                     CategoriasEdicion oCategoria = new CategoriasEdicion();
                     oCategoria.tbIDCategoria.Text = dgvCategorias.CurrentRow.Cells["IDCategoria"].Value.ToString();
                     oCategoria.tbNombre.Text = dgvCategorias.CurrentRow.Cells["Nombre"].Value.ToString();
-                    oCategoria.tbEsIngrediente.Text = dgvCategorias.CurrentRow.Cells["EsIngrendiente"].Value.ToString();
+                    oCategoria.cbIngrediente.Checked = (Convert.ToInt32(dgvCategorias.CurrentRow.Cells["EsIngrendiente"].Value) == 1);
+
+
 
                     oCategoria.ShowDialog();
                     Cargar();

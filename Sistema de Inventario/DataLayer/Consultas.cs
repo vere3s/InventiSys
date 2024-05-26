@@ -176,20 +176,24 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT
-                p.IDProducto, 
-                p.Nombre,
-                p.Precio, 
-                p.CostoUnitario,
-                p.EsPlatillo, 
-                p.IDCategoria, 
-   
-                p.Cantidad,
-                 c.Nombre AS NombreC
-            FROM
-                productos p
-                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
-            ORDER BY
-                p.Nombre ASC; ";
+    p.IDProducto, 
+    p.Nombre,
+    p.Precio, 
+    p.CostoUnitario,
+    p.EsPlatillo, 
+    p.IDCategoria, 
+    p.Cantidad,
+    c.Nombre AS NombreC,
+    CASE
+        WHEN p.EsPlatillo = 1 THEN 'Sí'
+        ELSE 'No'
+    END AS SinStock
+FROM
+    productos p
+    INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+ORDER BY
+    p.Nombre ASC;
+ ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -286,7 +290,7 @@ namespace DataLayer
             return Resultado;
         }
 
-        public static object PedidosCompras(string inicio,string final)
+        public static DataTable PedidosCompras(string inicio,string final)
         {
             
   

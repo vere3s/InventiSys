@@ -36,43 +36,44 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbIDCategoria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbEsIngrediente = new System.Windows.Forms.TextBox();
             this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbIngrediente = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(161, 243);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(215, 299);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(85, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(113, 37);
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(46, 243);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAceptar.Location = new System.Drawing.Point(61, 299);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(85, 30);
+            this.btnAceptar.Size = new System.Drawing.Size(113, 37);
             this.btnAceptar.TabIndex = 18;
             this.btnAceptar.Text = "Guardar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 166);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(21, 204);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 20);
+            this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 14;
             this.label3.Text = "Es Ingrediente";
             // 
@@ -80,20 +81,19 @@
             // 
             this.tbNombre.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNombre.Location = new System.Drawing.Point(130, 118);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNombre.Location = new System.Drawing.Point(173, 145);
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(175, 26);
+            this.tbNombre.Size = new System.Drawing.Size(232, 30);
             this.tbNombre.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 124);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(21, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(81, 25);
             this.label2.TabIndex = 12;
             this.label2.Text = "Nombre";
             // 
@@ -101,10 +101,10 @@
             // 
             this.tbIDCategoria.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tbIDCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIDCategoria.Location = new System.Drawing.Point(130, 72);
-            this.tbIDCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.tbIDCategoria.Location = new System.Drawing.Point(173, 89);
+            this.tbIDCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbIDCategoria.Name = "tbIDCategoria";
-            this.tbIDCategoria.Size = new System.Drawing.Size(56, 26);
+            this.tbIDCategoria.Size = new System.Drawing.Size(73, 30);
             this.tbIDCategoria.TabIndex = 11;
             this.tbIDCategoria.Visible = false;
             // 
@@ -112,35 +112,33 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 78);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(31, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 20);
+            this.label1.Size = new System.Drawing.Size(31, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "ID";
-            // 
-            // tbEsIngrediente
-            // 
-            this.tbEsIngrediente.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbEsIngrediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEsIngrediente.Location = new System.Drawing.Point(130, 163);
-            this.tbEsIngrediente.Margin = new System.Windows.Forms.Padding(2);
-            this.tbEsIngrediente.Name = "tbEsIngrediente";
-            this.tbEsIngrediente.Size = new System.Drawing.Size(156, 26);
-            this.tbEsIngrediente.TabIndex = 20;
             // 
             // Notificador
             // 
             this.Notificador.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Notificador.ContainerControl = this;
             // 
+            // cbIngrediente
+            // 
+            this.cbIngrediente.AutoSize = true;
+            this.cbIngrediente.Location = new System.Drawing.Point(182, 208);
+            this.cbIngrediente.Name = "cbIngrediente";
+            this.cbIngrediente.Size = new System.Drawing.Size(18, 17);
+            this.cbIngrediente.TabIndex = 20;
+            this.cbIngrediente.UseVisualStyleBackColor = true;
+            // 
             // CategoriasEdicion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(324, 297);
-            this.Controls.Add(this.tbEsIngrediente);
+            this.ClientSize = new System.Drawing.Size(432, 366);
+            this.Controls.Add(this.cbIngrediente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label3);
@@ -148,6 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbIDCategoria);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CategoriasEdicion";
             this.Text = "CategoriasEdicion";
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
@@ -165,7 +164,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox tbIDCategoria;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox tbEsIngrediente;
         private System.Windows.Forms.ErrorProvider Notificador;
+        public System.Windows.Forms.CheckBox cbIngrediente;
     }
 }

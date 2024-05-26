@@ -35,8 +35,8 @@ namespace InventiSys.GUI
             INNER JOIN 
                 empleados e ON u.IDEmpleado = e.IDEmpleado
             WHERE 
-                u.Usuario = '" + tbUsuario.Text + @"' AND 
-                u.Contraseña = '" + Accesos.CLS.Usuarios.ConvertirContraseña(tbContraseña.Text) + @"';";
+                u.Usuario = '" + tbUsuario.Text.Trim() + @"' AND 
+                u.Contraseña = '" + Accesos.CLS.Usuarios.ConvertirContraseña(tbContraseña.Text.Trim()) + @"';";
             dt = oOperacion.Consultar(query);
             if (dt.Rows.Count == 1)
             {

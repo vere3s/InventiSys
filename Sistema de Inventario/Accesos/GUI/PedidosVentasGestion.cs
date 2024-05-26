@@ -20,13 +20,14 @@ namespace Accesos.GUI
         public PedidosVentasGestion()
         {
             InitializeComponent();
-            Cronometro.Start();
+         
+            dgvPedidosVentas.AutoGenerateColumns = false;
         }
         private void Cargar()
         {
             _DATOS.DataSource = Consultas.PedidosVentas(dpInicio.Text,dpFinal.Text);
             dgvPedidosVentas.DataSource = _DATOS.DataSource;
-            dgvPedidosVentas.AutoGenerateColumns = false;
+            FiltrarLocalmente();
 
         }
         private void FiltrarLocalmente()
@@ -41,8 +42,7 @@ namespace Accesos.GUI
                 {
                     _DATOS.Filter = "Cliente like '%" + tbFiltro.Text + "%'";
                 }
-                dgvPedidosVentas.AutoGenerateColumns = false;
-                dgvPedidosVentas.DataSource = _DATOS;
+           
             }
             catch (Exception)
             {

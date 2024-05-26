@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosVentasGestion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbRegistros = new System.Windows.Forms.ToolStripStatusLabel();
@@ -44,28 +44,28 @@
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.tbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.dgvPedidosVentas = new System.Windows.Forms.DataGridView();
-            this.IDPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cronometro = new System.Windows.Forms.Timer(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.dpFinal = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dpInicio = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPedidosVentas = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -184,122 +184,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(73, 37);
             this.toolStripLabel1.Text = "Filtrar";
             // 
-            // dgvPedidosVentas
-            // 
-            this.dgvPedidosVentas.AllowUserToAddRows = false;
-            this.dgvPedidosVentas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dgvPedidosVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPedidosVentas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPedidosVentas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvPedidosVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedidosVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvPedidosVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidosVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPedido,
-            this.EstadoPago,
-            this.Cliente,
-            this.Total,
-            this.FechaPedido,
-            this.Estado,
-            this.Comentarios});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedidosVentas.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvPedidosVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPedidosVentas.EnableHeadersVisualStyles = false;
-            this.dgvPedidosVentas.Location = new System.Drawing.Point(0, 0);
-            this.dgvPedidosVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvPedidosVentas.Name = "dgvPedidosVentas";
-            this.dgvPedidosVentas.ReadOnly = true;
-            this.dgvPedidosVentas.RowHeadersWidth = 51;
-            this.dgvPedidosVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidosVentas.Size = new System.Drawing.Size(637, 387);
-            this.dgvPedidosVentas.TabIndex = 14;
-            // 
-            // IDPedido
-            // 
-            this.IDPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.IDPedido.DataPropertyName = "IDPedido";
-            this.IDPedido.HeaderText = "ID";
-            this.IDPedido.MinimumWidth = 90;
-            this.IDPedido.Name = "IDPedido";
-            this.IDPedido.ReadOnly = true;
-            this.IDPedido.Width = 90;
-            // 
-            // EstadoPago
-            // 
-            this.EstadoPago.DataPropertyName = "EstadoPago";
-            this.EstadoPago.HeaderText = "EstadoPago";
-            this.EstadoPago.MinimumWidth = 6;
-            this.EstadoPago.Name = "EstadoPago";
-            this.EstadoPago.ReadOnly = true;
-            this.EstadoPago.Width = 125;
-            // 
-            // Cliente
-            // 
-            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cliente.DataPropertyName = "Cliente";
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 100;
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 50;
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.ToolTipText = "c2";
-            this.Total.Width = 85;
-            // 
-            // FechaPedido
-            // 
-            this.FechaPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.FechaPedido.DataPropertyName = "FechaPedido";
-            this.FechaPedido.HeaderText = "Fecha";
-            this.FechaPedido.MinimumWidth = 100;
-            this.FechaPedido.Name = "FechaPedido";
-            this.FechaPedido.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 102;
-            // 
-            // Comentarios
-            // 
-            this.Comentarios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Comentarios.DataPropertyName = "Comentarios";
-            this.Comentarios.HeaderText = "Comentarios";
-            this.Comentarios.MinimumWidth = 6;
-            this.Comentarios.Name = "Comentarios";
-            this.Comentarios.ReadOnly = true;
-            this.Comentarios.Width = 152;
-            // 
             // Cronometro
             // 
             this.Cronometro.Interval = 1000;
@@ -337,6 +221,16 @@
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
+            // dpFinal
+            // 
+            this.dpFinal.CustomFormat = "yyyy-MM-dd";
+            this.dpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpFinal.Location = new System.Drawing.Point(19, 193);
+            this.dpFinal.Margin = new System.Windows.Forms.Padding(4);
+            this.dpFinal.Name = "dpFinal";
+            this.dpFinal.Size = new System.Drawing.Size(140, 22);
+            this.dpFinal.TabIndex = 17;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -347,15 +241,15 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Fecha final";
             // 
-            // dpFinal
+            // dpInicio
             // 
-            this.dpFinal.CustomFormat = "yyyy-MM-dd";
-            this.dpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpFinal.Location = new System.Drawing.Point(19, 193);
-            this.dpFinal.Margin = new System.Windows.Forms.Padding(4);
-            this.dpFinal.Name = "dpFinal";
-            this.dpFinal.Size = new System.Drawing.Size(140, 22);
-            this.dpFinal.TabIndex = 17;
+            this.dpInicio.CustomFormat = "yyyy-MM-dd";
+            this.dpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpInicio.Location = new System.Drawing.Point(19, 108);
+            this.dpInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.dpInicio.Name = "dpInicio";
+            this.dpInicio.Size = new System.Drawing.Size(140, 22);
+            this.dpInicio.TabIndex = 15;
             // 
             // label1
             // 
@@ -367,15 +261,121 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Fecha de inicio";
             // 
-            // dpInicio
+            // Comentarios
             // 
-            this.dpInicio.CustomFormat = "yyyy-MM-dd";
-            this.dpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpInicio.Location = new System.Drawing.Point(19, 108);
-            this.dpInicio.Margin = new System.Windows.Forms.Padding(4);
-            this.dpInicio.Name = "dpInicio";
-            this.dpInicio.Size = new System.Drawing.Size(140, 22);
-            this.dpInicio.TabIndex = 15;
+            this.Comentarios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Comentarios.DataPropertyName = "Comentarios";
+            this.Comentarios.HeaderText = "Comentarios";
+            this.Comentarios.MinimumWidth = 6;
+            this.Comentarios.Name = "Comentarios";
+            this.Comentarios.ReadOnly = true;
+            this.Comentarios.Width = 152;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 102;
+            // 
+            // FechaPedido
+            // 
+            this.FechaPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.FechaPedido.DataPropertyName = "FechaPedido";
+            this.FechaPedido.HeaderText = "Fecha";
+            this.FechaPedido.MinimumWidth = 100;
+            this.FechaPedido.Name = "FechaPedido";
+            this.FechaPedido.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 50;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.ToolTipText = "c2";
+            this.Total.Width = 85;
+            // 
+            // Cliente
+            // 
+            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cliente.DataPropertyName = "Cliente";
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.MinimumWidth = 100;
+            this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
+            // 
+            // EstadoPago
+            // 
+            this.EstadoPago.DataPropertyName = "EstadoPago";
+            this.EstadoPago.HeaderText = "EstadoPago";
+            this.EstadoPago.MinimumWidth = 6;
+            this.EstadoPago.Name = "EstadoPago";
+            this.EstadoPago.ReadOnly = true;
+            this.EstadoPago.Width = 125;
+            // 
+            // IDPedido
+            // 
+            this.IDPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.IDPedido.DataPropertyName = "IDPedido";
+            this.IDPedido.HeaderText = "ID";
+            this.IDPedido.MinimumWidth = 90;
+            this.IDPedido.Name = "IDPedido";
+            this.IDPedido.ReadOnly = true;
+            this.IDPedido.Width = 90;
+            // 
+            // dgvPedidosVentas
+            // 
+            this.dgvPedidosVentas.AllowUserToAddRows = false;
+            this.dgvPedidosVentas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvPedidosVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPedidosVentas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPedidosVentas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPedidosVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidosVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPedidosVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidosVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPedido,
+            this.EstadoPago,
+            this.Cliente,
+            this.Total,
+            this.FechaPedido,
+            this.Estado,
+            this.Comentarios});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedidosVentas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPedidosVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPedidosVentas.EnableHeadersVisualStyles = false;
+            this.dgvPedidosVentas.Location = new System.Drawing.Point(0, 0);
+            this.dgvPedidosVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPedidosVentas.Name = "dgvPedidosVentas";
+            this.dgvPedidosVentas.ReadOnly = true;
+            this.dgvPedidosVentas.RowHeadersWidth = 51;
+            this.dgvPedidosVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPedidosVentas.Size = new System.Drawing.Size(637, 387);
+            this.dgvPedidosVentas.TabIndex = 14;
             // 
             // PedidosVentasGestion
             // 
@@ -396,12 +396,12 @@
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosVentas)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,6 +419,13 @@
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripTextBox tbFiltro;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.Timer Cronometro;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.DateTimePicker dpFinal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dpInicio;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvPedidosVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoPago;
@@ -427,12 +434,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentarios;
-        private System.Windows.Forms.Timer Cronometro;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.DateTimePicker dpFinal;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dpInicio;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Accesos.CLS.Accesos.CLS;
+﻿using Accesos.CLS;
+using Accesos.CLS.Accesos.CLS;
 using DataLayer;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,13 @@ namespace Accesos.GUI
         public PedidosComprasGestion()
         {
             InitializeComponent();
-            Cronometro.Start();
+            dgvPedidosVentas.AutoGenerateColumns = false;
+           
         }
         private void Cargar()
         {
             _DATOS.DataSource = Consultas.PedidosCompras(dpInicio.Text,dpFinal.Text);
-            dgvPedidosVentas.AutoGenerateColumns = false;
+            
             dgvPedidosVentas.DataSource = _DATOS.DataSource;
            
 
@@ -41,8 +43,7 @@ namespace Accesos.GUI
                 {
                     _DATOS.Filter = "Proveedor like '%" + tbFiltro.Text + "%'";
                 }
-                dgvPedidosVentas.AutoGenerateColumns = false;
-                dgvPedidosVentas.DataSource = _DATOS;
+             
             }
             catch (Exception)
             {
@@ -111,10 +112,10 @@ namespace Accesos.GUI
                 // Verificar la respuesta del usuario
                 if (result == DialogResult.Yes)
                 {
-                    PedidoVentas pedidoVentas = new PedidoVentas();
+                    PedidoCompras pedidoCompras = new PedidoCompras();
 
                     // Intentar eliminar el pedido
-                    if (pedidoVentas.Eliminar(idSeleccionado))
+                    if (pedidoCompras.Eliminar(idSeleccionado))
                     {
                         MessageBox.Show("Pedido eliminado correctamente.");
                         // Recargar los datos en el DataGridView después de eliminar
@@ -159,6 +160,11 @@ namespace Accesos.GUI
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            Cargar();
+        }
+
+        private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
             Cargar();
         }

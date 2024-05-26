@@ -33,6 +33,7 @@ namespace Accesos.GUI
         public CategoriasEdicion()
         {
             InitializeComponent();
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -55,8 +56,9 @@ namespace Accesos.GUI
                     }
 
                     oCategoria.Nombre = tbNombre.Text;
-                    oCategoria.EsIngrendiente = Convert.ToInt32(tbEsIngrediente.Text);
-                   
+
+                    oCategoria.EsIngrendiente = cbIngrediente.Checked ? 1 : 0;
+
                     //PROCEDER
                     if (tbIDCategoria.Text.Trim().Length == 0)
                     {
@@ -96,6 +98,22 @@ namespace Accesos.GUI
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+    }
+    public class ComboBoxItem
+    {
+        public string Text { get; set; }
+        public int Value { get; set; }
+
+        public ComboBoxItem(string text, int value)
+        {
+            Text = text;
+            Value = value;
+        }
+
+        public override string ToString()
+        {
+            return Text;
         }
     }
 }

@@ -230,8 +230,7 @@ namespace Accesos.GUI
                     string nombreProducto = item["Producto"].ToString();
                     decimal precioProducto = Convert.ToDecimal(item["Precio"]);
                     int cantidad = Convert.ToInt32(item["Cantidad"]);
-                   // int idDetallpedido = Convert.ToInt32(item["IDDetallePedido"]);
-                    // Crear un objeto Item con los datos del producto y agregarlo a la lista
+                   
                     Item itemPedido = new Item(idProducto, precioProducto, cantidad);
                     detallesPedido.Add(itemPedido);
                 }
@@ -243,8 +242,9 @@ namespace Accesos.GUI
                 if (idPedidoInsertado > 0)
                 {
                     MessageBox.Show("Pedido insertado correctamente. ID del pedido: " + idPedidoInsertado);
-                    // Aquí puedes realizar cualquier otra acción necesaria después de insertar el pedido
-
+                 
+                    btnModificar.Visible = true;
+                    btnEnPedido.Visible = false;
                     return idPedidoInsertado;
                 }
                 else
@@ -355,6 +355,7 @@ namespace Accesos.GUI
                     if (idPago > 0)
                     {
                         MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
                     else if (idPago == 0)
                     {
