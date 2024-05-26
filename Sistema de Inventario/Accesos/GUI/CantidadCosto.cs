@@ -27,11 +27,7 @@ namespace Accesos.GUI
                     Notificador.SetError(tbCantidad, "Ingrese un número válido mayor que cero");
                     valido = false;
                 }
-                else if (cantidad > cantidadMaxima)
-                {
-                    Notificador.SetError(tbCantidad, $"La cantidad no puede ser mayor que {cantidadMaxima}");
-                    valido = false;
-                }
+             
 
                 if (!decimal.TryParse(tbCosto.Text.Trim(), out decimal costoUnitario) || costoUnitario <= 0)
                 {
@@ -58,6 +54,11 @@ namespace Accesos.GUI
                 this.DialogResult = DialogResult.OK;
                 Close();
             }
+        }
+
+        private void CantidadCosto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

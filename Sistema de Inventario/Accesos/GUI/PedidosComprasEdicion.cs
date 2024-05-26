@@ -60,7 +60,7 @@ namespace Accesos.GUI
                         {
                             nCantidad = Convert.ToInt32(c.tbCantidad.Text);
                             nCosto = Convert.ToDecimal(c.tbCosto.Text);
-                        }
+                        
                         DataRow nuevaFila = ((DataTable)_DATOS.DataSource).NewRow();
                         nuevaFila["IDProducto"] = idProductoSeleccionado;
                         nuevaFila["Producto"] = nombreProductoSeleccionado;
@@ -68,6 +68,7 @@ namespace Accesos.GUI
                         nuevaFila["CostoUnitario"] = nCosto > 0 ? nCosto : precioProductoSeleccionado;
                         nuevaFila["Importe"] = Convert.ToDecimal(nuevaFila["Cantidad"]) * Convert.ToDecimal(nuevaFila["CostoUnitario"]);
                         ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
+                        }
                     }
                 }
                 else
