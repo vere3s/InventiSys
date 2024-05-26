@@ -26,7 +26,7 @@ namespace Accesos.GUI
         private void Cargar()
         {
             _DATOS.DataSource = Consultas.PedidosCompras(dpInicio.Text,dpFinal.Text);
-            
+            lbRegistros.Text = _DATOS.Count.ToString();
             dgvPedidosVentas.DataSource = _DATOS.DataSource;
            
 
@@ -115,16 +115,22 @@ namespace Accesos.GUI
                     PedidoCompras pedidoCompras = new PedidoCompras();
 
                     // Intentar eliminar el pedido
-                    if (pedidoCompras.Eliminar(idSeleccionado))
+                    int resultadoEliminacion = pedidoCompras.Eliminar(idSeleccionado);
+                    if (resultadoEliminacion == 1)
                     {
                         MessageBox.Show("Pedido eliminado correctamente.");
                         // Recargar los datos en el DataGridView después de eliminar
                         Cargar();
                     }
+                    else if (resultadoEliminacion == -1)
+                    {
+                        MessageBox.Show("No se puede eliminar el pedido porque existen compras asociadas.");
+                    }
                     else
                     {
                         MessageBox.Show("Error al eliminar el pedido.");
                     }
+
                 }
             }
             else
@@ -168,5 +174,22 @@ namespace Accesos.GUI
         {
             Cargar();
         }
+
+        private void dgvPedidosVentas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvPedidosVentas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPedidosVentas.SelectedRows.Count > 0)
+            {
+                // Obtiene el valor de la celda en la columna del ID del pedido
+                int idPedido = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
+
+                dgvProductos.DataSource = Consultas.DetallePedidoCompras(idPedido);
+            }
+        }
+
     }
 }

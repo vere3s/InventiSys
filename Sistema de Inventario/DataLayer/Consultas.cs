@@ -301,6 +301,7 @@ ORDER BY
             pc.IDProveedor,
             ps.Nombre AS Proveedor,
             pc.FechaPedido,
+
             pc.Estado,
             pc.Comentarios,
             SUM(dpv.Cantidad * dpv.Precio) AS Total,
@@ -470,7 +471,7 @@ ORDER BY
                 p.IDProducto,
                 p.Nombre AS Producto,
                 dpv.Cantidad,
-                dpv.Precio as CostoUnitario,
+                dpv.Precio,
                 (dpv.Cantidad * dpv.Precio) AS Importe
             FROM 
                 detallepedidocompras dpv

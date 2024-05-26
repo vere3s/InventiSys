@@ -167,38 +167,61 @@ namespace Accesos.CLS
             }
         }
 
-        public bool Eliminar(int idPedido)
+        public int Eliminar(int idPedido)
         {
             try
             {
                 // Crear una instancia de DBOperacion para ejecutar las consultas
                 DBOperacion operacion = new DBOperacion();
+                StringBuilder consultaVerificacion = new StringBuilder();
 
-                // Construir la consulta para eliminar los detalles del pedido
-                StringBuilder consultaEliminacionDetalles = new StringBuilder();
-                consultaEliminacionDetalles.Append("DELETE FROM detallepedidocompras WHERE IDPedido = ");
-                consultaEliminacionDetalles.Append(idPedido);
-                consultaEliminacionDetalles.Append(";");
+                consultaVerificacion.Append("SELECT COUNT(*) FROM compras WHERE IDPedido = @IDPedido");
 
-                // Construir la consulta para eliminar el pedido
-                StringBuilder consultaEliminacionPedido = new StringBuilder();
-                consultaEliminacionPedido.Append("DELETE FROM pedidocompras WHERE IDPedido = ");
-                consultaEliminacionPedido.Append(idPedido);
-                consultaEliminacionPedido.Append(";");
+                // Crear un diccionario de parámetros y añadir el valor de IDPedido
+                Dictionary<string, object> parametro = new Dictionary<string, object>
+        {
+            { "@IDPedido", idPedido }
+        };
 
-                // Ejecutar las consultas de eliminación
-                operacion.EjecutarSentencia(consultaEliminacionPedido.ToString());
-                operacion.EjecutarSentencia(consultaEliminacionDetalles.ToString());
+                // Ejecutar la consulta de verificación
+                int count = Convert.ToInt32(operacion.Consultar(consultaVerificacion.ToString(), parametro).Rows[0][0]);
+                if (count == 0)
+                {
 
-                Console.WriteLine("Pedido y detalles eliminados correctamente.");
-                return true;
+                    // Consulta para eliminar los detalles del pedido
+                    string consultaEliminacionDetalles = "DELETE FROM detallepedidocompras WHERE IDPedido = @IDPedidoDetalles";
+
+                    // Consulta para eliminar el pedido
+                    string consultaEliminacionPedido = "DELETE FROM pedidocompras WHERE IDPedido = @IDPedidoPedido";
+
+                    // Parámetros para las consultas
+                    Dictionary<string, object> parametrosDetalles = new Dictionary<string, object>();
+                    parametrosDetalles.Add("@IDPedidoDetalles", idPedido);
+
+                    Dictionary<string, object> parametrosPedido = new Dictionary<string, object>();
+                    parametrosPedido.Add("@IDPedidoPedido", idPedido);
+
+                    // Ejecutar las consultas de eliminación
+                    operacion.EjecutarSentencia(consultaEliminacionDetalles, parametrosDetalles);
+                    operacion.EjecutarSentencia(consultaEliminacionPedido, parametrosPedido);
+
+                    Console.WriteLine("Pedido y detalles eliminados correctamente.");
+                    return 1; // Se ha eliminado el pedido y los detalles correctamente
+                }
+                else
+                {
+                    Console.WriteLine("No se puede eliminar el pedido porque existen compras asociadas.");
+                    return -1; // No se puede eliminar el pedido porque existen compras asociadas
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al eliminar el pedido y sus detalles: " + ex.Message);
-                return false;
+                return 0; // Error al intentar eliminar el pedido y los detalles
             }
         }
+
+
         public int PagarPedido(int idPedido, double precio, int idEmpleado)
         {
             try

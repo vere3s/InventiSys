@@ -27,7 +27,8 @@ namespace Accesos.GUI
         {
             _DATOS.DataSource = Consultas.PedidosVentas(dpInicio.Text,dpFinal.Text);
             dgvPedidosVentas.DataSource = _DATOS.DataSource;
-            FiltrarLocalmente();
+            lbRegistros.Text = _DATOS.Count.ToString();
+           
 
         }
         private void FiltrarLocalmente()
@@ -117,16 +118,22 @@ namespace Accesos.GUI
                     PedidoVentas pedidoVentas = new PedidoVentas();
 
                     // Intentar eliminar el pedido
-                    if (pedidoVentas.Eliminar(idSeleccionado))
+                    int resultadoEliminacion = pedidoVentas.Eliminar(idSeleccionado);
+                    if (resultadoEliminacion == 1)
                     {
                         MessageBox.Show("Pedido eliminado correctamente.");
                         // Recargar los datos en el DataGridView después de eliminar
                         Cargar();
                     }
+                    else if (resultadoEliminacion == -1)
+                    {
+                        MessageBox.Show("No se puede eliminar el pedido porque ya tiene un pago asociado.");
+                    }
                     else
                     {
                         MessageBox.Show("Error al eliminar el pedido.");
                     }
+
                 }
             }
             else
@@ -156,6 +163,17 @@ namespace Accesos.GUI
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             Cargar();
+        }
+
+        private void dgvPedidosVentas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPedidosVentas.SelectedRows.Count > 0)
+            {
+                // Obtiene el valor de la celda en la columna del ID del pedido
+                int idPedido = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
+
+                dgvProductos.DataSource = Consultas.DetallePedidoVentas(idPedido);
+            }
         }
     }
 }

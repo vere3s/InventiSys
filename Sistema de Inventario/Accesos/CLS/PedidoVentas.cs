@@ -319,7 +319,7 @@ namespace Accesos.CLS
             }
 
 
-            public Boolean Eliminar(int idPedido)
+            public int Eliminar(int idPedido)
             {
                 try
                 {
@@ -327,14 +327,14 @@ namespace Accesos.CLS
                     DBOperacion operacion = new DBOperacion();
 
                     // Consultar si hay algún pago asociado con el pedido
-                    string consultaPago = "SELECT COUNT(*) FROM pagos WHERE IDPedido = " + idPedido;
-                    int count = Convert.ToInt32(operacion.EjecutarSentencia(consultaPago));
+                    string consultaPago = "SELECT COUNT(*) FROM Compras WHERE IDPedido = " + idPedido;
+                    int count = Convert.ToInt32(operacion.Consultar(consultaPago).Rows[0][0]);
 
                     // Si hay algún pago asociado, no se permite eliminar
                     if (count > 0)
                     {
                         Console.WriteLine("No se puede eliminar el pedido porque ya tiene un pago asociado.");
-                        return false;
+                        return -1;
                     }
 
                     // Si no hay pagos asociados, procedemos con la eliminación
@@ -358,92 +358,16 @@ namespace Accesos.CLS
                     operacion.EjecutarSentencia(consultaEliminacionDetalles.ToString());
 
                     Console.WriteLine("Pedido y detalles eliminados correctamente.");
-                    return true;
+                    return 1; // Se ha eliminado el pedido y los detalles correctamente
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error al eliminar el pedido y sus detalles: " + ex.Message);
-                    return false;
+                    return 0; // Error al intentar eliminar el pedido y los detalles
                 }
             }
 
 
-            public void EliminarProductosNoPresentesEnPedido(int idPedido, List<Item> nuevosDetallesPedido)
-            {
-                try
-                {
-                    // Crear una instancia de DBOperacion para ejecutar las consultas
-                    DBOperacion operacion = new DBOperacion();
-
-                    // Construir la consulta para obtener todos los detalles del pedido actual
-                    StringBuilder consultaDetallesPedidoActual = new StringBuilder();
-                    consultaDetallesPedidoActual.Append("SELECT IDDetallePedido FROM detallepedidoventas WHERE IDPedido = ");
-                    consultaDetallesPedidoActual.Append(idPedido);
-                    consultaDetallesPedidoActual.Append(";");
-
-                    // Ejecutar la consulta para obtener los detalles del pedido actual
-                    DataTable detallesPedidoActual = operacion.Consultar(consultaDetallesPedidoActual.ToString());
-
-                    // Crear una lista para almacenar los IDs de los detalles presentes en el pedido actual
-                    List<int> idsDetallesPresentes = new List<int>();
-
-                    // Iterar sobre los resultados de la consulta y almacenar los IDs de los detalles
-                    foreach (DataRow fila in detallesPedidoActual.Rows)
-                    {
-                        int idDetallePedido = Convert.ToInt32(fila["IDDetallePedido"]);
-                        idsDetallesPresentes.Add(idDetallePedido);
-                    }
-
-                    // Crear una lista para almacenar los IDs de los detalles presentes en los nuevos detalles del pedido
-                    List<int> idsNuevosDetalles = new List<int>();
-
-                    // Iterar sobre los nuevos detalles del pedido y almacenar sus IDs
-                    foreach (Item nuevoDetalle in nuevosDetallesPedido)
-                    {
-                        idsNuevosDetalles.Add(nuevoDetalle.IDDetallePedido);
-                    }
-
-                    // Determinar los IDs de los detalles que ya no están presentes en los nuevos detalles del pedido
-                    List<int> idsDetallesAEliminar = idsDetallesPresentes.Except(idsNuevosDetalles).ToList();
-
-                    // Si hay detalles a eliminar, construir la consulta de eliminación y ejecutarla
-                    if (idsDetallesAEliminar.Count > 0)
-                    {
-                        StringBuilder consultaEliminacionDetalles = new StringBuilder();
-                        consultaEliminacionDetalles.Append("DELETE FROM detallepedidoventas WHERE IDDetallePedido IN (");
-
-                        // Construir una cadena de IDs de detalles a eliminar
-                        StringBuilder idsDetalles = new StringBuilder();
-                        foreach (int idDetalle in idsDetallesAEliminar)
-                        {
-                            idsDetalles.Append(idDetalle);
-                            idsDetalles.Append(",");
-                        }
-
-                        // Eliminar la coma adicional al final
-                        if (idsDetalles.Length > 0)
-                        {
-                            idsDetalles.Length--; // Eliminar el último carácter (coma)
-                        }
-
-                        consultaEliminacionDetalles.Append(idsDetalles);
-                        consultaEliminacionDetalles.Append(");");
-
-                        // Ejecutar la consulta de eliminación de detalles
-                        operacion.EjecutarSentencia(consultaEliminacionDetalles.ToString());
-
-                        Console.WriteLine("Detalles eliminados correctamente.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No hay detalles para eliminar.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al eliminar detalles del pedido: " + ex.Message);
-                }
-            }
 
         }
     }
