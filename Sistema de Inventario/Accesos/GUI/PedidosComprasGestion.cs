@@ -70,12 +70,30 @@ namespace Accesos.GUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            PedidosComprasEdicion pedidosComprasEdicion = new PedidosComprasEdicion();
-            pedidosComprasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
-            pedidosComprasEdicion._IDproveedor = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdProveedor"].Value);
+            // Obtener el ID del pedido y el ID del proveedor de la fila seleccionada
+            int idPedido = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
+            int idProveedor = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdProveedor"].Value);
 
-            pedidosComprasEdicion.ShowDialog();
-            Cargar();
+            // Mostrar un cuadro de diálogo de confirmación
+            DialogResult result = MessageBox.Show("¿Deseas editar el pedido seleccionado?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Verificar la respuesta del usuario
+            if (result == DialogResult.Yes)
+            {
+                // Crear una instancia del formulario de edición
+                PedidosComprasEdicion pedidosComprasEdicion = new PedidosComprasEdicion();
+
+                // Pasar los datos necesarios al formulario de edición
+                pedidosComprasEdicion._ID = idPedido;
+                pedidosComprasEdicion._IDproveedor = idProveedor;
+
+                // Mostrar el formulario de edición
+                pedidosComprasEdicion.ShowDialog();
+
+                // Actualizar la vista después de editar
+                Cargar();
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -84,27 +102,35 @@ namespace Accesos.GUI
             // Verificar si se ha seleccionado una fila
             if (dgvPedidosVentas.SelectedRows.Count > 0)
             {
-
+                // Obtener el ID del pedido seleccionado
                 int idSeleccionado = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdPedido"].Value);
 
+                // Mostrar un cuadro de diálogo de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar el pedido seleccionado?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                PedidoVentas pedidoVentas = new PedidoVentas();
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
+                {
+                    PedidoVentas pedidoVentas = new PedidoVentas();
 
-                if (pedidoVentas.Eliminar(idSeleccionado))
-                {
-                    MessageBox.Show("Pedido eliminado correctamente.");
-                    // Recargar los datos en el DataGridView después de eliminar
-                    Cargar();
-                }
-                else
-                {
-                    MessageBox.Show("Error al eliminar el pedido.");
+                    // Intentar eliminar el pedido
+                    if (pedidoVentas.Eliminar(idSeleccionado))
+                    {
+                        MessageBox.Show("Pedido eliminado correctamente.");
+                        // Recargar los datos en el DataGridView después de eliminar
+                        Cargar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el pedido.");
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila para eliminar.");
             }
+
 
 
         }

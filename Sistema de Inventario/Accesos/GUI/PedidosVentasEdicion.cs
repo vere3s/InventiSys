@@ -336,25 +336,38 @@ namespace Accesos.GUI
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-          
-      
             if (_DATOS.Count == 0) { return; }
             if (_ID <= 0) { _ID = InsertarPedido(); }
-    
 
+            if (_ID > 0)
+            {
+                // Mostrar un cuadro de diálogo de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas realizar el pago?", "Confirmar pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-               
-                if (_ID > 0)
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
                 {
                     PedidoVentas pedidoVentas = new PedidoVentas();
                     SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
 
-                   int pedidopagado = pedidoVentas.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+                    int idPago = pedidoVentas.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
 
+                    if (idPago > 0)
+                    {
+                        MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (idPago == 0)
+                    {
+                        MessageBox.Show("Ya existe un pago para este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al procesar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            
-
+            }
         }
+
 
         private void btnEnPedido_Click(object sender, EventArgs e)
         {

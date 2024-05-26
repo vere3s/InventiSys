@@ -70,44 +70,71 @@ namespace Accesos.GUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            PedidosVentasEdicion pedidosVentasEdicion = new PedidosVentasEdicion();
-            pedidosVentasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
-            pedidosVentasEdicion.txtCliente = dgvPedidosVentas.SelectedRows[0].Cells["Cliente"].Value.ToString();
-            pedidosVentasEdicion.txtComentario = dgvPedidosVentas.SelectedRows[0].Cells["Comentarios"].Value.ToString();
-            pedidosVentasEdicion.ShowDialog();
-            Cargar();
+            if (dgvPedidosVentas.SelectedRows.Count > 0)
+            {
+                // Mostrar un cuadro de diálogo de confirmación
+                DialogResult result = MessageBox.Show("¿Deseas editar el pedido seleccionado?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
+                {
+                    // Crear una instancia del formulario de edición
+                    PedidosVentasEdicion pedidosVentasEdicion = new PedidosVentasEdicion();
+
+                    // Asignar valores al formulario de edición
+                    pedidosVentasEdicion._ID = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IDPedido"].Value);
+                    pedidosVentasEdicion.txtCliente = dgvPedidosVentas.SelectedRows[0].Cells["Cliente"].Value.ToString();
+                    pedidosVentasEdicion.txtComentario = dgvPedidosVentas.SelectedRows[0].Cells["Comentarios"].Value.ToString();
+
+                    // Mostrar el formulario de edición
+                    pedidosVentasEdicion.ShowDialog();
+
+                    // Actualizar la vista después de editar
+                    Cargar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para editar.");
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             // Verificar si se ha seleccionado una fila
             if (dgvPedidosVentas.SelectedRows.Count > 0)
             {
+                // Mostrar un cuadro de diálogo de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar el pedido seleccionado?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                int idSeleccionado = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdPedido"].Value);
-
-
-                PedidoVentas pedidoVentas = new PedidoVentas();
-
-                if (pedidoVentas.Eliminar(idSeleccionado))
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Pedido eliminado correctamente.");
-                    // Recargar los datos en el DataGridView después de eliminar
-                    Cargar();
-                }
-                else
-                {
-                    MessageBox.Show("Error al eliminar el pedido.");
+                    // Obtener el ID del pedido seleccionado
+                    int idSeleccionado = Convert.ToInt32(dgvPedidosVentas.SelectedRows[0].Cells["IdPedido"].Value);
+
+                    PedidoVentas pedidoVentas = new PedidoVentas();
+
+                    // Intentar eliminar el pedido
+                    if (pedidoVentas.Eliminar(idSeleccionado))
+                    {
+                        MessageBox.Show("Pedido eliminado correctamente.");
+                        // Recargar los datos en el DataGridView después de eliminar
+                        Cargar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el pedido.");
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila para eliminar.");
             }
-
-
         }
+
 
         private void Cronometro_Tick(object sender, EventArgs e)
         {

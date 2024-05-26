@@ -310,30 +310,37 @@ namespace Accesos.GUI
                 InsertarPedido(); // Inserta un nuevo pedido si el ID es menor o igual a cero
             }
             if (_ID > 0)
-           
             {
-                // El ID es mayor que cero, por lo que se asume que ya existe un pedido
-                PedidoCompras pedidoCompras = new PedidoCompras();
-                SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
+                // Muestra un cuadro de diálogo de confirmación antes de realizar el pago
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas realizar el pago?", "Confirmar pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Realiza el pago del pedido
-                int idPago = pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+                // Verifica si el usuario confirmó el pago
+                if (result == DialogResult.Yes)
+                {
+                    // El ID es mayor que cero, por lo que se asume que ya existe un pedido
+                    PedidoCompras pedidoCompras = new PedidoCompras();
+                    SesionManager.Sesion oSesion = SesionManager.Sesion.ObtenerInstancia();
 
-                // Manejo de resultados del pago
-                if (idPago > 0)
-                {
-                    MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else if (idPago == 0)
-                {
-                    MessageBox.Show("Ya existe un pago para este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrió un error al procesar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Realiza el pago del pedido
+                    int idPago = pedidoCompras.PagarPedido(_ID, ObtenerTotalProductos(), oSesion.empleado.IDEmpleado);
+
+                    // Manejo de resultados del pago
+                    if (idPago > 0)
+                    {
+                        MessageBox.Show("Pago realizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (idPago == 0)
+                    {
+                        MessageBox.Show("Ya existe un pago para este pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al procesar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
+
         #endregion
 
 
