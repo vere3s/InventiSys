@@ -53,6 +53,7 @@ namespace InventiSys.GUI
                     Email = row["Email"].ToString()
                 };
                 _Autorizado = true;
+                this.DialogResult = DialogResult.OK;
                 Close();
             }
             else
@@ -63,6 +64,7 @@ namespace InventiSys.GUI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             Close();
         }
 
@@ -90,6 +92,12 @@ namespace InventiSys.GUI
             {
                 this.Show();
             }
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (_Autorizado == false) { Application.Exit(); }
+            
         }
     }
 }

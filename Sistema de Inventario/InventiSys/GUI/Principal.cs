@@ -486,7 +486,18 @@ namespace InventiSys.GUI
 
         private void reporteDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form FormularioExistente = ObtenerFormularioExistente(typeof(Reportes.GUI.VisorVentas));
 
+            if (FormularioExistente != null)
+            {
+                FormularioExistente.Activate(); // Activar la instancia existente
+            }
+            else
+            {
+                VisorVentas f = new VisorVentas();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
 
         private void reporteComprasToolStripMenuItem_Click(object sender, EventArgs e)

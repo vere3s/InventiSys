@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventiSys.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,12 @@ namespace InventiSys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CLS.AppManager());
+        
+            new CLS.AppManager();
+
+            Application.Run();
+            Application.Exit();
         }
+        
     }
 }

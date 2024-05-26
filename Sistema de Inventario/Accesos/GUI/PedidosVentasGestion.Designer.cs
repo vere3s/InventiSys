@@ -370,6 +370,7 @@
             this.dgvPedidosVentas.EnableHeadersVisualStyles = false;
             this.dgvPedidosVentas.Location = new System.Drawing.Point(0, 0);
             this.dgvPedidosVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPedidosVentas.MultiSelect = false;
             this.dgvPedidosVentas.Name = "dgvPedidosVentas";
             this.dgvPedidosVentas.ReadOnly = true;
             this.dgvPedidosVentas.RowHeadersWidth = 51;

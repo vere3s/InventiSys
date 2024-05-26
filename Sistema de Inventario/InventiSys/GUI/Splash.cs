@@ -15,17 +15,18 @@ namespace InventiSys.GUI
         public Splash()
         {
             InitializeComponent();
+            Cronometro.Start();
         }
 
         private void Cronometro_Tick(object sender, EventArgs e)
         {
-            Cronometro.Start();
+            Close();
         }
 
         private void Splash_Load(object sender, EventArgs e)
         {
-            Cronometro.Stop();
-            Close();
+ 
+           
         }
     }
 }
