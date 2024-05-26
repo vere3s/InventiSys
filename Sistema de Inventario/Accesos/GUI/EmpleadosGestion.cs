@@ -26,6 +26,7 @@ namespace Accesos.GUI
         public EmpleadosGestion()
         {
             InitializeComponent();
+            Cronometro.Start();
         }
 
         private void FiltrarLocalmente()
@@ -134,6 +135,21 @@ namespace Accesos.GUI
             Cargar();
         }
 
-     
+        private void Cronometro_Tick(object sender, EventArgs e)
+        {
+            Cronometro.Stop(); // Detener el timer mientras carga
+            try
+            {
+                Cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar datos: " + ex.Message);
+            }
+            finally
+            {
+                Cronometro.Start(); // Reiniciar el timer después de cargar
+            }
+        }
     }
 }

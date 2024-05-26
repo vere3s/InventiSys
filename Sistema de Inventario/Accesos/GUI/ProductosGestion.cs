@@ -20,12 +20,6 @@ namespace Accesos.GUI
         // Declarar el evento
         public event DataChangedEventHandler DataChanged;
 
-    
-
-        
-        
-
-
         public void Cargar()
         {
             try
@@ -62,6 +56,7 @@ namespace Accesos.GUI
         public ProductosGestion()
         {
             InitializeComponent();
+            Cronometro.Start();
         }
 
         public static int ContarCategorias()
@@ -157,6 +152,23 @@ namespace Accesos.GUI
         private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
             FiltrarLocalmente();
+        }
+
+        private void Cronometro_Tick(object sender, EventArgs e)
+        {
+            Cronometro.Stop(); // Detener el timer mientras carga
+            try
+            {
+                Cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar datos: " + ex.Message);
+            }
+            finally
+            {
+                Cronometro.Start(); // Reiniciar el timer después de cargar
+            }
         }
     }
 }

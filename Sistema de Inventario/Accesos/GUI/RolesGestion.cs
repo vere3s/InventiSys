@@ -18,6 +18,7 @@ namespace Accesos.GUI
         public RolesGestion()
         {
             InitializeComponent();
+            Cronometro.Start();
         }
 
         private void RolesGestion_Load(object sender, EventArgs e)
@@ -130,6 +131,23 @@ namespace Accesos.GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Error al eliminar el rol: " + ex.Message);
+            }
+        }
+
+        private void Cronometro_Tick(object sender, EventArgs e)
+        {
+            Cronometro.Stop(); // Detener el timer mientras carga
+            try
+            {
+                Cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar datos: " + ex.Message);
+            }
+            finally
+            {
+                Cronometro.Start(); // Reiniciar el timer después de cargar
             }
         }
     } }

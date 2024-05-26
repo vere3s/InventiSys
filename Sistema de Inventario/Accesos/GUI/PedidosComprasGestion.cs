@@ -19,6 +19,7 @@ namespace Accesos.GUI
         public PedidosComprasGestion()
         {
             InitializeComponent();
+            Cronometro.Start();
         }
         private void Cargar()
         {
@@ -112,6 +113,23 @@ namespace Accesos.GUI
         {
             ProveedoresGestion f = new ProveedoresGestion();
             f.ShowDialog();
+        }
+
+        private void Cronometro_Tick(object sender, EventArgs e)
+        {
+            Cronometro.Stop(); // Detener el timer mientras carga
+            try
+            {
+                Cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar datos: " + ex.Message);
+            }
+            finally
+            {
+                Cronometro.Start(); // Reiniciar el timer después de cargar
+            }
         }
     }
 }
