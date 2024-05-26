@@ -18,10 +18,10 @@ namespace InventiSys
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
         
-            new CLS.AppManager();
+           
 
-            Application.Run();
-            Application.Exit();
+            Application.Run(new CLS.AppManager());
+           
         }
         
     }

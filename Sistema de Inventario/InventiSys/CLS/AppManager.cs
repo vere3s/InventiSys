@@ -41,13 +41,10 @@ namespace InventiSys.CLS
             if (LoginScreen())
             {
                 Principal f = new Principal();
-                f.FormClosed += (sender, e) => { ExitThread(); }; // Salir del contexto de la aplicación cuando se cierre la ventana principal
+                 // Salir del contexto de la aplicación cuando se cierre la ventana principal
                 f.Show();
             }
-            else
-            {
-                ExitThread(); // Salir del contexto de la aplicación si no se autoriza el login
-            }
+            
         }
     }
 }
