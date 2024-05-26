@@ -17,9 +17,10 @@
             <xs:sequence>
               <xs:element name="Compras" msprop:Generator_ColumnPropNameInTable="ComprasColumn" msprop:Generator_ColumnPropNameInRow="Compras" msprop:Generator_UserColumnName="Compras" msprop:Generator_ColumnVarNameInTable="columnCompras" type="xs:int" minOccurs="0" />
               <xs:element name="FechaCompra" msprop:Generator_ColumnPropNameInTable="FechaCompraColumn" msprop:Generator_ColumnPropNameInRow="FechaCompra" msprop:Generator_UserColumnName="FechaCompra" msprop:Generator_ColumnVarNameInTable="columnFechaCompra" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Comentario" msprop:Generator_ColumnPropNameInTable="ComentarioColumn" msprop:Generator_ColumnPropNameInRow="Comentario" msprop:Generator_UserColumnName="Comentario" msprop:Generator_ColumnVarNameInTable="columnComentario" type="xs:string" minOccurs="0" />
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" type="xs:string" minOccurs="0" />
               <xs:element name="Pedido" msprop:Generator_ColumnPropNameInTable="PedidoColumn" msprop:Generator_ColumnPropNameInRow="Pedido" msprop:Generator_UserColumnName="Pedido" msprop:Generator_ColumnVarNameInTable="columnPedido" type="xs:int" minOccurs="0" />
               <xs:element name="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_UserColumnName="Empleado" msprop:Generator_ColumnVarNameInTable="columnEmpleado" type="xs:string" minOccurs="0" />
+              <xs:element name="Precio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_UserColumnName="Precio" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
