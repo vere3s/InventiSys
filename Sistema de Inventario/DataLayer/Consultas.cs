@@ -233,7 +233,7 @@ namespace DataLayer
                 p.IDProducto,
                 p.Nombre,
                 p.Precio,
-                3p.EsPlatillo,
+                p.EsPlatillo,
                 p.Cantidad
             FROM
                 productos p
@@ -283,38 +283,41 @@ namespace DataLayer
             return Resultado;
         }
 
-        public static object PedidosCompras()
+        public static object PedidosCompras(string inicio,string final)
         {
+            Console.WriteLine(inicio);
   
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT
-                DISTINCT pc.IDPedido,
-                pc.IDProveedor,
-                ps.Nombre,
-                pc.FechaPedido,
-                pc.Estado,
-                ps.Nombre as Proveedor,
-                pc.Comentarios,
+            string Consulta = $@"
+        SELECT
+            pc.IDPedido,
+            pc.IDProveedor,
+            ps.Nombre AS Proveedor,
+            pc.FechaPedido,
+            pc.Estado,
+            pc.Comentarios,
+            SUM(dpv.Cantidad * dpv.Precio) AS Total,
+            CASE 
+                WHEN c.IDCompras IS NOT NULL THEN 'Pagado'
+                ELSE 'No Pagado'
+            END AS EstadoPago
+        FROM
+            pedidocompras pc
+            LEFT JOIN detallepedidocompras dpv ON pc.IDPedido = dpv.IDPedido
+            LEFT JOIN compras c ON pc.IDPedido = c.IDPedido
+            LEFT JOIN proveedores ps ON pc.IDProveedor = ps.IDProveedor
+        WHERE
+            pc.FechaPedido BETWEEN '{inicio}' AND '{final}'
+        GROUP BY
+            pc.IDPedido,
+            pc.IDProveedor,
             ps.Nombre,
-                SUM(dpv.Cantidad * dpv.Precio) AS 'Total',
-                CASE 
-                    WHEN c.IDCompras IS NOT NULL THEN 'Pagado'
-                    ELSE 'No Pagado'
-                END AS 'EstadoPago'
-            FROM
-                pedidocompras pc
-                LEFT JOIN detallepedidoCompras dpv ON pc.IDPedido = dpv.IDPedido
-                LEFT JOIN compras c ON pc.IDPedido = c.IDPedido
-                LEFT JOIN proveedores ps on pc.IDProveedor = ps.IDProveedor
-            GROUP BY
-                pc.IDPedido,
-                pc.IDProveedor,
-                pc.FechaPedido,
-                pc.Estado,
-                pc.Comentarios,
-			    c.IDCompras
-            ORDER BY
-                pc.FechaPedido DESC;";
+            pc.FechaPedido,
+            pc.Estado,
+            pc.Comentarios,
+            c.IDCompras
+        ORDER BY
+            pc.FechaPedido DESC;";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -330,7 +333,7 @@ namespace DataLayer
         public static DataTable Permisos()
         {
             DataTable Resultado = new DataTable();
-            String Consulta = @"SELECT 
+            string Consulta = @"SELECT 
                 p.IDPermiso, 
                 p.IDRol, 
                 p.IDOpcion,  

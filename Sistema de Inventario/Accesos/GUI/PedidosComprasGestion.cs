@@ -23,7 +23,7 @@ namespace Accesos.GUI
         }
         private void Cargar()
         {
-            _DATOS.DataSource = Consultas.PedidosCompras();
+            _DATOS.DataSource = Consultas.PedidosCompras(dpInicio.Text,dpFinal.Text);
             dgvPedidosVentas.AutoGenerateColumns = false;
             dgvPedidosVentas.DataSource = _DATOS.DataSource;
            
@@ -130,6 +130,11 @@ namespace Accesos.GUI
             {
                 Cronometro.Start(); // Reiniciar el timer después de cargar
             }
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            Cargar();
         }
     }
 }

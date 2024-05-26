@@ -241,3 +241,7 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe.manifest
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.application
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.manifest
+C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.application

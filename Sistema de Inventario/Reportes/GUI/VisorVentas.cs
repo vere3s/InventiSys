@@ -21,9 +21,9 @@ namespace Reportes.GUI
         {
             try
             {
-                REP.Ventas rdProductos = new REP.Ventas();
-                //rOrdenes.SetDataSource(DataLayer.Consultas.SEGUN_PERIODO_INGREDIENTES(dpInicio.Text, dpFinal.Text));
-               // crvVisorIngredientes.ReportSource = rOrdenes;
+                REP.Ventas rdVentas = new REP.Ventas();
+                rdVentas.SetDataSource(DataLayer.Consultas.VENTAS_SEGUN_PERIODO_PRODUCTOS(dpInicio.Text, dpFinal.Text));
+                 crvVisorVentas.ReportSource = rdVentas ;
             }
             catch (Exception)
             {
