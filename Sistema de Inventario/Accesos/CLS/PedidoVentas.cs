@@ -96,7 +96,7 @@ namespace Accesos.CLS
 
                     // Construir la consulta de inserción con la fecha actual
                     StringBuilder consultaPedido = new StringBuilder();
-                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente, FechaPedido, Estado, Comentarios) VALUES(@Cliente, @FechaPedido, 'Pendiente', @Comentarios)");
+                    consultaPedido.Append("INSERT INTO pedidoventas(Cliente, FechaPedido, Estado, Comentarios) VALUES(@Cliente, @FechaPedido, 'Creado', @Comentarios)");
 
                     // Crear un diccionario de parámetros y añadir los valores correspondientes
                     Dictionary<string, object> parametros = new Dictionary<string, object>();

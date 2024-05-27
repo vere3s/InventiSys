@@ -268,6 +268,7 @@ namespace Accesos.GUI
 
                 }
 
+                txtComentario = "Actualizado";
          
                 int idPedidoActualizado = pedidoCompras.Actualizar(_ID, _IDproveedor, detallesPedido, txtComentario);
 
