@@ -24,9 +24,9 @@ namespace InventiSys.GUI
             InitializeComponent();
             DataTable dt = Consultas.ProductosPocoStock();
             notifyIcon1.Visible = true;
-            notifyIcon1.Icon = SystemIcons.Error;
+            notifyIcon1.Icon = SystemIcons.Warning;
             notifyIcon1.BalloonTipTitle = "Bajo Inventario";
-            notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
 
             string lowStockMessage = string.Empty;
 

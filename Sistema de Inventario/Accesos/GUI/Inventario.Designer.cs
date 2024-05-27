@@ -53,6 +53,7 @@
             this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOTIFICADORI = new System.Windows.Forms.ErrorProvider(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -295,6 +296,11 @@
             // 
             this.NOTIFICADORI.ContainerControl = this;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,5 +345,6 @@
         private System.Windows.Forms.ErrorProvider NOTIFICADORI;
         private System.Windows.Forms.ToolStripButton btnConvertirPDF;
         private System.Windows.Forms.ToolStripButton btnConvertirExcel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

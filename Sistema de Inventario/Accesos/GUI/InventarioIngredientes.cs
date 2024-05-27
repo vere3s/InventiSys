@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
+using DataLayer;
 
 namespace Accesos.GUI
 {
@@ -54,6 +55,26 @@ namespace Accesos.GUI
         {
             InitializeComponent();
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            DataTable dt = Consultas.ProductosPocoStock();
+            notifyIcon1.Visible = true;
+            notifyIcon1.Icon = SystemIcons.Error;
+            notifyIcon1.BalloonTipTitle = "Bajo Inventario";
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
+
+            string lowStockMessage = string.Empty;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string nombreProducto = row["Nombre"].ToString();
+                lowStockMessage += $"El producto {nombreProducto} tiene bajo stock.\n";
+            }
+
+            if (!string.IsNullOrEmpty(lowStockMessage))
+            {
+                notifyIcon1.BalloonTipText = lowStockMessage;
+                notifyIcon1.ShowBalloonTip(30000); // Mostrar por 30 segundos
+            }
 
         }
 

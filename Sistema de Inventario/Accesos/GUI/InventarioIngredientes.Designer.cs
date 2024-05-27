@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,6 +51,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnConvertirPDF = new System.Windows.Forms.ToolStripButton();
             this.btnConvertirExcel = new System.Windows.Forms.ToolStripButton();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -270,6 +272,11 @@
             this.btnConvertirExcel.Text = "Convertir a Excel";
             this.btnConvertirExcel.Click += new System.EventHandler(this.btnConvertirExcel_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // InventarioIngredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,5 +319,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCosto;
         private System.Windows.Forms.ToolStripButton btnConvertirPDF;
         private System.Windows.Forms.ToolStripButton btnConvertirExcel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
