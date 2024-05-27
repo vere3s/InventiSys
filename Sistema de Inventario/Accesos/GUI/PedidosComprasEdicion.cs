@@ -38,7 +38,7 @@ namespace Accesos.GUI
                 // Verificar si la cantidad seleccionada es menor o igual a las existencias disponibles
                 if (filasExistentes.Length > 0 || nCantidad <= existencias)
                 {
-                    listBox1.Text = "";
+                    tbFiltro.Text = "";
 
                     if (filasExistentes.Length > 0)
                     {
@@ -73,7 +73,7 @@ namespace Accesos.GUI
                 }
                 else
                 {
-                    // Maneja la situación donde la cantidad seleccionada es mayor que las existencias disponibles
+                    MessageBox.Show("La cantidad es mayor que las existencias no se pudo realizar");
                 }
             }
             listBox1.Text = "";
@@ -114,6 +114,7 @@ namespace Accesos.GUI
             listBox1.DataSource = _DATOSProductos.DataSource;
             listBox1.DisplayMember = "Nombre";
             listBox1.ValueMember = "IDProducto";
+            // _DATOSProductos.Count realizara un conteo de filas de los datos
             lbRegistros.Text = _DATOSProductos.Count.ToString();
         }
         private void FiltrarLocalmente()
@@ -130,8 +131,7 @@ namespace Accesos.GUI
                     listBox1.Visible = true;
                     _DATOSProductos.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
                 }
-                dgvPedido.AutoGenerateColumns = false;
-                dgvPedido.DataSource = _DATOS;
+               
             }
             catch (Exception)
             {
@@ -268,11 +268,7 @@ namespace Accesos.GUI
 
                 }
 
-                // Remove products from the order that are not present in the DataGridView
-
-                // pedidoVentas.EliminarProductosNoPresentesEnPedido(_ID, detallesPedido);
-
-                // Update the order with the new details
+         
                 int idPedidoActualizado = pedidoCompras.Actualizar(_ID, _IDproveedor, detallesPedido, txtComentario);
 
                 // Check if the update was successful
@@ -313,7 +309,7 @@ namespace Accesos.GUI
             {
                 // Muestra un cuadro de diálogo de confirmación antes de realizar el pago
                 DialogResult result = MessageBox.Show("¿Estás seguro de que deseas realizar el pago?", "Confirmar pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+              
                 // Verifica si el usuario confirmó el pago
                 if (result == DialogResult.Yes)
                 {
@@ -355,7 +351,7 @@ namespace Accesos.GUI
             {
                 // Obtener el índice de la fila seleccionada
                 int indiceFila = dgvPedido.SelectedRows[0].Index;
-
+                
                 // Obtener la DataTable subyacente
                 DataTable tablaPedidos = (DataTable)_DATOS.DataSource;
 
@@ -374,8 +370,8 @@ namespace Accesos.GUI
 
 
 
-        #region Cliente
-        private void btnCliente_Click(object sender, EventArgs e)
+       
+        private void btnProveedor_Click(object sender, EventArgs e)
         {
             ProveedorComentario f = new ProveedorComentario();
 
@@ -390,7 +386,7 @@ namespace Accesos.GUI
 
             }
         }
-        #endregion
+   
 
 
 

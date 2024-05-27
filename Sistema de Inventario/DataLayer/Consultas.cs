@@ -471,7 +471,7 @@ ORDER BY
                 p.IDProducto,
                 p.Nombre AS Producto,
                 dpv.Cantidad,
-                dpv.Precio,
+                dpv.Precio as CostoUnitario,
                 (dpv.Cantidad * dpv.Precio) AS Importe
             FROM 
                 detallepedidocompras dpv

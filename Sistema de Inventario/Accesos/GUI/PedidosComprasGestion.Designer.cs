@@ -513,7 +513,7 @@
             // CostoUnitario
             // 
             this.CostoUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CostoUnitario.DataPropertyName = "Precio";
+            this.CostoUnitario.DataPropertyName = "CostoUnitario";
             this.CostoUnitario.HeaderText = "Costo Unitario";
             this.CostoUnitario.MinimumWidth = 6;
             this.CostoUnitario.Name = "CostoUnitario";

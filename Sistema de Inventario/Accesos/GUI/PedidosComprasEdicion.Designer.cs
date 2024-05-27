@@ -211,7 +211,7 @@
             this.btnCliente.Size = new System.Drawing.Size(94, 31);
             this.btnCliente.Text = "Proveedor";
             this.btnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.btnCliente.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // dgvPedido
             // 

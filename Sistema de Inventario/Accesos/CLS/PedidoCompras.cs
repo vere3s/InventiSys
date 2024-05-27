@@ -48,7 +48,7 @@ namespace Accesos.CLS
                     {
                         // Construir la consulta para insertar el detalle del pedido
                         StringBuilder consultaDetalle = new StringBuilder();
-                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio, Fecha) VALUES (@IDPedido, @IDProducto, @Cantidad, @Precio, @Fecha)");
+                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio) VALUES (@IDPedido, @IDProducto, @Cantidad, @Precio, @Fecha)");
 
                         // Crear un diccionario de parámetros y añadir los valores correspondientes
                         Dictionary<string, object> parametrosDetalles = new Dictionary<string, object>();
@@ -56,7 +56,7 @@ namespace Accesos.CLS
                         parametrosDetalles.Add("@IDProducto", item.IDProducto);
                         parametrosDetalles.Add("@Cantidad", item.Cantidad);
                         parametrosDetalles.Add("@Precio", item.Precio.ToString("0.00", CultureInfo.InvariantCulture));
-                        parametrosDetalles.Add("@Fecha", DateTime.Now);
+                        
 
                         // Ejecutar la consulta para insertar el detalle del pedido
                         operacion.EjecutarSentencia(consultaDetalle.ToString(), parametrosDetalles);
@@ -84,12 +84,12 @@ namespace Accesos.CLS
 
                 // Construir la consulta para actualizar el proveedor del pedido
                 StringBuilder consultaActualizacionProveedor = new StringBuilder();
-                consultaActualizacionProveedor.Append("UPDATE pedidocompras SET IDProveedor = @NuevoProveedor, Comentarios = @NuevoComentario WHERE IDPedido = @IDPedido");
+                consultaActualizacionProveedor.Append("UPDATE pedidocompras SET  Comentarios = @NuevoComentario WHERE IDPedido = @IDPedido");
 
                 // Crear un diccionario de parámetros y añadir los valores correspondientes
                 Dictionary<string, object> parametros = new Dictionary<string, object>();
-                parametros.Add("@NuevoProveedor", nuevoProveedor);
-                parametros.Add("@NuevoComentario", nuevoComentario?.Replace("'", "''") ?? ""); // Escapar comillas simples
+               // parametros.Add("@NuevoProveedor", nuevoProveedor);
+                parametros.Add("@NuevoComentario", nuevoComentario); 
                 parametros.Add("@IDPedido", idPedido);
 
                 // Ejecutar la consulta de actualización del proveedor
