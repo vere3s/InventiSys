@@ -48,7 +48,7 @@ namespace Accesos.CLS
                     {
                         // Construir la consulta para insertar el detalle del pedido
                         StringBuilder consultaDetalle = new StringBuilder();
-                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio) VALUES (@IDPedido, @IDProducto, @Cantidad, @Precio, @Fecha)");
+                        consultaDetalle.Append("INSERT INTO detallepedidocompras(IDPedido, IDProducto, Cantidad, Precio) VALUES (@IDPedido, @IDProducto, @Cantidad, @Precio)");
 
                         // Crear un diccionario de parámetros y añadir los valores correspondientes
                         Dictionary<string, object> parametrosDetalles = new Dictionary<string, object>();
@@ -71,7 +71,7 @@ namespace Accesos.CLS
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return -1;
+                return 0;
             }
         }
 
@@ -205,12 +205,12 @@ namespace Accesos.CLS
                     operacion.EjecutarSentencia(consultaEliminacionDetalles, parametrosDetalles);
                     operacion.EjecutarSentencia(consultaEliminacionPedido, parametrosPedido);
 
-                    Console.WriteLine("Pedido y detalles eliminados correctamente.");
+                    
                     return 1; // Se ha eliminado el pedido y los detalles correctamente
                 }
                 else
                 {
-                    Console.WriteLine("No se puede eliminar el pedido porque existen compras asociadas.");
+                    
                     return -1; // No se puede eliminar el pedido porque existen compras asociadas
                 }
             }
@@ -257,7 +257,7 @@ namespace Accesos.CLS
                     {
                         { "@IDPedido", idPedido },
                         { "@FechaCompra", DateTime.Now },
-                        { "@IDEmpleado", idEmpleado }
+                        { "@IDEmpleado", idEmpleado } 
                     };
 
                     // Ejecutar la consulta para insertar la compra

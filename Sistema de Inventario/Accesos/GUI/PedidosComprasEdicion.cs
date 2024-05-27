@@ -168,14 +168,15 @@ namespace Accesos.GUI
 
 
         }
-        private int InsertarPedido()
+        private void InsertarPedido()
         {
             try
 
             {
-                if (_IDproveedor <= 0) { return -1; }
-                if (_ID > 0) { return _ID; }
-                if (_DATOS.Count == 0) { return -1; }
+                if (_IDproveedor <= 0) { return; }
+                if (_ID > 0) { 
+                    return; }
+                if (_DATOS.Count == 0) { return; }
 
                 // Crear una lista para almacenar los detalles del pedido como objetos Item
                 List<Item> detallesPedido = new List<Item>();
@@ -205,19 +206,19 @@ namespace Accesos.GUI
                     _ID = idPedidoInsertado;
                     btnModificar.Visible = true;
                     btnEnPedido.Visible = false;
-                    return idPedidoInsertado;
+                    
                 }
                 else
                 {
                     MessageBox.Show("Error al insertar el pedido.");
-                    return -2;
+                   
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.ToString());
-                return -10;
+               
             }
         }
         #endregion
