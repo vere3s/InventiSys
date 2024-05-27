@@ -120,26 +120,15 @@ namespace Accesos.GUI
         {
             Close();
         }
-void Verificar() {
-            if (cbPlatillo.Checked)
-            {
-                tbCantidad.Text = "0";
-                tbCantidad.ReadOnly = true;
-            }
-            else
-            {
-                tbCantidad.ReadOnly = false;
-            }
-        }
 
         private void cbPlatillo_CheckedChanged(object sender, EventArgs e)
         {
-            Verificar();
+            
         }
 
         private void ProductosEdicion_Load(object sender, EventArgs e)
         {
-            Verificar();
+            
         }
     }
 }
