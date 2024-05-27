@@ -83,7 +83,7 @@ namespace Accesos.GUI
             if (!string.IsNullOrEmpty(lowStockMessage))
             {
                 notifyIcon1.BalloonTipText = lowStockMessage;
-                notifyIcon1.ShowBalloonTip(30000); // Mostrar por 30 segundos
+                notifyIcon1.ShowBalloonTip(180000); // Mostrar por 3 minutos
             }
         }
         public void productosGestion(ProductosGestion productosGestion)
