@@ -84,7 +84,7 @@ namespace Accesos.CLS
 
                 // Construir la consulta para actualizar el proveedor del pedido
                 StringBuilder consultaActualizacionProveedor = new StringBuilder();
-                consultaActualizacionProveedor.Append("UPDATE pedidocompras SET  Comentarios = @NuevoComentario WHERE IDPedido = @IDPedido");
+                consultaActualizacionProveedor.Append("UPDATE pedidocompras SET Comentarios = @NuevoComentario, Estado = 'Actualizado' WHERE IDPedido = @IDPedido;");
 
                 // Crear un diccionario de parámetros y añadir los valores correspondientes
                 Dictionary<string, object> parametros = new Dictionary<string, object>();
@@ -256,7 +256,7 @@ namespace Accesos.CLS
                     Dictionary<string, object> parametros = new Dictionary<string, object>
                     {
                         { "@IDPedido", idPedido },
-                        { "@FechaCompra", DateTime.Now },
+                        { "@FechaCompra", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
                         { "@IDEmpleado", idEmpleado } 
                     };
 
