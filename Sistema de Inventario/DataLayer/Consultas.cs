@@ -297,7 +297,7 @@ namespace DataLayer
             DataTable Resultado = new DataTable();
             string Consulta = $@"
         SELECT
-            pc.IDPedido,
+           DISTINCT pc.IDPedido,
             pc.IDProveedor,
             ps.Nombre AS Proveedor,
             pc.FechaPedido,

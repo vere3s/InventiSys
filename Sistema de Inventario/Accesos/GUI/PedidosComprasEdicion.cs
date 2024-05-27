@@ -26,19 +26,18 @@ namespace Accesos.GUI
         private void AgregarProducto()
         {
             // Obtener el ID del producto seleccionado en el ListBox
-            int selectedIndex = listBox1.SelectedIndex;
-            int idProductoSeleccionado = (int)listBox1.SelectedValue;
-            int existencias = Convert.ToInt32(((DataRowView)listBox1.Items[selectedIndex])["Cantidad"]);
+            DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
+            int idProductoSeleccionado = (int)productoSeleccionado["IDProducto"];
+            int existencias = Convert.ToInt32(productoSeleccionado["Cantidad"]);
 
             if (idProductoSeleccionado != 0) // Ajusta según tu caso
             {
                 // Verificar si el producto ya está en la lista
                 DataRow[] filasExistentes = ((DataTable)_DATOS.DataSource).Select($"IDProducto = {idProductoSeleccionado}");
 
-                // Verificar si la cantidad seleccionada es menor o igual a las existencias disponibles
-                if (filasExistentes.Length > 0 || nCantidad <= existencias)
-                {
-                    tbFiltro.Text = "";
+                
+               
+                   
 
                     if (filasExistentes.Length > 0)
                     {
@@ -51,9 +50,9 @@ namespace Accesos.GUI
                         CantidadCosto c = new CantidadCosto();
 
                         c.cantidadMaxima = existencias;
-                        DataRowView productoSeleccionado = (DataRowView)listBox1.SelectedItem;
+
                         decimal precioProductoSeleccionado = Convert.ToDecimal(productoSeleccionado["CostoUnitario"]);
-                        string nombreProductoSeleccionado = listBox1.GetItemText(listBox1.SelectedItem);
+                        string nombreProductoSeleccionado = listBox1.GetItemText(productoSeleccionado["Nombre"]);
                         c.tbCantidad.Text = "1";
                         c.tbCosto.Text = precioProductoSeleccionado.ToString();
                         if (c.ShowDialog() == DialogResult.OK)
@@ -69,14 +68,12 @@ namespace Accesos.GUI
                         nuevaFila["Importe"] = Convert.ToDecimal(nuevaFila["Cantidad"]) * Convert.ToDecimal(nuevaFila["CostoUnitario"]);
                         ((DataTable)_DATOS.DataSource).Rows.Add(nuevaFila);
                         }
-                    }
+                    
                 }
-                else
-                {
-                    MessageBox.Show("La cantidad es mayor que las existencias no se pudo realizar");
-                }
+                tbFiltro.Text = "";
+
             }
-            listBox1.Text = "";
+         
         }
 
         private void PedidosVentasEdicion_Load(object sender, EventArgs e)
