@@ -327,7 +327,7 @@ namespace Accesos.CLS
                     DBOperacion operacion = new DBOperacion();
 
                     // Consultar si hay algún pago asociado con el pedido
-                    string consultaPago = "SELECT COUNT(*) FROM Compras WHERE IDPedido = " + idPedido;
+                    string consultaPago = "SELECT COUNT(*) FROM ventas WHERE IDPedido = " + idPedido;
                     int count = Convert.ToInt32(operacion.Consultar(consultaPago).Rows[0][0]);
 
                     // Si hay algún pago asociado, no se permite eliminar
