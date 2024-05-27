@@ -615,7 +615,7 @@ ORDER BY
                c.IDPedido,
                p.Nombre As Producto,
                e.Nombre AS Empleado,
-               dc.Precio as Costo
+               (p.Cantidad* p.Precio) as TotalCosto
                
                FROM 
                GestionRestauranteDB.compras c

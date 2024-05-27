@@ -20,7 +20,7 @@
               <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" type="xs:string" minOccurs="0" />
               <xs:element name="Pedido" msprop:Generator_ColumnPropNameInTable="PedidoColumn" msprop:Generator_ColumnPropNameInRow="Pedido" msprop:Generator_UserColumnName="Pedido" msprop:Generator_ColumnVarNameInTable="columnPedido" type="xs:int" minOccurs="0" />
               <xs:element name="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_UserColumnName="Empleado" msprop:Generator_ColumnVarNameInTable="columnEmpleado" type="xs:string" minOccurs="0" />
-              <xs:element name="Precio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_UserColumnName="Precio" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalCosto" msprop:Generator_UserColumnName="TotalCosto" msprop:Generator_ColumnPropNameInTable="TotalCostoColumn" msprop:Generator_ColumnPropNameInRow="TotalCosto" msprop:Generator_ColumnVarNameInTable="columnTotalCosto" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
