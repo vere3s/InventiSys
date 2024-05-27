@@ -290,33 +290,7 @@ namespace Accesos.CLS
                 }
             }
 
-            public void ActualizarDetallePedidoVentas(int idDetallePedido, int nuevaCantidad, double nuevoPrecio)
-            {
-                try
-                {
-                    // Crear una instancia de DBOperacion para ejecutar las consultas
-                    DBOperacion operacion = new DBOperacion();
-
-                    // Construir la consulta para actualizar el detalle del pedido
-                    StringBuilder consultaActualizacion = new StringBuilder();
-                    consultaActualizacion.Append("UPDATE detallepedidoventas SET Cantidad = ");
-                    consultaActualizacion.Append(nuevaCantidad);
-                    consultaActualizacion.Append(", Precio = ");
-                    consultaActualizacion.Append(nuevoPrecio.ToString("0.00")); // Formateamos el precio a dos decimales
-                    consultaActualizacion.Append(" WHERE IDDetallePedido = ");
-                    consultaActualizacion.Append(idDetallePedido);
-                    consultaActualizacion.Append(";");
-
-                    // Ejecutar la consulta de actualización
-                    operacion.EjecutarSentencia(consultaActualizacion.ToString());
-
-                    Console.WriteLine("Detalle del pedido actualizado correctamente.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al actualizar el detalle del pedido: " + ex.Message);
-                }
-            }
+           
 
 
             public int Eliminar(int idPedido)
@@ -351,12 +325,12 @@ namespace Accesos.CLS
                     consultaEliminacionPedido.Append(idPedido);
                     consultaEliminacionPedido.Append(";");
 
-                    // Ejecutar la consulta de eliminación del pedido
-                    operacion.EjecutarSentencia(consultaEliminacionPedido.ToString());
+                  
 
                     // Ejecutar la consulta de eliminación de los detalles del pedido
                     operacion.EjecutarSentencia(consultaEliminacionDetalles.ToString());
-
+                    // Ejecutar la consulta de eliminación del pedido
+                    operacion.EjecutarSentencia(consultaEliminacionPedido.ToString());
                     Console.WriteLine("Pedido y detalles eliminados correctamente.");
                     return 1; // Se ha eliminado el pedido y los detalles correctamente
                 }
