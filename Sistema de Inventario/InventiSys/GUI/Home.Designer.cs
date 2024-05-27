@@ -38,13 +38,19 @@
             this.lblContadorProductos = new System.Windows.Forms.Label();
             this.lbProductos = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbVentasTotal = new System.Windows.Forms.Label();
             this.lbVentas = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbProductoVenta = new System.Windows.Forms.Label();
+            this.lbPrecioVenta = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // lbContadorUsuarios
@@ -152,17 +158,17 @@
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // lbVentasTotal
             // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(968, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 89);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbVentasTotal.BackColor = System.Drawing.Color.White;
+            this.lbVentasTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVentasTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbVentasTotal.Location = new System.Drawing.Point(968, 40);
+            this.lbVentasTotal.Name = "lbVentasTotal";
+            this.lbVentasTotal.Size = new System.Drawing.Size(120, 89);
+            this.lbVentasTotal.TabIndex = 29;
+            this.lbVentasTotal.Text = "0";
+            this.lbVentasTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbVentas
             // 
@@ -187,13 +193,74 @@
             this.pictureBox3.TabIndex = 27;
             this.pictureBox3.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(160, 289);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(237, 36);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "PRODUCTO MÁS VENDIDO";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(394, 289);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 36);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "PRECIO";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbProductoVenta
+            // 
+            this.lbProductoVenta.BackColor = System.Drawing.Color.White;
+            this.lbProductoVenta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbProductoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProductoVenta.Location = new System.Drawing.Point(160, 325);
+            this.lbProductoVenta.Name = "lbProductoVenta";
+            this.lbProductoVenta.Size = new System.Drawing.Size(237, 74);
+            this.lbProductoVenta.TabIndex = 32;
+            this.lbProductoVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbPrecioVenta
+            // 
+            this.lbPrecioVenta.BackColor = System.Drawing.Color.White;
+            this.lbPrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrecioVenta.Location = new System.Drawing.Point(394, 325);
+            this.lbPrecioVenta.Name = "lbPrecioVenta";
+            this.lbPrecioVenta.Size = new System.Drawing.Size(237, 74);
+            this.lbPrecioVenta.TabIndex = 33;
+            this.lbPrecioVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(38, 289);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(127, 110);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 34;
+            this.pictureBox4.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1003, 450);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(1067, 450);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.lbPrecioVenta);
+            this.Controls.Add(this.lbProductoVenta);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbVentasTotal);
             this.Controls.Add(this.lbVentas);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblContadorProductos);
@@ -214,6 +281,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,8 +296,13 @@
         private System.Windows.Forms.Label lblContadorProductos;
         private System.Windows.Forms.Label lbProductos;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbVentasTotal;
         private System.Windows.Forms.Label lbVentas;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbProductoVenta;
+        private System.Windows.Forms.Label lbPrecioVenta;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

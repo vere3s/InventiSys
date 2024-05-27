@@ -42,44 +42,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 57);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cantidad";
             // 
             // tbCantidad
             // 
             this.tbCantidad.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbCantidad.Location = new System.Drawing.Point(147, 61);
+            this.tbCantidad.Location = new System.Drawing.Point(149, 48);
+            this.tbCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(288, 22);
+            this.tbCantidad.Size = new System.Drawing.Size(217, 20);
             this.tbCantidad.TabIndex = 1;
             // 
             // tbCosto
             // 
             this.tbCosto.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbCosto.Location = new System.Drawing.Point(147, 108);
+            this.tbCosto.Location = new System.Drawing.Point(149, 86);
+            this.tbCosto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCosto.Name = "tbCosto";
-            this.tbCosto.Size = new System.Drawing.Size(288, 22);
+            this.tbCosto.Size = new System.Drawing.Size(217, 20);
             this.tbCosto.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 104);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 25);
+            this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Costo Unitario";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(147, 163);
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(88, 135);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(80, 25);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -87,9 +93,11 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(336, 163);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(230, 135);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 25);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -102,10 +110,10 @@
             // 
             // CantidadCosto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(457, 203);
+            this.ClientSize = new System.Drawing.Size(404, 181);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tbCosto);
@@ -113,6 +121,7 @@
             this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CantidadCosto";
             this.Text = "Cantidad Costo";
             this.Load += new System.EventHandler(this.CantidadCosto_Load);

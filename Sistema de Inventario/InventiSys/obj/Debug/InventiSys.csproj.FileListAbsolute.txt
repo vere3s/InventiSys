@@ -249,3 +249,7 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.application
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.manifest
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.application
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe.manifest
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.application
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.manifest
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.application

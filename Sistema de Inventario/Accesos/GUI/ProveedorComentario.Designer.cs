@@ -39,35 +39,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 62);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(77, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Proveedor";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 125);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 102);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Comentario";
             // 
             // rtbComentario
             // 
             this.rtbComentario.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.rtbComentario.Location = new System.Drawing.Point(136, 122);
+            this.rtbComentario.Location = new System.Drawing.Point(122, 102);
+            this.rtbComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbComentario.Name = "rtbComentario";
-            this.rtbComentario.Size = new System.Drawing.Size(264, 96);
+            this.rtbComentario.Size = new System.Drawing.Size(199, 79);
             this.rtbComentario.TabIndex = 4;
             this.rtbComentario.Text = "";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(55, 290);
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(41, 226);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(80, 36);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -75,9 +82,11 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(310, 290);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(232, 226);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 36);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -86,17 +95,18 @@
             // cbProveedor
             // 
             this.cbProveedor.FormattingEnabled = true;
-            this.cbProveedor.Location = new System.Drawing.Point(136, 53);
+            this.cbProveedor.Location = new System.Drawing.Point(122, 46);
+            this.cbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbProveedor.Name = "cbProveedor";
-            this.cbProveedor.Size = new System.Drawing.Size(264, 24);
+            this.cbProveedor.Size = new System.Drawing.Size(199, 21);
             this.cbProveedor.TabIndex = 7;
             // 
             // ProveedorComentario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(468, 335);
+            this.ClientSize = new System.Drawing.Size(382, 283);
             this.Controls.Add(this.cbProveedor);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -104,6 +114,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ProveedorComentario";
             this.Text = "Proveedor Comentario";
             this.Load += new System.EventHandler(this.ProveedorComentario_Load);

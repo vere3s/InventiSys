@@ -104,16 +104,16 @@ namespace Accesos.CLS
         }
         public static string ConvertirContraseña(string cContraseña)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
+            using (SHA256 sha256Hash = SHA256.Create()) // 'using' asegura que el objeto SHA256 se libere. SHA256.Create() crea una instancia.
             {
-                byte[] ConvertirBytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(cContraseña));
+                byte[] ConvertirBytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(cContraseña)); // Convierte la cadena en un arreglo de bytes. Procesa esos bytes y devuelve un arreglo de bytes.
 
                 StringBuilder convertirCadena = new StringBuilder();
                 for (int i = 0; i < ConvertirBytes.Length; i++)
                 {
-                    convertirCadena.Append(ConvertirBytes[i].ToString("x2"));
+                    convertirCadena.Append(ConvertirBytes[i].ToString("x2")); // Convierte cada byte a una cadena hexadecimal usando "x2" que representa los bytes en formato hexadecimal de dos caracteres.
                 }
-                return convertirCadena.ToString();
+                return convertirCadena.ToString(); 
             }
         }
         public static bool UsuarioExiste(string oUsuario)

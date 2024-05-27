@@ -46,8 +46,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.tbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnConvertirPDF = new System.Windows.Forms.ToolStripButton();
@@ -218,8 +216,6 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel2,
-            this.toolStripComboBox1,
             this.tbFiltro,
             this.toolStripLabel1,
             this.btnConvertirPDF,
@@ -229,22 +225,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(720, 44);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Padding = new System.Windows.Forms.Padding(3);
-            this.toolStripLabel2.Size = new System.Drawing.Size(26, 41);
-            this.toolStripLabel2.Text = "toolStripLabel2";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(140, 44);
-            this.toolStripComboBox1.Text = "Filtrar por categoria";
             // 
             // tbFiltro
             // 
@@ -319,8 +299,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbRegistros;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripTextBox tbFiltro;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;

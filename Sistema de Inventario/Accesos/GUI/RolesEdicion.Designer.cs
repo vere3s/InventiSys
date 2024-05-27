@@ -42,43 +42,51 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 58);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 16);
+            this.label1.Size = new System.Drawing.Size(22, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 110);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.Size = new System.Drawing.Size(31, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Rol";
             // 
             // tbIDRol
             // 
             this.tbIDRol.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbIDRol.Location = new System.Drawing.Point(104, 58);
+            this.tbIDRol.Location = new System.Drawing.Point(78, 47);
+            this.tbIDRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbIDRol.Name = "tbIDRol";
             this.tbIDRol.ReadOnly = true;
-            this.tbIDRol.Size = new System.Drawing.Size(100, 22);
+            this.tbIDRol.Size = new System.Drawing.Size(76, 20);
             this.tbIDRol.TabIndex = 2;
             // 
             // tbRol
             // 
             this.tbRol.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tbRol.Location = new System.Drawing.Point(104, 110);
+            this.tbRol.Location = new System.Drawing.Point(78, 89);
+            this.tbRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbRol.Name = "tbRol";
-            this.tbRol.Size = new System.Drawing.Size(230, 22);
+            this.tbRol.Size = new System.Drawing.Size(174, 20);
             this.tbRol.TabIndex = 3;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(57, 179);
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(32, 148);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(76, 29);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -86,9 +94,11 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(234, 179);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(165, 148);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(76, 29);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -101,16 +111,17 @@
             // 
             // RolesEdicion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(375, 224);
+            this.ClientSize = new System.Drawing.Size(281, 199);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tbRol);
             this.Controls.Add(this.tbIDRol);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RolesEdicion";
             this.Text = "RolesEdicion";
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();

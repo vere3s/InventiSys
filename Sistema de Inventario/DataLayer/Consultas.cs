@@ -176,24 +176,24 @@ namespace DataLayer
         {
             DataTable Resultado = new DataTable();
             String Consulta = @"SELECT
-    p.IDProducto, 
-    p.Nombre,
-    p.Precio, 
-    p.CostoUnitario,
-    p.EsPlatillo, 
-    p.IDCategoria, 
-    p.Cantidad,
-    c.Nombre AS NombreC,
-    CASE
-        WHEN p.EsPlatillo = 1 THEN 'Sí'
-        ELSE 'No'
-    END AS SinStock
-FROM
-    productos p
-    INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
-ORDER BY
-    p.Nombre ASC;
- ";
+                p.IDProducto, 
+                p.Nombre,
+                p.Precio, 
+                p.CostoUnitario,
+                p.EsPlatillo, 
+                p.IDCategoria, 
+                p.Cantidad,
+                c.Nombre AS NombreC,
+                CASE
+                    WHEN p.EsPlatillo = 1 THEN 'Sí'
+                    ELSE 'No'
+                END AS SinStock
+            FROM
+                productos p
+                INNER JOIN categorias c ON p.IDCategoria = c.IDCategoria
+            ORDER BY
+                p.Nombre ASC;
+             ";
             DBOperacion operacion = new DBOperacion();
             try
             {
@@ -624,7 +624,7 @@ ORDER BY
                INNER JOIN GestionRestauranteDB.empleados e ON c.IDEmpleado = e.IDEmpleado
                
                WHERE
- CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
+                CAST(c.FechaCompra AS DATE) BETWEEN '" + pFechaInicio + "' AND '" + pFechaFinal + @"'
              GROUP BY
                 c.IDCompras,
                c.FechaCompra,
@@ -646,7 +646,62 @@ ORDER BY
             }
             return Resultado;
         }
+        public static decimal VENTAS_TOTAL()
+        {
+            decimal total = 0;
+            String consulta = @"SELECT SUM(Precio) AS 'Precio' FROM ventas;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                DataTable resultado = operacion.Consultar(consulta);
+                if (resultado.Rows.Count > 0)
+                {
+                    total = Convert.ToDecimal(resultado.Rows[0]["Precio"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario, por ejemplo, registrando el error
+                Console.WriteLine(ex.Message);
+            }
+            return total;
+        }
 
+        public static DataRow PRODUCTOS_MAS_VENDIDO()
+        {
+            DataRow resultado = null;
+            String consulta = @"SELECT
+                p.Nombre AS 'Producto',
+                v.Precio
+            FROM
+                ventas v
+            INNER JOIN
+                empleados e ON v.IDEmpleado = e.IDEmpleado
+            INNER JOIN
+                pedidoventas pv ON v.IDPedido = pv.IDPedido
+            INNER JOIN
+                detallepedidoventas dpv ON pv.IDPedido = dpv.IDPedido
+            INNER JOIN
+                productos p ON dpv.IDProducto = p.IDProducto
+            ORDER BY
+                v.Precio DESC
+            LIMIT 1;";
+            DBOperacion operacion = new DBOperacion();
+            try
+            {
+                DataTable tablaResultado = operacion.Consultar(consulta);
+                if (tablaResultado.Rows.Count > 0)
+                {
+                    resultado = tablaResultado.Rows[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja la excepción si es necesario
+                Console.WriteLine(ex.Message);
+            }
+            return resultado;
+        }
     }
 }
 
