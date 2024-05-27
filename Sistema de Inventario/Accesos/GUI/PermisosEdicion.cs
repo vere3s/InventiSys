@@ -1,5 +1,6 @@
 ﻿using Accesos.CLS;
 using DataLayer;
+using Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -168,15 +169,5 @@ namespace Accesos.GUI
         }
     }
 
-    public class ListItem
-    {
-        public string DisplayName { get; set; }
-        public string Value { get; set; }
 
-        public ListItem(string displayName, string value)
-        {
-            DisplayName = displayName;
-            Value = value;
-        }
-    }
 }

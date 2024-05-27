@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Accesos.GUI
     public partial class ProductosGestion : Form
     {
         BindingSource _DATOS = new BindingSource();
+        string Filtrado;
 
         // Actualizar automaticamente 
 
@@ -25,27 +27,44 @@ namespace Accesos.GUI
             try
             {
                 _DATOS.DataSource = DataLayer.Consultas.PRODUCTOS();
+
+                dgvProductos.DataSource = _DATOS;
+
+
                 lbRegistros.Text = _DATOS.Count.ToString();
                 FiltrarLocalmente();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                // Manejar la excepción según sea necesario
+                Console.WriteLine("Ocurrió un error: " + ex.Message);
             }
+
         }
         private void FiltrarLocalmente()
         {
             try
             {
+                ListItem listItem = (ListItem)cbFiltrar.SelectedItem;
+              
+
                 if (tbFiltro.Text.Trim().Length <= 0)
                 {
                     _DATOS.RemoveFilter();
                 }
                 else
                 {
-                    _DATOS.Filter = "Nombre like '%" + tbFiltro.Text + "%'";
+                    if (listItem.Value == "1")
+                    {
+                        Filtrado = "Nombre like '%" + tbFiltro.Text + "%'";
+                    }
+                    else
+                    {
+                        Filtrado = "NombreC like '%" + tbFiltro.Text + "%'";
+                    }
+                    _DATOS.Filter = Filtrado;
                 }
-                dgvProductos.AutoGenerateColumns = false;
-                dgvProductos.DataSource = _DATOS;
+               
             }
             catch (Exception)
             {
@@ -57,6 +76,11 @@ namespace Accesos.GUI
         {
             InitializeComponent();
             Cronometro.Start();
+            cbFiltrar.Items.Add(new ListItem("Nombre","1"));
+            cbFiltrar.Items.Add(new ListItem("Categorias", "2"));
+           
+            cbFiltrar.SelectedIndex = 0;
+
         }
 
         public static int ContarCategorias()
