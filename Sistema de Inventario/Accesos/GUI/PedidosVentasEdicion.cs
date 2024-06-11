@@ -423,6 +423,7 @@ namespace Accesos.GUI
         private void btnCantidad_Click(object sender, EventArgs e)
         {
             Cantidad c = new Cantidad();
+            c._cantidadMaxima = 999;
             c.tbCantidad.Text = nCantidad.ToString();
             if(c.ShowDialog() == DialogResult.OK) {
                 nCantidad = Convert.ToInt32(c.tbCantidad.Text);
