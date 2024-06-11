@@ -180,7 +180,7 @@ namespace Accesos.GUI
 
         private void Cronometro_Tick(object sender, EventArgs e)
         {
-            Cronometro.Stop(); // Detener el timer mientras carga
+            //Cronometro.Stop(); // Detener el timer mientras carga
             try
             {
                 Cargar();
