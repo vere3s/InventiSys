@@ -18,7 +18,8 @@ namespace DataLayer
                 Configuracion config = new Configuracion();
                 config.CargarDesdeXML(_rutaArchivoConfiguracion);
 
-                _CONEXION.ConnectionString = $"Server={config.IP};Port=3306;Database=GestionRestauranteDB;Uid=sistema-user;Pwd=Sistema-user; SSLMode=None";
+                _CONEXION.ConnectionString = "Server=localhost;Port=3306;Database=gestionrestaurantesdb;Uid=sistema-user;Pwd=Sistema-user;SslMode=None"; //contiene informacion para conectarmnos al servidor de datos
+                //$"Server={config.IP};Port=3306;Database=GestionRestauranteDB;Uid=sistema-user;Pwd=Sistema-user; SSLMode=None";
                 _CONEXION.Open();
                 Resultado = true;
             }

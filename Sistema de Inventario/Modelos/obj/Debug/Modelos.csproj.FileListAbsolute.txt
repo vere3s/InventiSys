@@ -16,3 +16,9 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Deb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Modelos\bin\Debug\Modelos.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Modelos\bin\Debug\Modelos.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.csproj.AssemblyReference.cache
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\Modelos\obj\Debug\Modelos.pdb

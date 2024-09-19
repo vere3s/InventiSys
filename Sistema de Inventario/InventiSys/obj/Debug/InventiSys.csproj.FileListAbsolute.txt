@@ -100,57 +100,6 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.Up2Date
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe.config
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Accesos.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\DataLayer.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Modelos.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\SesionManager.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\MySql.Data.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Google.Protobuf.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\ZstdSharp.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Memory.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Buffers.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.IO.Pipelines.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Accesos.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Accesos.dll.config
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\DataLayer.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\DataLayer.dll.config
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Modelos.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\SesionManager.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\SesionManager.dll.config
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\MySql.Data.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Google.Protobuf.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Google.Protobuf.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Memory.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Buffers.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.IO.Pipelines.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.AssemblyReference.cache
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Home.resources
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Login.resources
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Principal.resources
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Splash.resources
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.Properties.Resources.resources
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.GenerateResource.cache
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.CoreCompileInputs.cache
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.CopyComplete
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.pdb
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.Shared.dll
@@ -170,25 +119,6 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\stdole.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.Windows.Forms.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\stdole.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.pdb
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.Shared.dll
@@ -208,20 +138,9 @@ C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\stdole.dll
 C:\Users\Saira\Documents\GitHub\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.pdb
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.xml
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.System.Drawing.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
-C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.Interfaces.dll
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.System.Drawing.dll
@@ -249,7 +168,88 @@ C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de In
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.application
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.manifest
 C:\Users\Marce\Documents\Marcela\Desarrollo II\Proyecto\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.application
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe.config
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe.manifest
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.application
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.exe
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\InventiSys.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Accesos.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\DataLayer.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Modelos.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\SesionManager.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\MySql.Data.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Google.Protobuf.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\ZstdSharp.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Memory.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Buffers.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.IO.Pipelines.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\stdole.dll
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Accesos.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Accesos.dll.config
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\DataLayer.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\DataLayer.dll.config
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Modelos.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Reportes.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\SesionManager.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\SesionManager.dll.config
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\itextsharp.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\EPPlus.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\MySql.Data.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Google.Protobuf.pdb
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\Google.Protobuf.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Memory.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Buffers.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.IO.Pipelines.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.AssemblyReference.cache
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.SuggestedBindingRedirects.cache
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.config
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Home.resources
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Login.resources
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Principal.resources
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.GUI.Splash.resources
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.Properties.Resources.resources
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.GenerateResource.cache
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.CoreCompileInputs.cache
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe.manifest
 C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.application
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.csproj.CopyComplete
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.exe
+C:\Users\verri\Documents\Archivos Salma\2024\Materias ciclo 7\DESARROLLO DE SOFTWARE II\InventiSys\Sistema de Inventario\InventiSys\obj\Debug\InventiSys.pdb
